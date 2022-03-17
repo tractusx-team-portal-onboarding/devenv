@@ -25,12 +25,15 @@ services:
       DB_SCHEMA: iamcentral
       DB_USER: kccentral
       DB_PASSWORD: pwkccentral
+      X509_CA_BUNDLE: /tmp/ca
       KEYCLOAK_IMPORT: /tmp/realm-export.json
     ports:
       - 8080:8080
       - 8443:8443
     volumes:
       - ./keycloak/iamcentral/realm-export.json:/tmp/realm-export.json
+      - ./keycloak/cert:/etc/x509/https
+      - ./keycloak/ca:/tmp/ca
 
   iamshared:
     image: jboss/keycloak
@@ -44,10 +47,13 @@ services:
       DB_SCHEMA: iamshared
       DB_USER: kcshared
       DB_PASSWORD: pwkcshared
+      X509_CA_BUNDLE: /tmp/ca
       KEYCLOAK_IMPORT: /tmp/realm-export.json
     ports:
       - 8081:8080
       - 8444:8443
     volumes:
       - ./keycloak/iamshared/realm-export.json:/tmp/realm-export.json
+      - ./keycloak/cert:/etc/x509/https
+      - ./keycloak/ca:/tmp/ca
 
