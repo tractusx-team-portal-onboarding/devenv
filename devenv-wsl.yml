@@ -31,6 +31,8 @@ services:
     volumes:
       - ./keycloak/iamcentral/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
+    extra_hosts:
+      - "wsl:169.254.254.2"
 
   iamshared:
     image: jboss/keycloak
@@ -51,6 +53,8 @@ services:
     volumes:
       - ./keycloak/iamshared/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
+    extra_hosts:
+      - "wsl:169.254.254.2"
 
   ingress:
     image: nginx
