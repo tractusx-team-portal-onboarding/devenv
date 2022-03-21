@@ -1,4 +1,3 @@
-# Use postgres/example user/password credentials
 version: '3.1'
 
 services:
@@ -18,6 +17,8 @@ services:
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_FRONTEND_URL: https://wsl:8443/iamcentral/auth
+      PROXY_ADDRESS_FORWARDING: 'true'
       DB_VENDOR: postgres
       DB_ADDR: devenv_db
       DB_PORT: 5432
@@ -25,14 +26,10 @@ services:
       DB_SCHEMA: iamcentral
       DB_USER: kccentral
       DB_PASSWORD: pwkccentral
-      X509_CA_BUNDLE: /tmp/ca
+      X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
       KEYCLOAK_IMPORT: /tmp/realm-export.json
-    ports:
-      - 8080:8080
-      - 8443:8443
     volumes:
       - ./keycloak/iamcentral/realm-export.json:/tmp/realm-export.json
-      - ./keycloak/cert:/etc/x509/https
       - ./keycloak/ca:/tmp/ca
 
   iamshared:
@@ -40,6 +37,8 @@ services:
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_FRONTEND_URL: https://wsl:8443/iamshared/auth
+      PROXY_ADDRESS_FORWARDING: 'true'
       DB_VENDOR: postgres
       DB_ADDR: devenv_db
       DB_PORT: 5432
@@ -47,13 +46,17 @@ services:
       DB_SCHEMA: iamshared
       DB_USER: kcshared
       DB_PASSWORD: pwkcshared
-      X509_CA_BUNDLE: /tmp/ca
+      X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
       KEYCLOAK_IMPORT: /tmp/realm-export.json
-    ports:
-      - 8081:8080
-      - 8444:8443
     volumes:
       - ./keycloak/iamshared/realm-export.json:/tmp/realm-export.json
-      - ./keycloak/cert:/etc/x509/https
       - ./keycloak/ca:/tmp/ca
+
+  ingress:
+    image: nginx
+    ports:
+      - 8443:443
+    volumes:
+      - ./nginx/wsl/conf/:/etc/nginx/
+      - ./nginx/wsl/certs/:/etc/ssl/certs/
 
