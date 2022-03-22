@@ -1,4 +1,3 @@
 #!/bin/sh
-has_wsl=`grep "169.254.254.2 wsl" /etc/hosts`
-[ -z "$has_wsl" ] && sudo echo "169.254.254.2 wsl" >> /etc/hosts
-
+wsl_ip=`getent hosts wsl | awk '{ print $1 }'`
+[ -z "$wsl_ip" ] && sudo echo "169.254.254.2 wsl" >> /etc/hosts
