@@ -17,10 +17,10 @@ services:
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: https://localhost:8443/iamcentral/auth
+      KEYCLOAK_FRONTEND_URL: https://${DEVENV_SERVERNAME}:8443/iamcentral/auth
       PROXY_ADDRESS_FORWARDING: 'true'
       DB_VENDOR: postgres
-      DB_ADDR: devenv_db
+      DB_ADDR: db
       DB_PORT: 5432
       DB_DATABASE: postgres
       DB_SCHEMA: iamcentral
@@ -31,16 +31,18 @@ services:
     volumes:
       - ./keycloak/iamcentral/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
+    extra_hosts:
+      - "${DEVENV_SERVERNAME}:${DEVENV_IP}"
 
   iamshared:
     image: jboss/keycloak
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: https://localhost:8443/iamshared/auth
+      KEYCLOAK_FRONTEND_URL: https://${DEVENV_SERVERNAME}:8443/iamshared/auth
       PROXY_ADDRESS_FORWARDING: 'true'
       DB_VENDOR: postgres
-      DB_ADDR: devenv_db
+      DB_ADDR: db
       DB_PORT: 5432
       DB_DATABASE: postgres
       DB_SCHEMA: iamshared
@@ -51,12 +53,15 @@ services:
     volumes:
       - ./keycloak/iamshared/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
+    extra_hosts:
+      - "${DEVENV_SERVERNAME}:${DEVENV_IP}"
 
   ingress:
     image: nginx
     ports:
       - 8443:443
     volumes:
-      - ./nginx/localhost/conf/:/etc/nginx/
-      - ./nginx/localhost/certs/:/etc/ssl/certs/
+      - ./nginx/conf/:/etc/nginx/
+      - ./nginx/servernames/${DEVENV_SERVERNAME}.conf:/etc/nginx/servername.conf
+      - ./nginx/certs/:/etc/ssl/certs/
 

@@ -5,5 +5,7 @@ then
   echo "run 'sudo ./set_wsl_hosts.sh' first!"
 else
   [ ! -d "./postgres/data" ] && mkdir ./postgres/data
-  docker stack deploy -c devenv-wsl.yml devenv
+  export DEVENV_SERVERNAME=wsl
+  export DEVENV_IP=`getent hosts $DEVENV_SERVERNAME | awk '{ print $1 }'`
+  docker stack deploy -c devenv.yml devenv
 fi
