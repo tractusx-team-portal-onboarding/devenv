@@ -7,11 +7,12 @@ else
   if [ -z "$DEVENV_IP" ]; then
     echo "hostname $DEVENV_SERVERNAME unknown (run 'sudo ./set_wsl_hosts.sh' resp. 'sudo ./set_devhost_hosts.sh' first)"
   else
-    if [ -a "nginx/servernames/$DEVENV_SERVERNAME.conf" ] && [ -a "nginx/certs/$DEVENV_SERVERNAME.crt" ] && [ -a "nginx/certs/$DEVENV_SERVERNAME.key" ]; then
-      [ ! -d "./postgres/data" ] && mkdir ./postgres/data
+    if [ -a "nginx/certs/$DEVENV_SERVERNAME.crt" ] && [ -a "nginx/certs/$DEVENV_SERVERNAME.key" ]; then
+      [ ! -d "postgres/data" ] && mkdir postgres/data
+      echo "server_name $DEVENV_SERVERNAME;" > nginx/conf/servername.conf
       docker stack deploy -c devenv.yml devenv
     else
-      echo "nginx/servernames/$DEVENV_SERVERNAME.conf, nginx/certs/$DEVENV_SERVERNAME.crt or nginx/certs/$DEVENV_SERVERNAME.key are missing!"
+      echo "nginx/certs/$DEVENV_SERVERNAME.crt or nginx/certs/$DEVENV_SERVERNAME.key are missing!"
     fi
   fi
 fi
