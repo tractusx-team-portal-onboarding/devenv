@@ -38,6 +38,6 @@ GRANT ALL ON TABLE portal.invitations TO portal;
 GRANT ALL ON TABLE provisioning.client_sequence TO provisioning;
 GRANT ALL ON TABLE provisioning.identity_provider_sequence TO provisioning;
 
-GRANT ALL ON SEQUENCE provisioning.client_sequence_client_sequence_id_seq TO provisioning;
-GRANT ALL ON SEQUENCE provisioning.identity_provider_sequence_identity_provider_sequence_id_seq TO provisioning;
+GRANT ALL ON SEQUENCE provisioning.client_sequence_sequence_id_seq TO provisioning;
+GRANT ALL ON SEQUENCE provisioning.identity_provider_sequence_sequence_id_seq TO provisioning;
 
