@@ -92,9 +92,9 @@ CREATE TABLE portal.identity_providers (
 
 
 CREATE TABLE portal.iam_identity_providers (
-    iam_identity_provider_id uuid PRIMARY KEY,
+    identity_provider_id uuid PRIMARY KEY,
     iam_idp_alias character varying(255) NOT NULL,
-    CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (iam_identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id)
+    CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id)
 );
 
 
