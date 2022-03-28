@@ -458,3 +458,10 @@ CREATE TABLE portal.invitations (
     CONSTRAINT fk_woihaodhawoeir72alfidosd FOREIGN KEY (status) REFERENCES portal.invitation_status(status)
 );
 
+INSERT INTO portal.company_application_status (status, label) values(1,'ADD_COMPANY_DATA');
+INSERT INTO portal.company_application_status (status, label) values(2,'INVITE_USER');
+INSERT INTO portal.company_application_status (status, label) values(3,'SELECT_COMPANY_ROLE');
+INSERT INTO portal.company_application_status (status, label) values(4,'UPLOAD_DOCUMENTS');
+INSERT INTO portal.company_application_status (status, label) values(5,'VERIFY');
+INSERT INTO portal.company_application_status (status, label) values(6,'SUBMITTED');
+
