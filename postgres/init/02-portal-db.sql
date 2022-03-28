@@ -205,7 +205,7 @@ CREATE TABLE portal.company_users (
 );
 
 
-CREATE TABLE portal.iam_user (
+CREATE TABLE portal.iam_users (
     company_user_id uuid PRIMARY KEY,
     iam_user_id uuid NOT NULL,
     CONSTRAINT uk_wiodwiowhdfo84f0sd9afsd2 UNIQUE (iam_user_id),

@@ -14,7 +14,7 @@ GRANT ALL ON TABLE portal.companies TO portal;
 GRANT ALL ON TABLE portal.company_identity_provider TO portal;
 GRANT ALL ON TABLE portal.apps TO portal;
 GRANT ALL ON TABLE portal.company_users TO portal;
-GRANT ALL ON TABLE portal.iam_user TO portal;
+GRANT ALL ON TABLE portal.iam_users TO portal;
 GRANT ALL ON TABLE portal.documents TO portal;
 GRANT ALL ON TABLE portal.agreements TO portal;
 GRANT ALL ON TABLE portal.agreement_assigned_company_roles TO portal;
