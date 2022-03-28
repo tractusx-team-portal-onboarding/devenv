@@ -123,6 +123,7 @@ COPY provisioning.client_sequence (sequence_id) FROM stdin;
 
 COPY provisioning.identity_provider_sequence (sequence_id) FROM stdin;
 1
+2
 \.
 
 
@@ -137,7 +138,7 @@ SELECT pg_catalog.setval('provisioning.client_sequence_sequence_id_seq', 1, fals
 -- Name: identity_provider_sequence_sequence_id_seq; Type: SEQUENCE SET; Schema: provisioning; Owner: provisioning
 --
 
-SELECT pg_catalog.setval('provisioning.identity_provider_sequence_sequence_id_seq', 1, true);
+SELECT pg_catalog.setval('provisioning.identity_provider_sequence_sequence_id_seq', 2, true);
 
 
 --

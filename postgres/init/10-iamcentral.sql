@@ -1560,6 +1560,16 @@ e8a64130-3fb0-4b71-99b2-a335d98463a2	1648483642830	CX-Central	UPDATE	master	d228
 1d687191-0f9c-47e1-8166-ea6fa426c45f	1648483737717	CX-Central	ACTION	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/e9b1c0e4-953d-4539-b703-dca9e911eab5/credentials/e9810501-5a5a-4bf2-92db-1fad7f1df677	\N	\N	USER
 3f5ee067-c208-4c95-b819-20a1e276f6af	1648483781700	CX-Central	UPDATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	identity-provider/instances/idp2	{"alias":"idp2","displayName":"Devhost Shared Idp 2","internalId":"78427e48-60c7-4a25-938c-1d163b507012","providerId":"keycloak-oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first broker login","postBrokerLoginFlowAlias":"","config":{"hideOnLoginPage":"false","validateSignature":"true","clientId":"central-idp","tokenUrl":"https://devhost:8443/iamshared/auth/realms/idp2/protocol/openid-connect/token","authorizationUrl":"https://devhost:8443/iamshared/auth/realms/idp2/protocol/openid-connect/auth","jwksUrl":"https://devhost:8443/iamshared/auth/realms/idp2/protocol/openid-connect/certs","clientAuthMethod":"private_key_jwt","logoutUrl":"https://devhost:8443/iamshared/auth/realms/idp2/protocol/openid-connect/logout","clientAssertionSigningAlg":"RS256","syncMode":"FORCE","useJwksUrl":"true","loginHint":"","uiLocales":"","backchannelSupported":"","disableUserInfo":"","acceptsPromptNoneForwardFromClient":"","pkceEnabled":""}}	\N	IDENTITY_PROVIDER
 7869101a-a03b-464a-8239-1c2758a07233	1648483792834	CX-Central	DELETE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	identity-provider/instances/idp2	\N	\N	IDENTITY_PROVIDER
+9bc86cba-9763-404c-a503-6c51b2a6ed71	1648485056289	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2	{"alias":"idp2","displayName":"WSL Shared Idp","internalId":"145e84bb-56a5-4726-af50-beb7a5b733f8","providerId":"keycloak-oidc","enabled":false,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first broker login","postBrokerLoginFlowAlias":"","config":{"hideOnLoginPage":"true","clientId":"central-idp","disableUserInfo":"","useJwksUrl":"true","tokenUrl":"https://null","authorizationUrl":"https://null","jwksUrl":"https://null","clientAuthMethod":"private_key_jwt","clientAssertionSigningAlg":"RS256","syncMode":"FORCE","validateSignature":"true"}}	\N	IDENTITY_PROVIDER
+611af9e4-b43e-41b9-a897-3dfa677f5441	1648485061330	CX-Central	UPDATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2	{"alias":"idp2","displayName":"WSL Shared Idp","internalId":"145e84bb-56a5-4726-af50-beb7a5b733f8","providerId":"keycloak-oidc","enabled":false,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first broker login","config":{"hideOnLoginPage":"true","clientId":"central-idp","useJwksUrl":"true","tokenUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/token","authorizationUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/auth","logoutUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/logout","jwksUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/certs","clientAuthMethod":"private_key_jwt","clientAssertionSigningAlg":"RS256","syncMode":"FORCE","validateSignature":"true"}}	\N	IDENTITY_PROVIDER
+be6d13b9-4024-4208-a255-31e7afbf35de	1648485061427	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2/mappers/73df0acd-f1f3-4d47-ad4a-40835d9dfe22	{"name":"tenant-mapper","identityProviderAlias":"idp2","identityProviderMapper":"hardcoded-attribute-idp-mapper","config":{"syncMode":"INHERIT","attribute":"tenant","attribute.value":"idp2"}}	\N	IDENTITY_PROVIDER_MAPPER
+8b124b19-5426-4c72-836d-a5d966ddfd44	1648485061518	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2/mappers/f9c70b74-4574-4050-a9db-88d147a74d51	{"name":"organisation-mapper","identityProviderAlias":"idp2","identityProviderMapper":"hardcoded-attribute-idp-mapper","config":{"syncMode":"INHERIT","attribute":"organisation","attribute.value":"WSL Shared Idp"}}	\N	IDENTITY_PROVIDER_MAPPER
+b94ad711-3aa5-4642-8833-0406b2c5bf9b	1648485061605	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2/mappers/79eb5890-b2e6-4b5c-b5f6-e1575d2d9aff	{"name":"username-mapper","identityProviderAlias":"idp2","identityProviderMapper":"oidc-username-idp-mapper","config":{"syncMode":"INHERIT","target":"LOCAL","template":"${ALIAS}.${CLAIM.sub}"}}	\N	IDENTITY_PROVIDER_MAPPER
+45df5129-065f-4426-9b6e-655a2a06ddfa	1648485061977	CX-Central	UPDATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	identity-provider/instances/idp2	{"alias":"idp2","displayName":"WSL Shared Idp","internalId":"145e84bb-56a5-4726-af50-beb7a5b733f8","providerId":"keycloak-oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first broker login","config":{"hideOnLoginPage":"false","clientId":"central-idp","useJwksUrl":"true","tokenUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/token","authorizationUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/auth","logoutUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/logout","jwksUrl":"https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/certs","clientAuthMethod":"private_key_jwt","clientAssertionSigningAlg":"RS256","syncMode":"FORCE","validateSignature":"true"}}	\N	IDENTITY_PROVIDER
+5320cb8c-bcbe-4606-86a3-72ec33b86576	1648485062342	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	users/3432d787-d7c8-46fb-96d7-cc984c6bfaac	{"createdTimestamp":0,"username":"idp2.f99d2698-5670-41f2-a141-e58b0c99560c","enabled":true,"emailVerified":true,"firstName":"Testuser","lastName":"WSL","email":"norbert.truchsess@t-online.de","attributes":{"organisation":["WSL Shared Idp"],"tenant":["idp2"]}}	\N	USER
+71455281-ef37-40e9-8edf-31f03e8a2e83	1648485062490	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	users/3432d787-d7c8-46fb-96d7-cc984c6bfaac/federated-identity/idp2	{"identityProvider":"idp2","userId":"f99d2698-5670-41f2-a141-e58b0c99560c","userName":"wsl-test"}	\N	USER
+46d887c9-1832-4589-ac33-76c35a6c691a	1648485062910	CX-Central	CREATE	CX-Central	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	4575b5b9-fab3-4c85-a722-8816bc487fad	10.0.0.2	users/3432d787-d7c8-46fb-96d7-cc984c6bfaac/role-mappings/clients/789fed9d-e369-41db-92d9-5058e21fdd6d	[{"id":"d4e90553-21c6-4922-9b47-26ad2db306dc","name":"Company Admin","composite":true,"clientRole":true,"containerId":"789fed9d-e369-41db-92d9-5058e21fdd6d","attributes":{}}]	\N	CLIENT_ROLE_MAPPING
+e82eb495-7c90-4761-b3ea-c9be010e1c4e	1648490668169	CX-Central	UPDATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3432d787-d7c8-46fb-96d7-cc984c6bfaac	{"id":"3432d787-d7c8-46fb-96d7-cc984c6bfaac","createdTimestamp":1648485062303,"username":"idp2.f99d2698-5670-41f2-a141-e58b0c99560c","enabled":true,"totp":false,"emailVerified":true,"firstName":"Testuser","lastName":"WSL","email":"no.email@catena.net","attributes":{"organisation":["WSL Shared Idp"],"tenant":["idp2"]},"disableableCredentialTypes":[],"requiredActions":[],"federatedIdentities":[{"identityProvider":"idp2","userId":"f99d2698-5670-41f2-a141-e58b0c99560c","userName":"wsl-test"}],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}	\N	USER
 \.
 
 
@@ -2692,6 +2702,28 @@ d3704829-fcf9-4b78-9e35-e200f2a7064b	sa-cl1-reg-2	{"token_id":"bf37d569-5ff9-40a
 89af8cb4-4a64-49b1-9821-6d8ba47c00b8	account-console	{"identity_provider":"idp1","redirect_uri":"https://devhost:8443/iamcentral/auth/realms/CX-Central/account/#/","consent":"no_consent_required","identity_provider_identity":"devhost-test","code_id":"4a63d42d-4e6d-4562-a54d-afc5d589b6e1","username":"idp1.6ec46cd4-5aec-46c3-88dc-2a283994ab92"}	\N	10.0.0.2	CX-Central	4a63d42d-4e6d-4562-a54d-afc5d589b6e1	1648483764880	LOGIN	e9b1c0e4-953d-4539-b703-dca9e911eab5
 0ce32c45-9f54-4843-93c5-7f41d6c6e3d6	account-console	{"token_id":"0ad101de-fa99-4c44-945d-c2e69fcd2c7e","grant_type":"authorization_code","refresh_token_type":"Refresh","scope":"openid profile email","refresh_token_id":"7f4d6a04-0f3b-4ca8-85e4-91b081a89b96","code_id":"4a63d42d-4e6d-4562-a54d-afc5d589b6e1","client_auth_method":"client-secret"}	\N	10.0.0.2	CX-Central	4a63d42d-4e6d-4562-a54d-afc5d589b6e1	1648483765499	CODE_TO_TOKEN	e9b1c0e4-953d-4539-b703-dca9e911eab5
 7f6cf477-aed9-43d6-91be-b19062295576	\N	{"redirect_uri":"https://devhost:8443/iamcentral/auth/realms/CX-Central/account/#/"}	\N	10.0.0.2	CX-Central	4a63d42d-4e6d-4562-a54d-afc5d589b6e1	1648483768023	LOGOUT	e9b1c0e4-953d-4539-b703-dca9e911eab5
+b696ddee-603f-40c7-882e-5909d0835319	catenax-portal	{"auth_method":"openid-connect","token_id":"7edde7d7-7ac4-4a63-8b56-208597c175b7","grant_type":"password","refresh_token_type":"Refresh","scope":"profile email","refresh_token_id":"60614f50-5767-4d9e-ab95-d091c4dc099d","client_auth_method":"client-secret","username":"devenv-cx-admin"}	\N	10.0.0.2	CX-Central	367f8d79-4dfb-4220-88e6-fc890770840d	1648485012169	LOGIN	3cbac5d7-d38e-4366-904a-b5829d0819dd
+e8eda92e-00a9-4eaf-ba8d-00c84f26b8c5	sa-cl1-reg-2	{"token_id":"50ae13d4-7263-4003-b0ef-a925ae31a7fb","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	99028331-4b96-4f9c-998e-a3bfbc2964fd	1648485056073	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+33961198-4e5f-4c73-86f3-ba827bcf7c39	sa-cl1-reg-2	{"token_id":"6e0ba710-920b-4bfb-a1d8-0d2fca529dbb","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	dc42364a-6505-4fe1-a939-79ef2b8eddd5	1648485061206	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+2ed799ce-a410-4176-886e-12293fee335d	sa-cl1-reg-2	{"token_id":"ea3e4c87-773a-4ee0-8835-73768e596007","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	f43df06a-be5e-4d86-b312-5f44ac1f34ab	1648485061301	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+5cabf0f7-ee37-46a0-bae0-cd44c3d631b4	sa-cl1-reg-2	{"token_id":"60318205-b111-4de2-8d23-c478f0f8fc97","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	5729a16a-7716-4398-bf10-467af82f0ca1	1648485061402	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+4566e06d-e58b-4175-9e68-9dbc714dcb3f	sa-cl1-reg-2	{"token_id":"0bedafbf-be64-4a9f-b8f1-7a471e4d4dc5","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	9fe8e53b-d730-4e7b-8503-4d4f6224e6b5	1648485061497	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+39b0111f-8052-43a7-9835-16d05034d4af	sa-cl1-reg-2	{"token_id":"a884d099-212c-4f97-b1b6-78da9ce14a72","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	961558fa-8b9f-4fdb-a457-a138e9611887	1648485061585	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+425af5fa-f324-4e08-85fc-4877b8500541	sa-cl1-reg-2	{"token_id":"7d5655dd-41df-4e85-ba30-d107a4957734","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	a63ef0c9-c800-471f-ad85-1715f4886d73	1648485061669	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+18ddd631-95ad-4bfc-91b2-cb5bfb80339c	sa-cl1-reg-2	{"token_id":"276a1c8f-7a48-40f9-8d23-a3d6529dc1e1","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	55c63675-621a-479e-b8d5-9d5a499b5b84	1648485061701	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+32354dfa-26f3-4dfb-8cca-7a8abbfe034d	sa-cl1-reg-2	{"token_id":"129c0aea-80b7-4026-b919-18887b741543","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	4f4d864a-73ee-434f-9d21-dab1b933c296	1648485061920	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+5f7515b6-1d23-4863-9f0d-43d429b90aa8	sa-cl1-reg-2	{"token_id":"7e7f121a-0c37-4785-bea5-88ab34e5fba8","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	82b06924-c900-418f-bb00-d8d8b491f280	1648485061954	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+949d3c2c-c5dc-4cce-b483-d08945c1c813	sa-cl1-reg-2	{"token_id":"d4d0f2b6-31c2-4893-90ef-157e1f44a82d","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	be665f62-a372-4b91-aee5-c6f008ee95a4	1648485062253	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+a5588b73-2be5-4de2-967f-fedd50b3f2fb	sa-cl1-reg-2	{"token_id":"0c6e0fb0-463b-4379-b167-30bed30f342f","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	9d54404e-7973-4321-b156-75d2c6387a02	1648485062383	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+02bd9e6f-4448-4bb0-9b47-1721f9b5988b	sa-cl1-reg-2	{"token_id":"efdee071-228b-4b80-b14f-af921564559d","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	68a79c5a-55ed-4199-9d89-63c77e75a292	1648485062529	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+71656c1a-e5b4-4eda-8a07-ecc4530f6b0f	sa-cl1-reg-2	{"token_id":"9ce35ee0-7227-4b26-8afd-e5212f2ca831","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	790ef27d-1e5b-4775-8e77-a95338638145	1648485062646	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+3d70fdde-9ddb-4fa9-9ede-1991d572aea2	sa-cl1-reg-2	{"token_id":"f849435a-e21c-4a1e-af26-2b35f86bd877","grant_type":"client_credentials","scope":"profile email","client_auth_method":"client-secret","username":"service-account-sa-cl1-reg-2"}	\N	10.0.0.2	CX-Central	ac46fd63-8955-4b1a-ae41-7c14ee16984f	1648485062861	CLIENT_LOGIN	4575b5b9-fab3-4c85-a722-8816bc487fad
+dc2a6a1f-7d44-4edd-a029-7b0253d95792	account-console	{"identity_provider":"idp2","redirect_uri":"https://wsl:8443/iamcentral/auth/realms/CX-Central/account/#/","consent":"no_consent_required","identity_provider_identity":"wsl-test","code_id":"01b6003c-0824-418c-ab0e-9860564e4d6b","username":"idp2.f99d2698-5670-41f2-a141-e58b0c99560c"}	\N	10.0.0.2	CX-Central	01b6003c-0824-418c-ab0e-9860564e4d6b	1648485203560	LOGIN	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+7b2ca4d9-26a0-4aa2-a1bd-e30bf2c76215	account-console	{"token_id":"a576e033-d029-4d81-a182-f91ade5f034c","grant_type":"authorization_code","refresh_token_type":"Refresh","scope":"openid profile email","refresh_token_id":"fa19a3c4-5c1a-4b0f-9dd6-a9ad8ae68b56","code_id":"01b6003c-0824-418c-ab0e-9860564e4d6b","client_auth_method":"client-secret"}	\N	10.0.0.2	CX-Central	01b6003c-0824-418c-ab0e-9860564e4d6b	1648485203874	CODE_TO_TOKEN	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+954a6d55-8ac4-4cf5-a2a7-a39f642b2e7d	\N	{"redirect_uri":"https://wsl:8443/iamcentral/auth/realms/CX-Central/account/#/"}	\N	10.0.0.2	CX-Central	01b6003c-0824-418c-ab0e-9860564e4d6b	1648485206636	LOGOUT	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+73fab0a4-332d-4a4d-8c1b-c1ca0bf49fdc	account-console	{"identity_provider":"idp2","redirect_uri":"https://wsl:8443/iamcentral/auth/realms/CX-Central/account/#/","consent":"no_consent_required","identity_provider_identity":"wsl-test","code_id":"864eeb36-2fea-49e8-a6e3-23fdcd20adad","username":"idp2.f99d2698-5670-41f2-a141-e58b0c99560c"}	\N	10.0.0.2	CX-Central	864eeb36-2fea-49e8-a6e3-23fdcd20adad	1648490736357	LOGIN	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+f22fb0be-b172-44d5-857c-2e7d893f2ba8	account-console	{"token_id":"d80a65fb-c68a-4d7a-86a0-e089f84e3a37","grant_type":"authorization_code","refresh_token_type":"Refresh","scope":"openid profile email","refresh_token_id":"2fb3f6cd-3a33-4234-95d1-096230dc680d","code_id":"864eeb36-2fea-49e8-a6e3-23fdcd20adad","client_auth_method":"client-secret"}	\N	10.0.0.2	CX-Central	864eeb36-2fea-49e8-a6e3-23fdcd20adad	1648490736575	CODE_TO_TOKEN	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+370c8cd3-11e7-4451-96f4-7b5d49a6f312	\N	{"redirect_uri":"https://wsl:8443/iamcentral/auth/realms/CX-Central/account/#/"}	\N	10.0.0.2	CX-Central	864eeb36-2fea-49e8-a6e3-23fdcd20adad	1648490739067	LOGOUT	3432d787-d7c8-46fb-96d7-cc984c6bfaac
 \.
 
 
@@ -2757,6 +2789,7 @@ COPY iamcentral.fed_user_role_mapping (role_id, user_id, realm_id, storage_provi
 
 COPY iamcentral.federated_identity (identity_provider, realm_id, federated_user_id, federated_username, token, user_id) FROM stdin;
 idp1	CX-Central	6ec46cd4-5aec-46c3-88dc-2a283994ab92	devhost-test	\N	e9b1c0e4-953d-4539-b703-dca9e911eab5
+idp2	CX-Central	f99d2698-5670-41f2-a141-e58b0c99560c	wsl-test	\N	3432d787-d7c8-46fb-96d7-cc984c6bfaac
 \.
 
 
@@ -2790,6 +2823,7 @@ COPY iamcentral.group_role_mapping (role_id, group_id) FROM stdin;
 
 COPY iamcentral.identity_provider (internal_id, enabled, provider_alias, provider_id, store_token, authenticate_by_default, realm_id, add_token_role, trust_email, first_broker_login_flow_id, post_broker_login_flow_id, provider_display_name, link_only) FROM stdin;
 bd73c385-bdd5-405f-977f-db6b5281e68e	t	idp1	keycloak-oidc	f	f	CX-Central	f	f	045ba328-a6b4-4566-b240-57dfcf866788	\N	Devhost Shared Idp	f
+145e84bb-56a5-4726-af50-beb7a5b733f8	t	idp2	keycloak-oidc	f	f	CX-Central	f	f	045ba328-a6b4-4566-b240-57dfcf866788	\N	WSL Shared Idp	f
 \.
 
 
@@ -2809,6 +2843,17 @@ bd73c385-bdd5-405f-977f-db6b5281e68e	https://devhost:8443/iamshared/auth/realms/
 bd73c385-bdd5-405f-977f-db6b5281e68e	RS256	clientAssertionSigningAlg
 bd73c385-bdd5-405f-977f-db6b5281e68e	FORCE	syncMode
 bd73c385-bdd5-405f-977f-db6b5281e68e	true	useJwksUrl
+145e84bb-56a5-4726-af50-beb7a5b733f8	false	hideOnLoginPage
+145e84bb-56a5-4726-af50-beb7a5b733f8	true	validateSignature
+145e84bb-56a5-4726-af50-beb7a5b733f8	central-idp	clientId
+145e84bb-56a5-4726-af50-beb7a5b733f8	https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/token	tokenUrl
+145e84bb-56a5-4726-af50-beb7a5b733f8	https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/auth	authorizationUrl
+145e84bb-56a5-4726-af50-beb7a5b733f8	https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/certs	jwksUrl
+145e84bb-56a5-4726-af50-beb7a5b733f8	private_key_jwt	clientAuthMethod
+145e84bb-56a5-4726-af50-beb7a5b733f8	https://wsl:8443/iamshared/auth/realms/idp2/protocol/openid-connect/logout	logoutUrl
+145e84bb-56a5-4726-af50-beb7a5b733f8	RS256	clientAssertionSigningAlg
+145e84bb-56a5-4726-af50-beb7a5b733f8	FORCE	syncMode
+145e84bb-56a5-4726-af50-beb7a5b733f8	true	useJwksUrl
 \.
 
 
@@ -2820,6 +2865,9 @@ COPY iamcentral.identity_provider_mapper (id, name, idp_alias, idp_mapper_name, 
 bdd91efb-b5f5-4d2b-bce7-e3a8fc93c8b9	tenant-mapper	idp1	hardcoded-attribute-idp-mapper	CX-Central
 f3fd2df9-3c15-4d17-be48-06d59b983811	organisation-mapper	idp1	hardcoded-attribute-idp-mapper	CX-Central
 c2a8086e-5e07-4828-921b-f8200fa2c58a	username-mapper	idp1	oidc-username-idp-mapper	CX-Central
+73df0acd-f1f3-4d47-ad4a-40835d9dfe22	tenant-mapper	idp2	hardcoded-attribute-idp-mapper	CX-Central
+f9c70b74-4574-4050-a9db-88d147a74d51	organisation-mapper	idp2	hardcoded-attribute-idp-mapper	CX-Central
+79eb5890-b2e6-4b5c-b5f6-e1575d2d9aff	username-mapper	idp2	oidc-username-idp-mapper	CX-Central
 \.
 
 
@@ -2837,6 +2885,15 @@ f3fd2df9-3c15-4d17-be48-06d59b983811	organisation	attribute
 c2a8086e-5e07-4828-921b-f8200fa2c58a	INHERIT	syncMode
 c2a8086e-5e07-4828-921b-f8200fa2c58a	${ALIAS}.${CLAIM.sub}	template
 c2a8086e-5e07-4828-921b-f8200fa2c58a	LOCAL	target
+73df0acd-f1f3-4d47-ad4a-40835d9dfe22	INHERIT	syncMode
+73df0acd-f1f3-4d47-ad4a-40835d9dfe22	idp2	attribute.value
+73df0acd-f1f3-4d47-ad4a-40835d9dfe22	tenant	attribute
+f9c70b74-4574-4050-a9db-88d147a74d51	INHERIT	syncMode
+f9c70b74-4574-4050-a9db-88d147a74d51	WSL Shared Idp	attribute.value
+f9c70b74-4574-4050-a9db-88d147a74d51	organisation	attribute
+79eb5890-b2e6-4b5c-b5f6-e1575d2d9aff	INHERIT	syncMode
+79eb5890-b2e6-4b5c-b5f6-e1575d2d9aff	${ALIAS}.${CLAIM.sub}	template
+79eb5890-b2e6-4b5c-b5f6-e1575d2d9aff	LOCAL	target
 \.
 
 
@@ -3857,6 +3914,8 @@ COPY iamcentral.scope_policy (scope_id, policy_id) FROM stdin;
 COPY iamcentral.user_attribute (name, value, user_id, id) FROM stdin;
 organisation	Devhost Shared Idp	e9b1c0e4-953d-4539-b703-dca9e911eab5	19fd7857-2747-4259-9a72-0af5dcaa01ad
 tenant	idp1	e9b1c0e4-953d-4539-b703-dca9e911eab5	0483b9d3-fd77-4ffc-9ee3-9d6c48962b6b
+organisation	WSL Shared Idp	3432d787-d7c8-46fb-96d7-cc984c6bfaac	f70bdb60-63ba-4567-8ffb-018dddc27d71
+tenant	idp2	3432d787-d7c8-46fb-96d7-cc984c6bfaac	64b657ee-eede-497d-b24e-feb49b100739
 \.
 
 
@@ -3885,6 +3944,7 @@ COPY iamcentral.user_entity (id, email, email_constraint, email_verified, enable
 d25a17f9-1550-4b79-8495-3c1279c4333a	\N	78d0c7a6-917d-4c11-9f15-966b72aea8f4	f	t	\N	\N	\N	master	admin	1648455310538	\N	0
 3cbac5d7-d38e-4366-904a-b5829d0819dd	\N	569ca9a7-3092-4c42-9bfc-43aef2aeafb2	f	t	\N	\N	\N	CX-Central	devenv-cx-admin	1648456779494	\N	0
 e9b1c0e4-953d-4539-b703-dca9e911eab5	no.email@catena.net	71daec41-f89c-407e-a9ad-9247b738f4a4	t	t	\N	Testuser	Devhost	CX-Central	idp1.6ec46cd4-5aec-46c3-88dc-2a283994ab92	1648483534694	\N	0
+3432d787-d7c8-46fb-96d7-cc984c6bfaac	no.email@catena.net	a8cfe098-2d4e-4e6d-baa1-75fa7587834b	t	t	\N	Testuser	WSL	CX-Central	idp2.f99d2698-5670-41f2-a141-e58b0c99560c	1648485062303	\N	0
 \.
 
 
@@ -3954,6 +4014,8 @@ cc5e185c-5cc5-4b0d-9d60-a9e733f454ec	4575b5b9-fab3-4c85-a722-8816bc487fad
 a83e07cf-e87d-40ca-831a-6b67f0ac4714	4575b5b9-fab3-4c85-a722-8816bc487fad
 4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	e9b1c0e4-953d-4539-b703-dca9e911eab5
 d4e90553-21c6-4922-9b47-26ad2db306dc	e9b1c0e4-953d-4539-b703-dca9e911eab5
+4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+d4e90553-21c6-4922-9b47-26ad2db306dc	3432d787-d7c8-46fb-96d7-cc984c6bfaac
 \.
 
 
