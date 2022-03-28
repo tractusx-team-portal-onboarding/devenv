@@ -447,16 +447,16 @@ CREATE TABLE portal.iam_identity_providers (
 ALTER TABLE portal.iam_identity_providers OWNER TO postgres;
 
 --
--- Name: iam_user; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: iam_users; Type: TABLE; Schema: portal; Owner: postgres
 --
 
-CREATE TABLE portal.iam_user (
+CREATE TABLE portal.iam_users (
     company_user_id uuid NOT NULL,
     iam_user_id uuid NOT NULL
 );
 
 
-ALTER TABLE portal.iam_user OWNER TO postgres;
+ALTER TABLE portal.iam_users OWNER TO postgres;
 
 --
 -- Name: identity_provider_categories; Type: TABLE; Schema: portal; Owner: postgres
@@ -779,10 +779,10 @@ COPY portal.iam_identity_providers (iam_identity_provider_id, iam_idp_alias) FRO
 
 
 --
--- Data for Name: iam_user; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: iam_users; Type: TABLE DATA; Schema: portal; Owner: postgres
 --
 
-COPY portal.iam_user (company_user_id, iam_user_id) FROM stdin;
+COPY portal.iam_users (company_user_id, iam_user_id) FROM stdin;
 \.
 
 
@@ -979,10 +979,10 @@ ALTER TABLE ONLY portal.iam_identity_providers
 
 
 --
--- Name: iam_user iam_user_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users iam_user_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
 --
 
-ALTER TABLE ONLY portal.iam_user
+ALTER TABLE ONLY portal.iam_users
     ADD CONSTRAINT iam_user_pkey PRIMARY KEY (company_user_id);
 
 
@@ -1051,10 +1051,10 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 
 --
--- Name: iam_user uk_wiodwiowhdfo84f0sd9afsd2; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users uk_wiodwiowhdfo84f0sd9afsd2; Type: CONSTRAINT; Schema: portal; Owner: postgres
 --
 
-ALTER TABLE ONLY portal.iam_user
+ALTER TABLE ONLY portal.iam_users
     ADD CONSTRAINT uk_wiodwiowhdfo84f0sd9afsd2 UNIQUE (iam_user_id);
 
 
@@ -1235,10 +1235,10 @@ ALTER TABLE ONLY portal.company_identity_provider
 
 
 --
--- Name: iam_user fk_iweorqwaeilskjeijekkalwo; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users fk_iweorqwaeilskjeijekkalwo; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
 --
 
-ALTER TABLE ONLY portal.iam_user
+ALTER TABLE ONLY portal.iam_users
     ADD CONSTRAINT fk_iweorqwaeilskjeijekkalwo FOREIGN KEY (company_user_id) REFERENCES portal.company_users(company_user_id);
 
 
@@ -1638,10 +1638,10 @@ GRANT ALL ON TABLE portal.iam_identity_providers TO portal;
 
 
 --
--- Name: TABLE iam_user; Type: ACL; Schema: portal; Owner: postgres
+-- Name: TABLE iam_users; Type: ACL; Schema: portal; Owner: postgres
 --
 
-GRANT ALL ON TABLE portal.iam_user TO portal;
+GRANT ALL ON TABLE portal.iam_users TO portal;
 
 
 --
