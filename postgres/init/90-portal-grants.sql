@@ -5,7 +5,7 @@ GRANT ALL ON TABLE portal.countries TO portal;
 GRANT ALL ON TABLE portal.document_templates TO portal;
 GRANT ALL ON TABLE portal.identity_provider_categories TO portal;
 GRANT ALL ON TABLE portal.identity_providers TO portal;
-GRANT ALL ON TABLE portal.iam_identityproviders TO portal;
+GRANT ALL ON TABLE portal.iam_identity_providers TO portal;
 GRANT ALL ON TABLE portal.languages TO portal;
 GRANT ALL ON TABLE portal.use_cases TO portal;
 GRANT ALL ON TABLE portal.addresses TO portal;
@@ -34,11 +34,10 @@ GRANT ALL ON TABLE portal.consent_status TO portal;
 GRANT ALL ON TABLE portal.consents TO portal;
 GRANT ALL ON TABLE portal.invitation_status TO portal;
 GRANT ALL ON TABLE portal.invitations TO portal;
-GRANT ALL ON TABLE portal.iam_client_sequence TO portal;
-GRANT ALL ON TABLE portal.iam_identityprovider_sequence TO portal;
-GRANT ALL ON TABLE portal.iam_client_sequence TO portal;
-GRANT ALL ON TABLE portal.iam_identityprovider_sequence TO portal;
 
-GRANT ALL ON SEQUENCE portal.iam_client_sequence_id_seq TO portal;
-GRANT ALL ON SEQUENCE portal.iam_identityprovider_sequence_id_seq TO portal;
+GRANT ALL ON TABLE provisioning.client_sequence TO provisioning;
+GRANT ALL ON TABLE provisioning.identity_provider_sequence TO provisioning;
+
+GRANT ALL ON SEQUENCE provisioning.client_sequence_client_sequence_id_seq TO provisioning;
+GRANT ALL ON SEQUENCE provisioning.identity_provider_sequence_identity_provider_sequence_id_seq TO provisioning;
 
