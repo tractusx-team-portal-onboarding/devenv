@@ -439,7 +439,7 @@ ALTER TABLE portal.documents OWNER TO postgres;
 --
 
 CREATE TABLE portal.iam_identity_providers (
-    iam_identity_provider_id uuid NOT NULL,
+    identity_provider_id uuid NOT NULL,
     iam_idp_alias character varying(255) NOT NULL
 );
 
@@ -774,7 +774,7 @@ COPY portal.documents (document_id, date_created, date_last_changed, document, d
 -- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: portal; Owner: postgres
 --
 
-COPY portal.iam_identity_providers (iam_identity_provider_id, iam_idp_alias) FROM stdin;
+COPY portal.iam_identity_providers (identity_provider_id, iam_idp_alias) FROM stdin;
 \.
 
 
@@ -975,7 +975,7 @@ ALTER TABLE ONLY portal.documents
 --
 
 ALTER TABLE ONLY portal.iam_identity_providers
-    ADD CONSTRAINT iam_identity_providers_pkey PRIMARY KEY (iam_identity_provider_id);
+    ADD CONSTRAINT iam_identity_providers_pkey PRIMARY KEY (identity_provider_id);
 
 
 --
@@ -1143,7 +1143,7 @@ ALTER TABLE ONLY portal.addresses
 --
 
 ALTER TABLE ONLY portal.iam_identity_providers
-    ADD CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (iam_identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id);
+    ADD CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id);
 
 
 --
