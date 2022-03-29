@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: addresses; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: addresses; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.addresses (
@@ -47,22 +47,22 @@ CREATE TABLE portal.addresses (
 );
 
 
-ALTER TABLE portal.addresses OWNER TO postgres;
+ALTER TABLE portal.addresses OWNER TO portal;
 
 --
--- Name: agreement_assigned_company_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_company_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.agreement_assigned_company_roles (
     agreement_id uuid NOT NULL,
-    company_role_id uuid NOT NULL
+    company_role_id integer NOT NULL
 );
 
 
-ALTER TABLE portal.agreement_assigned_company_roles OWNER TO postgres;
+ALTER TABLE portal.agreement_assigned_company_roles OWNER TO portal;
 
 --
--- Name: agreement_assigned_document_templates; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_document_templates; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.agreement_assigned_document_templates (
@@ -71,14 +71,26 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 );
 
 
-ALTER TABLE portal.agreement_assigned_document_templates OWNER TO postgres;
+ALTER TABLE portal.agreement_assigned_document_templates OWNER TO portal;
 
 --
--- Name: agreements; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: agreement_categories; Type: TABLE; Schema: portal; Owner: portal
+--
+
+CREATE TABLE portal.agreement_categories (
+    agreement_category_id integer NOT NULL,
+    label character varying(255)
+);
+
+
+ALTER TABLE portal.agreement_categories OWNER TO portal;
+
+--
+-- Name: agreements; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.agreements (
-    item_category integer NOT NULL,
+    agreement_category_id integer NOT NULL,
     agreement_id uuid NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
@@ -86,14 +98,14 @@ CREATE TABLE portal.agreements (
     name character varying(255) NOT NULL,
     app_id uuid,
     issuer_company_id uuid NOT NULL,
-    usecase_id uuid
+    use_case_id uuid
 );
 
 
-ALTER TABLE portal.agreements OWNER TO postgres;
+ALTER TABLE portal.agreements OWNER TO portal;
 
 --
--- Name: app_assigned_company_user_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: app_assigned_company_user_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.app_assigned_company_user_roles (
@@ -102,10 +114,10 @@ CREATE TABLE portal.app_assigned_company_user_roles (
 );
 
 
-ALTER TABLE portal.app_assigned_company_user_roles OWNER TO postgres;
+ALTER TABLE portal.app_assigned_company_user_roles OWNER TO portal;
 
 --
--- Name: app_assigned_licenses; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: app_assigned_licenses; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.app_assigned_licenses (
@@ -114,10 +126,10 @@ CREATE TABLE portal.app_assigned_licenses (
 );
 
 
-ALTER TABLE portal.app_assigned_licenses OWNER TO postgres;
+ALTER TABLE portal.app_assigned_licenses OWNER TO portal;
 
 --
--- Name: app_assigned_use_cases; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: app_assigned_use_cases; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.app_assigned_use_cases (
@@ -126,10 +138,10 @@ CREATE TABLE portal.app_assigned_use_cases (
 );
 
 
-ALTER TABLE portal.app_assigned_use_cases OWNER TO postgres;
+ALTER TABLE portal.app_assigned_use_cases OWNER TO portal;
 
 --
--- Name: app_descriptions; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: app_descriptions; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.app_descriptions (
@@ -142,10 +154,10 @@ CREATE TABLE portal.app_descriptions (
 );
 
 
-ALTER TABLE portal.app_descriptions OWNER TO postgres;
+ALTER TABLE portal.app_descriptions OWNER TO portal;
 
 --
--- Name: app_licenses; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: app_licenses; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.app_licenses (
@@ -156,10 +168,10 @@ CREATE TABLE portal.app_licenses (
 );
 
 
-ALTER TABLE portal.app_licenses OWNER TO postgres;
+ALTER TABLE portal.app_licenses OWNER TO portal;
 
 --
--- Name: apps; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: apps; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.apps (
@@ -173,10 +185,10 @@ CREATE TABLE portal.apps (
 );
 
 
-ALTER TABLE portal.apps OWNER TO postgres;
+ALTER TABLE portal.apps OWNER TO portal;
 
 --
--- Name: companies; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: companies; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.companies (
@@ -187,42 +199,42 @@ CREATE TABLE portal.companies (
     name character varying(255),
     parent character varying(255),
     shortname character varying(255),
-    status integer,
+    company_status_id integer,
     address_id uuid
 );
 
 
-ALTER TABLE portal.companies OWNER TO postgres;
+ALTER TABLE portal.companies OWNER TO portal;
 
 --
--- Name: company_application_status; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_application_status; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_application_status (
-    status integer NOT NULL,
+    application_status_id integer NOT NULL,
     label character varying(255)
 );
 
 
-ALTER TABLE portal.company_application_status OWNER TO postgres;
+ALTER TABLE portal.company_application_status OWNER TO portal;
 
 --
--- Name: company_applications; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_applications; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_applications (
     company_application_id uuid NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
-    status integer,
+    application_status_id integer,
     company_id uuid NOT NULL
 );
 
 
-ALTER TABLE portal.company_applications OWNER TO postgres;
+ALTER TABLE portal.company_applications OWNER TO portal;
 
 --
--- Name: company_assigned_apps; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_assigned_apps; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_assigned_apps (
@@ -231,22 +243,22 @@ CREATE TABLE portal.company_assigned_apps (
 );
 
 
-ALTER TABLE portal.company_assigned_apps OWNER TO postgres;
+ALTER TABLE portal.company_assigned_apps OWNER TO portal;
 
 --
--- Name: company_assigned_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_assigned_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_assigned_roles (
     company_id uuid NOT NULL,
-    company_role_id uuid NOT NULL
+    company_role_id integer NOT NULL
 );
 
 
-ALTER TABLE portal.company_assigned_roles OWNER TO postgres;
+ALTER TABLE portal.company_assigned_roles OWNER TO portal;
 
 --
--- Name: company_assigned_use_cases; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_assigned_use_cases; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_assigned_use_cases (
@@ -255,10 +267,10 @@ CREATE TABLE portal.company_assigned_use_cases (
 );
 
 
-ALTER TABLE portal.company_assigned_use_cases OWNER TO postgres;
+ALTER TABLE portal.company_assigned_use_cases OWNER TO portal;
 
 --
--- Name: company_identity_provider; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_identity_provider; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_identity_provider (
@@ -267,14 +279,14 @@ CREATE TABLE portal.company_identity_provider (
 );
 
 
-ALTER TABLE portal.company_identity_provider OWNER TO postgres;
+ALTER TABLE portal.company_identity_provider OWNER TO portal;
 
 --
--- Name: company_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_roles (
-    company_role_id uuid NOT NULL,
+    company_role_id integer NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     name_de character varying(255) NOT NULL,
@@ -282,22 +294,22 @@ CREATE TABLE portal.company_roles (
 );
 
 
-ALTER TABLE portal.company_roles OWNER TO postgres;
+ALTER TABLE portal.company_roles OWNER TO portal;
 
 --
--- Name: company_status; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_status; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_status (
-    status integer NOT NULL,
+    company_status_id integer NOT NULL,
     label character varying(255)
 );
 
 
-ALTER TABLE portal.company_status OWNER TO postgres;
+ALTER TABLE portal.company_status OWNER TO portal;
 
 --
--- Name: company_user_assigned_app_favourites; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_app_favourites; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_user_assigned_app_favourites (
@@ -306,10 +318,10 @@ CREATE TABLE portal.company_user_assigned_app_favourites (
 );
 
 
-ALTER TABLE portal.company_user_assigned_app_favourites OWNER TO postgres;
+ALTER TABLE portal.company_user_assigned_app_favourites OWNER TO portal;
 
 --
--- Name: company_user_assigned_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_user_assigned_roles (
@@ -318,10 +330,10 @@ CREATE TABLE portal.company_user_assigned_roles (
 );
 
 
-ALTER TABLE portal.company_user_assigned_roles OWNER TO postgres;
+ALTER TABLE portal.company_user_assigned_roles OWNER TO portal;
 
 --
--- Name: company_user_roles; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_user_roles; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_user_roles (
@@ -333,10 +345,10 @@ CREATE TABLE portal.company_user_roles (
 );
 
 
-ALTER TABLE portal.company_user_roles OWNER TO postgres;
+ALTER TABLE portal.company_user_roles OWNER TO portal;
 
 --
--- Name: company_users; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: company_users; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.company_users (
@@ -351,22 +363,22 @@ CREATE TABLE portal.company_users (
 );
 
 
-ALTER TABLE portal.company_users OWNER TO postgres;
+ALTER TABLE portal.company_users OWNER TO portal;
 
 --
--- Name: consent_status; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: consent_status; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.consent_status (
-    status integer NOT NULL,
+    consent_status_id integer NOT NULL,
     label character varying(255)
 );
 
 
-ALTER TABLE portal.consent_status OWNER TO postgres;
+ALTER TABLE portal.consent_status OWNER TO portal;
 
 --
--- Name: consents; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: consents; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.consents (
@@ -374,7 +386,7 @@ CREATE TABLE portal.consents (
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     comment character varying(255),
-    status integer NOT NULL,
+    consent_status_id integer NOT NULL,
     target character varying(255),
     "timestamp" bytea NOT NULL,
     agreement_id uuid NOT NULL,
@@ -384,10 +396,10 @@ CREATE TABLE portal.consents (
 );
 
 
-ALTER TABLE portal.consents OWNER TO postgres;
+ALTER TABLE portal.consents OWNER TO portal;
 
 --
--- Name: countries; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: countries; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.countries (
@@ -398,10 +410,10 @@ CREATE TABLE portal.countries (
 );
 
 
-ALTER TABLE portal.countries OWNER TO postgres;
+ALTER TABLE portal.countries OWNER TO portal;
 
 --
--- Name: document_templates; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: document_templates; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.document_templates (
@@ -413,10 +425,10 @@ CREATE TABLE portal.document_templates (
 );
 
 
-ALTER TABLE portal.document_templates OWNER TO postgres;
+ALTER TABLE portal.document_templates OWNER TO portal;
 
 --
--- Name: documents; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: documents; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.documents (
@@ -432,10 +444,10 @@ CREATE TABLE portal.documents (
 );
 
 
-ALTER TABLE portal.documents OWNER TO postgres;
+ALTER TABLE portal.documents OWNER TO portal;
 
 --
--- Name: iam_identity_providers; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: iam_identity_providers; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.iam_identity_providers (
@@ -444,10 +456,10 @@ CREATE TABLE portal.iam_identity_providers (
 );
 
 
-ALTER TABLE portal.iam_identity_providers OWNER TO postgres;
+ALTER TABLE portal.iam_identity_providers OWNER TO portal;
 
 --
--- Name: iam_users; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: iam_users; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.iam_users (
@@ -456,64 +468,64 @@ CREATE TABLE portal.iam_users (
 );
 
 
-ALTER TABLE portal.iam_users OWNER TO postgres;
+ALTER TABLE portal.iam_users OWNER TO portal;
 
 --
--- Name: identity_provider_categories; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: identity_provider_categories; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.identity_provider_categories (
-    category integer NOT NULL,
+    identity_provider_category_id integer NOT NULL,
     label character varying(255)
 );
 
 
-ALTER TABLE portal.identity_provider_categories OWNER TO postgres;
+ALTER TABLE portal.identity_provider_categories OWNER TO portal;
 
 --
--- Name: identity_providers; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: identity_providers; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.identity_providers (
-    item_category integer NOT NULL,
+    identity_provider_category_id integer NOT NULL,
     identity_provider_id uuid NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone
 );
 
 
-ALTER TABLE portal.identity_providers OWNER TO postgres;
+ALTER TABLE portal.identity_providers OWNER TO portal;
 
 --
--- Name: invitation_status; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: invitation_status; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.invitation_status (
-    status integer NOT NULL,
+    invitation_status_id integer NOT NULL,
     label character varying(255)
 );
 
 
-ALTER TABLE portal.invitation_status OWNER TO postgres;
+ALTER TABLE portal.invitation_status OWNER TO portal;
 
 --
--- Name: invitations; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: invitations; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.invitations (
     invitation_id uuid NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
-    status integer NOT NULL,
+    invitation_status_id integer NOT NULL,
     company_application_id uuid,
     company_user_id uuid NOT NULL
 );
 
 
-ALTER TABLE portal.invitations OWNER TO postgres;
+ALTER TABLE portal.invitations OWNER TO portal;
 
 --
--- Name: languages; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: languages; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.languages (
@@ -523,10 +535,10 @@ CREATE TABLE portal.languages (
 );
 
 
-ALTER TABLE portal.languages OWNER TO postgres;
+ALTER TABLE portal.languages OWNER TO portal;
 
 --
--- Name: use_cases; Type: TABLE; Schema: portal; Owner: postgres
+-- Name: use_cases; Type: TABLE; Schema: portal; Owner: portal
 --
 
 CREATE TABLE portal.use_cases (
@@ -538,10 +550,10 @@ CREATE TABLE portal.use_cases (
 );
 
 
-ALTER TABLE portal.use_cases OWNER TO postgres;
+ALTER TABLE portal.use_cases OWNER TO portal;
 
 --
--- Data for Name: addresses; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: addresses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.addresses (address_id, date_created, date_last_changed, city, region, streetadditional, streetname, streetnumber, zipcode, country_country_name_en) FROM stdin;
@@ -549,7 +561,7 @@ COPY portal.addresses (address_id, date_created, date_last_changed, city, region
 
 
 --
--- Data for Name: agreement_assigned_company_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: agreement_assigned_company_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.agreement_assigned_company_roles (agreement_id, company_role_id) FROM stdin;
@@ -557,7 +569,7 @@ COPY portal.agreement_assigned_company_roles (agreement_id, company_role_id) FRO
 
 
 --
--- Data for Name: agreement_assigned_document_templates; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: agreement_assigned_document_templates; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.agreement_assigned_document_templates (agreement_id, document_template_id) FROM stdin;
@@ -565,15 +577,23 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 
 
 --
--- Data for Name: agreements; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: agreement_categories; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.agreements (item_category, agreement_id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, usecase_id) FROM stdin;
+COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
 \.
 
 
 --
--- Data for Name: app_assigned_company_user_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: agreements; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.agreements (agreement_category_id, agreement_id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, use_case_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: app_assigned_company_user_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM stdin;
@@ -581,7 +601,7 @@ COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM 
 
 
 --
--- Data for Name: app_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: app_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.app_assigned_licenses (app_id, app_license_id) FROM stdin;
@@ -589,7 +609,7 @@ COPY portal.app_assigned_licenses (app_id, app_license_id) FROM stdin;
 
 
 --
--- Data for Name: app_assigned_use_cases; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: app_assigned_use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.app_assigned_use_cases (app_id, use_case_id) FROM stdin;
@@ -597,7 +617,7 @@ COPY portal.app_assigned_use_cases (app_id, use_case_id) FROM stdin;
 
 
 --
--- Data for Name: app_descriptions; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: app_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.app_descriptions (date_created, date_last_changed, description_long, description_short, app_id, language_short_name) FROM stdin;
@@ -605,7 +625,7 @@ COPY portal.app_descriptions (date_created, date_last_changed, description_long,
 
 
 --
--- Data for Name: app_licenses; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: app_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.app_licenses (app_license_id, date_created, date_last_changed, licensetext) FROM stdin;
@@ -613,7 +633,7 @@ COPY portal.app_licenses (app_license_id, date_created, date_last_changed, licen
 
 
 --
--- Data for Name: apps; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: apps; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.apps (app_id, date_created, date_last_changed, name, date_released, thumbnail_url, vendor_company_id) FROM stdin;
@@ -621,18 +641,18 @@ COPY portal.apps (app_id, date_created, date_last_changed, name, date_released, 
 
 
 --
--- Data for Name: companies; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: companies; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.companies (company_id, date_created, date_last_changed, bpn, name, parent, shortname, status, address_id) FROM stdin;
+COPY portal.companies (company_id, date_created, date_last_changed, bpn, name, parent, shortname, company_status_id, address_id) FROM stdin;
 \.
 
 
 --
--- Data for Name: company_application_status; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_application_status; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_application_status (status, label) FROM stdin;
+COPY portal.company_application_status (application_status_id, label) FROM stdin;
 1	ADD_COMPANY_DATA
 2	INVITE_USER
 3	SELECT_COMPANY_ROLE
@@ -643,15 +663,15 @@ COPY portal.company_application_status (status, label) FROM stdin;
 
 
 --
--- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_applications (company_application_id, date_created, date_last_changed, status, company_id) FROM stdin;
+COPY portal.company_applications (company_application_id, date_created, date_last_changed, application_status_id, company_id) FROM stdin;
 \.
 
 
 --
--- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_assigned_apps (company_id, app_id) FROM stdin;
@@ -659,7 +679,7 @@ COPY portal.company_assigned_apps (company_id, app_id) FROM stdin;
 
 
 --
--- Data for Name: company_assigned_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_assigned_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_assigned_roles (company_id, company_role_id) FROM stdin;
@@ -667,7 +687,7 @@ COPY portal.company_assigned_roles (company_id, company_role_id) FROM stdin;
 
 
 --
--- Data for Name: company_assigned_use_cases; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_assigned_use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_assigned_use_cases (company_id, use_case_id) FROM stdin;
@@ -675,7 +695,7 @@ COPY portal.company_assigned_use_cases (company_id, use_case_id) FROM stdin;
 
 
 --
--- Data for Name: company_identity_provider; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_identity_provider; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_identity_provider (company_id, identity_provider_id) FROM stdin;
@@ -683,7 +703,7 @@ COPY portal.company_identity_provider (company_id, identity_provider_id) FROM st
 
 
 --
--- Data for Name: company_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_roles (company_role_id, date_created, date_last_changed, name_de, name_en) FROM stdin;
@@ -691,15 +711,15 @@ COPY portal.company_roles (company_role_id, date_created, date_last_changed, nam
 
 
 --
--- Data for Name: company_status; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_status; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_status (status, label) FROM stdin;
+COPY portal.company_status (company_status_id, label) FROM stdin;
 \.
 
 
 --
--- Data for Name: company_user_assigned_app_favourites; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_user_assigned_app_favourites; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_user_assigned_app_favourites (company_user_id, app_id) FROM stdin;
@@ -707,7 +727,7 @@ COPY portal.company_user_assigned_app_favourites (company_user_id, app_id) FROM 
 
 
 --
--- Data for Name: company_user_assigned_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_user_assigned_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_user_assigned_roles (company_user_id, user_role_id) FROM stdin;
@@ -715,7 +735,7 @@ COPY portal.company_user_assigned_roles (company_user_id, user_role_id) FROM std
 
 
 --
--- Data for Name: company_user_roles; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_user_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_user_roles (company_user_role_id, date_created, date_last_changed, namede, nameen) FROM stdin;
@@ -723,7 +743,7 @@ COPY portal.company_user_roles (company_user_role_id, date_created, date_last_ch
 
 
 --
--- Data for Name: company_users; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: company_users; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_users (company_user_id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id) FROM stdin;
@@ -731,23 +751,23 @@ COPY portal.company_users (company_user_id, date_created, date_last_changed, ema
 
 
 --
--- Data for Name: consent_status; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: consent_status; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.consent_status (status, label) FROM stdin;
+COPY portal.consent_status (consent_status_id, label) FROM stdin;
 \.
 
 
 --
--- Data for Name: consents; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: consents; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.consents (consent_id, date_created, date_last_changed, comment, status, target, "timestamp", agreement_id, company_id, documents_id, company_user_id) FROM stdin;
+COPY portal.consents (consent_id, date_created, date_last_changed, comment, consent_status_id, target, "timestamp", agreement_id, company_id, documents_id, company_user_id) FROM stdin;
 \.
 
 
 --
--- Data for Name: countries; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: countries; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.countries (country_name_en, alpha_2_code, alpha_3_code, country_name_de) FROM stdin;
@@ -755,7 +775,7 @@ COPY portal.countries (country_name_en, alpha_2_code, alpha_3_code, country_name
 
 
 --
--- Data for Name: document_templates; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: document_templates; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.document_templates (document_template_id, date_created, date_last_changed, documenttemplatename, documenttemplateversion) FROM stdin;
@@ -763,7 +783,7 @@ COPY portal.document_templates (document_template_id, date_created, date_last_ch
 
 
 --
--- Data for Name: documents; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: documents; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.documents (document_id, date_created, date_last_changed, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
@@ -771,7 +791,7 @@ COPY portal.documents (document_id, date_created, date_last_changed, document, d
 
 
 --
--- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.iam_identity_providers (identity_provider_id, iam_idp_alias) FROM stdin;
@@ -779,7 +799,7 @@ COPY portal.iam_identity_providers (identity_provider_id, iam_idp_alias) FROM st
 
 
 --
--- Data for Name: iam_users; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: iam_users; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.iam_users (company_user_id, iam_user_id) FROM stdin;
@@ -787,39 +807,42 @@ COPY portal.iam_users (company_user_id, iam_user_id) FROM stdin;
 
 
 --
--- Data for Name: identity_provider_categories; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: identity_provider_categories; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.identity_provider_categories (category, label) FROM stdin;
+COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
+1	KEYCLOAK_SHARED
+2	KEYCLOAK_OIDC
+3	KEYCLOAK_SAML
 \.
 
 
 --
--- Data for Name: identity_providers; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: identity_providers; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.identity_providers (item_category, identity_provider_id, date_created, date_last_changed) FROM stdin;
+COPY portal.identity_providers (identity_provider_category_id, identity_provider_id, date_created, date_last_changed) FROM stdin;
 \.
 
 
 --
--- Data for Name: invitation_status; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: invitation_status; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.invitation_status (status, label) FROM stdin;
+COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 \.
 
 
 --
--- Data for Name: invitations; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: invitations; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.invitations (invitation_id, date_created, date_last_changed, status, company_application_id, company_user_id) FROM stdin;
+COPY portal.invitations (invitation_id, date_created, date_last_changed, invitation_status_id, company_application_id, company_user_id) FROM stdin;
 \.
 
 
 --
--- Data for Name: languages; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: languages; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.languages (short_name, long_name_de, long_name_en) FROM stdin;
@@ -827,7 +850,7 @@ COPY portal.languages (short_name, long_name_de, long_name_en) FROM stdin;
 
 
 --
--- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: postgres
+-- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.use_cases (use_case_id, date_created, date_last_changed, name, shortname) FROM stdin;
@@ -835,7 +858,7 @@ COPY portal.use_cases (use_case_id, date_created, date_last_changed, name, short
 
 
 --
--- Name: addresses addresses_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: addresses addresses_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.addresses
@@ -843,7 +866,15 @@ ALTER TABLE ONLY portal.addresses
 
 
 --
--- Name: agreements agreements_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_categories agreement_categories_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
+--
+
+ALTER TABLE ONLY portal.agreement_categories
+    ADD CONSTRAINT agreement_categories_pkey PRIMARY KEY (agreement_category_id);
+
+
+--
+-- Name: agreements agreements_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreements
@@ -851,7 +882,7 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_descriptions app_descriptions_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_descriptions app_descriptions_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_descriptions
@@ -859,7 +890,7 @@ ALTER TABLE ONLY portal.app_descriptions
 
 
 --
--- Name: app_licenses app_licenses_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_licenses app_licenses_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_licenses
@@ -867,7 +898,7 @@ ALTER TABLE ONLY portal.app_licenses
 
 
 --
--- Name: apps apps_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: apps apps_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.apps
@@ -875,7 +906,7 @@ ALTER TABLE ONLY portal.apps
 
 
 --
--- Name: companies companies_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: companies companies_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.companies
@@ -883,15 +914,15 @@ ALTER TABLE ONLY portal.companies
 
 
 --
--- Name: company_application_status company_application_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_application_status company_application_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_application_status
-    ADD CONSTRAINT company_application_status_pkey PRIMARY KEY (status);
+    ADD CONSTRAINT company_application_status_pkey PRIMARY KEY (application_status_id);
 
 
 --
--- Name: company_applications company_applications_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_applications company_applications_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_applications
@@ -899,7 +930,7 @@ ALTER TABLE ONLY portal.company_applications
 
 
 --
--- Name: company_roles company_roles_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_roles company_roles_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_roles
@@ -907,15 +938,15 @@ ALTER TABLE ONLY portal.company_roles
 
 
 --
--- Name: company_status company_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_status company_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_status
-    ADD CONSTRAINT company_status_pkey PRIMARY KEY (status);
+    ADD CONSTRAINT company_status_pkey PRIMARY KEY (company_status_id);
 
 
 --
--- Name: company_user_roles company_user_roles_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_user_roles company_user_roles_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_user_roles
@@ -923,7 +954,7 @@ ALTER TABLE ONLY portal.company_user_roles
 
 
 --
--- Name: company_users company_users_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_users company_users_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_users
@@ -931,15 +962,15 @@ ALTER TABLE ONLY portal.company_users
 
 
 --
--- Name: consent_status consent_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consent_status consent_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consent_status
-    ADD CONSTRAINT consent_status_pkey PRIMARY KEY (status);
+    ADD CONSTRAINT consent_status_pkey PRIMARY KEY (consent_status_id);
 
 
 --
--- Name: consents consents_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents consents_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
@@ -947,7 +978,7 @@ ALTER TABLE ONLY portal.consents
 
 
 --
--- Name: countries countries_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: countries countries_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.countries
@@ -955,7 +986,7 @@ ALTER TABLE ONLY portal.countries
 
 
 --
--- Name: document_templates document_templates_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: document_templates document_templates_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.document_templates
@@ -963,7 +994,7 @@ ALTER TABLE ONLY portal.document_templates
 
 
 --
--- Name: documents documents_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: documents documents_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.documents
@@ -971,7 +1002,7 @@ ALTER TABLE ONLY portal.documents
 
 
 --
--- Name: iam_identity_providers iam_identity_providers_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_identity_providers iam_identity_providers_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.iam_identity_providers
@@ -979,23 +1010,23 @@ ALTER TABLE ONLY portal.iam_identity_providers
 
 
 --
--- Name: iam_users iam_user_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users iam_users_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.iam_users
-    ADD CONSTRAINT iam_user_pkey PRIMARY KEY (company_user_id);
+    ADD CONSTRAINT iam_users_pkey PRIMARY KEY (company_user_id);
 
 
 --
--- Name: identity_provider_categories identity_provider_categories_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: identity_provider_categories identity_provider_categories_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.identity_provider_categories
-    ADD CONSTRAINT identity_provider_categories_pkey PRIMARY KEY (category);
+    ADD CONSTRAINT identity_provider_categories_pkey PRIMARY KEY (identity_provider_category_id);
 
 
 --
--- Name: identity_providers identity_providers_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: identity_providers identity_providers_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.identity_providers
@@ -1003,15 +1034,15 @@ ALTER TABLE ONLY portal.identity_providers
 
 
 --
--- Name: invitation_status invitation_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: invitation_status invitation_status_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.invitation_status
-    ADD CONSTRAINT invitation_status_pkey PRIMARY KEY (status);
+    ADD CONSTRAINT invitation_status_pkey PRIMARY KEY (invitation_status_id);
 
 
 --
--- Name: invitations invitations_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: invitations invitations_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.invitations
@@ -1019,7 +1050,7 @@ ALTER TABLE ONLY portal.invitations
 
 
 --
--- Name: languages languages_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: languages languages_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.languages
@@ -1027,7 +1058,7 @@ ALTER TABLE ONLY portal.languages
 
 
 --
--- Name: company_identity_provider pk_company_identity_provider; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_identity_provider pk_company_identity_provider; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_identity_provider
@@ -1035,7 +1066,7 @@ ALTER TABLE ONLY portal.company_identity_provider
 
 
 --
--- Name: agreement_assigned_company_roles uk_6df9o1r7dy987w1pt9qnkopcv; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_company_roles uk_6df9o1r7dy987w1pt9qnkopcv; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_company_roles
@@ -1043,7 +1074,7 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 
 
 --
--- Name: agreement_assigned_document_templates uk_9ib7xuc1vke96s9rvlyhxbtuc; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_document_templates uk_9ib7xuc1vke96s9rvlyhxbtuc; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_document_templates
@@ -1051,7 +1082,7 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 
 --
--- Name: iam_users uk_wiodwiowhdfo84f0sd9afsd2; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users uk_wiodwiowhdfo84f0sd9afsd2; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.iam_users
@@ -1059,7 +1090,7 @@ ALTER TABLE ONLY portal.iam_users
 
 
 --
--- Name: use_cases use_cases_pkey; Type: CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: use_cases use_cases_pkey; Type: CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.use_cases
@@ -1067,7 +1098,7 @@ ALTER TABLE ONLY portal.use_cases
 
 
 --
--- Name: company_user_assigned_roles fk_0c9rjjf9gm3l0n6reb4o0f1s; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_roles fk_0c9rjjf9gm3l0n6reb4o0f1s; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_user_assigned_roles
@@ -1075,7 +1106,7 @@ ALTER TABLE ONLY portal.company_user_assigned_roles
 
 
 --
--- Name: consents fk_36j22f34lgi2444n4tynxamh; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents fk_36j22f34lgi2444n4tynxamh; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
@@ -1083,7 +1114,7 @@ ALTER TABLE ONLY portal.consents
 
 
 --
--- Name: consents fk_39a5cbiv35v59ysgfon5oole; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents fk_39a5cbiv35v59ysgfon5oole; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
@@ -1091,7 +1122,7 @@ ALTER TABLE ONLY portal.consents
 
 
 --
--- Name: app_assigned_licenses fk_3of613iyw1jx8gcj5i46jc1h; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_licenses fk_3of613iyw1jx8gcj5i46jc1h; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_licenses
@@ -1099,7 +1130,7 @@ ALTER TABLE ONLY portal.app_assigned_licenses
 
 
 --
--- Name: company_applications fk_3prv5i3o84vwvh7v0hh3sav7; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_applications fk_3prv5i3o84vwvh7v0hh3sav7; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_applications
@@ -1107,7 +1138,7 @@ ALTER TABLE ONLY portal.company_applications
 
 
 --
--- Name: company_assigned_roles fk_4db4hgj3yvqlkn9h6q8m4e0j; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_roles fk_4db4hgj3yvqlkn9h6q8m4e0j; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_roles
@@ -1115,7 +1146,7 @@ ALTER TABLE ONLY portal.company_assigned_roles
 
 
 --
--- Name: app_assigned_company_user_roles fk_4m022ek8gffepnqlnuxwyxp8; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_company_user_roles fk_4m022ek8gffepnqlnuxwyxp8; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_company_user_roles
@@ -1123,7 +1154,7 @@ ALTER TABLE ONLY portal.app_assigned_company_user_roles
 
 
 --
--- Name: apps fk_68a9joedhyf43smfx2xc4rgm; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: apps fk_68a9joedhyf43smfx2xc4rgm; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.apps
@@ -1131,7 +1162,7 @@ ALTER TABLE ONLY portal.apps
 
 
 --
--- Name: addresses fk_6jg6itw07d2qww62deuyk0kh; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: addresses fk_6jg6itw07d2qww62deuyk0kh; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.addresses
@@ -1139,7 +1170,7 @@ ALTER TABLE ONLY portal.addresses
 
 
 --
--- Name: iam_identity_providers fk_9balkda89j2498dkj2lkjd9s3; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_identity_providers fk_9balkda89j2498dkj2lkjd9s3; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.iam_identity_providers
@@ -1147,7 +1178,7 @@ ALTER TABLE ONLY portal.iam_identity_providers
 
 
 --
--- Name: invitations fk_9tgenb7p09hr5c24haxjw259; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: invitations fk_9tgenb7p09hr5c24haxjw259; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.invitations
@@ -1155,23 +1186,23 @@ ALTER TABLE ONLY portal.invitations
 
 
 --
--- Name: consents fk_aiodhuwehw8wee20adskdfo2; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents fk_aiodhuwehw8wee20adskdfo2; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
-    ADD CONSTRAINT fk_aiodhuwehw8wee20adskdfo2 FOREIGN KEY (status) REFERENCES portal.consent_status(status);
+    ADD CONSTRAINT fk_aiodhuwehw8wee20adskdfo2 FOREIGN KEY (consent_status_id) REFERENCES portal.consent_status(consent_status_id);
 
 
 --
--- Name: company_applications fk_akuwiehfiadf8928fhefhuda; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_applications fk_akuwiehfiadf8928fhefhuda; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_applications
-    ADD CONSTRAINT fk_akuwiehfiadf8928fhefhuda FOREIGN KEY (status) REFERENCES portal.company_application_status(status);
+    ADD CONSTRAINT fk_akuwiehfiadf8928fhefhuda FOREIGN KEY (application_status_id) REFERENCES portal.company_application_status(application_status_id);
 
 
 --
--- Name: consents fk_asqxie2r7yr06cdrw9ifaex8; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents fk_asqxie2r7yr06cdrw9ifaex8; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
@@ -1179,7 +1210,7 @@ ALTER TABLE ONLY portal.consents
 
 
 --
--- Name: agreement_assigned_document_templates fk_bvrvs5aktrcn4t6565pnj3ur; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_document_templates fk_bvrvs5aktrcn4t6565pnj3ur; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_document_templates
@@ -1187,7 +1218,7 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 
 --
--- Name: company_user_assigned_roles fk_bw1yhel67uhrxfk7mevovq5p; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_roles fk_bw1yhel67uhrxfk7mevovq5p; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_user_assigned_roles
@@ -1195,7 +1226,7 @@ ALTER TABLE ONLY portal.company_user_assigned_roles
 
 
 --
--- Name: consents fk_cnrtafckouq96m0fw2qtpwbs; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: consents fk_cnrtafckouq96m0fw2qtpwbs; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.consents
@@ -1203,7 +1234,7 @@ ALTER TABLE ONLY portal.consents
 
 
 --
--- Name: invitations fk_dlrst4ju9d0wcgkh4w1nnoj3; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: invitations fk_dlrst4ju9d0wcgkh4w1nnoj3; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.invitations
@@ -1211,7 +1242,7 @@ ALTER TABLE ONLY portal.invitations
 
 
 --
--- Name: company_user_assigned_app_favourites fk_eip97mygnbglivrtmkagesjh; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_app_favourites fk_eip97mygnbglivrtmkagesjh; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_user_assigned_app_favourites
@@ -1219,7 +1250,7 @@ ALTER TABLE ONLY portal.company_user_assigned_app_favourites
 
 
 --
--- Name: agreement_assigned_document_templates fk_fvcwoptsuer9p23m055osose; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_document_templates fk_fvcwoptsuer9p23m055osose; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_document_templates
@@ -1227,7 +1258,7 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 
 --
--- Name: company_identity_provider fk_haad983jkald89wlkejidk234; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_identity_provider fk_haad983jkald89wlkejidk234; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_identity_provider
@@ -1235,7 +1266,7 @@ ALTER TABLE ONLY portal.company_identity_provider
 
 
 --
--- Name: iam_users fk_iweorqwaeilskjeijekkalwo; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: iam_users fk_iweorqwaeilskjeijekkalwo; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.iam_users
@@ -1243,15 +1274,15 @@ ALTER TABLE ONLY portal.iam_users
 
 
 --
--- Name: identity_providers fk_iwohgwi9342adf9asdnfuie28; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: identity_providers fk_iwohgwi9342adf9asdnfuie28; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.identity_providers
-    ADD CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (item_category) REFERENCES portal.identity_provider_categories(category);
+    ADD CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id);
 
 
 --
--- Name: company_identity_provider fk_iwzehadf8whjd8asjdfuwefhs; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_identity_provider fk_iwzehadf8whjd8asjdfuwefhs; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_identity_provider
@@ -1259,7 +1290,7 @@ ALTER TABLE ONLY portal.company_identity_provider
 
 
 --
--- Name: company_assigned_apps fk_k1dqlv81463yes0k8f2giyaf; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_apps fk_k1dqlv81463yes0k8f2giyaf; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_apps
@@ -1267,7 +1298,7 @@ ALTER TABLE ONLY portal.company_assigned_apps
 
 
 --
--- Name: company_users fk_ku01366dbcqk8h32lh8k5sx1; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_users fk_ku01366dbcqk8h32lh8k5sx1; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_users
@@ -1275,7 +1306,7 @@ ALTER TABLE ONLY portal.company_users
 
 
 --
--- Name: agreement_assigned_company_roles fk_ljol11mdo76f4kv7fwqn1qc6; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_company_roles fk_ljol11mdo76f4kv7fwqn1qc6; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_company_roles
@@ -1283,7 +1314,7 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 
 
 --
--- Name: company_assigned_use_cases fk_m5eyaohrl0g9ju52byxsouqk; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_use_cases fk_m5eyaohrl0g9ju52byxsouqk; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_use_cases
@@ -1291,7 +1322,7 @@ ALTER TABLE ONLY portal.company_assigned_use_cases
 
 
 --
--- Name: app_assigned_licenses fk_mes2xm3i1wotryfc88be4dkf; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_licenses fk_mes2xm3i1wotryfc88be4dkf; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_licenses
@@ -1299,7 +1330,7 @@ ALTER TABLE ONLY portal.app_assigned_licenses
 
 
 --
--- Name: company_assigned_roles fk_my2p7jlqrjf0tq1f8rhk0i0a; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_roles fk_my2p7jlqrjf0tq1f8rhk0i0a; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_roles
@@ -1307,7 +1338,7 @@ ALTER TABLE ONLY portal.company_assigned_roles
 
 
 --
--- Name: agreements fk_n4nnf5bn8i3i9ijrf7kchfvc; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreements fk_n4nnf5bn8i3i9ijrf7kchfvc; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreements
@@ -1315,7 +1346,7 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_company_user_roles fk_oayyvy590ngh5705yspep0up; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_company_user_roles fk_oayyvy590ngh5705yspep0up; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_company_user_roles
@@ -1323,7 +1354,7 @@ ALTER TABLE ONLY portal.app_assigned_company_user_roles
 
 
 --
--- Name: agreements fk_ooy9ydkah696jxh4lq7pn0xe; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreements fk_ooy9ydkah696jxh4lq7pn0xe; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreements
@@ -1331,15 +1362,23 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: companies fk_owihadhfweilwefhaf682khj; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: companies fk_owihadhfweilwefhaf682khj; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.companies
-    ADD CONSTRAINT fk_owihadhfweilwefhaf682khj FOREIGN KEY (status) REFERENCES portal.company_status(status);
+    ADD CONSTRAINT fk_owihadhfweilwefhaf682khj FOREIGN KEY (company_status_id) REFERENCES portal.company_status(company_status_id);
 
 
 --
--- Name: app_descriptions fk_qamy6j7s3klebrf2s69v9k0i; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreements fk_owqie84qkle78dasifljiwer; Type: FK CONSTRAINT; Schema: portal; Owner: portal
+--
+
+ALTER TABLE ONLY portal.agreements
+    ADD CONSTRAINT fk_owqie84qkle78dasifljiwer FOREIGN KEY (agreement_category_id) REFERENCES portal.agreement_categories(agreement_category_id);
+
+
+--
+-- Name: app_descriptions fk_qamy6j7s3klebrf2s69v9k0i; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_descriptions
@@ -1347,7 +1386,7 @@ ALTER TABLE ONLY portal.app_descriptions
 
 
 --
--- Name: agreement_assigned_company_roles fk_qh1hby9qcrr3gmy1cvi7nd3h; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreement_assigned_company_roles fk_qh1hby9qcrr3gmy1cvi7nd3h; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_company_roles
@@ -1355,7 +1394,7 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 
 
 --
--- Name: app_assigned_use_cases fk_qi320sp8lxy7drw6kt4vheka; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_use_cases fk_qi320sp8lxy7drw6kt4vheka; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_use_cases
@@ -1363,7 +1402,7 @@ ALTER TABLE ONLY portal.app_assigned_use_cases
 
 
 --
--- Name: app_assigned_use_cases fk_sjyfs49ma0kxaqfknjbaye0i; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_assigned_use_cases fk_sjyfs49ma0kxaqfknjbaye0i; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_assigned_use_cases
@@ -1371,7 +1410,7 @@ ALTER TABLE ONLY portal.app_assigned_use_cases
 
 
 --
--- Name: company_assigned_apps fk_t365qpfvehuq40om25dyrnn5; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_apps fk_t365qpfvehuq40om25dyrnn5; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_apps
@@ -1379,7 +1418,7 @@ ALTER TABLE ONLY portal.company_assigned_apps
 
 
 --
--- Name: company_assigned_use_cases fk_u65fkdrxnbkp8n0s7mate01v; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_assigned_use_cases fk_u65fkdrxnbkp8n0s7mate01v; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_assigned_use_cases
@@ -1387,7 +1426,7 @@ ALTER TABLE ONLY portal.company_assigned_use_cases
 
 
 --
--- Name: app_descriptions fk_vrom2pjij9x6stgovhaqkfxf; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: app_descriptions fk_vrom2pjij9x6stgovhaqkfxf; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.app_descriptions
@@ -1395,7 +1434,7 @@ ALTER TABLE ONLY portal.app_descriptions
 
 
 --
--- Name: companies fk_w70yf6urddd0ky7ev90okenf; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: companies fk_w70yf6urddd0ky7ev90okenf; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.companies
@@ -1403,23 +1442,23 @@ ALTER TABLE ONLY portal.companies
 
 
 --
--- Name: agreements fk_whby66dika71srejhja6g75a; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: agreements fk_whby66dika71srejhja6g75a; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.agreements
-    ADD CONSTRAINT fk_whby66dika71srejhja6g75a FOREIGN KEY (usecase_id) REFERENCES portal.use_cases(use_case_id);
+    ADD CONSTRAINT fk_whby66dika71srejhja6g75a FOREIGN KEY (use_case_id) REFERENCES portal.use_cases(use_case_id);
 
 
 --
--- Name: invitations fk_woihaodhawoeir72alfidosd; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: invitations fk_woihaodhawoeir72alfidosd; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.invitations
-    ADD CONSTRAINT fk_woihaodhawoeir72alfidosd FOREIGN KEY (status) REFERENCES portal.invitation_status(status);
+    ADD CONSTRAINT fk_woihaodhawoeir72alfidosd FOREIGN KEY (invitation_status_id) REFERENCES portal.invitation_status(invitation_status_id);
 
 
 --
--- Name: company_user_assigned_app_favourites fk_wva553r3xiew3ngbdkvafk85; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: company_user_assigned_app_favourites fk_wva553r3xiew3ngbdkvafk85; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.company_user_assigned_app_favourites
@@ -1427,263 +1466,11 @@ ALTER TABLE ONLY portal.company_user_assigned_app_favourites
 
 
 --
--- Name: documents fk_xcgobngn7vk56k8nfkuaysvn; Type: FK CONSTRAINT; Schema: portal; Owner: postgres
+-- Name: documents fk_xcgobngn7vk56k8nfkuaysvn; Type: FK CONSTRAINT; Schema: portal; Owner: portal
 --
 
 ALTER TABLE ONLY portal.documents
     ADD CONSTRAINT fk_xcgobngn7vk56k8nfkuaysvn FOREIGN KEY (company_user_id) REFERENCES portal.company_users(company_user_id);
-
-
---
--- Name: TABLE addresses; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.addresses TO portal;
-
-
---
--- Name: TABLE agreement_assigned_company_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.agreement_assigned_company_roles TO portal;
-
-
---
--- Name: TABLE agreement_assigned_document_templates; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.agreement_assigned_document_templates TO portal;
-
-
---
--- Name: TABLE agreements; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.agreements TO portal;
-
-
---
--- Name: TABLE app_assigned_company_user_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.app_assigned_company_user_roles TO portal;
-
-
---
--- Name: TABLE app_assigned_licenses; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.app_assigned_licenses TO portal;
-
-
---
--- Name: TABLE app_assigned_use_cases; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.app_assigned_use_cases TO portal;
-
-
---
--- Name: TABLE app_descriptions; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.app_descriptions TO portal;
-
-
---
--- Name: TABLE app_licenses; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.app_licenses TO portal;
-
-
---
--- Name: TABLE apps; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.apps TO portal;
-
-
---
--- Name: TABLE companies; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.companies TO portal;
-
-
---
--- Name: TABLE company_application_status; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_application_status TO portal;
-
-
---
--- Name: TABLE company_applications; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_applications TO portal;
-
-
---
--- Name: TABLE company_assigned_apps; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_assigned_apps TO portal;
-
-
---
--- Name: TABLE company_assigned_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_assigned_roles TO portal;
-
-
---
--- Name: TABLE company_assigned_use_cases; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_assigned_use_cases TO portal;
-
-
---
--- Name: TABLE company_identity_provider; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_identity_provider TO portal;
-
-
---
--- Name: TABLE company_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_roles TO portal;
-
-
---
--- Name: TABLE company_status; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_status TO portal;
-
-
---
--- Name: TABLE company_user_assigned_app_favourites; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_user_assigned_app_favourites TO portal;
-
-
---
--- Name: TABLE company_user_assigned_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_user_assigned_roles TO portal;
-
-
---
--- Name: TABLE company_user_roles; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_user_roles TO portal;
-
-
---
--- Name: TABLE company_users; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.company_users TO portal;
-
-
---
--- Name: TABLE consent_status; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.consent_status TO portal;
-
-
---
--- Name: TABLE consents; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.consents TO portal;
-
-
---
--- Name: TABLE countries; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.countries TO portal;
-
-
---
--- Name: TABLE document_templates; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.document_templates TO portal;
-
-
---
--- Name: TABLE documents; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.documents TO portal;
-
-
---
--- Name: TABLE iam_identity_providers; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.iam_identity_providers TO portal;
-
-
---
--- Name: TABLE iam_users; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.iam_users TO portal;
-
-
---
--- Name: TABLE identity_provider_categories; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.identity_provider_categories TO portal;
-
-
---
--- Name: TABLE identity_providers; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.identity_providers TO portal;
-
-
---
--- Name: TABLE invitation_status; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.invitation_status TO portal;
-
-
---
--- Name: TABLE invitations; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.invitations TO portal;
-
-
---
--- Name: TABLE languages; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.languages TO portal;
-
-
---
--- Name: TABLE use_cases; Type: ACL; Schema: portal; Owner: postgres
---
-
-GRANT ALL ON TABLE portal.use_cases TO portal;
 
 
 --
