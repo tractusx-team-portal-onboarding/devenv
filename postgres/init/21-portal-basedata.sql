@@ -14,7 +14,7 @@ COPY portal.company_application_status (application_status_id, label) FROM stdin
 2	INVITE_USER
 3	SELECT_COMPANY_ROLE
 4	UPLOAD_DOCUMENTS
-5	VERIFY
+5	VERIFY_COMPANY
 6	SUBMITTED
 \.
 
@@ -22,6 +22,24 @@ COPY portal.identity_provider_categories (identity_provider_category_id, label) 
 1	KEYCLOAK_SHARED
 2	KEYCLOAK_OIDC
 3	KEYCLOAK_SAML
+\.
+
+COPY portal.company_status (company_status_id, label) FROM stdin;
+1	PENDING
+\.
+
+COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
+1	CREATED
+\.
+
+COPY portal.company_roles (company_role_id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
+1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
+2	APP_PROVIDER	2022-03-24 18:01:33.295	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
+\.
+
+COPY portal.languages (language_short_name, long_name_de, long_name_en) FROM stdin;
+de	deutsch	german
+en	englisch	english
 \.
 
 COPY portal.countries (country_name_en, alpha_2_code, alpha_3_code, country_name_de) FROM stdin;
@@ -272,15 +290,5 @@ Wallis and Futuna	WF	WLF	Wallis and Futuna
 Western Sahara*	EH	ESH	Western Sahara*
 Yemen	YE	YEM	Yemen
 Zambia	ZM	ZMB	Zambia
-\.
-
-COPY portal.company_roles (company_role_id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
-1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
-2	APP_PROVIDER	2022-03-24 18:01:33.295	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
-\.
-
-COPY portal.languages (language_short_name, long_name_de, long_name_en) FROM stdin;
-de	deutsch	german
-en	englisch	english
 \.
 
