@@ -94,9 +94,10 @@ CREATE TABLE portal.identity_providers (
 
 
 CREATE TABLE portal.iam_identity_providers (
-    identity_provider_id uuid PRIMARY KEY,
-    iam_idp_alias character varying(255) NOT NULL,
-    CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id)
+    identity_provider_id uuid NOT NULL,
+    iam_idp_alias character varying(255) PRIMARY KEY,
+    CONSTRAINT fk_9balkda89j2498dkj2lkjd9s3 FOREIGN KEY (identity_provider_id) REFERENCES portal.identity_providers(identity_provider_id),
+    CONSTRAINT uk_aiehoat94wlhasdfiwlkefisi UNIQUE (identity_provider_id)
 );
 
 
@@ -208,11 +209,14 @@ CREATE TABLE portal.company_users (
 
 
 CREATE TABLE portal.iam_users (
-    company_user_id uuid PRIMARY KEY,
-    iam_user_id uuid NOT NULL,
-    CONSTRAINT uk_wiodwiowhdfo84f0sd9afsd2 UNIQUE (iam_user_id),
+    iam_user_id uuid PRIMARY KEY,
+    date_created timestamp without time zone,
+    date_last_changed timestamp without time zone,
+    company_user_id uuid NOT NULL,
+    CONSTRAINT uk_wiodwiowhdfo84f0sd9afsd2 UNIQUE (company_user_id),
     CONSTRAINT fk_iweorqwaeilskjeijekkalwo FOREIGN KEY (company_user_id) REFERENCES portal.company_users(company_user_id)
 );
+
 
 --
 -- Name: documents; Type: TABLE; Schema: public; Owner: -
