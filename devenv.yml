@@ -27,9 +27,7 @@ services:
       DB_USER: kccentral
       DB_PASSWORD: pwkccentral
       X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
-      KEYCLOAK_IMPORT: /tmp/realm-export.json
     volumes:
-      - ./keycloak/iamcentral/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
     extra_hosts:
       - "${DEVENV_SERVERNAME}:${DEVENV_IP}"
@@ -49,9 +47,7 @@ services:
       DB_USER: kcshared
       DB_PASSWORD: pwkcshared
       X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
-      KEYCLOAK_IMPORT: /tmp/realm-export.json
     volumes:
-      - ./keycloak/iamshared/realm-export.json:/tmp/realm-export.json
       - ./keycloak/ca:/tmp/ca
     extra_hosts:
       - "${DEVENV_SERVERNAME}:${DEVENV_IP}"
