@@ -14,7 +14,7 @@ COPY portal.company_application_status (application_status_id, label) FROM stdin
 2	INVITE_USER
 3	SELECT_COMPANY_ROLE
 4	UPLOAD_DOCUMENTS
-5	VERIFY_COMPANY
+5	VERIFY
 6	SUBMITTED
 \.
 
