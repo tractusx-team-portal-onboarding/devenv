@@ -16,6 +16,8 @@ COPY portal.company_application_status (application_status_id, label) FROM stdin
 4	UPLOAD_DOCUMENTS
 5	VERIFY
 6	SUBMITTED
+7       CONFIRMED
+8       DECLINED
 \.
 
 COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
@@ -26,10 +28,16 @@ COPY portal.identity_provider_categories (identity_provider_category_id, label) 
 
 COPY portal.company_status (company_status_id, label) FROM stdin;
 1	PENDING
+2       ACTIVE
+3       REJECTED
+4       INACTIVE
 \.
 
 COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 1	CREATED
+2       PENDING
+3       ACCEPTED
+4       DECLINED
 \.
 
 COPY portal.company_roles (company_role_id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
