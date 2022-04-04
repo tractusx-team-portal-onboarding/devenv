@@ -157,7 +157,7 @@ CREATE TABLE portal.companies (
     company_id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
-    bpn character varying(20) NOT NULL,
+    bpn character varying(20),
     name character varying(255),
     parent character varying(255),
     shortname character varying(255),
@@ -270,7 +270,8 @@ CREATE TABLE portal.agreements (
 CREATE TABLE portal.agreement_assigned_company_roles (
     agreement_id uuid NOT NULL,
     company_role_id integer NOT NULL,
-    CONSTRAINT uk_6df9o1r7dy987w1pt9qnkopcv UNIQUE (company_role_id),
+    CONSTRAINT pk_agreement_ass_comp_roles PRIMARY KEY (agreement_id, company_role_id),
+    CONSTRAINT uk_6df9o1r7dy987w1pt9qnkopc UNIQUE (company_role_id),
     CONSTRAINT fk_qh1hby9qcrr3gmy1cvi7nd3h FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id),
     CONSTRAINT fk_ljol11mdo76f4kv7fwqn1qc6 FOREIGN KEY (agreement_id) REFERENCES portal.agreements(agreement_id)
 );
@@ -283,7 +284,8 @@ CREATE TABLE portal.agreement_assigned_company_roles (
 CREATE TABLE portal.agreement_assigned_document_templates (
     agreement_id uuid NOT NULL,
     document_template_id uuid NOT NULL,
-    CONSTRAINT uk_9ib7xuc1vke96s9rvlyhxbtuc UNIQUE (document_template_id),
+    CONSTRAINT pk_agreement_ass_doc_templa PRIMARY KEY (agreement_id, document_template_id),
+    CONSTRAINT uk_9ib7xuc1vke96s9rvlyhxbtu UNIQUE (document_template_id),
     CONSTRAINT fk_fvcwoptsuer9p23m055osose FOREIGN KEY (agreement_id) REFERENCES portal.agreements(agreement_id),
     CONSTRAINT fk_bvrvs5aktrcn4t6565pnj3ur FOREIGN KEY (document_template_id) REFERENCES portal.document_templates(document_template_id)
 );
@@ -296,6 +298,7 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 CREATE TABLE portal.app_assigned_company_user_roles (
     app_id uuid NOT NULL,
     company_user_role_id uuid,
+    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, company_user_role_id),
     CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(company_user_role_id),
     CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(app_id)
 );
@@ -308,6 +311,7 @@ CREATE TABLE portal.app_assigned_company_user_roles (
 CREATE TABLE portal.app_assigned_licenses (
     app_id uuid NOT NULL,
     app_license_id uuid NOT NULL,
+    CONSTRAINT pk_app_assigned_licenses PRIMARY KEY (app_id, app_license_id),
     CONSTRAINT fk_3of613iyw1jx8gcj5i46jc1h FOREIGN KEY (app_id) REFERENCES portal.apps(app_id),
     CONSTRAINT fk_mes2xm3i1wotryfc88be4dkf FOREIGN KEY (app_license_id) REFERENCES portal.app_licenses(app_license_id)
 );
@@ -320,6 +324,7 @@ CREATE TABLE portal.app_assigned_licenses (
 CREATE TABLE portal.app_assigned_use_cases (
     app_id uuid NOT NULL,
     use_case_id uuid NOT NULL,
+    CONSTRAINT pk_app_assigned_use_cases PRIMARY KEY (app_id, use_case_id),
     CONSTRAINT fk_sjyfs49ma0kxaqfknjbaye0i FOREIGN KEY (use_case_id) REFERENCES portal.use_cases(use_case_id),
     CONSTRAINT fk_qi320sp8lxy7drw6kt4vheka FOREIGN KEY (app_id) REFERENCES portal.apps(app_id)
 );
@@ -369,6 +374,7 @@ CREATE TABLE portal.company_applications (
 CREATE TABLE portal.company_assigned_apps (
     company_id uuid NOT NULL,
     app_id uuid NOT NULL,
+    CONSTRAINT pk_company_assigned_apps PRIMARY KEY (company_id, app_id),
     CONSTRAINT fk_t365qpfvehuq40om25dyrnn5 FOREIGN KEY (app_id) REFERENCES portal.apps(app_id),
     CONSTRAINT fk_k1dqlv81463yes0k8f2giyaf FOREIGN KEY (company_id) REFERENCES portal.companies(company_id)
 );
@@ -381,6 +387,7 @@ CREATE TABLE portal.company_assigned_apps (
 CREATE TABLE portal.company_assigned_roles (
     company_id uuid NOT NULL,
     company_role_id integer NOT NULL,
+    CONSTRAINT pk_company_assigned_roles PRIMARY KEY (company_id, company_role_id),
     CONSTRAINT fk_my2p7jlqrjf0tq1f8rhk0i0a FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id),
     CONSTRAINT fk_4db4hgj3yvqlkn9h6q8m4e0j FOREIGN KEY (company_id) REFERENCES portal.companies(company_id)
 );
@@ -393,6 +400,7 @@ CREATE TABLE portal.company_assigned_roles (
 CREATE TABLE portal.company_assigned_use_cases (
     company_id uuid NOT NULL,
     use_case_id uuid NOT NULL,
+    CONSTRAINT pk_company_assigned_use_cas PRIMARY KEY (company_id, use_case_id),
     CONSTRAINT fk_m5eyaohrl0g9ju52byxsouqk FOREIGN KEY (use_case_id) REFERENCES portal.use_cases(use_case_id),
     CONSTRAINT fk_u65fkdrxnbkp8n0s7mate01v FOREIGN KEY (company_id) REFERENCES portal.companies(company_id)
 );
@@ -405,6 +413,7 @@ CREATE TABLE portal.company_assigned_use_cases (
 CREATE TABLE portal.company_user_assigned_app_favourites (
     company_user_id uuid NOT NULL,
     app_id uuid NOT NULL,
+    CONSTRAINT pk_comp_user_ass_app_favour PRIMARY KEY (company_user_id, app_id),
     CONSTRAINT fk_wva553r3xiew3ngbdkvafk85 FOREIGN KEY (company_user_id) REFERENCES portal.company_users(company_user_id),
     CONSTRAINT fk_eip97mygnbglivrtmkagesjh FOREIGN KEY (app_id) REFERENCES portal.apps(app_id)
 );
@@ -417,6 +426,7 @@ CREATE TABLE portal.company_user_assigned_app_favourites (
 CREATE TABLE portal.company_user_assigned_roles (
     company_user_id uuid NOT NULL,
     user_role_id uuid NOT NULL,
+    CONSTRAINT pk_comp_user_assigned_roles PRIMARY KEY (company_user_id, user_role_id),
     CONSTRAINT fk_0c9rjjf9gm3l0n6reb4o0f1s FOREIGN KEY (company_user_id) REFERENCES portal.company_users(company_user_id),
     CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (user_role_id) REFERENCES portal.company_user_roles(company_user_role_id)
 );
