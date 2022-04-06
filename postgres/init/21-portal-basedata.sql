@@ -40,7 +40,7 @@ COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 4	DECLINED
 \.
 
-COPY portal.company_roles (company_role_id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
+COPY portal.company_roles (id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
 1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
 2	APP_PROVIDER	2022-03-24 18:01:33.295	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
 \.

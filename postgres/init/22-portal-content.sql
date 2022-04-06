@@ -22,7 +22,7 @@ SET row_security = off;
 -- Data for Name: addresses; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.addresses (address_id, date_created, date_last_changed, city, region, streetadditional, streetname, streetnumber, zipcode, country_alpha_2_code) FROM stdin;
+COPY portal.addresses (id, date_created, date_last_changed, city, region, streetadditional, streetname, streetnumber, zipcode, country_alpha_2_code) FROM stdin;
 b4db3945-19a7-4a50-97d6-e66e8dfd04fb	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	\N	\N	\N	\N	\N	\N	\N
 12302f9b-418c-4b8c-aea8-3eedf67e6a02	2022-03-24 18:01:33.341	2022-03-24 18:01:33.341	\N	\N	\N	\N	\N	\N	\N
 3a52099d-4988-4a56-9787-10a669c41338	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344	\N	\N	\N	\N	\N	\N	\N
@@ -39,7 +39,7 @@ c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33
 -- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.companies (company_id, date_created, date_last_changed, bpn, name, parent, shortname, company_status_id, address_id) FROM stdin;
+COPY portal.companies (id, date_created, date_last_changed, bpn, name, parent, shortname, company_status_id, address_id) FROM stdin;
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	CAXSDUMMYCATENAZZ	Catena-X	\N	Catena-X	1	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	2022-03-24 18:01:33.341	CAXSDUMMYBMWZZ	Bayerische Motorenwerke AG	\N	BMW AG	1	12302f9b-418c-4b8c-aea8-3eedf67e6a02
 0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344	CAXSDUMMYSAPZZ	SAP AG	\N	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
@@ -55,7 +55,7 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	2022-03-24 18:01:33
 -- Data for Name: identity_providers; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.identity_providers (identity_provider_category_id, identity_provider_id, date_created, date_last_changed) FROM stdin;
+COPY portal.identity_providers (identity_provider_category_id, id, date_created, date_last_changed) FROM stdin;
 1	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-03-24 18:01:33.33	2022-03-24 18:01:33.33
 1	ac1cf001-7fbc-1f2f-817f-bce057200005	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344
 1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-03-24 18:01:33.347	2022-03-24 18:01:33.347
@@ -83,7 +83,7 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 -- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.apps (app_id, date_created, date_last_changed, name, date_released, thumbnail_url, app_url, marketing_url, vendor_company_id) FROM stdin;
+COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url, app_url, marketing_url, vendor_company_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
 ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106
@@ -99,7 +99,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.use_cases (use_case_id, date_created, date_last_changed, name, shortname) FROM stdin;
+COPY portal.use_cases (id, date_created, date_last_changed, name, shortname) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce056f90000	2022-03-24 18:01:33.297	2022-03-24 18:01:33.297	Circular Economy	CE
 ac1cf001-7fbc-1f2f-817f-bce056fa0001	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Traceability	Traceability
 41f3c6fb-74b3-4377-a061-b57c1cba1205	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	BPDM	BPDM
@@ -111,7 +111,7 @@ f141968d-fd33-45d4-9cb9-0af727cae430	2022-03-24 18:01:33.306	2022-03-24 18:01:33
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.agreements (agreement_category_id, agreement_id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, use_case_id) FROM stdin;
+COPY portal.agreements (agreement_category_id, id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, use_case_id) FROM stdin;
 \.
 
 
@@ -127,7 +127,7 @@ COPY portal.agreement_assigned_company_roles (agreement_id, company_role_id) FRO
 -- Data for Name: document_templates; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.document_templates (document_template_id, date_created, date_last_changed, documenttemplatename, documenttemplateversion) FROM stdin;
+COPY portal.document_templates (id, date_created, date_last_changed, documenttemplatename, documenttemplateversion) FROM stdin;
 \.
 
 
@@ -143,7 +143,7 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 -- Data for Name: company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_user_roles (company_user_role_id, company_user_role, date_created, date_last_changed, namede, nameen) FROM stdin;
+COPY portal.company_user_roles (id, company_user_role, date_created, date_last_changed, namede, nameen) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN	2022-03-24 18:01:33.244	2022-03-24 18:01:33.244	Unternehmensadministrator	Company Admin
 58f897ec-0aad-4588-8ffa-5f45d6638632	CX	2022-03-24 18:01:33.26	2022-03-24 18:01:33.26	CX Admin	CX Admin
 607818be-4978-41f4-bf63-fa8d2de51154	IT_ADMIN	2022-03-24 18:01:33.263	2022-03-24 18:01:33.263	IT Administrator	IT Admin
@@ -171,7 +171,7 @@ COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM 
 -- Data for Name: app_licenses; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_licenses (app_license_id, date_created, date_last_changed, licensetext) FROM stdin;
+COPY portal.app_licenses (id, date_created, date_last_changed, licensetext) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0573f0008	2022-03-24 18:01:33.366	2022-03-24 18:01:33.366	free of charge
 ac1cf001-7fbc-1f2f-817f-bce05743000a	2022-03-24 18:01:33.379	2022-03-24 18:01:33.379	free of charge
 ac1cf001-7fbc-1f2f-817f-bce05748000c	2022-03-24 18:01:33.383	2022-03-24 18:01:33.383	free of charge
@@ -236,7 +236,7 @@ COPY portal.app_descriptions (date_created, date_last_changed, description_long,
 -- Data for Name: company_applications; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_applications (company_application_id, date_created, date_last_changed, application_status_id, company_id) FROM stdin;
+COPY portal.company_applications (id, date_created, date_last_changed, application_status_id, company_id) FROM stdin;
 4f0146c6-32aa-4bb1-b844-df7e8babdcb6	2022-03-24 18:01:33.403	2022-03-24 18:01:33.403	5	220330ac-170d-4e22-8d72-9467ed042149
 0195a85f-e465-4571-b980-d1351dd76a9f	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	5	bdac6865-2a8d-4bfd-9373-9dfce8190895
 6b2d1263-c073-4a48-bfaf-704dc154ca9a	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	5	41fd2ab8-71cd-4546-9bef-a388d91b2542
@@ -287,7 +287,7 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce056fa0001
 -- Data for Name: company_users; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_users (company_user_id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id) FROM stdin;
+COPY portal.company_users (id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	\N	\N	\N	220330ac-170d-4e22-8d72-9467ed042149
 ac1cf001-7fbc-1f2f-817f-bce057770013	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	\N	\N	\N	\N	bdac6865-2a8d-4bfd-9373-9dfce8190895
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542
@@ -358,7 +358,7 @@ ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
 -- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.documents (document_id, date_created, date_last_changed, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
+COPY portal.documents (id, date_created, date_last_changed, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
 \.
 
 
@@ -366,14 +366,14 @@ COPY portal.documents (document_id, date_created, date_last_changed, document, d
 -- Data for Name: consents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.consents (consent_id, date_created, date_last_changed, comment, consent_status_id, target, "timestamp", agreement_id, company_id, documents_id, company_user_id) FROM stdin;
+COPY portal.consents (id, date_created, date_last_changed, comment, consent_status_id, target, "timestamp", agreement_id, company_id, documents_id, company_user_id) FROM stdin;
 \.
 
 --
 -- Data for Name: identity_provider_users; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.iam_users (iam_user_id, date_created, date_last_changed, company_user_id) FROM stdin;
+COPY portal.iam_users (id, date_created, date_last_changed, company_user_id) FROM stdin;
 ad56702b-5908-44eb-a668-9a11a0e100d6	2022-03-24 18:01:33.416	2022-03-24 18:01:33.416	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 e9b1c0e4-953d-4539-b703-dca9e911eab5	2022-03-24 18:01:33.432	2022-03-24 18:01:33.432	ac1cf001-7fbc-1f2f-817f-bce057770013
 3432d787-d7c8-46fb-96d7-cc984c6bfaac	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	ac1cf001-7fbc-1f2f-817f-bce0577e0015
@@ -424,7 +424,7 @@ e82ab43e-3d34-4c75-9961-6b31b00ec3cb	2022-03-24 18:01:33.566	2022-03-24 18:01:33
 -- Data for Name: invitations; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.invitations (invitation_id, date_created, date_last_changed, invitation_status_id, company_application_id, company_user_id) FROM stdin;
+COPY portal.invitations (id, date_created, date_last_changed, invitation_status_id, company_application_id, company_user_id) FROM stdin;
 bd0d0302-3ec8-4bfe-99db-b89bdb6c4b94	2022-03-24 18:01:33.408	2022-03-24 18:01:33.408	1	4f0146c6-32aa-4bb1-b844-df7e8babdcb6	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 3106e610-2740-4b5c-946c-5258b7a58a6c	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	1	0195a85f-e465-4571-b980-d1351dd76a9f	ac1cf001-7fbc-1f2f-817f-bce057770013
 d54db875-774c-479f-9f14-375f2cb8b257	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce0577e0015

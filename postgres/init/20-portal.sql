@@ -14,7 +14,7 @@ SET row_security = off;
 --
 
 CREATE TABLE portal.app_licenses (
-    app_license_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     licensetext character varying(255)
@@ -26,7 +26,7 @@ CREATE TABLE portal.app_licenses (
 --
 
 CREATE TABLE portal.company_roles (
-    company_role_id integer PRIMARY KEY,
+    id integer PRIMARY KEY,
     company_role character varying(255) NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
@@ -40,7 +40,7 @@ CREATE TABLE portal.company_roles (
 --
 
 CREATE TABLE portal.company_user_roles (
-    company_user_role_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     company_user_role character varying(255) NOT NULL,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
@@ -66,7 +66,7 @@ CREATE TABLE portal.countries (
 --
 
 CREATE TABLE portal.document_templates (
-    document_template_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     documenttemplatename character varying(255) NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE portal.identity_provider_categories (
 
 CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
-    identity_provider_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
@@ -117,7 +117,7 @@ CREATE TABLE portal.languages (
 --
 
 CREATE TABLE portal.use_cases (
-    use_case_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     name character varying(255),
@@ -130,7 +130,7 @@ CREATE TABLE portal.use_cases (
 --
 
 CREATE TABLE portal.addresses (
-    address_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     city character varying(255),
@@ -154,7 +154,7 @@ CREATE TABLE portal.company_status (
 --
 
 CREATE TABLE portal.companies (
-    company_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     bpn character varying(20),
@@ -180,7 +180,7 @@ CREATE TABLE portal.company_identity_provider (
 --
 
 CREATE TABLE portal.apps (
-    app_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     name character varying(255),
@@ -198,7 +198,7 @@ CREATE TABLE portal.apps (
 --
 
 CREATE TABLE portal.company_users (
-    company_user_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     email character varying(255),
@@ -211,7 +211,7 @@ CREATE TABLE portal.company_users (
 
 
 CREATE TABLE portal.iam_users (
-    iam_user_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     company_user_id uuid NOT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE portal.iam_users (
 --
 
 CREATE TABLE portal.documents (
-    document_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     document oid NOT NULL,
@@ -248,7 +248,7 @@ CREATE TABLE portal.agreement_categories (
 
 CREATE TABLE portal.agreements (
     agreement_category_id integer NOT NULL,
-    agreement_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     agreement_type character varying(255),
@@ -357,7 +357,7 @@ CREATE TABLE portal.company_application_status (
 --
 
 CREATE TABLE portal.company_applications (
-    company_application_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     application_status_id integer,
@@ -442,7 +442,7 @@ CREATE TABLE portal.consent_status (
 --
 
 CREATE TABLE portal.consents (
-    consent_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     comment character varying(255),
@@ -471,7 +471,7 @@ CREATE TABLE portal.invitation_status (
 --
 
 CREATE TABLE portal.invitations (
-    invitation_id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     invitation_status_id integer NOT NULL,
