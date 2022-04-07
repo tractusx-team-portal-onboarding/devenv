@@ -85,7 +85,7 @@ Bosnia and Herzegovina	BA	BIH	Bosnien and Herzegovenien
 Botswana	BW	BWA	Botswana
 Bouvet Island	BV	BVT	Bouvet Island
 Brazil	BR	BRA	Brasilien
-British Indian Ocean Territory (the)	IO	IOT	British Indian Ocean Territory 
+British Indian Ocean Territory (the)	IO	IOT	British Indian Ocean Territory
 Brunei Darussalam	BN	BRN	Brunei Darussalam
 Bulgaria	BG	BGR	Bulgarien
 Burkina Faso	BF	BFA	Burkina Faso
@@ -300,3 +300,9 @@ Yemen	YE	YEM	Yemen
 Zambia	ZM	ZMB	Zambia
 \.
 
+COPY portal.use_cases (name) FROM stdin;
+1	Circular Economy
+2	Demand and Capacity Management
+3	Quality Management
+4	Business Partner Management
+\.
