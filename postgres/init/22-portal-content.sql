@@ -95,17 +95,6 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33
 \.
 
 
---
--- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-COPY portal.use_cases (id, date_created, date_last_changed, name, shortname) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce056f90000	2022-03-24 18:01:33.297	2022-03-24 18:01:33.297	Circular Economy	CE
-ac1cf001-7fbc-1f2f-817f-bce056fa0001	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Traceability	Traceability
-41f3c6fb-74b3-4377-a061-b57c1cba1205	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	BPDM	BPDM
-f141968d-fd33-45d4-9cb9-0af727cae430	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Quality & Demand Management	Quality & Demand Management
-\.
-
 
 --
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
@@ -204,15 +193,15 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	0f956bce-7ec3-4171-b6d2-ba7fc57c37d5
 --
 
 COPY portal.app_assigned_use_cases (app_id, use_case_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac1cf001-7fbc-1f2f-817f-bce05744000b	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac1cf001-7fbc-1f2f-817f-bce05748000d	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-f9cad59d-84b3-4880-a550-4072c26a6b93	41f3c6fb-74b3-4377-a061-b57c1cba1205
-8488044e-b8df-403a-9cbd-16dad7e4a08c	f141968d-fd33-45d4-9cb9-0af727cae430
-5cf74ef8-e0b7-4984-a872-474828beb5d8	f141968d-fd33-45d4-9cb9-0af727cae430
-5cf74ef8-e0b7-4984-a872-474828beb5d8	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	f141968d-fd33-45d4-9cb9-0af727cae430
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac1cf001-7fbc-1f2f-817f-bce05744000b	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac1cf001-7fbc-1f2f-817f-bce05748000d	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
+8488044e-b8df-403a-9cbd-16dad7e4a08c	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+5cf74ef8-e0b7-4984-a872-474828beb5d8	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 \.
 
 
@@ -274,12 +263,12 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2
 --
 
 COPY portal.company_assigned_use_cases (company_id, use_case_id) FROM stdin;
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce056f90000
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-0dcd8209-85e2-4073-b130-ac094fb47106	ac1cf001-7fbc-1f2f-817f-bce056f90000
-0dcd8209-85e2-4073-b130-ac094fb47106	ac1cf001-7fbc-1f2f-817f-bce056fa0001
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+0dcd8209-85e2-4073-b130-ac094fb47106	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+0dcd8209-85e2-4073-b130-ac094fb47106	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 \.
 
 
@@ -429,4 +418,3 @@ bd0d0302-3ec8-4bfe-99db-b89bdb6c4b94	2022-03-24 18:01:33.408	2022-03-24 18:01:33
 3106e610-2740-4b5c-946c-5258b7a58a6c	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	1	0195a85f-e465-4571-b980-d1351dd76a9f	ac1cf001-7fbc-1f2f-817f-bce057770013
 d54db875-774c-479f-9f14-375f2cb8b257	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce0577e0015
 \.
-

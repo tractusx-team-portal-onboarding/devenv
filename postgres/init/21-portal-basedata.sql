@@ -300,9 +300,11 @@ Yemen	YE	YEM	Yemen
 Zambia	ZM	ZMB	Zambia
 \.
 
-COPY portal.use_cases (name) FROM stdin;
-1	Circular Economy
-2	Demand and Capacity Management
-3	Quality Management
-4	Business Partner Management
+COPY portal.use_cases (id, date_created, date_last_changed, name, shortname) FROM stdin;
+1aacde78-35ec-4df3-ba1e-f988cddcbbd8 Circular Economy	CE
+41e4a4c0-aae4-41c0-97c9-ebafde410de4 Demand and Capacity Management  DCM
+c065a349-f649-47f8-94d5-1a504a855419 Quality Management QM
+6909ccc7-37c8-4088-99ab-790f20702460 Business Partner Management	BPDM
+06b243a4-ba51-4bf3-bc40-5d79a2231b86 Traceability	T
+
 \.
