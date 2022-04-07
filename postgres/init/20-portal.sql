@@ -211,7 +211,7 @@ CREATE TABLE portal.company_users (
 
 
 CREATE TABLE portal.iam_users (
-    id uuid PRIMARY KEY,
+    iam_user_id character varying(36) PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     company_user_id uuid NOT NULL,
