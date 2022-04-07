@@ -160,17 +160,13 @@ ALTER TABLE ONLY provisioning.identity_provider_sequence
 -- Name: user_password_reset ; Type: Table; Schema: provisioning; Owner: provisioning
 --
 
-CREATE TABLE provisioning.user_password_reset (
-    id character varying(36) NOT NULL,
+CREATE TABLE provisioning.user_password_resets (
+    user_entity_id character varying(36) PRIMARY KEY,
     password_modified_at TIMESTAMP DEFAULT NOW(),
     reset_count integer DEFAULT 0 NOT NULL
 );
 
-ALTER TABLE provisioning.user_password_reset OWNER TO provisioning;
-
-ALTER TABLE ONLY provisioning.user_password_reset
-    ADD CONSTRAINT constraint_fb PRIMARY KEY (id);
-
+ALTER TABLE provisioning.user_password_resets OWNER TO provisioning;
 --
 -- PostgreSQL database dump complete
 --
