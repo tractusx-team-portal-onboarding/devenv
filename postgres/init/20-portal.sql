@@ -186,8 +186,13 @@ CREATE TABLE portal.apps (
     name character varying(255),
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
+    thumbnail_url1 character varying(255),
+    thumbnail_url2 character varying(255),
+    thumbnail_url3 character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
+    contact_email character varying(255),
+    contact_number character varying(255),
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
 );
@@ -481,6 +486,3 @@ CREATE TABLE portal.invitations (
     CONSTRAINT fk_dlrst4ju9d0wcgkh4w1nnoj3 FOREIGN KEY (company_application_id) REFERENCES portal.company_applications(id),
     CONSTRAINT fk_woihaodhawoeir72alfidosd FOREIGN KEY (invitation_status_id) REFERENCES portal.invitation_status(invitation_status_id)
 );
-
-
-

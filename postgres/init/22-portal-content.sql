@@ -83,15 +83,15 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 -- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url, app_url, marketing_url, vendor_company_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE Marketplace	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Component Performance	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	BPDM Services	\N	\N	https://apps.cdq.com/signin/catenax	\N	9d049598-0dac-4d26-8a21-8f5b64c799cf
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Covanto - AFQM	\N	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Test MultiApp	\N	\N	\N	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url,  thumbnail_url1, thumbnail_url2, thumbnail_url3,  app_url, marketing_url,  contact_email,  contact_number, vendor_company_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N \N  \N  \N	\N  \N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N	\N  \N  \N	\N  \N	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N	\N	\N  \N  \N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE Marketplace	\N	\N	\N  \N  \N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Component Performance	\N	\N	\N  \N  \N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N  \N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	BPDM Services	\N	\N	\N  \N  \N	https://apps.cdq.com/signin/catenax	\N	\N  \N	9d049598-0dac-4d26-8a21-8f5b64c799cf
+8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Covanto - AFQM	\N	\N	\N  \N  \N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	\N  \N	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
+5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Test MultiApp	\N	\N	\N	\N	\N  \N  \N	\N  \N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
 \.
 
 
@@ -429,4 +429,3 @@ bd0d0302-3ec8-4bfe-99db-b89bdb6c4b94	2022-03-24 18:01:33.408	2022-03-24 18:01:33
 3106e610-2740-4b5c-946c-5258b7a58a6c	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	1	0195a85f-e465-4571-b980-d1351dd76a9f	ac1cf001-7fbc-1f2f-817f-bce057770013
 d54db875-774c-479f-9f14-375f2cb8b257	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce0577e0015
 \.
-
