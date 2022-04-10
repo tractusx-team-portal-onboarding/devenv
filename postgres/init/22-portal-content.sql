@@ -55,13 +55,13 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	2022-03-24 18:01:33
 -- Data for Name: identity_providers; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.identity_providers (identity_provider_category_id, id, date_created, date_last_changed) FROM stdin;
-1	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-03-24 18:01:33.33	2022-03-24 18:01:33.33
-1	ac1cf001-7fbc-1f2f-817f-bce057200005	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344
-1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-03-24 18:01:33.347	2022-03-24 18:01:33.347
-1	ac1cf001-7fbc-1f2f-817f-bce0575a0012	2022-03-24 18:01:33.402	2022-03-24 18:01:33.402
-1	ac1cf001-7fbc-1f2f-817f-bce057770014	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431
-1	ac1cf001-7fbc-1f2f-817f-bce0577f0016	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438
+COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
+1	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-03-24 18:01:33.33
+1	ac1cf001-7fbc-1f2f-817f-bce057200005	2022-03-24 18:01:33.344
+1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-03-24 18:01:33.347
+1	ac1cf001-7fbc-1f2f-817f-bce0575a0012	2022-03-24 18:01:33.402
+1	ac1cf001-7fbc-1f2f-817f-bce057770014	2022-03-24 18:01:33.431
+1	ac1cf001-7fbc-1f2f-817f-bce0577f0016	2022-03-24 18:01:33.438
 \.
 
 COPY portal.company_identity_provider (company_id, identity_provider_id) FROM stdin;
