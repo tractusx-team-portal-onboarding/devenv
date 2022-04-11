@@ -75,7 +75,7 @@ CREATE TABLE portal.document_templates (
 
 CREATE TABLE portal.identity_provider_categories (
     identity_provider_category_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 
@@ -86,7 +86,7 @@ CREATE TABLE portal.identity_provider_categories (
 CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
 );
 
@@ -105,8 +105,8 @@ CREATE TABLE portal.iam_identity_providers (
 
 CREATE TABLE portal.languages (
     language_short_name character(2) PRIMARY KEY,
-    long_name_de character varying(255),
-    long_name_en character varying(255)
+    long_name_de character varying(255) NOT NULL,
+    long_name_en character varying(255) NOT NULL
 );
 
 
@@ -116,8 +116,8 @@ CREATE TABLE portal.languages (
 
 CREATE TABLE portal.use_cases (
     id uuid PRIMARY KEY,
-    name character varying(255),
-    shortname character varying(255)
+    name character varying(255) NOT NULL,
+    shortname character varying(255) NOT NULL
 );
 
 
@@ -127,22 +127,22 @@ CREATE TABLE portal.use_cases (
 
 CREATE TABLE portal.addresses (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
-    city character varying(255),
+    date_created timestamp without time zone NOT NULL,
+    date_last_changed timestamp without time zone NOT NULL,
+    city character varying(255) NOT NULL,
     region character varying(255),
     streetadditional character varying(255),
-    streetname character varying(255),
-    streetnumber character varying(255),
-    zipcode numeric(19,2),
-    country_alpha_2_code character(2),
+    streetname character varying(255) NOT NULL,
+    streetnumber character varying(255) NOT NULL,
+    zipcode numeric(19,2) NOT NULL,
+    country_alpha_2_code character(2) NOT NULL,
     CONSTRAINT fk_6jg6itw07d2qww62deuyk0kh FOREIGN KEY (country_alpha_2_code) REFERENCES portal.countries(alpha_2_code)
 );
 
 
 CREATE TABLE portal.company_status (
     company_status_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -177,13 +177,13 @@ CREATE TABLE portal.company_identity_provider (
 
 CREATE TABLE portal.apps (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
-    name character varying(255),
+    date_created timestamp without time zone NOT NULL,
+    name character varying(255) NOT NULL,
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
-    provider character varying(255),
+    provider character varying(255) NOT NULL,
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
 );
@@ -234,7 +234,7 @@ CREATE TABLE portal.documents (
 
 CREATE TABLE portal.agreement_categories (
     agreement_category_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -292,7 +292,7 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 
 CREATE TABLE portal.app_assigned_company_user_roles (
     app_id uuid NOT NULL,
-    company_user_role_id uuid,
+    company_user_role_id uuid NOT NULL,
     CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, company_user_role_id),
     CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id),
     CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
@@ -330,10 +330,10 @@ CREATE TABLE portal.app_assigned_use_cases (
 --
 
 CREATE TABLE portal.app_descriptions (
-    description_long character varying(4096),
-    description_short character varying(255),
+    description_long character varying(4096) NOT NULL,
+    description_short character varying(255) NOT NULL,
     app_id uuid NOT NULL,
-    language_short_name character(2),
+    language_short_name character(2) NOT NULL,
     CONSTRAINT app_descriptions_pkey PRIMARY KEY (app_id, language_short_name),
     CONSTRAINT fk_qamy6j7s3klebrf2s69v9k0i FOREIGN KEY (app_id) REFERENCES portal.apps(id),
     CONSTRAINT fk_vrom2pjij9x6stgovhaqkfxf FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
@@ -342,7 +342,7 @@ CREATE TABLE portal.app_descriptions (
 
 CREATE TABLE portal.company_application_status (
     application_status_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -353,7 +353,7 @@ CREATE TABLE portal.company_applications (
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
-    application_status_id integer,
+    application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
     CONSTRAINT fk_3prv5i3o84vwvh7v0hh3sav7 FOREIGN KEY (company_id) REFERENCES portal.companies(id),
     CONSTRAINT fk_akuwiehfiadf8928fhefhuda FOREIGN KEY (application_status_id) REFERENCES portal.company_application_status(application_status_id)
@@ -427,7 +427,7 @@ CREATE TABLE portal.company_user_assigned_roles (
 
 CREATE TABLE portal.consent_status (
     consent_status_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -456,7 +456,7 @@ CREATE TABLE portal.consents (
 
 CREATE TABLE portal.invitation_status (
     invitation_status_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -468,7 +468,7 @@ CREATE TABLE portal.invitations (
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     invitation_status_id integer NOT NULL,
-    company_application_id uuid,
+    company_application_id uuid NOT NULL,
     company_user_id uuid NOT NULL,
     CONSTRAINT fk_9tgenb7p09hr5c24haxjw259 FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
     CONSTRAINT fk_dlrst4ju9d0wcgkh4w1nnoj3 FOREIGN KEY (company_application_id) REFERENCES portal.company_applications(id),

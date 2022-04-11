@@ -10,14 +10,15 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 COPY portal.company_application_status (application_status_id, label) FROM stdin;
-1	ADD_COMPANY_DATA
-2	INVITE_USER
-3	SELECT_COMPANY_ROLE
-4	UPLOAD_DOCUMENTS
-5	VERIFY
-6	SUBMITTED
-7	CONFIRMED
-8	DECLINED
+1 CREATED
+2 ADD_COMPANY_DATA
+3	INVITE_USER
+4	SELECT_COMPANY_ROLE
+5	UPLOAD_DOCUMENTS
+6	VERIFY
+7	SUBMITTED
+8	CONFIRMED
+9	DECLINED
 \.
 
 COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
