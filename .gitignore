@@ -1,3 +1,4 @@
 postgres/data
 nginx/conf/servername.conf
 
+.DS_Store
