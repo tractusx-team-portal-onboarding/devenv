@@ -240,9 +240,27 @@ CREATE TABLE portal.documents (
     documentname character varying(255) NOT NULL,
     documentuploaddate bytea NOT NULL,
     documentversion character varying(255) NOT NULL,
+    document_type character varying(255),
     company_user_id uuid,
     CONSTRAINT fk_xcgobngn7vk56k8nfkuaysvn FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id)
+    CONSTRAINT fk_xcgobngn7vk56k8nfkualsvn FOREIGN KEY (document_type) REFERENCES portal.document_types(document_types_id)
 );
+
+
+--
+-- Name: document_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.document_types (
+    document_type_id integer PRIMARY KEY,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: agreement_categories; Type: TABLE; Schema: public; Owner: -
+--
+
 
 CREATE TABLE portal.agreement_categories (
     agreement_category_id integer PRIMARY KEY,
