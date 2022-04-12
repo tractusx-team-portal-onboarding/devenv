@@ -190,6 +190,18 @@ CREATE TABLE portal.apps (
 
 
 --
+-- Name: app_tags; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.apps_tags (
+    app_id uuid NOT NULL,
+    tag_name NOT NULL,
+    CONSTRAINT pk_app_tags PRIMARY KEY (app_id, tag_name),
+    CONSTRAINT fk_qi320sp8lxy7drw6kt4vheka FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+);
+
+
+--
 -- Name: company_users; Type: TABLE; Schema: public; Owner: -
 --
 
