@@ -123,6 +123,9 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 --
 
 COPY portal.agreements (agreement_category_id, id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, use_case_id) FROM stdin;
+aa0a0000-7fbc-1f2f-817f-bce0572c0007  1 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  CX Frame Contract 1  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0572c0007  1 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  CX Frame Contract 2  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0572c0007  1 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  CX Frame Contract 3  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
