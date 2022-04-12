@@ -40,9 +40,9 @@ COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 4	DECLINED
 \.
 
-COPY portal.company_roles (id, company_role, date_created, date_last_changed, name_de, name_en) FROM stdin;
-1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
-2	APP_PROVIDER	2022-03-24 18:01:33.295	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
+COPY portal.company_roles (id, company_role, date_created, name_de, name_en) FROM stdin;
+1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
+2	APP_PROVIDER	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
 \.
 
 COPY portal.languages (language_short_name, long_name_de, long_name_en) FROM stdin;
@@ -85,7 +85,7 @@ Bosnia and Herzegovina	BA	BIH	Bosnien and Herzegovenien
 Botswana	BW	BWA	Botswana
 Bouvet Island	BV	BVT	Bouvet Island
 Brazil	BR	BRA	Brasilien
-British Indian Ocean Territory (the)	IO	IOT	British Indian Ocean Territory 
+British Indian Ocean Territory (the)	IO	IOT	British Indian Ocean Territory
 Brunei Darussalam	BN	BRN	Brunei Darussalam
 Bulgaria	BG	BGR	Bulgarien
 Burkina Faso	BF	BFA	Burkina Faso
@@ -300,3 +300,10 @@ Yemen	YE	YEM	Yemen
 Zambia	ZM	ZMB	Zambia
 \.
 
+COPY portal.use_cases (id, name, shortname) FROM stdin;
+1aacde78-35ec-4df3-ba1e-f988cddcbbd8	Circular Economy	CE
+41e4a4c0-aae4-41c0-97c9-ebafde410de4	Demand and Capacity Management	DCM
+c065a349-f649-47f8-94d5-1a504a855419	Quality Management	QM
+6909ccc7-37c8-4088-99ab-790f20702460	Business Partner Management	BPDM
+06b243a4-ba51-4bf3-bc40-5d79a2231b86	Traceability	T
+\.
