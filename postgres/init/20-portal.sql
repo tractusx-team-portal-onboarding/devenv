@@ -183,11 +183,23 @@ CREATE TABLE portal.apps (
     thumbnail_url character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
+    contact_email character varying(255),
+    contact_number character varying(255),
     provider character varying(255),
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
 );
 
+
+-- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.app_detail_image (
+    app_id uuid,
+    image_url character varying(255),
+    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, image_url),
+    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+);
 
 --
 -- Name: app_tags; Type: TABLE; Schema: public; Owner: -
