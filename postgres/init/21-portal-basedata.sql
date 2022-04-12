@@ -314,3 +314,8 @@ COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
 2	App Contract
 3	Data Contract
 \.
+
+COPY portal.consent_status (consent_status_id, label) FROM stdin;
+1	Active
+2	Inactive
+\.
