@@ -29,7 +29,6 @@ CREATE TABLE portal.company_roles (
     id integer PRIMARY KEY,
     company_role character varying(255) NOT NULL,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     name_de character varying(255) NOT NULL,
     name_en character varying(255) NOT NULL
 );
@@ -88,7 +87,6 @@ CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
 );
 
@@ -118,8 +116,6 @@ CREATE TABLE portal.languages (
 
 CREATE TABLE portal.use_cases (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     name character varying(255),
     shortname character varying(255)
 );
@@ -182,7 +178,6 @@ CREATE TABLE portal.company_identity_provider (
 CREATE TABLE portal.apps (
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     name character varying(255),
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
@@ -193,6 +188,7 @@ CREATE TABLE portal.apps (
     marketing_url character varying(255),
     contact_email character varying(255),
     contact_number character varying(255),
+    provider character varying(255),
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
 );
@@ -225,7 +221,7 @@ CREATE TABLE portal.company_users (
 
 
 CREATE TABLE portal.iam_users (
-    iam_user_id character varying(36) PRIMARY KEY,
+    user_entity_id character varying(36) PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     company_user_id uuid NOT NULL,
@@ -241,7 +237,6 @@ CREATE TABLE portal.iam_users (
 CREATE TABLE portal.documents (
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     document oid NOT NULL,
     documenthash character varying(255) NOT NULL,
     documentname character varying(255) NOT NULL,
@@ -349,8 +344,6 @@ CREATE TABLE portal.app_assigned_use_cases (
 --
 
 CREATE TABLE portal.app_descriptions (
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     description_long character varying(4096),
     description_short character varying(255),
     app_id uuid NOT NULL,
