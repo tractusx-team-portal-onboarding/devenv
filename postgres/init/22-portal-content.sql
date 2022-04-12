@@ -95,6 +95,28 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	\N	\N
 \.
 
 
+--
+-- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.app_tags (app_id uuid,  tag_name) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Traceability
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Traceability
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Test
+f9cad59d-84b3-4880-a550-4072c26a6b93	Data
+f9cad59d-84b3-4880-a550-4072c26a6b93	Business Partner
+f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
+8488044e-b8df-403a-9cbd-16dad7e4a08c	Traceability
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Test
+\.
+
+
+--
+-- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
+--
 
 --
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
