@@ -181,9 +181,6 @@ CREATE TABLE portal.apps (
     name character varying(255),
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
-    thumbnail_url1 character varying(255),
-    thumbnail_url2 character varying(255),
-    thumbnail_url3 character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
     contact_email character varying(255),
@@ -192,6 +189,7 @@ CREATE TABLE portal.apps (
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
 );
+
 
 -- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
 --
