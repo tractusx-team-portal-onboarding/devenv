@@ -55,13 +55,13 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	2022-03-24 18:01:33
 -- Data for Name: identity_providers; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.identity_providers (identity_provider_category_id, id, date_created, date_last_changed) FROM stdin;
-1	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-03-24 18:01:33.33	2022-03-24 18:01:33.33
-1	ac1cf001-7fbc-1f2f-817f-bce057200005	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344
-1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-03-24 18:01:33.347	2022-03-24 18:01:33.347
-1	ac1cf001-7fbc-1f2f-817f-bce0575a0012	2022-03-24 18:01:33.402	2022-03-24 18:01:33.402
-1	ac1cf001-7fbc-1f2f-817f-bce057770014	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431
-1	ac1cf001-7fbc-1f2f-817f-bce0577f0016	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438
+COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
+1	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-03-24 18:01:33.33
+1	ac1cf001-7fbc-1f2f-817f-bce057200005	2022-03-24 18:01:33.344
+1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-03-24 18:01:33.347
+1	ac1cf001-7fbc-1f2f-817f-bce0575a0012	2022-03-24 18:01:33.402
+1	ac1cf001-7fbc-1f2f-817f-bce057770014	2022-03-24 18:01:33.431
+1	ac1cf001-7fbc-1f2f-817f-bce0577f0016	2022-03-24 18:01:33.438
 \.
 
 COPY portal.company_identity_provider (company_id, identity_provider_id) FROM stdin;
@@ -83,29 +83,41 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 -- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url, app_url, marketing_url, vendor_company_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE Marketplace	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Component Performance	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	BPDM Services	\N	\N	https://apps.cdq.com/signin/catenax	\N	9d049598-0dac-4d26-8a21-8f5b64c799cf
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Covanto - AFQM	\N	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Test MultiApp	\N	\N	\N	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+
+COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, vendor_company_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N  \N  \N  \N  \N  \N  Catena-X  ac861325-bc54-4583-bcdc-9e9f2a38ff84
+ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N  \N  \N  \N  \N  Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N  \N  https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N  SAP 0dcd8209-85e2-4073-b130-ac094fb47106
+      ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE Marketplace	\N  \N  https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N  SAP 0dcd8209-85e2-4073-b130-ac094fb47106
+      ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Component Performance	\N  \N  https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N  \N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+  f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	BPDM Services	\N  \N  https://apps.cdq.com/signin/catenax \N  \N  \N  Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf
+  8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Covanto - AFQM  \N  \N  https://portal-staging.afqm-services.com/[#/auth/signin]  \N  \N  \N  Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
+    5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Test MultiApp	\N  \N  \N  \N  \N  \N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+\.
+
+
+--
+-- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.app_tags (app_id uuid,  tag_name) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Traceability
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Traceability
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Test
+f9cad59d-84b3-4880-a550-4072c26a6b93	Data
+f9cad59d-84b3-4880-a550-4072c26a6b93	Business Partner
+f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
+8488044e-b8df-403a-9cbd-16dad7e4a08c	Traceability
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Test
 \.
 
 
 --
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
 --
-
-COPY portal.use_cases (id, date_created, date_last_changed, name, shortname) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce056f90000	2022-03-24 18:01:33.297	2022-03-24 18:01:33.297	Circular Economy	CE
-ac1cf001-7fbc-1f2f-817f-bce056fa0001	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Traceability	Traceability
-41f3c6fb-74b3-4377-a061-b57c1cba1205	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	BPDM	BPDM
-f141968d-fd33-45d4-9cb9-0af727cae430	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Quality & Demand Management	Quality & Demand Management
-\.
-
 
 --
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
@@ -204,15 +216,15 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	0f956bce-7ec3-4171-b6d2-ba7fc57c37d5
 --
 
 COPY portal.app_assigned_use_cases (app_id, use_case_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac1cf001-7fbc-1f2f-817f-bce05744000b	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac1cf001-7fbc-1f2f-817f-bce05748000d	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-f9cad59d-84b3-4880-a550-4072c26a6b93	41f3c6fb-74b3-4377-a061-b57c1cba1205
-8488044e-b8df-403a-9cbd-16dad7e4a08c	f141968d-fd33-45d4-9cb9-0af727cae430
-5cf74ef8-e0b7-4984-a872-474828beb5d8	f141968d-fd33-45d4-9cb9-0af727cae430
-5cf74ef8-e0b7-4984-a872-474828beb5d8	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	f141968d-fd33-45d4-9cb9-0af727cae430
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac1cf001-7fbc-1f2f-817f-bce05744000b	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac1cf001-7fbc-1f2f-817f-bce05748000d	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
+8488044e-b8df-403a-9cbd-16dad7e4a08c	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+5cf74ef8-e0b7-4984-a872-474828beb5d8	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 \.
 
 
@@ -220,15 +232,15 @@ ac1cf001-7fbc-1f2f-817f-bce0574c000f	f141968d-fd33-45d4-9cb9-0af727cae430
 -- Data for Name: app_descriptions; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_descriptions (date_created, date_last_changed, description_long, description_short, app_id, language_short_name) FROM stdin;
-2022-03-24 18:01:33.356	2022-03-24 18:01:33.356	Seamless part traceability through the n.tier supply chain\n\nknowledge you get detailed information about the components of your direct suppliers as well as your direct customers. This lets your answer questions such as:\n\n\n\nWhat's the exact lead time between the produciton of a subcomponent an your own components?\nTo wehre in the world are my components distributed and where are my suppliers located?\nWhat's the exact composition of my component on a unique ID level?\n\n\nBecause all of that is important information. PartChain keeps a storng one-up, one-down visibilty rule. You and the other parties in the network always see - only their suppliers customers data well as own ata. Your competitors won't be able to get any sensitive information about your production data.	CX App Part Chain Details	ac1cf001-7fbc-1f2f-817f-bce0572c0007	en
-2022-03-24 18:01:33.376	2022-03-24 18:01:33.376	The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle.\n\n\n\nAt the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location).\n\n\n\nThe solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App Dismantler App Details	ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
-2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle.\n\n\n\nAt the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location).\n\n\n\nThe solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App CE Marketplace Details	ac1cf001-7fbc-1f2f-817f-bce05744000b	en
-2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabration and Insights. SAP Logistics Business Network, material traceability options connect partners for inter-company collaboration and transparency. It supports a comprehensive set capabilities, allowing to manage freight more efficiently, benefit form situational awareness through track and trace, and create a trust chain for up- and downstream product genealogy.	SAP App Material Traceability Details	ac1cf001-7fbc-1f2f-817f-bce05748000d	en
-2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
-2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Business Partner Services for Fraud & Data Management	Business Partner Services for Fraud & Data Management	f9cad59d-84b3-4880-a550-4072c26a6b93	en
-2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
-2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
+COPY portal.app_descriptions (description_long, description_short, app_id, language_short_name) FROM stdin;
+Seamless part traceability through the n.tier supply chain\n\nknowledge you get detailed information about the components of your direct suppliers as well as your direct customers. This lets your answer questions such as:\n\n\n\nWhat's the exact lead time between the produciton of a subcomponent an your own components?\nTo wehre in the world are my components distributed and where are my suppliers located?\nWhat's the exact composition of my component on a unique ID level?\n\n\nBecause all of that is important information. PartChain keeps a storng one-up, one-down visibilty rule. You and the other parties in the network always see - only their suppliers customers data well as own ata. Your competitors won't be able to get any sensitive information about your production data.	CX App Part Chain Details	ac1cf001-7fbc-1f2f-817f-bce0572c0007	en
+The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle.\n\n\n\nAt the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location).\n\n\n\nThe solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App Dismantler App Details	ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
+The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle.\n\n\n\nAt the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location).\n\n\n\nThe solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App CE Marketplace Details	ac1cf001-7fbc-1f2f-817f-bce05744000b	en
+Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabration and Insights. SAP Logistics Business Network, material traceability options connect partners for inter-company collaboration and transparency. It supports a comprehensive set capabilities, allowing to manage freight more efficiently, benefit form situational awareness through track and trace, and create a trust chain for up- and downstream product genealogy.	SAP App Material Traceability Details	ac1cf001-7fbc-1f2f-817f-bce05748000d	en
+Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
+Business Partner Services for Fraud & Data Management	Business Partner Services for Fraud & Data Management	f9cad59d-84b3-4880-a550-4072c26a6b93	en
+Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
+Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 \.
 
 
@@ -274,12 +286,12 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2
 --
 
 COPY portal.company_assigned_use_cases (company_id, use_case_id) FROM stdin;
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce056f90000
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce056f90000
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce056fa0001
-0dcd8209-85e2-4073-b130-ac094fb47106	ac1cf001-7fbc-1f2f-817f-bce056f90000
-0dcd8209-85e2-4073-b130-ac094fb47106	ac1cf001-7fbc-1f2f-817f-bce056fa0001
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+0dcd8209-85e2-4073-b130-ac094fb47106	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
+0dcd8209-85e2-4073-b130-ac094fb47106	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 \.
 
 
@@ -358,7 +370,7 @@ ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
 -- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.documents (id, date_created, date_last_changed, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
+COPY portal.documents (id, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
 \.
 
 
@@ -429,4 +441,3 @@ bd0d0302-3ec8-4bfe-99db-b89bdb6c4b94	2022-03-24 18:01:33.408	2022-03-24 18:01:33
 3106e610-2740-4b5c-946c-5258b7a58a6c	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	1	0195a85f-e465-4571-b980-d1351dd76a9f	ac1cf001-7fbc-1f2f-817f-bce057770013
 d54db875-774c-479f-9f14-375f2cb8b257	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce0577e0015
 \.
-
