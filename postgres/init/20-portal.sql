@@ -154,6 +154,7 @@ CREATE TABLE portal.companies (
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     bpn character varying(20),
+    tax_id character varying(20),
     name character varying(255),
     parent character varying(255),
     shortname character varying(255),
