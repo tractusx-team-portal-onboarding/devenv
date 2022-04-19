@@ -376,7 +376,7 @@ ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
 -- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.documents (id, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
+COPY portal.documents (id, date_created, document, documenthash, documentname, document_type_id, company_user_id) FROM stdin;
 \.
 
 

@@ -308,6 +308,10 @@ COPY portal.use_cases (id, name, shortname) FROM stdin;
 c065a349-f649-47f8-94d5-1a504a855419	Quality Management	QM
 6909ccc7-37c8-4088-99ab-790f20702460	Business Partner Management	BPDM
 06b243a4-ba51-4bf3-bc40-5d79a2231b86	Traceability	T
+06b243a4-ba51-4bf3-bc40-5d79a2231b87	Sustainability & CO2-Footprint	CO2
+06b243a4-ba51-4bf3-bc40-5d79a2231b88	Manufacturing as a Service	MaaS
+06b243a4-ba51-4bf3-bc40-5d79a2231b89	Real-Time Control	RTC
+06b243a4-ba51-4bf3-bc40-5d79a2231b90	Modular Production	MP
 \.
 
 COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;

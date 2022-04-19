@@ -15,7 +15,7 @@ SET row_security = off;
 
 CREATE TABLE portal.app_licenses (
     id uuid PRIMARY KEY,
-    licensetext character varying(255)
+    licensetext character varying(255) NOT NULL
 );
 
 
@@ -122,13 +122,13 @@ CREATE TABLE portal.use_cases (
 
 CREATE TABLE portal.addresses (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone NOT NULL,
+    date_created timestamp without time zone,
+    date_last_changed timestamp without time zone,
     city character varying(255) NOT NULL,
     region character varying(255),
     streetadditional character varying(255),
     streetname character varying(255) NOT NULL,
-    streetnumber character varying(255) NOT NULL,
+    streetnumber character varying(255),
     zipcode numeric(19,2) NOT NULL,
     country_alpha_2_code character(2) NOT NULL,
     CONSTRAINT fk_6jg6itw07d2qww62deuyk0kh FOREIGN KEY (country_alpha_2_code) REFERENCES portal.countries(alpha_2_code)
@@ -172,7 +172,7 @@ CREATE TABLE portal.company_identity_provider (
 
 CREATE TABLE portal.app_status (
     app_status_id integer PRIMARY KEY,
-    label character varying(255)
+    label character varying(255) NOT NULL
 );
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE portal.apps (
     marketing_url character varying(255),
     contact_email character varying(255),
     contact_number character varying(255),
-    provider character varying(255),
+    provider character varying(255) NOT NULL,
     provider_company_id uuid,
     app_status_id integer NOT NULL,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id),
@@ -201,7 +201,7 @@ CREATE TABLE portal.apps (
 
 CREATE TABLE portal.app_detail_image (
     app_id uuid,
-    image_url character varying(255),
+    image_url character varying(255) NOT NULL,
     CONSTRAINT pk_app_detail_image PRIMARY KEY (app_id, image_url),
     CONSTRAINT fk_oayyvy590ngh5705yspep12a FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
@@ -262,8 +262,6 @@ CREATE TABLE portal.documents (
     document oid NOT NULL,
     documenthash character varying(255) NOT NULL,
     documentname character varying(255) NOT NULL,
-    documentuploaddate bytea NOT NULL,
-    documentversion character varying(255) NOT NULL,
     document_type_id integer,
     company_user_id uuid,
     CONSTRAINT fk_xcgobngn7vk56k8nfkuaysvn FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
