@@ -83,20 +83,41 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 -- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.apps (id, date_created, name, date_released, thumbnail_url, app_url, marketing_url, provider, vendor_company_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N  SAP	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N  SAP	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N  Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N  Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N  Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	\N	\N	https://apps.cdq.com/signin/catenax	\N  Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	\N	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N  Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	\N	\N	\N	\N  Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
-5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	\N	\N	\N	\N  German Edge Cloud GmbH & Co. KG	\N
+
+COPY portal.apps (id, date_created, date_last_changed, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, provider, vendor_company_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain	\N  \N  \N  \N  \N  \N  Catena-X  ac861325-bc54-4583-bcdc-9e9f2a38ff84
+ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability	\N	\N  \N  \N  \N  \N  Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	Dismantler App	\N  \N  https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N  SAP 0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE Marketplace	\N  \N  https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N  \N  SAP 0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Component Performance	\N  \N  https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N  \N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	BPDM Services	\N  \N  https://apps.cdq.com/signin/catenax \N  \N  \N  Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf
+8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Covanto - AFQM  \N  \N  https://portal-staging.afqm-services.com/[#/auth/signin]  \N  \N  \N  Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
+5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Test MultiApp	\N  \N  \N  \N  \N  \N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
 \.
 
 
+--
+-- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
+--
 
+COPY portal.app_tags (app_id uuid,  tag_name) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Traceability
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Traceability
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Test
+f9cad59d-84b3-4880-a550-4072c26a6b93	Data
+f9cad59d-84b3-4880-a550-4072c26a6b93	Business Partner
+f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
+8488044e-b8df-403a-9cbd-16dad7e4a08c	Traceability
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Test
+\.
+
+
+--
+-- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
+--
 
 --
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
@@ -352,7 +373,7 @@ ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
 -- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.documents (id, date_created, date_last_changed, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
+COPY portal.documents (id, document, documenthash, documentname, documentuploaddate, documentversion, company_user_id) FROM stdin;
 \.
 
 
@@ -367,7 +388,7 @@ COPY portal.consents (id, date_created, date_last_changed, comment, consent_stat
 -- Data for Name: identity_provider_users; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.iam_users (id, date_created, date_last_changed, company_user_id) FROM stdin;
+COPY portal.iam_users (user_entity_id, date_created, date_last_changed, company_user_id) FROM stdin;
 ad56702b-5908-44eb-a668-9a11a0e100d6	2022-03-24 18:01:33.416	2022-03-24 18:01:33.416	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 e9b1c0e4-953d-4539-b703-dca9e911eab5	2022-03-24 18:01:33.432	2022-03-24 18:01:33.432	ac1cf001-7fbc-1f2f-817f-bce057770013
 3432d787-d7c8-46fb-96d7-cc984c6bfaac	2022-03-24 18:01:33.439	2022-03-24 18:01:33.439	ac1cf001-7fbc-1f2f-817f-bce0577e0015
