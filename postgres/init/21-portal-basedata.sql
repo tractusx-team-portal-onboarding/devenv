@@ -10,8 +10,8 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 COPY portal.company_application_status (application_status_id, label) FROM stdin;
-1   CREATED
-2   ADD_COMPANY_DATA
+1	CREATED
+2	ADD_COMPANY_DATA
 3	INVITE_USER
 4	SELECT_COMPANY_ROLE
 5	UPLOAD_DOCUMENTS
