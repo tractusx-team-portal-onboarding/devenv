@@ -85,14 +85,15 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 
 
 COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, provider, vendor_company_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	\N	\N	\N	\N	\N  Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	\N	\N	\N	\N	\N Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	2022-03-24 18:01:33.375	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N  SAP	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	2022-03-24 18:01:33.38	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N  Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	\N Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	2022-03-24 18:01:33.388	\N	https://apps.cdq.com/signin/catenax	\N	\N	\N  Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	2022-03-24 18:01:33.388	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	\N	\N  Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	\N	\N	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	\N	\N	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	2022-03-24 18:01:33.375	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	2022-03-24 18:01:33.38	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84
+f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	2022-03-24 18:01:33.388	\N	https://apps.cdq.com/signin/catenax	\N	\N	\N	Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf
+8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	2022-03-24 18:01:33.388	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	\N	\N	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2
+5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Test MultiApp 2	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
 \.
 
 
@@ -226,7 +227,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d8	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
-5cf74ef8-e0b7-4984-a872-474828beb5d1  06b243a4-ba51-4bf3-bc40-5d79a2231b86
+5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 \.
 
 
@@ -243,8 +244,7 @@ Automotive suppliers must constantly monitor product performance and resolve qua
 Business Partner Services for Fraud & Data Management	Business Partner Services for Fraud & Data Management	f9cad59d-84b3-4880-a550-4072c26a6b93	en
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
-smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.
-smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated data from various IT and OT systems (e.g., ERP, PLM, machine PLCs) of the customer’s environment by employing its integration services. 5cf74ef8-e0b7-4984-a872-474828beb5d1 en
+smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
 \.
 
 
