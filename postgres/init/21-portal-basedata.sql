@@ -319,3 +319,10 @@ COPY portal.consent_status (consent_status_id, label) FROM stdin;
 1	Active
 2	Inactive
 \.
+
+COPY portal.app_status (app_status_id, label) FROM stdin;
+1	CREATED
+2	IN REVIEW
+3	ACTIVE
+4	INACTIVE
+\.

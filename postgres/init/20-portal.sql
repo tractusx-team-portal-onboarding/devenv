@@ -15,8 +15,6 @@ SET row_security = off;
 
 CREATE TABLE portal.app_licenses (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     licensetext character varying(255)
 );
 
@@ -28,7 +26,6 @@ CREATE TABLE portal.app_licenses (
 CREATE TABLE portal.company_roles (
     id integer PRIMARY KEY,
     company_role character varying(255) NOT NULL,
-    date_created timestamp without time zone,
     name_de character varying(255) NOT NULL,
     name_en character varying(255) NOT NULL
 );
@@ -41,8 +38,6 @@ CREATE TABLE portal.company_roles (
 CREATE TABLE portal.company_user_roles (
     id uuid PRIMARY KEY,
     company_user_role character varying(255) NOT NULL,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     namede character varying(255) NOT NULL,
     nameen character varying(255) NOT NULL
 );
@@ -152,7 +147,6 @@ CREATE TABLE portal.company_status (
 CREATE TABLE portal.companies (
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     bpn character varying(20),
     tax_id character varying(20),
     name character varying(255),
@@ -185,10 +179,20 @@ CREATE TABLE portal.apps (
     app_url character varying(255),
     marketing_url character varying(255),
     provider character varying(255),
-    vendor_company_id uuid,
-    CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
+    provider_company_id uuid,
+    app_status_id integer NOT NULL,
+    CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id),
+    CONSTRAINT fk_owihadhfweilwefhaf111aaa FOREIGN KEY (app_status_id) REFERENCES portal.app_status(app_status_id)
 );
 
+--
+-- Name: app_status; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.app_status (
+    app_status_id integer PRIMARY KEY,
+    label character varying(255)
+);
 
 --
 -- Name: app_tags; Type: TABLE; Schema: public; Owner: -
@@ -221,8 +225,6 @@ CREATE TABLE portal.company_users (
 
 CREATE TABLE portal.iam_users (
     user_entity_id character varying(36) PRIMARY KEY,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     company_user_id uuid NOT NULL,
     CONSTRAINT uk_wiodwiowhdfo84f0sd9afsd2 UNIQUE (company_user_id),
     CONSTRAINT fk_iweorqwaeilskjeijekkalwo FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id)
@@ -497,7 +499,6 @@ CREATE TABLE portal.invitation_status (
 CREATE TABLE portal.invitations (
     id uuid PRIMARY KEY,
     date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
     invitation_status_id integer NOT NULL,
     company_application_id uuid,
     company_user_id uuid NOT NULL,
