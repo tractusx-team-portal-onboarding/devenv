@@ -100,7 +100,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	2022-
 -- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_tags (app_id uuid,  tag_name) FROM stdin;
+COPY portal.app_tags (app_id, tag_name) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	Traceability
 ac1cf001-7fbc-1f2f-817f-bce05748000d	Traceability
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler

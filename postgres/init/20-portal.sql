@@ -205,7 +205,7 @@ CREATE TABLE portal.app_detail_image (
 -- Name: app_tags; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.apps_tags (
+CREATE TABLE portal.app_tags (
     app_id uuid NOT NULL,
     tag_name character varying(255) NOT NULL,
     CONSTRAINT pk_app_tags PRIMARY KEY (app_id, tag_name),
