@@ -197,8 +197,8 @@ CREATE TABLE portal.apps (
 CREATE TABLE portal.app_detail_image (
     app_id uuid,
     image_url character varying(255),
-    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, image_url),
-    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+    CONSTRAINT pk_app_detail_image PRIMARY KEY (app_id, image_url),
+    CONSTRAINT fk_oayyvy590ngh5705yspep12a FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
 
 --
@@ -207,7 +207,7 @@ CREATE TABLE portal.app_detail_image (
 
 CREATE TABLE portal.apps_tags (
     app_id uuid NOT NULL,
-    tag_name NOT NULL,
+    tag_name character varying(255) NOT NULL,
     CONSTRAINT pk_app_tags PRIMARY KEY (app_id, tag_name),
     CONSTRAINT fk_qi320sp8lxy7drw6kt4vheka FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
