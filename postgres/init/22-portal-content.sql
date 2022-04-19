@@ -390,7 +390,7 @@ ac1cf001-7fbc-1f2f-817f-bce0575a0100  2022-03-24 18:01:33.394	2022-03-24 18:01:3
 -- Data for Name: identity_provider_users; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.iam_users (user_entity_id, date_created, date_last_changed, company_user_id) FROM stdin;
+COPY portal.iam_users (user_entity_id, company_user_id) FROM stdin;
 ad56702b-5908-44eb-a668-9a11a0e100d6	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 e9b1c0e4-953d-4539-b703-dca9e911eab5	ac1cf001-7fbc-1f2f-817f-bce057770013
 3432d787-d7c8-46fb-96d7-cc984c6bfaac	ac1cf001-7fbc-1f2f-817f-bce0577e0015
