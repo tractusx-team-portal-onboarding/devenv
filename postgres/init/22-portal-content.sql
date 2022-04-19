@@ -23,15 +23,15 @@ SET row_security = off;
 --
 
 COPY portal.addresses (id, date_created, date_last_changed, city, region, streetadditional, streetname, streetnumber, zipcode, country_alpha_2_code) FROM stdin;
-b4db3945-19a7-4a50-97d6-e66e8dfd04fb	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	\N	\N	\N	\N	\N	\N	\N
-12302f9b-418c-4b8c-aea8-3eedf67e6a02	2022-03-24 18:01:33.341	2022-03-24 18:01:33.341	\N	\N	\N	\N	\N	\N	\N
-3a52099d-4988-4a56-9787-10a669c41338	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344	\N	\N	\N	\N	\N	\N	\N
-aa49c0ec-4e65-4115-a01c-7adfc36d220e	2022-03-24 18:01:33.391	2022-03-24 18:01:33.391	\N	\N	\N	\N	\N	\N	\N
-c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	\N	\N	\N	\N	\N	\N	\N
-86da3e1c-a634-41a6-ad44-9880746123e4	2022-03-24 18:01:33.435	2022-03-24 18:01:33.435	\N	\N	\N	\N	\N	\N	\N
-0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb	2022-03-24 18:01:33.443	2022-03-24 18:01:33.443	\N	\N	\N	\N	\N	\N	\N
-095ca573-bef1-4092-ad60-b7f651678fcd	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	\N	\N	\N	\N	\N	\N	\N
-081c8bfd-c6d1-4119-a5f8-a69726dfc11d	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	\N	\N	\N	\N	\N	\N	\N
+b4db3945-19a7-4a50-97d6-e66e8dfd04fb	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Munich	\N	\N	Street	1	00001	DE
+12302f9b-418c-4b8c-aea8-3eedf67e6a02	2022-03-24 18:01:33.341	2022-03-24 18:01:33.341	Munich	\N	\N	Street	1	00001	DE
+3a52099d-4988-4a56-9787-10a669c41338	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344	Munich	\N	\N	Street	1	00001	DE
+aa49c0ec-4e65-4115-a01c-7adfc36d220e	2022-03-24 18:01:33.391	2022-03-24 18:01:33.391	Munich	\N	\N	Street	1	00001	DE
+c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	Munich	\N	\N	Street	1	00001	DE
+86da3e1c-a634-41a6-ad44-9880746123e4	2022-03-24 18:01:33.435	2022-03-24 18:01:33.435	Munich	\N	\N	Street	1	00001	DE
+0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb	2022-03-24 18:01:33.443	2022-03-24 18:01:33.443	Munich	\N	\N	Street	1	00001	DE
+095ca573-bef1-4092-ad60-b7f651678fcd	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	Munich	\N	\N	Street	1	00001	DE
+081c8bfd-c6d1-4119-a5f8-a69726dfc11d	2022-03-24 18:01:33.428	2022-03-24 18:01:33.428	Munich	\N	\N	Street	1	00001	DE
 \.
 
 
@@ -40,15 +40,15 @@ c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33
 --
 
 COPY portal.companies (id, date_created, bpn, tax_id, name, parent, shortname, company_status_id, address_id) FROM stdin;
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	CAXSDUMMYCATENAZZ  0000000000  Catena-X	\N	Catena-X	1	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	CAXSDUMMYBMWZZ  0000000000  Bayerische Motorenwerke AG	\N	BMW AG	1	12302f9b-418c-4b8c-aea8-3eedf67e6a02
-0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	CAXSDUMMYSAPZZ  0000000000  SAP AG	\N	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
-220330ac-170d-4e22-8d72-9467ed042149	2022-03-24 18:01:33.393	CAXSCARFACTORY1ZZ  0000000000  Car Factory 1	\N	Car Factory 1	1	aa49c0ec-4e65-4115-a01c-7adfc36d220e
-bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43	CAXSCARFACTORY2ZZ  0000000000  Car Factory 2	\N	Car Factory 2	1	c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07
-41fd2ab8-71cd-4546-9bef-a388d91b2542	2022-03-24 18:01:33.438	CAXSCARFACTORY3ZZ  0000000000  Car Factory 3	\N	Car Factory 3	1	86da3e1c-a634-41a6-ad44-9880746123e4
-d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	CAXLDUMMYCORPZZ  0000000000  Dummy Corp. 1	\N	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb
-9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442	CAXLCDQCORPZZ  0000000000  CDQ	\N	CDQ	1	095ca573-bef1-4092-ad60-b7f651678fcd
-cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ  0000000000  BOSCH	\N	BOSCH	\N	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	CAXSDUMMYCATENAZZ	0000000000	Catena-X	\N	Catena-X	1	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	CAXSDUMMYBMWZZ	0000000000	Bayerische Motorenwerke AG	\N	BMW AG	1	12302f9b-418c-4b8c-aea8-3eedf67e6a02
+0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	CAXSDUMMYSAPZZ	0000000000	SAP AG	\N	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
+220330ac-170d-4e22-8d72-9467ed042149	2022-03-24 18:01:33.393	CAXSCARFACTORY1ZZ	0000000000	Car Factory 1	\N	Car Factory 1	1	aa49c0ec-4e65-4115-a01c-7adfc36d220e
+bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43	CAXSCARFACTORY2ZZ	0000000000	Car Factory 2	\N	Car Factory 2	1	c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07
+41fd2ab8-71cd-4546-9bef-a388d91b2542	2022-03-24 18:01:33.438	CAXSCARFACTORY3ZZ	0000000000	Car Factory 3	\N	Car Factory 3	1	86da3e1c-a634-41a6-ad44-9880746123e4
+d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	CAXLDUMMYCORPZZ	0000000000	Dummy Corp. 1	\N	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb
+9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442	CAXLCDQCORPZZ	0000000000	CDQ	\N	CDQ	1	095ca573-bef1-4092-ad60-b7f651678fcd
+cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000000	BOSCH	\N	BOSCH	\N	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
 \.
 
 --
@@ -83,15 +83,16 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 -- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.apps (id, date_created, name, date_released, thumbnail_url, app_url, marketing_url, provider_company_id, provider, status_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	\N	\N	\N	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84	SAP  1
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106	SAP 1
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106	Catena-X 1
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	\N	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	0dcd8209-85e2-4073-b130-ac094fb47106	Catena-X  1
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Catena-X  1
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	\N	\N	https://apps.cdq.com/signin/catenax	\N	9d049598-0dac-4d26-8a21-8f5b64c799cf	Catena-X 1
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	\N	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	Catena-X 1
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	\N	\N	\N	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Catena-X  1
+COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, provider, provider_company_id, app_status_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	\N	\N	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
+ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	\N	\N	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106	1
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	2022-03-24 18:01:33.375	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	1
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	2022-03-24 18:01:33.38	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106	1
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
+f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	2022-03-24 18:01:33.388	\N	https://apps.cdq.com/signin/catenax	\N	\N	\N	Catena-X	9d049598-0dac-4d26-8a21-8f5b64c799cf	1
+8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	2022-03-24 18:01:33.388	\N	https://portal-staging.afqm-services.com/[#/auth/signin]	\N	\N	\N	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	1
+5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Test MultiApp 2	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 \.
 
 
@@ -99,7 +100,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	BPDM Services	\N	\N
 -- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_tags (app_id uuid,  tag_name) FROM stdin;
+COPY portal.app_tags (app_id, tag_name) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	Traceability
 ac1cf001-7fbc-1f2f-817f-bce05748000d	Traceability
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler
@@ -118,14 +119,15 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
+
 --
 -- Data for Name: agreements; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
 COPY portal.agreements (agreement_category_id, id, date_created, date_last_changed, agreement_type, name, app_id, issuer_company_id, use_case_id) FROM stdin;
-1  aa0a0000-7fbc-1f2f-817f-bce0502c1010 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  Terms & Conditions - Active Participant  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-1  aa0a0000-7fbc-1f2f-817f-bce0502c1011 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  Terms & Conditions - App Provider  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-1  aa0a0000-7fbc-1f2f-817f-bce0502c1012 2022-03-24 18:01:33.388 2022-03-24 18:01:33.388 /N  Terms & Conditions - Consultant  /N  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87  1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+1	aa0a0000-7fbc-1f2f-817f-bce0502c1010	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - Active Participant	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+1	aa0a0000-7fbc-1f2f-817f-bce0502c1011	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - App Provider	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+1	aa0a0000-7fbc-1f2f-817f-bce0502c1012	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - Consultant	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
@@ -158,7 +160,7 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 --
 
 COPY portal.company_user_roles (id, company_user_role, namede, nameen) FROM stdin;
-7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN  Unternehmensadministrator	Company Admin
+7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN	Unternehmensadministrator	Company Admin
 58f897ec-0aad-4588-8ffa-5f45d6638632	CX	CX Admin	CX Admin
 607818be-4978-41f4-bf63-fa8d2de51154	IT_ADMIN	IT Administrator	IT Admin
 ceec23fd-6b26-485c-a4bb-90571a29e148	SIGNING_MANAGER	Signing Manager	Signing Manager
@@ -227,6 +229,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d8	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 \.
 
 
@@ -243,6 +246,7 @@ Automotive suppliers must constantly monitor product performance and resolve qua
 Business Partner Services for Fraud & Data Management	Business Partner Services for Fraud & Data Management	f9cad59d-84b3-4880-a550-4072c26a6b93	en
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
+smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
 \.
 
 
@@ -380,10 +384,10 @@ COPY portal.documents (id, document, documenthash, documentname, documentuploadd
 -- Data for Name: consents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.consents (id, date_created, date_last_changed, comment, consent_status_id, target, "timestamp", agreement_id, company_id, documents_id, company_user_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0575a0100  2022-03-24 18:01:33.394	2022-03-24 18:01:33.394 /N  1  /N  /N  aa0a0000-7fbc-1f2f-817f-bce0572c1010  0dcd8209-85e2-4073-b130-ac094fb47106  /N  ac1cf001-7fbc-1f2f-817f-bce0575a0011
-ac1cf001-7fbc-1f2f-817f-bce0575a0100  2022-03-24 18:01:33.394	2022-03-24 18:01:33.394 /N  1  /N  /N  aa0a0000-7fbc-1f2f-817f-bce0572c1010  0dcd8209-85e2-4073-b130-ac094fb47106  /N  ac1cf001-7fbc-1f2f-817f-bce0575a0011
-ac1cf001-7fbc-1f2f-817f-bce0575a0100  2022-03-24 18:01:33.394	2022-03-24 18:01:33.394 /N  1  /N  /N  aa0a0000-7fbc-1f2f-817f-bce0572c1010  0dcd8209-85e2-4073-b130-ac094fb47106  /N  ac1cf001-7fbc-1f2f-817f-bce0575a0011
+COPY portal.consents (id, date_created, date_last_changed, comment, consent_status_id, target, "timestamp", agreement_id, company_id, document_id, company_user_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0575a0100	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	1	\N	E'\\000'::bytea	aa0a0000-7fbc-1f2f-817f-bce0502c1010	0dcd8209-85e2-4073-b130-ac094fb47106	\N	ac1cf001-7fbc-1f2f-817f-bce0575a0011
+ac1cf001-7fbc-1f2f-817f-bce0575a0101	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	1	\N	E'\\000'::bytea	aa0a0000-7fbc-1f2f-817f-bce0502c1011	0dcd8209-85e2-4073-b130-ac094fb47106	\N	ac1cf001-7fbc-1f2f-817f-bce0575a0011
+ac1cf001-7fbc-1f2f-817f-bce0575a0102	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	1	\N	E'\\000'::bytea	aa0a0000-7fbc-1f2f-817f-bce0502c1012	0dcd8209-85e2-4073-b130-ac094fb47106	\N	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 \.
 
 --
