@@ -86,7 +86,7 @@ CREATE TABLE portal.identity_provider_categories (
 CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamp without time zone,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
 );
 
@@ -177,15 +177,39 @@ CREATE TABLE portal.company_identity_provider (
 
 CREATE TABLE portal.apps (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
     name character varying(255) NOT NULL,
+    date_created timestamp without time zone,
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
-    provider character varying(255) NOT NULL,
+    contact_email character varying(255),
+    contact_number character varying(255),
+    provider character varying(255),
     vendor_company_id uuid,
     CONSTRAINT fk_68a9joedhyf43smfx2xc4rgm FOREIGN KEY (vendor_company_id) REFERENCES portal.companies(id)
+);
+
+
+-- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.app_detail_image (
+    app_id uuid,
+    image_url character varying(255),
+    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, image_url),
+    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+);
+
+--
+-- Name: app_tags; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.apps_tags (
+    app_id uuid NOT NULL,
+    tag_name NOT NULL,
+    CONSTRAINT pk_app_tags PRIMARY KEY (app_id, tag_name),
+    CONSTRAINT fk_qi320sp8lxy7drw6kt4vheka FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
 
 
@@ -207,7 +231,7 @@ CREATE TABLE portal.company_users (
 
 
 CREATE TABLE portal.iam_users (
-    id uuid PRIMARY KEY,
+    user_entity_id character varying(36) PRIMARY KEY,
     date_created timestamp without time zone,
     date_last_changed timestamp without time zone,
     company_user_id uuid NOT NULL,
