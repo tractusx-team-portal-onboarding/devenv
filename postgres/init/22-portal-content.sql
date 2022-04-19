@@ -244,7 +244,7 @@ Business Partner Services for Fraud & Data Management	Business Partner Services 
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.
-smart MOM can be operated as part of our scalable Edge Cloud data center �GEC Digital Production System�, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated data from various IT and OT systems (e.g., ERP, PLM, machine PLCs) of the customer�s environment by employing its integration services.  5cf74ef8-e0b7-4984-a872-474828beb5d1  en
+smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated data from various IT and OT systems (e.g., ERP, PLM, machine PLCs) of the customer’s environment by employing its integration services. 5cf74ef8-e0b7-4984-a872-474828beb5d1 en
 \.
 
 
