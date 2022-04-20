@@ -196,6 +196,19 @@ CREATE TABLE portal.apps (
     CONSTRAINT fk_owihadhfweilwefhaf111aaa FOREIGN KEY (app_status_id) REFERENCES portal.app_status(app_status_id)
 );
 
+
+--
+-- Name: app_languages; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE portal.app_languages (
+	app_id uuid,
+	language_short_name character(2) NOT NULL,
+	CONSTRAINT pk_app_language PRIMARY KEY (app_id, language_short_name),
+	CONSTRAINT fk_oayyvy590ngh5705yspep101 FOREIGN KEY (app_id) REFERENCES portal.apps(id),
+	CONSTRAINT fk_oayyvy590ngh5705yspep102 FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
+);
+
 -- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -477,12 +490,10 @@ CREATE TABLE portal.consent_status (
 
 CREATE TABLE portal.consents (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
-    date_last_changed timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     comment character varying(255),
     consent_status_id integer NOT NULL,
     target character varying(255),
-    "timestamp" bytea NOT NULL,
     agreement_id uuid NOT NULL,
     company_id uuid NOT NULL,
     document_id uuid,
