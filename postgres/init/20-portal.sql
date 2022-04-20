@@ -152,7 +152,7 @@ CREATE TABLE portal.companies (
     name character varying(255),
     parent character varying(255),
     shortname character varying(255),
-    company_status_id integer,
+    company_status_id integer NOT NULL,
     address_id uuid,
     CONSTRAINT fk_w70yf6urddd0ky7ev90okenf FOREIGN KEY (address_id) REFERENCES portal.addresses(id),
     CONSTRAINT fk_owihadhfweilwefhaf682khj FOREIGN KEY (company_status_id) REFERENCES portal.company_status(company_status_id)
@@ -212,10 +212,10 @@ CREATE TABLE portal.app_languages (
 -- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.app_detail_image (
+CREATE TABLE portal.app_detail_images (
+    id uuid PRIMARY KEY,
     app_id uuid,
     image_url character varying(255) NOT NULL,
-    CONSTRAINT pk_app_detail_image PRIMARY KEY (app_id, image_url),
     CONSTRAINT fk_oayyvy590ngh5705yspep12a FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
 
