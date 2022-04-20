@@ -202,11 +202,11 @@ CREATE TABLE portal.apps (
 --
 
 CREATE TABLE portal.app_languages (
-	app_id uuid,
-	language_short_name character(2) NOT NULL,
-	CONSTRAINT pk_app_language PRIMARY KEY (app_id, language_short_name),
-	CONSTRAINT fk_oayyvy590ngh5705yspep101 FOREIGN KEY (app_id) REFERENCES portal.apps(id),
-	CONSTRAINT fk_oayyvy590ngh5705yspep102 FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
+    app_id uuid,
+    language_short_name character(2) NOT NULL,
+    CONSTRAINT pk_app_language PRIMARY KEY (app_id, language_short_name),
+    CONSTRAINT fk_oayyvy590ngh5705yspep101 FOREIGN KEY (app_id) REFERENCES portal.apps(id),
+    CONSTRAINT fk_oayyvy590ngh5705yspep102 FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
 );
 
 -- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
