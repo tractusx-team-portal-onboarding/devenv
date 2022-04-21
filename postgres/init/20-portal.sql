@@ -61,7 +61,7 @@ CREATE TABLE portal.countries (
 
 CREATE TABLE portal.document_templates (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_last_changed timestamp without time zone,
     documenttemplatename character varying(255) NOT NULL,
     documenttemplateversion character varying(255) NOT NULL
@@ -81,7 +81,7 @@ CREATE TABLE portal.identity_provider_categories (
 CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
 );
 
@@ -122,7 +122,7 @@ CREATE TABLE portal.use_cases (
 
 CREATE TABLE portal.addresses (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_last_changed timestamp without time zone,
     city character varying(255) NOT NULL,
     region character varying(255),
@@ -146,10 +146,10 @@ CREATE TABLE portal.company_status (
 
 CREATE TABLE portal.companies (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     bpn character varying(20),
     tax_id character varying(20),
-    name character varying(255),
+    name character varying(255) NOT NULL,
     parent character varying(255),
     shortname character varying(255),
     company_status_id integer NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE portal.app_status (
 CREATE TABLE portal.apps (
     id uuid PRIMARY KEY,
     name character varying(255) NOT NULL,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_released timestamp without time zone,
     thumbnail_url character varying(255),
     app_url character varying(255),
@@ -214,7 +214,7 @@ CREATE TABLE portal.app_languages (
 
 CREATE TABLE portal.app_detail_images (
     id uuid PRIMARY KEY,
-    app_id uuid,
+    app_id uuid NOT NULL,
     image_url character varying(255) NOT NULL,
     CONSTRAINT fk_oayyvy590ngh5705yspep12a FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
@@ -237,7 +237,7 @@ CREATE TABLE portal.app_tags (
 
 CREATE TABLE portal.company_users (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_last_changed timestamp without time zone,
     email character varying(255),
     firstname character varying(255),
@@ -271,7 +271,7 @@ CREATE TABLE portal.document_types (
 
 CREATE TABLE portal.documents (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     document oid NOT NULL,
     documenthash character varying(255) NOT NULL,
     documentname character varying(255) NOT NULL,
@@ -298,7 +298,7 @@ CREATE TABLE portal.agreement_categories (
 CREATE TABLE portal.agreements (
     agreement_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_last_changed timestamp without time zone,
     agreement_type character varying(255),
     name character varying(255) NOT NULL,
@@ -405,7 +405,7 @@ CREATE TABLE portal.company_application_status (
 
 CREATE TABLE portal.company_applications (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     date_last_changed timestamp without time zone,
     application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
@@ -517,7 +517,7 @@ CREATE TABLE portal.invitation_status (
 
 CREATE TABLE portal.invitations (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone,
+    date_created timestamp without time zone NOT NULL,
     invitation_status_id integer NOT NULL,
     company_application_id uuid NOT NULL,
     company_user_id uuid NOT NULL,
