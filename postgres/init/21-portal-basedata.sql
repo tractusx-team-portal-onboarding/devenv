@@ -9,21 +9,28 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-COPY portal.company_application_status (application_status_id, label) FROM stdin;
-1	ADD_COMPANY_DATA
-2	INVITE_USER
-3	SELECT_COMPANY_ROLE
-4	UPLOAD_DOCUMENTS
-5	VERIFY
-6	SUBMITTED
-7	CONFIRMED
-8	DECLINED
+COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
+1	CX_FRAME_CONTRACT
+2	APP_CONTRACT
+3	DATA_CONTRACT
 \.
 
-COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
-1	KEYCLOAK_SHARED
-2	KEYCLOAK_OIDC
-3	KEYCLOAK_SAML
+COPY portal.app_status (app_status_id, label) FROM stdin;
+1	CREATED
+2	IN_REVIEW
+3	ACTIVE
+4	INACTIVE
+\.
+COPY portal.company_application_status (application_status_id, label) FROM stdin;
+1	CREATED
+2	ADD_COMPANY_DATA
+3	INVITE_USER
+4	SELECT_COMPANY_ROLE
+5	UPLOAD_DOCUMENTS
+6	VERIFY
+7	SUBMITTED
+8	CONFIRMED
+9	DECLINED
 \.
 
 COPY portal.company_status (company_status_id, label) FROM stdin;
@@ -33,6 +40,21 @@ COPY portal.company_status (company_status_id, label) FROM stdin;
 4	INACTIVE
 \.
 
+COPY portal.consent_status (consent_status_id, label) FROM stdin;
+1	ACTIVE
+2	INACTIVE
+\.
+
+COPY portal.document_types (document_type_id, label) FROM stdin;
+1	DUMMY
+\.
+
+COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
+1	KEYCLOAK_SHARED
+2	KEYCLOAK_OIDC
+3	KEYCLOAK_SAML
+\.
+
 COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 1	CREATED
 2	PENDING
@@ -40,9 +62,9 @@ COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 4	DECLINED
 \.
 
-COPY portal.company_roles (id, company_role, date_created, name_de, name_en) FROM stdin;
-1	ACTIVE_PARTICIPANT	2022-03-24 18:01:33.288	Netzwerkteilnehmer	Participant
-2	APP_PROVIDER	2022-03-24 18:01:33.295	Software Anbieter	Application Provider
+COPY portal.company_roles (id, company_role, name_de, name_en) FROM stdin;
+1	ACTIVE_PARTICIPANT	Netzwerkteilnehmer	Participant
+2	APP_PROVIDER	Software Anbieter	Application Provider
 \.
 
 COPY portal.languages (language_short_name, long_name_de, long_name_en) FROM stdin;
@@ -301,9 +323,15 @@ Zambia	ZM	ZMB	Zambia
 \.
 
 COPY portal.use_cases (id, name, shortname) FROM stdin;
+1aacde78-35ec-4df3-ba1e-f988cddcbbd9	None	None
 1aacde78-35ec-4df3-ba1e-f988cddcbbd8	Circular Economy	CE
 41e4a4c0-aae4-41c0-97c9-ebafde410de4	Demand and Capacity Management	DCM
 c065a349-f649-47f8-94d5-1a504a855419	Quality Management	QM
 6909ccc7-37c8-4088-99ab-790f20702460	Business Partner Management	BPDM
 06b243a4-ba51-4bf3-bc40-5d79a2231b86	Traceability	T
+06b243a4-ba51-4bf3-bc40-5d79a2231b87	Sustainability & CO2-Footprint	CO2
+06b243a4-ba51-4bf3-bc40-5d79a2231b88	Manufacturing as a Service	MaaS
+06b243a4-ba51-4bf3-bc40-5d79a2231b89	Real-Time Control	RTC
+06b243a4-ba51-4bf3-bc40-5d79a2231b90	Modular Production	MP
 \.
+
