@@ -61,8 +61,8 @@ CREATE TABLE portal.countries (
 
 CREATE TABLE portal.document_templates (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_last_changed timestamptz,
     documenttemplatename character varying(255) NOT NULL,
     documenttemplateversion character varying(255) NOT NULL
 );
@@ -81,7 +81,7 @@ CREATE TABLE portal.identity_provider_categories (
 CREATE TABLE portal.identity_providers (
     identity_provider_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamptz NOT NULL,
     CONSTRAINT fk_iwohgwi9342adf9asdnfuie28 FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id)
 );
 
@@ -122,8 +122,8 @@ CREATE TABLE portal.use_cases (
 
 CREATE TABLE portal.addresses (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_last_changed timestamptz,
     city character varying(255) NOT NULL,
     region character varying(255),
     streetadditional character varying(255),
@@ -146,7 +146,7 @@ CREATE TABLE portal.company_status (
 
 CREATE TABLE portal.companies (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamptz NOT NULL,
     bpn character varying(20),
     tax_id character varying(20),
     name character varying(255) NOT NULL,
@@ -182,8 +182,8 @@ CREATE TABLE portal.app_status (
 CREATE TABLE portal.apps (
     id uuid PRIMARY KEY,
     name character varying(255) NOT NULL,
-    date_created timestamp without time zone NOT NULL,
-    date_released timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_released timestamptz,
     thumbnail_url character varying(255),
     app_url character varying(255),
     marketing_url character varying(255),
@@ -237,8 +237,8 @@ CREATE TABLE portal.app_tags (
 
 CREATE TABLE portal.company_users (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_last_changed timestamptz,
     email character varying(255),
     firstname character varying(255),
     lastlogin bytea,
@@ -271,7 +271,7 @@ CREATE TABLE portal.document_types (
 
 CREATE TABLE portal.documents (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamptz NOT NULL,
     document oid NOT NULL,
     documenthash character varying(255) NOT NULL,
     documentname character varying(255) NOT NULL,
@@ -298,8 +298,8 @@ CREATE TABLE portal.agreement_categories (
 CREATE TABLE portal.agreements (
     agreement_category_id integer NOT NULL,
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_last_changed timestamptz,
     agreement_type character varying(255),
     name character varying(255) NOT NULL,
     app_id uuid,
@@ -405,8 +405,8 @@ CREATE TABLE portal.company_application_status (
 
 CREATE TABLE portal.company_applications (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
-    date_last_changed timestamp without time zone,
+    date_created timestamptz NOT NULL,
+    date_last_changed timestamptz,
     application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
     CONSTRAINT fk_3prv5i3o84vwvh7v0hh3sav7 FOREIGN KEY (company_id) REFERENCES portal.companies(id),
@@ -490,7 +490,7 @@ CREATE TABLE portal.consent_status (
 
 CREATE TABLE portal.consents (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamptz NOT NULL,
     comment character varying(255),
     consent_status_id integer NOT NULL,
     target character varying(255),
@@ -517,7 +517,7 @@ CREATE TABLE portal.invitation_status (
 
 CREATE TABLE portal.invitations (
     id uuid PRIMARY KEY,
-    date_created timestamp without time zone NOT NULL,
+    date_created timestamptz NOT NULL,
     invitation_status_id integer NOT NULL,
     company_application_id uuid NOT NULL,
     company_user_id uuid NOT NULL,

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped from database version 14.2 (Debian 14.2-1.pgdg110)
 -- Dumped by pg_dump version 14.2
 
 SET statement_timeout = 0;
@@ -15,6 +15,7 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+SET time zone 'UTC';
 
 
 
