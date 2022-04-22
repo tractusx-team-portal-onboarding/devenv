@@ -72,7 +72,7 @@ de	deutsch	german
 en	englisch	english
 \.
 
-COPY portal.countries (country_name_en, alpha_2_code, alpha_3_code, country_name_de) FROM stdin;
+COPY portal.countries (country_name_en, alpha2code, alpha3code, country_name_de) FROM stdin;
 Germany	DE	DEU	Deutschland
 United Kingdom of Great Britain and Northern Ireland (the)	GB	GBR	United Kingdom of Great Britain and Northern Ireland (the)
 Afghanistan	AF	AFG	Afghanistan

@@ -49,8 +49,8 @@ CREATE TABLE portal.company_user_roles (
 
 CREATE TABLE portal.countries (
     country_name_en character varying(255) NOT NULL,
-    alpha_2_code character(2) PRIMARY KEY,
-    alpha_3_code character(3),
+    alpha2code character(2) PRIMARY KEY,
+    alpha3code character(3),
     country_name_de character varying(255) NOT NULL
 );
 
@@ -130,8 +130,8 @@ CREATE TABLE portal.addresses (
     streetname character varying(255) NOT NULL,
     streetnumber character varying(255),
     zipcode numeric(19,2) NOT NULL,
-    country_alpha_2_code character(2) NOT NULL,
-    CONSTRAINT fk_6jg6itw07d2qww62deuyk0kh FOREIGN KEY (country_alpha_2_code) REFERENCES portal.countries(alpha_2_code)
+    country_alpha2code character(2) NOT NULL,
+    CONSTRAINT fk_6jg6itw07d2qww62deuyk0kh FOREIGN KEY (country_alpha2code) REFERENCES portal.countries(alpha2code)
 );
 
 
