@@ -162,7 +162,7 @@ ALTER TABLE ONLY provisioning.identity_provider_sequence
 
 CREATE TABLE provisioning.user_password_resets (
     user_entity_id character varying(36) PRIMARY KEY,
-    password_modified_at TIMESTAMP DEFAULT NOW(),
+    password_modified_at TIMESTAMPTZ DEFAULT NOW(),
     reset_count integer DEFAULT 0 NOT NULL
 );
 
