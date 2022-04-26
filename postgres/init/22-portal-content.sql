@@ -88,13 +88,31 @@ COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	\N	\N	\N	\N	\N	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
 ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	2022-03-24 18:01:33.375	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	1
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	2022-03-24 18:01:33.38	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106	1
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	CE Marketplace	2022-03-24 18:01:33.38	CE_Marketplace_LP	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	Catena-X	0dcd8209-85e2-4073-b130-ac094fb47106	1
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
 f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	Fraud Dashboard	2022-03-24 18:01:33.388	\N	https://dash.catenax-cdq.com/	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022-03-24 18:01:33.388	\N	https://apps.cdq.com/dashboard/fraud/report-fraud	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	2022-03-24 18:01:33.388	\N	https://portal-staging.afqm-services.com/	\N	\N	\N	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	1
 5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
-5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	2022-03-24 18:01:33.388	\N	\N	\N	\N	\N	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+5cf74ef8-e0b7-4984-a872-474828beb5d2	2022-03-24 18:01:33.388	DTC-Translator	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	https://dtc-translator.adac.openresearch.com	\N	gerd.preuss@adac.de	\N	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	\N	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+\.
+
+
+-- Name: app_detail_image; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
+5cf74ef8-a0a1-0000-a000-000000000001	5cf74ef8-e0b7-4984-a872-474828beb5d1	GEC_smartMOM_Maschinenzustaende.png
+5cf74ef8-a0a1-0000-a000-000000000002	5cf74ef8-e0b7-4984-a872-474828beb5d1	GEC_smartMOM_Auftragsdetails.png
+5cf74ef8-a0a1-0000-a000-000000000003	5cf74ef8-e0b7-4984-a872-474828beb5d1	GEC_smartMOM_SN_Buchung.png
+5cf74ef8-a0a1-0000-a000-000000000004	5cf74ef8-e0b7-4984-a872-474828beb5d3	Fleet_Manager_Image1.png
+5cf74ef8-a0a1-0000-a000-000000000005	5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator_Image1.png
+5cf74ef8-a0a1-0000-a000-000000000006	5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator_Image2.png
+5cf74ef8-a0a1-0000-a000-000000000007	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image1.png
+5cf74ef8-a0a1-0000-a000-000000000008	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image2.png
+5cf74ef8-a0a1-0000-a000-000000000009	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image3.png
 \.
 
 
@@ -114,6 +132,9 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Business Partner
 f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Traceability
 5cf74ef8-e0b7-4984-a872-474828beb5d8	Test
+5cf74ef8-e0b7-4984-a872-474828beb5d1	Traceability
+5cf74ef8-e0b7-4984-a872-474828beb5d2	Behavior Twin
+5cf74ef8-e0b7-4984-a872-474828beb5d3	Behavior Twin
 \.
 
 
@@ -124,6 +145,12 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 COPY portal.app_languages (app_id, language_short_name) FROM stdin;
 5cf74ef8-e0b7-4984-a872-474828beb5d1	de
 5cf74ef8-e0b7-4984-a872-474828beb5d1	en
+5cf74ef8-e0b7-4984-a872-474828beb5d2	en
+5cf74ef8-e0b7-4984-a872-474828beb5d3	en
+f9cad59d-84b3-4880-a550-4072c26a6b93	de
+f9cad59d-84b3-4880-a550-4072c26a6b93	en
+f9cad59d-84b3-4880-a550-4072c26a6b94	de
+f9cad59d-84b3-4880-a550-4072c26a6b94	en
 \.
 
 
@@ -203,6 +230,9 @@ ac1cf001-7fbc-1f2f-817f-bce0574f0010	free of charge
 500518a7-9b14-4b55-bdba-2ecd53cff831	free of charge
 0f956bce-7ec3-4171-b6d2-ba7fc57c37d5	free of charge
 37eee74c-95fb-40ee-ae9c-95953a80bd66	free of charge
+5cf74ef8-e0b7-4984-a872-474828beb5d1	free of charge
+5cf74ef8-e0b7-4984-a872-474828beb5d2	free of charge
+5cf74ef8-e0b7-4984-a872-474828beb5d3	free of charge
 \.
 
 
@@ -237,6 +267,9 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+5cf74ef8-e0b7-4984-a872-474828beb5d2	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+5cf74ef8-e0b7-4984-a872-474828beb5d3	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 \.
 
 
@@ -250,10 +283,16 @@ The SAP Circular Economy Application for the Catena-X comprises different soluti
 The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle.\n\n\n\nAt the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location).\n\n\n\nThe solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App CE Marketplace Details	ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabration and Insights. SAP Logistics Business Network, material traceability options connect partners for inter-company collaboration and transparency. It supports a comprehensive set capabilities, allowing to manage freight more efficiently, benefit form situational awareness through track and trace, and create a trust chain for up- and downstream product genealogy.	SAP App Material Traceability Details	ac1cf001-7fbc-1f2f-817f-bce05748000d	en
 Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
-Business Partner Services for Fraud & Data Management	Business Partner Services for Fraud & Data Management	f9cad59d-84b3-4880-a550-4072c26a6b93	en
+The service provides information about new bank account fraud cases (e.g. invoices with fake bank details) reported by companies to the community.	Dashboard to manage and monitor fraud cases	f9cad59d-84b3-4880-a550-4072c26a6b93	en
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
+Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d2	en
+Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d2	de
+Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d3	en
+Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d3	de
+The service provides the possibility to create a fraud case (e.g. invoices with fake bank details) and report them to business partners.	Report Fraud Cases	f9cad59d-84b3-4880-a550-4072c26a6b94	en
+Test	Test	f9cad59d-84b3-4880-a550-4072c26a6b94	de
 \.
 
 
