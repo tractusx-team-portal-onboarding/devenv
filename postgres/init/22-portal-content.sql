@@ -162,6 +162,7 @@ COPY portal.agreements (agreement_category_id, id, date_created, date_last_chang
 1	aa0a0000-7fbc-1f2f-817f-bce0502c1010	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - Active Participant	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 1	aa0a0000-7fbc-1f2f-817f-bce0502c1011	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - App Provider	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 1	aa0a0000-7fbc-1f2f-817f-bce0502c1012	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Terms & Conditions - Consultant	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+1	aa0a0000-7fbc-1f2f-817f-bce0502c1013	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	Security Regulations - Active Participant	\N	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
@@ -170,6 +171,9 @@ COPY portal.agreements (agreement_category_id, id, date_created, date_last_chang
 --
 
 COPY portal.agreement_assigned_company_roles (agreement_id, company_role_id) FROM stdin;
+aa0a0000-7fbc-1f2f-817f-bce0502c1010	1
+aa0a0000-7fbc-1f2f-817f-bce0502c1011	2
+aa0a0000-7fbc-1f2f-817f-bce0502c1013	1
 \.
 
 

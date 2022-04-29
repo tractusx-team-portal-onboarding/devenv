@@ -46,7 +46,10 @@ COPY portal.consent_status (consent_status_id, label) FROM stdin;
 \.
 
 COPY portal.document_types (document_type_id, label) FROM stdin;
-1	DUMMY
+1	CX Frame Contract
+2	Commercial Register Extract
+3	App Contract
+4	Data Contract
 \.
 
 COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
@@ -334,4 +337,3 @@ c065a349-f649-47f8-94d5-1a504a855419	Quality Management	QM
 06b243a4-ba51-4bf3-bc40-5d79a2231b89	Real-Time Control	RTC
 06b243a4-ba51-4bf3-bc40-5d79a2231b90	Modular Production	MP
 \.
-
