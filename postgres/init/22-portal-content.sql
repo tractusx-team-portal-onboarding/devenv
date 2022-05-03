@@ -200,6 +200,7 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 COPY portal.company_user_roles (id, company_user_role, namede, nameen) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN	Unternehmensadministrator	Company Admin
 58f897ec-0aad-4588-8ffa-5f45d6638632	CX	CX Admin	CX Admin
+58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	CX User	CX User
 607818be-4978-41f4-bf63-fa8d2de51154	IT_ADMIN	IT Administrator	IT Admin
 ceec23fd-6b26-485c-a4bb-90571a29e148	SIGNING_MANAGER	Signing Manager	Signing Manager
 95fe4014-4d1b-47af-a22e-72a12f9470db	DEVELOPER	Entwickler	Developer
@@ -218,6 +219,10 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	BUSINESS_ADMIN	Unternehmensadministrator	Bu
 --
 
 COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce05744000b	efc20368-9e82-46ff-b88f-6495b9810253
+ac1cf001-7fbc-1f2f-817f-bce05744000b	aabcdfeb-6669-4c74-89f0-19cda090873f
+ac1cf001-7fbc-1f2f-817f-bce05744000b	7d41c72f-5242-4168-828d-8b1c87c472e3
+ac1cf001-7fbc-1f2f-817f-bce05744000b	ac6860f4-770b-4228-9a59-580d538490ff
 \.
 
 
@@ -316,6 +321,30 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 --
 
 COPY portal.company_assigned_apps (company_id, app_id) FROM stdin;
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3
 \.
 
 
@@ -400,6 +429,7 @@ ac1cf001-7fbc-1f2f-817f-bce057f8003c	2022-03-24 18:01:33.56	2022-03-24 18:01:33.
 ac1cf001-7fbc-1f2f-817f-bce057fa003d	2022-03-24 18:01:33.562	2022-03-24 18:01:33.562	\N	\N	\N	\N	d14eba77-0b18-4e41-9d84-49ef875c0763
 ac1cf001-7fbc-1f2f-817f-bce057fe003e	2022-03-24 18:01:33.565	2022-03-24 18:01:33.565	\N	\N	\N	\N	d14eba77-0b18-4e41-9d84-49ef875c0763
 ac1cf001-7fbc-1f2f-817f-bce05802003f	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	\N	\N	\N	\N	d14eba77-0b18-4e41-9d84-49ef875c0763
+ac1cf001-7fbc-1f2f-817f-bce058020000	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
 \.
 
 
@@ -408,6 +438,8 @@ ac1cf001-7fbc-1f2f-817f-bce05802003f	2022-03-24 18:01:33.57	2022-03-24 18:01:33.
 --
 
 COPY portal.company_user_assigned_app_favourites (company_user_id, app_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce058020000	f9cad59d-84b3-4880-a550-4072c26a6b93
+ac1cf001-7fbc-1f2f-817f-bce058020000	f9cad59d-84b3-4880-a550-4072c26a6b94
 \.
 
 
@@ -419,6 +451,11 @@ COPY portal.company_user_assigned_roles (company_user_id, user_role_id) FROM std
 ac1cf001-7fbc-1f2f-817f-bce0575a0011	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce057770013	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
+ac1cf001-7fbc-1f2f-817f-bce058020000	efc20368-9e82-46ff-b88f-6495b9810253
+ac1cf001-7fbc-1f2f-817f-bce058020000	aabcdfeb-6669-4c74-89f0-19cda090873f
+ac1cf001-7fbc-1f2f-817f-bce058020000	7d41c72f-5242-4168-828d-8b1c87c472e3
+ac1cf001-7fbc-1f2f-817f-bce058020000	ac6860f4-770b-4228-9a59-580d538490ff
+ac1cf001-7fbc-1f2f-817f-bce058020000	58f897ec-0aad-4588-8ffa-5f45d6638633
 \.
 
 
@@ -489,6 +526,7 @@ de2225ca-7bb3-4f2a-af69-07360bbddb3e	ac1cf001-7fbc-1f2f-817f-bce057f8003c
 cc40c57f-ab69-49bf-ab05-168c4d61ca36	ac1cf001-7fbc-1f2f-817f-bce057fa003d
 e82ab43e-3d34-4c75-9961-6b31b00ec3cb	ac1cf001-7fbc-1f2f-817f-bce057fe003e
 92095972-fcfc-4c94-9489-5711e0e73b71	ac1cf001-7fbc-1f2f-817f-bce05802003f
+f92940f8-d44d-403e-9708-9f5424fdb36b	ac1cf001-7fbc-1f2f-817f-bce058020000
 \.
 
 --
