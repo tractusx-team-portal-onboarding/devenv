@@ -320,7 +320,6 @@ CREATE TABLE portal.agreement_assigned_company_roles (
     agreement_id uuid NOT NULL,
     company_role_id integer NOT NULL,
     CONSTRAINT pk_agreement_ass_comp_roles PRIMARY KEY (agreement_id, company_role_id),
-    CONSTRAINT uk_6df9o1r7dy987w1pt9qnkopc UNIQUE (company_role_id),
     CONSTRAINT fk_qh1hby9qcrr3gmy1cvi7nd3h FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id),
     CONSTRAINT fk_ljol11mdo76f4kv7fwqn1qc6 FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id)
 );
