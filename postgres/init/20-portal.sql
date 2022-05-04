@@ -277,6 +277,8 @@ CREATE TABLE portal.documents (
     documentname character varying(255) NOT NULL,
     document_type_id integer,
     company_user_id uuid,
+	company_id uuid NOT NULL,
+    CONSTRAINT fk_3prv5i3o84vwvh7v0hh3sa00 FOREIGN KEY (company_id) REFERENCES portal.companies(id),
     CONSTRAINT fk_xcgobngn7vk56k8nfkuaysvn FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
     CONSTRAINT fk_xcgobngn7vk56k8nfkualsvn FOREIGN KEY (document_type_id) REFERENCES portal.document_types(document_type_id)
 );
