@@ -24,10 +24,8 @@ CREATE TABLE portal.app_licenses (
 --
 
 CREATE TABLE portal.company_roles (
-    id integer PRIMARY KEY,
-    company_role character varying(255) NOT NULL,
-    name_de character varying(255) NOT NULL,
-    name_en character varying(255) NOT NULL
+    company_role_id integer PRIMARY KEY,
+    label character varying(255) NOT NULL
 );
 
 
@@ -99,9 +97,19 @@ CREATE TABLE portal.iam_identity_providers (
 --
 
 CREATE TABLE portal.languages (
-    language_short_name character(2) PRIMARY KEY,
+    short_name character(2) PRIMARY KEY,
     long_name_de character varying(255) NOT NULL,
     long_name_en character varying(255) NOT NULL
+);
+
+
+CREATE TABLE portal.company_role_descriptions (
+    company_role_id integer,
+    language_short_name character(2),
+    description character varying(255) NOT NULL,
+    CONSTRAINT pk_company_role_descriptions PRIMARY KEY (company_role_id, language_short_name),
+    CONSTRAINT fk_company_role_descriptions_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id),
+    CONSTRAINT fk_company_role_descriptions_country_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
 
@@ -206,7 +214,7 @@ CREATE TABLE portal.app_languages (
     language_short_name character(2) NOT NULL,
     CONSTRAINT pk_app_language PRIMARY KEY (app_id, language_short_name),
     CONSTRAINT fk_oayyvy590ngh5705yspep101 FOREIGN KEY (app_id) REFERENCES portal.apps(id),
-    CONSTRAINT fk_oayyvy590ngh5705yspep102 FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
+    CONSTRAINT fk_oayyvy590ngh5705yspep102 FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
 -- Name: app_detail_image; Type: TABLE; Schema: public; Owner: -
@@ -320,7 +328,7 @@ CREATE TABLE portal.agreement_assigned_company_roles (
     agreement_id uuid NOT NULL,
     company_role_id integer NOT NULL,
     CONSTRAINT pk_agreement_ass_comp_roles PRIMARY KEY (agreement_id, company_role_id),
-    CONSTRAINT fk_qh1hby9qcrr3gmy1cvi7nd3h FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id),
+    CONSTRAINT fk_qh1hby9qcrr3gmy1cvi7nd3h FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id),
     CONSTRAINT fk_ljol11mdo76f4kv7fwqn1qc6 FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id)
 );
 
@@ -389,7 +397,7 @@ CREATE TABLE portal.app_descriptions (
     language_short_name character(2) NOT NULL,
     CONSTRAINT app_descriptions_pkey PRIMARY KEY (app_id, language_short_name),
     CONSTRAINT fk_qamy6j7s3klebrf2s69v9k0i FOREIGN KEY (app_id) REFERENCES portal.apps(id),
-    CONSTRAINT fk_vrom2pjij9x6stgovhaqkfxf FOREIGN KEY (language_short_name) REFERENCES portal.languages(language_short_name)
+    CONSTRAINT fk_vrom2pjij9x6stgovhaqkfxf FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
 
@@ -434,7 +442,7 @@ CREATE TABLE portal.company_assigned_roles (
     company_id uuid NOT NULL,
     company_role_id integer NOT NULL,
     CONSTRAINT pk_company_assigned_roles PRIMARY KEY (company_id, company_role_id),
-    CONSTRAINT fk_my2p7jlqrjf0tq1f8rhk0i0a FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id),
+    CONSTRAINT fk_my2p7jlqrjf0tq1f8rhk0i0a FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id),
     CONSTRAINT fk_4db4hgj3yvqlkn9h6q8m4e0j FOREIGN KEY (company_id) REFERENCES portal.companies(id)
 );
 

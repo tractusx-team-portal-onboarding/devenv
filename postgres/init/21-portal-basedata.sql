@@ -65,14 +65,21 @@ COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
 4	DECLINED
 \.
 
-COPY portal.company_roles (id, company_role, name_de, name_en) FROM stdin;
-1	ACTIVE_PARTICIPANT	Netzwerkteilnehmer	Participant
-2	APP_PROVIDER	Software Anbieter	Application Provider
+COPY portal.company_roles (company_role_id, label) FROM stdin;
+1	ACTIVE_PARTICIPANT
+2	APP_PROVIDER
 \.
 
-COPY portal.languages (language_short_name, long_name_de, long_name_en) FROM stdin;
+COPY portal.languages (short_name, long_name_de, long_name_en) FROM stdin;
 de	deutsch	german
 en	englisch	english
+\.
+
+COPY portal.company_role_descriptions (company_role_id, language_short_name, description) FROM stdin;
+1	de	Netzwerkteilnehmer
+1	en	Participant
+2	de	Software Anbieter
+2	en	Application Provider
 \.
 
 COPY portal.countries (country_name_en, alpha2code, alpha3code, country_name_de) FROM stdin;
