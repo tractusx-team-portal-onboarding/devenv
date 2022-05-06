@@ -87,7 +87,7 @@ ac1cf001-7fbc-1f2f-817f-bce057770014	idp2
 COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, provider, provider_company_id, app_status_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	\N	\N	\N	\N	\N	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
 ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	\N	\N	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler App	2022-03-24 18:01:33.375	\N	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	\N	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	1
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler Cockpit	2022-03-24 18:01:33.375	\N	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N	support@sap.com	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	1
 ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	support@sap.com	\N	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	1
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	\N	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
 f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	Fraud Dashboard	2022-03-24 18:01:33.388	\N	https://dash.catenax-cdq.com/	\N	\N	\N	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
@@ -209,10 +209,8 @@ ceec23fd-6b26-485c-a4bb-90571a29e148	SIGNING_MANAGER	Signing Manager	Signing Man
 95fe4014-4d1b-47af-a22e-72a12f9470db	DEVELOPER	Entwickler	Developer
 04231a30-df50-4d14-bb00-71ff012ae0cf	DATA_SPECIALIST	Data Specialist	Data Specialist
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	App(Store) Administrator	App(store) Admin
-efc20368-9e82-46ff-b88f-6495b9810253	CE.Dismantler.Lead	CE.Dismantler.Lead	CE.Dismantler.Lead
-aabcdfeb-6669-4c74-89f0-19cda090873f	CE.Dismantler.Manager	CE.Dismantler.Manager	CE.Dismantler.Manager
-7d41c72f-5242-4168-828d-8b1c87c472e3	CE.Dismantler.Buy	CE.Dismantler.Buy	CE.Dismantler.Buy
-ac6860f4-770b-4228-9a59-580d538490ff	CE.Dismantler.Seller	CE.Dismantler.Seller	CE.Dismantler.Seller
+efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	Vehicle Purchaser	Vehicle Purchaser
+aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	Dismantling Lead	Dismantling Lead
 efc20368-9e82-46ff-b88f-6495b9810250	Buyer	Einkäufer	Buyer
 aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	Advanced Buyer	Advanced Buyer
 7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	Content Manager	Content Manager
@@ -228,8 +226,6 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	BUSINESS_ADMIN	Unternehmensadministrator	Bu
 COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	efc20368-9e82-46ff-b88f-6495b9810253
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	aabcdfeb-6669-4c74-89f0-19cda090873f
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	7d41c72f-5242-4168-828d-8b1c87c472e3
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	ac6860f4-770b-4228-9a59-580d538490ff
 ac1cf001-7fbc-1f2f-817f-bce05744000b	efc20368-9e82-46ff-b88f-6495b9810250
 ac1cf001-7fbc-1f2f-817f-bce05744000b	aabcdfeb-6669-4c74-89f0-19cda0908730
 ac1cf001-7fbc-1f2f-817f-bce05744000b	7d41c72f-5242-4168-828d-8b1c87c472e0
@@ -299,7 +295,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 
 COPY portal.app_descriptions (description_long, description_short, app_id, language_short_name) FROM stdin;
 Seamless part traceability through the n.tier supply chain\n\nknowledge you get detailed information about the components of your direct suppliers as well as your direct customers. This lets your answer questions such as:\n\n\n\nWhat's the exact lead time between the produciton of a subcomponent an your own components?\nTo wehre in the world are my components distributed and where are my suppliers located?\nWhat's the exact composition of my component on a unique ID level?\n\n\nBecause all of that is important information. PartChain keeps a storng one-up, one-down visibilty rule. You and the other parties in the network always see - only their suppliers customers data well as own ata. Your competitors won't be able to get any sensitive information about your production data.	CX App Part Chain Details	ac1cf001-7fbc-1f2f-817f-bce0572c0007	en
-The SAP Circular Economy Application for the Catena-X comprises different solutions to collaborate on digital twin information across the entire lifecycle, be it a component, a part or an entire vehicle. At the core of the application is SAPs Digital Vehicle Hub powered by the SAP Asset Intelligence Network, which integrates and interacts seamlessly along the automotive & mobility value chain. The application contains pre-delivered content for a vehicle's structure to easily model vehicle objects (e.g. model data, configuration data, technical data, lifecycle status, location). The solutions help to manage all types of vehicle related master, transactional and usage data to support collaborative business models and processes.	SAP App Dismantler App Details	ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
+The Dismantler Cockpit provides decision support for Vehicle Purchaser and Dismantling lead. At a dismantling company, these are responsible for the procurement of end-of-life vehicles and the decisions on reuse, remanufacture or recycling of the whole vehicle, or of parts and components. The Dismantler Cockpit support these decisions by fetching data about a specific vehicle from the Catena-X-network and presenting the most relevant information about the potential of the vehicle and its components: The structure of the vehicle and the parts it contains are presented by visualizing the "Digital Twins" available from the OEM and the suppliers of the components (e.g. gearbox, high voltage battery). KPIs such as the material composition of the vehicle further serve to analyze the commercial potential in a circular value chain.	Dismantler buy decision and 3R strategy decision support	ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 Cross-industry trading platform for buying and selling secondary components and materials, opening new opportunities for collaborating across the value chain and closing the loop on component and material level.	platform for buying and selling secondary components and materials	ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabration and Insights. SAP Logistics Business Network, material traceability options connect partners for inter-company collaboration and transparency. It supports a comprehensive set capabilities, allowing to manage freight more efficiently, benefit form situational awareness through track and trace, and create a trust chain for up- and downstream product genealogy.	SAP App Material Traceability Details	ac1cf001-7fbc-1f2f-817f-bce05748000d	en
 Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
@@ -314,6 +310,7 @@ Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d3	de
 The service provides the possibility to create a fraud case (e.g. invoices with fake bank details) and report them to business partners.	Report Fraud Cases	f9cad59d-84b3-4880-a550-4072c26a6b94	en
 Test	Test	f9cad59d-84b3-4880-a550-4072c26a6b94	de
 Test	Test	ac1cf001-7fbc-1f2f-817f-bce05744000b	de
+Test	Test	ac1cf001-7fbc-1f2f-817f-bce0573f0009	de
 \.
 
 
@@ -432,14 +429,10 @@ ac1cf001-7fbc-1f2f-817f-bce057770013	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce058020000	efc20368-9e82-46ff-b88f-6495b9810253
 ac1cf001-7fbc-1f2f-817f-bce058020000	aabcdfeb-6669-4c74-89f0-19cda090873f
-ac1cf001-7fbc-1f2f-817f-bce058020000	7d41c72f-5242-4168-828d-8b1c87c472e3
-ac1cf001-7fbc-1f2f-817f-bce058020000	ac6860f4-770b-4228-9a59-580d538490ff
 ac1cf001-7fbc-1f2f-817f-bce058020000	58f897ec-0aad-4588-8ffa-5f45d6638633
 ac1cf001-7fbc-1f2f-817f-bce058020001	58f897ec-0aad-4588-8ffa-5f45d6638632
 ac1cf001-7fbc-1f2f-817f-bce058020001	efc20368-9e82-46ff-b88f-6495b9810253
 ac1cf001-7fbc-1f2f-817f-bce058020001	aabcdfeb-6669-4c74-89f0-19cda090873f
-ac1cf001-7fbc-1f2f-817f-bce058020001	7d41c72f-5242-4168-828d-8b1c87c472e3
-ac1cf001-7fbc-1f2f-817f-bce058020001	ac6860f4-770b-4228-9a59-580d538490ff
 \.
 
 
