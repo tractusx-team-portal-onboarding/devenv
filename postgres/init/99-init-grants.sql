@@ -2,6 +2,7 @@ ALTER SCHEMA portal OWNER TO portal;
 
 ALTER TABLE portal.app_licenses OWNER TO portal;
 ALTER TABLE portal.company_roles OWNER TO portal;
+ALTER TABLE portal.company_role_descriptions OWNER TO portal;
 ALTER TABLE portal.company_user_roles OWNER TO portal;
 ALTER TABLE portal.countries OWNER TO portal;
 ALTER TABLE portal.document_templates OWNER TO portal;
