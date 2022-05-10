@@ -23,6 +23,7 @@ ALTER TABLE portal.app_languages OWNER TO portal;
 ALTER TABLE portal.app_detail_images OWNER TO portal;
 ALTER TABLE portal.app_tags OWNER TO portal;
 ALTER TABLE portal.company_users OWNER TO portal;
+ALTER TABLE portal.company_user_status OWNER TO portal;
 ALTER TABLE portal.iam_users OWNER TO portal;
 ALTER TABLE portal.document_types OWNER TO portal;
 ALTER TABLE portal.documents OWNER TO portal;

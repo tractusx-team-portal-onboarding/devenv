@@ -258,6 +258,12 @@ CREATE TABLE portal.app_tags (
 -- Name: company_users; Type: TABLE; Schema: public; Owner: -
 --
 
+CREATE TABLE portal.company_user_status (
+    company_user_status_id integer PRIMARY KEY,
+    label character varying(255) NOT NULL
+);
+
+
 CREATE TABLE portal.company_users (
     id uuid PRIMARY KEY,
     date_created timestamptz NOT NULL,
@@ -267,7 +273,9 @@ CREATE TABLE portal.company_users (
     lastlogin bytea,
     lastname character varying(255),
     company_id uuid NOT NULL,
-    CONSTRAINT fk_ku01366dbcqk8h32lh8k5sx1 FOREIGN KEY (company_id) REFERENCES portal.companies(id)
+    company_user_status_id integer NOT NULL,
+    CONSTRAINT fk_ku01366dbcqk8h32lh8k5sx1 FOREIGN KEY (company_id) REFERENCES portal.companies(id),
+    CONSTRAINT fk_company_users_company_user_status_id FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_status (company_user_status_id)
 );
 
 
