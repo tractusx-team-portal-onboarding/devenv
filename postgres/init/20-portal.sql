@@ -502,10 +502,10 @@ CREATE TABLE portal.company_user_assigned_app_favourites (
 
 CREATE TABLE portal.company_user_assigned_roles (
     company_user_id uuid NOT NULL,
-    user_role_id uuid NOT NULL,
+    company_user_role_id uuid NOT NULL,
     CONSTRAINT pk_comp_user_assigned_roles PRIMARY KEY (company_user_id, user_role_id),
     CONSTRAINT fk_0c9rjjf9gm3l0n6reb4o0f1s FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
-    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (user_role_id) REFERENCES portal.company_user_roles(id)
+    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id)
 );
 
 
