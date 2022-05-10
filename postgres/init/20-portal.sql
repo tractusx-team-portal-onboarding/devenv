@@ -29,6 +29,12 @@ CREATE TABLE portal.company_roles (
 );
 
 
+CREATE TABLE portal.iam_clients (
+    id uuid PRIMARY KEY,
+    client_client_id character varying(255) NOT NULL,
+    CONSTRAINT uk_iam_client_client_client_id UNIQUE(client_client_id)
+);
+
 --
 -- Name: company_user_roles; Type: TABLE; Schema: public; Owner: -
 --
@@ -36,8 +42,8 @@ CREATE TABLE portal.company_roles (
 CREATE TABLE portal.company_user_roles (
     id uuid PRIMARY KEY,
     company_user_role character varying(255) NOT NULL,
-    namede character varying(255) NOT NULL,
-    nameen character varying(255) NOT NULL
+    iam_client_id uuid NOT NULL,
+    CONSTRAINT fk_company_user_role_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
 );
 
 
@@ -112,6 +118,15 @@ CREATE TABLE portal.company_role_descriptions (
     CONSTRAINT fk_company_role_descriptions_country_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
+
+CREATE TABLE portal.company_user_role_descriptions (
+    company_user_role_id uuid,
+    language_short_name character(2),
+    description character varying(255) NOT NULL,
+    CONSTRAINT pk_company_user_role_descriptions PRIMARY KEY (company_user_role_id, language_short_name),
+    CONSTRAINT fk_company_user_role_descriptions_company_role_id FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id),
+    CONSTRAINT fk_company_user_role_descriptions_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
+);
 
 --
 -- Name: use_cases; Type: TABLE; Schema: public; Owner: -

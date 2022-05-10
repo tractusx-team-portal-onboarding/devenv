@@ -200,22 +200,61 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 -- Data for Name: company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_user_roles (id, company_user_role, namede, nameen) FROM stdin;
-7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN	Unternehmensadministrator	Company Admin
-58f897ec-0aad-4588-8ffa-5f45d6638632	CX	CX Admin	CX Admin
-58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	CX User	CX User
-607818be-4978-41f4-bf63-fa8d2de51154	IT_ADMIN	IT Administrator	IT Admin
-ceec23fd-6b26-485c-a4bb-90571a29e148	SIGNING_MANAGER	Signing Manager	Signing Manager
-95fe4014-4d1b-47af-a22e-72a12f9470db	DEVELOPER	Entwickler	Developer
-04231a30-df50-4d14-bb00-71ff012ae0cf	DATA_SPECIALIST	Data Specialist	Data Specialist
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	App(Store) Administrator	App(store) Admin
-efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	Vehicle Purchaser	Vehicle Purchaser
-aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	Dismantling Lead	Dismantling Lead
-efc20368-9e82-46ff-b88f-6495b9810250	Buyer	Einkäufer	Buyer
-aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	Advanced Buyer	Advanced Buyer
-7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	Content Manager	Content Manager
-ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	Customer Administrator	Customer Administrator
-b05d86e1-6c98-4619-85fa-9a425e0800b6	BUSINESS_ADMIN	Unternehmensadministrator	Business Admin
+COPY portal.iam_clients (id, client_client_id) FROM stdin;
+0c9051d0-d032-11ec-9d64-0242ac120002	catenax-portal
+f032a034-d035-11ec-9d64-0242ac120002	catenax-registration
+\.
+
+COPY portal.company_user_roles (id, company_user_role, iam_client_id) FROM stdin;
+7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	f032a034-d035-11ec-9d64-0242ac120002
+58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	0c9051d0-d032-11ec-9d64-0242ac120002
+607818be-4978-41f4-bf63-fa8d2de51154	IT Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-0242ac120002
+95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	0c9051d0-d032-11ec-9d64-0242ac120002
+04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	0c9051d0-d032-11ec-9d64-0242ac120002
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	0c9051d0-d032-11ec-9d64-0242ac120002
+efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	0c9051d0-d032-11ec-9d64-0242ac120002
+aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	0c9051d0-d032-11ec-9d64-0242ac120002
+efc20368-9e82-46ff-b88f-6495b9810250	Buyer	0c9051d0-d032-11ec-9d64-0242ac120002
+aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	0c9051d0-d032-11ec-9d64-0242ac120002
+7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	0c9051d0-d032-11ec-9d64-0242ac120002
+ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+\.
+
+
+COPY portal.company_user_role_descriptions (company_user_role_id, language_short_name, description) FROM stdin;
+7410693c-c893-409e-852f-9ee886ce94a6	de	Unternehmensadministrator
+7410693c-c893-409e-852f-9ee886ce94a6	en	Company Admin
+58f897ec-0aad-4588-8ffa-5f45d6638632	de	CX Admin
+58f897ec-0aad-4588-8ffa-5f45d6638632	en	CX Admin
+58f897ec-0aad-4588-8ffa-5f45d6638633	de	CX User
+58f897ec-0aad-4588-8ffa-5f45d6638633	en	CX User
+607818be-4978-41f4-bf63-fa8d2de51154	de	IT Administrator
+607818be-4978-41f4-bf63-fa8d2de51154	en	IT Admin
+ceec23fd-6b26-485c-a4bb-90571a29e148	de	Signing Manager
+ceec23fd-6b26-485c-a4bb-90571a29e148	en	Signing Manager
+95fe4014-4d1b-47af-a22e-72a12f9470db	de	Entwickler
+95fe4014-4d1b-47af-a22e-72a12f9470db	en	Developer
+04231a30-df50-4d14-bb00-71ff012ae0cf	de	Data Specialist
+04231a30-df50-4d14-bb00-71ff012ae0cf	en	Data Specialist
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	de	App(Store) Administrator
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	en	App(store) Admin
+efc20368-9e82-46ff-b88f-6495b9810253	de	Vehicle Purchaser
+efc20368-9e82-46ff-b88f-6495b9810253	en	Vehicle Purchaser
+aabcdfeb-6669-4c74-89f0-19cda090873f	de	Dismantling Lead
+aabcdfeb-6669-4c74-89f0-19cda090873f	en	Dismantling Lead
+efc20368-9e82-46ff-b88f-6495b9810250	de	Einkäufer
+efc20368-9e82-46ff-b88f-6495b9810250	en	Buyer
+aabcdfeb-6669-4c74-89f0-19cda0908730	de	Advanced Buyer
+aabcdfeb-6669-4c74-89f0-19cda0908730	en	Advanced Buyer
+7d41c72f-5242-4168-828d-8b1c87c472e0	de	Content Manager
+7d41c72f-5242-4168-828d-8b1c87c472e0	en	Content Manager
+ac6860f4-770b-4228-9a59-580d538490f0	de	Customer Administrator
+ac6860f4-770b-4228-9a59-580d538490f0	en	Customer Administrator
+b05d86e1-6c98-4619-85fa-9a425e0800b6	de	Unternehmensadministrator
+b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
 \.
 
 
