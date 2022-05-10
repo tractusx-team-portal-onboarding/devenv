@@ -39,11 +39,11 @@ CREATE TABLE portal.iam_clients (
 -- Name: company_user_roles; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.company_user_roles (
+CREATE TABLE portal.user_roles (
     id uuid PRIMARY KEY,
-    company_user_role character varying(255) NOT NULL,
+    user_role character varying(255) NOT NULL,
     iam_client_id uuid NOT NULL,
-    CONSTRAINT fk_company_user_role_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
+    CONSTRAINT fk_user_role_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
 );
 
 
@@ -119,13 +119,13 @@ CREATE TABLE portal.company_role_descriptions (
 );
 
 
-CREATE TABLE portal.company_user_role_descriptions (
-    company_user_role_id uuid,
+CREATE TABLE portal.user_role_descriptions (
+    user_role_id uuid,
     language_short_name character(2),
     description character varying(255) NOT NULL,
-    CONSTRAINT pk_company_user_role_descriptions PRIMARY KEY (company_user_role_id, language_short_name),
-    CONSTRAINT fk_company_user_role_descriptions_company_role_id FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id),
-    CONSTRAINT fk_company_user_role_descriptions_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
+    CONSTRAINT pk_user_role_descriptions PRIMARY KEY (user_role_id, language_short_name),
+    CONSTRAINT fk_user_role_descriptions_company_role_id FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id),
+    CONSTRAINT fk_user_role_descriptions_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
 --
@@ -371,14 +371,14 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 
 
 --
--- Name: app_assigned_company_user_roles; Type: TABLE; Schema: public; Owner: -
+-- Name: app_assigned_user_roles; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.app_assigned_company_user_roles (
+CREATE TABLE portal.app_assigned_user_roles (
     app_id uuid NOT NULL,
-    company_user_role_id uuid NOT NULL,
-    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, company_user_role_id),
-    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id),
+    user_role_id uuid NOT NULL,
+    CONSTRAINT pk_app_assg_user_roles PRIMARY KEY (app_id, user_role_id),
+    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id),
     CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
 );
 
@@ -502,10 +502,10 @@ CREATE TABLE portal.company_user_assigned_app_favourites (
 
 CREATE TABLE portal.company_user_assigned_roles (
     company_user_id uuid NOT NULL,
-    company_user_role_id uuid NOT NULL,
+    user_role_id uuid NOT NULL,
     CONSTRAINT pk_comp_user_assigned_roles PRIMARY KEY (company_user_id, user_role_id),
     CONSTRAINT fk_0c9rjjf9gm3l0n6reb4o0f1s FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
-    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id)
+    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id)
 );
 
 

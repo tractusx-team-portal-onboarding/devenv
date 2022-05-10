@@ -41,7 +41,8 @@ COPY portal.company_status (company_status_id, label) FROM stdin;
 \.
 
 COPY portal.company_user_status (company_user_status_id, label) FROM stdin;
-1	INVITED
+1	ACTIVE
+2	INACTIVE
 \.
 
 COPY portal.consent_status (consent_status_id, label) FROM stdin;

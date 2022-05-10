@@ -197,7 +197,7 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 
 
 --
--- Data for Name: company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
 COPY portal.iam_clients (id, client_client_id) FROM stdin;
@@ -205,7 +205,7 @@ COPY portal.iam_clients (id, client_client_id) FROM stdin;
 f032a034-d035-11ec-9d64-0242ac120002	catenax-registration
 \.
 
-COPY portal.company_user_roles (id, company_user_role, iam_client_id) FROM stdin;
+COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	f032a034-d035-11ec-9d64-0242ac120002
 58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	0c9051d0-d032-11ec-9d64-0242ac120002
 58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	0c9051d0-d032-11ec-9d64-0242ac120002
@@ -224,7 +224,7 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242
 \.
 
 
-COPY portal.company_user_role_descriptions (company_user_role_id, language_short_name, description) FROM stdin;
+COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	de	Unternehmensadministrator
 7410693c-c893-409e-852f-9ee886ce94a6	en	Company Admin
 58f897ec-0aad-4588-8ffa-5f45d6638632	de	CX Admin
@@ -259,10 +259,10 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
 
 
 --
--- Data for Name: app_assigned_company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: app_assigned_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM stdin;
+COPY portal.app_assigned_user_roles (app_id, user_role_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	efc20368-9e82-46ff-b88f-6495b9810253
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	aabcdfeb-6669-4c74-89f0-19cda090873f
 ac1cf001-7fbc-1f2f-817f-bce05744000b	efc20368-9e82-46ff-b88f-6495b9810250
@@ -462,7 +462,7 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	f9cad59d-84b3-4880-a550-4072c26a6b94
 -- Data for Name: company_user_assigned_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_user_assigned_roles (company_user_id, company_user_role_id) FROM stdin;
+COPY portal.company_user_assigned_roles (company_user_id, user_role_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0575a0011	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce057770013	b05d86e1-6c98-4619-85fa-9a425e0800b6
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6
