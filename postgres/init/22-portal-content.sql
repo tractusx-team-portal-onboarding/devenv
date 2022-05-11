@@ -203,6 +203,16 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 COPY portal.iam_clients (id, client_client_id) FROM stdin;
 0c9051d0-d032-11ec-9d64-0242ac120002	catenax-portal
 f032a034-d035-11ec-9d64-0242ac120002	catenax-registration
+f032a035-d035-11ec-9d64-0242ac120002	Cl3-CX-Semantic
+f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
+f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
+f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
+f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
+f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
+f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
+f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
+f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
+f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
 \.
 
 COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
