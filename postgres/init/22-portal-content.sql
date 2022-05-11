@@ -213,6 +213,8 @@ f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
 f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
 f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
+789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
+cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 \.
 
 COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
@@ -232,7 +234,6 @@ aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	0c9051d0-d032-11ec-9d64-0242
 ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
 \.
-
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	de	Unternehmensadministrator
@@ -272,15 +273,10 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
 -- Data for Name: app_assigned_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_assigned_user_roles (app_id, user_role_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	efc20368-9e82-46ff-b88f-6495b9810253
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	aabcdfeb-6669-4c74-89f0-19cda090873f
-ac1cf001-7fbc-1f2f-817f-bce05744000b	efc20368-9e82-46ff-b88f-6495b9810250
-ac1cf001-7fbc-1f2f-817f-bce05744000b	aabcdfeb-6669-4c74-89f0-19cda0908730
-ac1cf001-7fbc-1f2f-817f-bce05744000b	7d41c72f-5242-4168-828d-8b1c87c472e0
-ac1cf001-7fbc-1f2f-817f-bce05744000b	ac6860f4-770b-4228-9a59-580d538490f0
+COPY portal.app_assigned_clients (app_id, iam_client_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	789e31ee-0fdb-4e42-a819-23e0cfb1179b
+ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
 \.
-
 
 --
 -- Data for Name: app_licenses; Type: TABLE DATA; Schema: public; Owner: admin

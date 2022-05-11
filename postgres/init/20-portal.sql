@@ -374,12 +374,12 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 -- Name: app_assigned_user_roles; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.app_assigned_user_roles (
+CREATE TABLE portal.app_assigned_clients (
     app_id uuid NOT NULL,
-    user_role_id uuid NOT NULL,
-    CONSTRAINT pk_app_assg_user_roles PRIMARY KEY (app_id, user_role_id),
-    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id),
-    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+    iam_client_id uuid NOT NULL,
+    CONSTRAINT pk_app_assigned_clients PRIMARY KEY (app_id, iam_client_id),
+    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id),
+    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
 );
 
 

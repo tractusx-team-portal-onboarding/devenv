@@ -31,7 +31,7 @@ ALTER TABLE portal.agreement_categories OWNER TO portal;
 ALTER TABLE portal.agreements OWNER TO portal;
 ALTER TABLE portal.agreement_assigned_company_roles OWNER TO portal;
 ALTER TABLE portal.agreement_assigned_document_templates OWNER TO portal;
-ALTER TABLE portal.app_assigned_user_roles OWNER TO portal;
+ALTER TABLE portal.app_assigned_clients OWNER TO portal;
 ALTER TABLE portal.app_assigned_licenses OWNER TO portal;
 ALTER TABLE portal.app_assigned_use_cases OWNER TO portal;
 ALTER TABLE portal.app_descriptions OWNER TO portal;
