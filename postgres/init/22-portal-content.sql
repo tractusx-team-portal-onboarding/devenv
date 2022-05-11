@@ -197,7 +197,7 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 
 
 --
--- Data for Name: user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: iam_clients; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
 COPY portal.iam_clients (id, client_client_id) FROM stdin;
@@ -226,13 +226,17 @@ ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-024
 95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	0c9051d0-d032-11ec-9d64-0242ac120002
 04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	0c9051d0-d032-11ec-9d64-0242ac120002
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	0c9051d0-d032-11ec-9d64-0242ac120002
-efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	0c9051d0-d032-11ec-9d64-0242ac120002
-aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	0c9051d0-d032-11ec-9d64-0242ac120002
-efc20368-9e82-46ff-b88f-6495b9810250	Buyer	0c9051d0-d032-11ec-9d64-0242ac120002
-aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	0c9051d0-d032-11ec-9d64-0242ac120002
+efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	cf207afb-d213-4c33-becc-0cabeef174a7
+efc20368-9e82-46ff-b88f-6495b9810250	Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
 7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	0c9051d0-d032-11ec-9d64-0242ac120002
 ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f032a040-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f032a040-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f032a041-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -266,6 +270,14 @@ ac6860f4-770b-4228-9a59-580d538490f0	de	Customer Administrator
 ac6860f4-770b-4228-9a59-580d538490f0	en	Customer Administrator
 b05d86e1-6c98-4619-85fa-9a425e0800b6	de	Unternehmensadministrator
 b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
+b05d86e1-6c98-4619-85fa-9a425e080000	de	Betrugsmanager
+b05d86e1-6c98-4619-85fa-9a425e080000	en	Fraud Manager
+b05d86e1-6c98-4619-85fa-9a425e080001	de	Betrugsreporter
+b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
+b05d86e1-6c98-4619-85fa-9a425e080002	de	Betrugsmanager
+b05d86e1-6c98-4619-85fa-9a425e080002	en	Fraud Manager
+b05d86e1-6c98-4619-85fa-9a425e080003	de	Betrugsreporter
+b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 \.
 
 
@@ -276,6 +288,10 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
 COPY portal.app_assigned_clients (app_id, iam_client_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	789e31ee-0fdb-4e42-a819-23e0cfb1179b
 ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
+f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
+f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
 \.
 
 --
