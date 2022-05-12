@@ -197,41 +197,102 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 
 
 --
--- Data for Name: company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: iam_clients; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_user_roles (id, company_user_role, namede, nameen) FROM stdin;
-7410693c-c893-409e-852f-9ee886ce94a6	COMPANY_ADMIN	Unternehmensadministrator	Company Admin
-58f897ec-0aad-4588-8ffa-5f45d6638632	CX	CX Admin	CX Admin
-58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	CX User	CX User
-607818be-4978-41f4-bf63-fa8d2de51154	IT_ADMIN	IT Administrator	IT Admin
-ceec23fd-6b26-485c-a4bb-90571a29e148	SIGNING_MANAGER	Signing Manager	Signing Manager
-95fe4014-4d1b-47af-a22e-72a12f9470db	DEVELOPER	Entwickler	Developer
-04231a30-df50-4d14-bb00-71ff012ae0cf	DATA_SPECIALIST	Data Specialist	Data Specialist
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	App(Store) Administrator	App(store) Admin
-efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	Vehicle Purchaser	Vehicle Purchaser
-aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	Dismantling Lead	Dismantling Lead
-efc20368-9e82-46ff-b88f-6495b9810250	Buyer	Einkäufer	Buyer
-aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	Advanced Buyer	Advanced Buyer
-7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	Content Manager	Content Manager
-ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	Customer Administrator	Customer Administrator
-b05d86e1-6c98-4619-85fa-9a425e0800b6	BUSINESS_ADMIN	Unternehmensadministrator	Business Admin
+COPY portal.iam_clients (id, client_client_id) FROM stdin;
+0c9051d0-d032-11ec-9d64-0242ac120002	catenax-portal
+f032a034-d035-11ec-9d64-0242ac120002	catenax-registration
+f032a035-d035-11ec-9d64-0242ac120002	Cl3-CX-Semantic
+f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
+f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
+f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
+f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
+f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
+f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
+f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
+f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
+f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
+789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
+cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
+\.
+
+COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
+7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	f032a034-d035-11ec-9d64-0242ac120002
+58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	0c9051d0-d032-11ec-9d64-0242ac120002
+607818be-4978-41f4-bf63-fa8d2de51154	IT Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-0242ac120002
+95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	0c9051d0-d032-11ec-9d64-0242ac120002
+04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	0c9051d0-d032-11ec-9d64-0242ac120002
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	APP_ADMIN	0c9051d0-d032-11ec-9d64-0242ac120002
+efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	cf207afb-d213-4c33-becc-0cabeef174a7
+efc20368-9e82-46ff-b88f-6495b9810250	Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
+7d41c72f-5242-4168-828d-8b1c87c472e0	Content Manager	0c9051d0-d032-11ec-9d64-0242ac120002
+ac6860f4-770b-4228-9a59-580d538490f0	Customer Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f032a040-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f032a040-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f032a041-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242ac120002
+\.
+
+COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
+7410693c-c893-409e-852f-9ee886ce94a6	de	Unternehmensadministrator
+7410693c-c893-409e-852f-9ee886ce94a6	en	Company Admin
+58f897ec-0aad-4588-8ffa-5f45d6638632	de	CX Admin
+58f897ec-0aad-4588-8ffa-5f45d6638632	en	CX Admin
+58f897ec-0aad-4588-8ffa-5f45d6638633	de	CX User
+58f897ec-0aad-4588-8ffa-5f45d6638633	en	CX User
+607818be-4978-41f4-bf63-fa8d2de51154	de	IT Administrator
+607818be-4978-41f4-bf63-fa8d2de51154	en	IT Admin
+ceec23fd-6b26-485c-a4bb-90571a29e148	de	Signing Manager
+ceec23fd-6b26-485c-a4bb-90571a29e148	en	Signing Manager
+95fe4014-4d1b-47af-a22e-72a12f9470db	de	Entwickler
+95fe4014-4d1b-47af-a22e-72a12f9470db	en	Developer
+04231a30-df50-4d14-bb00-71ff012ae0cf	de	Data Specialist
+04231a30-df50-4d14-bb00-71ff012ae0cf	en	Data Specialist
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	de	App(Store) Administrator
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	en	App(store) Admin
+efc20368-9e82-46ff-b88f-6495b9810253	de	Vehicle Purchaser
+efc20368-9e82-46ff-b88f-6495b9810253	en	Vehicle Purchaser
+aabcdfeb-6669-4c74-89f0-19cda090873f	de	Dismantling Lead
+aabcdfeb-6669-4c74-89f0-19cda090873f	en	Dismantling Lead
+efc20368-9e82-46ff-b88f-6495b9810250	de	Einkäufer
+efc20368-9e82-46ff-b88f-6495b9810250	en	Buyer
+aabcdfeb-6669-4c74-89f0-19cda0908730	de	Advanced Buyer
+aabcdfeb-6669-4c74-89f0-19cda0908730	en	Advanced Buyer
+7d41c72f-5242-4168-828d-8b1c87c472e0	de	Content Manager
+7d41c72f-5242-4168-828d-8b1c87c472e0	en	Content Manager
+ac6860f4-770b-4228-9a59-580d538490f0	de	Customer Administrator
+ac6860f4-770b-4228-9a59-580d538490f0	en	Customer Administrator
+b05d86e1-6c98-4619-85fa-9a425e0800b6	de	Unternehmensadministrator
+b05d86e1-6c98-4619-85fa-9a425e0800b6	en	Business Admin
+b05d86e1-6c98-4619-85fa-9a425e080000	de	Betrugsmanager
+b05d86e1-6c98-4619-85fa-9a425e080000	en	Fraud Manager
+b05d86e1-6c98-4619-85fa-9a425e080001	de	Betrugsreporter
+b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
+b05d86e1-6c98-4619-85fa-9a425e080002	de	Betrugsmanager
+b05d86e1-6c98-4619-85fa-9a425e080002	en	Fraud Manager
+b05d86e1-6c98-4619-85fa-9a425e080003	de	Betrugsreporter
+b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 \.
 
 
 --
--- Data for Name: app_assigned_company_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: app_assigned_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_assigned_company_user_roles (app_id, company_user_role_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	efc20368-9e82-46ff-b88f-6495b9810253
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	aabcdfeb-6669-4c74-89f0-19cda090873f
-ac1cf001-7fbc-1f2f-817f-bce05744000b	efc20368-9e82-46ff-b88f-6495b9810250
-ac1cf001-7fbc-1f2f-817f-bce05744000b	aabcdfeb-6669-4c74-89f0-19cda0908730
-ac1cf001-7fbc-1f2f-817f-bce05744000b	7d41c72f-5242-4168-828d-8b1c87c472e0
-ac1cf001-7fbc-1f2f-817f-bce05744000b	ac6860f4-770b-4228-9a59-580d538490f0
+COPY portal.app_assigned_clients (app_id, iam_client_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	789e31ee-0fdb-4e42-a819-23e0cfb1179b
+ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
+f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
+f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
 \.
-
 
 --
 -- Data for Name: app_licenses; Type: TABLE DATA; Schema: public; Owner: admin
@@ -398,12 +459,12 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 -- Data for Name: company_users; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_users (id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	\N	\N	\N	220330ac-170d-4e22-8d72-9467ed042149
-ac1cf001-7fbc-1f2f-817f-bce057770013	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	\N	\N	\N	\N	bdac6865-2a8d-4bfd-9373-9dfce8190895
-ac1cf001-7fbc-1f2f-817f-bce0577e0015	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542
-ac1cf001-7fbc-1f2f-817f-bce058020000	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
-ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX Admin	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87
+COPY portal.company_users (id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id, company_user_status_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	\N	\N	\N	220330ac-170d-4e22-8d72-9467ed042149	1
+ac1cf001-7fbc-1f2f-817f-bce057770013	2022-03-24 18:01:33.431	2022-03-24 18:01:33.431	\N	\N	\N	\N	bdac6865-2a8d-4bfd-9373-9dfce8190895	1
+ac1cf001-7fbc-1f2f-817f-bce0577e0015	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542	1
+ac1cf001-7fbc-1f2f-817f-bce058020000	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX Admin	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 \.
 
 

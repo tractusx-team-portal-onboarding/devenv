@@ -29,15 +29,21 @@ CREATE TABLE portal.company_roles (
 );
 
 
+CREATE TABLE portal.iam_clients (
+    id uuid PRIMARY KEY,
+    client_client_id character varying(255) NOT NULL,
+    CONSTRAINT uk_iam_client_client_client_id UNIQUE(client_client_id)
+);
+
 --
 -- Name: company_user_roles; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.company_user_roles (
+CREATE TABLE portal.user_roles (
     id uuid PRIMARY KEY,
-    company_user_role character varying(255) NOT NULL,
-    namede character varying(255) NOT NULL,
-    nameen character varying(255) NOT NULL
+    user_role character varying(255) NOT NULL,
+    iam_client_id uuid NOT NULL,
+    CONSTRAINT fk_user_role_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
 );
 
 
@@ -112,6 +118,15 @@ CREATE TABLE portal.company_role_descriptions (
     CONSTRAINT fk_company_role_descriptions_country_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
 );
 
+
+CREATE TABLE portal.user_role_descriptions (
+    user_role_id uuid,
+    language_short_name character(2),
+    description character varying(255) NOT NULL,
+    CONSTRAINT pk_user_role_descriptions PRIMARY KEY (user_role_id, language_short_name),
+    CONSTRAINT fk_user_role_descriptions_company_role_id FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id),
+    CONSTRAINT fk_user_role_descriptions_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name)
+);
 
 --
 -- Name: use_cases; Type: TABLE; Schema: public; Owner: -
@@ -243,6 +258,12 @@ CREATE TABLE portal.app_tags (
 -- Name: company_users; Type: TABLE; Schema: public; Owner: -
 --
 
+CREATE TABLE portal.company_user_status (
+    company_user_status_id integer PRIMARY KEY,
+    label character varying(255) NOT NULL
+);
+
+
 CREATE TABLE portal.company_users (
     id uuid PRIMARY KEY,
     date_created timestamptz NOT NULL,
@@ -252,7 +273,9 @@ CREATE TABLE portal.company_users (
     lastlogin bytea,
     lastname character varying(255),
     company_id uuid NOT NULL,
-    CONSTRAINT fk_ku01366dbcqk8h32lh8k5sx1 FOREIGN KEY (company_id) REFERENCES portal.companies(id)
+    company_user_status_id integer NOT NULL,
+    CONSTRAINT fk_ku01366dbcqk8h32lh8k5sx1 FOREIGN KEY (company_id) REFERENCES portal.companies(id),
+    CONSTRAINT fk_company_users_company_user_status_id FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_status (company_user_status_id)
 );
 
 
@@ -348,15 +371,15 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 
 
 --
--- Name: app_assigned_company_user_roles; Type: TABLE; Schema: public; Owner: -
+-- Name: app_assigned_user_roles; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE portal.app_assigned_company_user_roles (
+CREATE TABLE portal.app_assigned_clients (
     app_id uuid NOT NULL,
-    company_user_role_id uuid NOT NULL,
-    CONSTRAINT pk_app_assg_comp_user_roles PRIMARY KEY (app_id, company_user_role_id),
-    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (company_user_role_id) REFERENCES portal.company_user_roles(id),
-    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id)
+    iam_client_id uuid NOT NULL,
+    CONSTRAINT pk_app_assigned_clients PRIMARY KEY (app_id, iam_client_id),
+    CONSTRAINT fk_oayyvy590ngh5705yspep0up FOREIGN KEY (app_id) REFERENCES portal.apps(id),
+    CONSTRAINT fk_4m022ek8gffepnqlnuxwyxp8 FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id)
 );
 
 
@@ -482,7 +505,7 @@ CREATE TABLE portal.company_user_assigned_roles (
     user_role_id uuid NOT NULL,
     CONSTRAINT pk_comp_user_assigned_roles PRIMARY KEY (company_user_id, user_role_id),
     CONSTRAINT fk_0c9rjjf9gm3l0n6reb4o0f1s FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id),
-    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (user_role_id) REFERENCES portal.company_user_roles(id)
+    CONSTRAINT fk_bw1yhel67uhrxfk7mevovq5p FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id)
 );
 
 
