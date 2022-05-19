@@ -231,8 +231,8 @@ COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
 ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-0242ac120002
 95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	0c9051d0-d032-11ec-9d64-0242ac120002
 04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	0c9051d0-d032-11ec-9d64-0242ac120002
-04231a30-df50-4d14-bb00-71ff012ae0cg	Data Specialist (INT only)	0c9051d0-d032-11ec-9d64-0242ac120002
-04231a30-df50-4d14-bb00-71ff012ae0ch	Technical User Semantic & Digital Twin	0c9051d0-d032-11ec-9d64-0242ac120002
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	Data Specialist (INT only)	0c9051d0-d032-11ec-9d64-0242ac120002
+0d9eb9e4-b6df-49bd-b045-d9cef96a879d	Technical User Semantic & Digital Twin	0c9051d0-d032-11ec-9d64-0242ac120002
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
 efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	cf207afb-d213-4c33-becc-0cabeef174a7
 aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	cf207afb-d213-4c33-becc-0cabeef174a7
@@ -243,9 +243,9 @@ b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f032a040-d035-11ec-9d64-0
 b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f032a040-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f032a041-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-ab000vju0073	admin	f032a043-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-ab000vju0074	customer	f032a043-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-ab000vju0075	oem	f032a043-d035-11ec-9d64-0242ac120002
+855eeefb-a2ef-4d74-ac10-34a87afcb865	admin	f032a043-d035-11ec-9d64-0242ac120002
+545c2616-2fce-4f52-b881-331db2fc1e35	customer	f032a043-d035-11ec-9d64-0242ac120002
+7a9e0777-2b13-4463-a7c4-f699afff3527	oem	f032a043-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -265,10 +265,10 @@ ceec23fd-6b26-485c-a4bb-90571a29e148	en	Signing Manager
 95fe4014-4d1b-47af-a22e-72a12f9470db	en	Developer
 04231a30-df50-4d14-bb00-71ff012ae0cf	de	Data Specialist
 04231a30-df50-4d14-bb00-71ff012ae0cf	en	Data Specialist
-04231a30-df50-4d14-bb00-71ff012ae0ch	de	Technischer User Semantik & Zwillinge
-04231a30-df50-4d14-bb00-71ff012ae0ch	en	Technical User Semantic & Digital Twin
-04231a30-df50-4d14-bb00-71ff012ae0cg	de	Data Specialist (INT only)
-04231a30-df50-4d14-bb00-71ff012ae0cg	en	Data Specialist (INT only)
+0d9eb9e4-b6df-49bd-b045-d9cef96a879d	de	Technischer User Semantik & Zwillinge
+0d9eb9e4-b6df-49bd-b045-d9cef96a879d	en	Technical User Semantic & Digital Twin
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	de	Data Specialist (INT only)
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	en	Data Specialist (INT only)
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	de	App Administrator
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	en	App Admin
 efc20368-9e82-46ff-b88f-6495b9810253	de	Vehicle Purchaser
@@ -289,12 +289,12 @@ b05d86e1-6c98-4619-85fa-9a425e080002	de	Betrugsmanager
 b05d86e1-6c98-4619-85fa-9a425e080002	en	Fraud Manager
 b05d86e1-6c98-4619-85fa-9a425e080003	de	Betrugsreporter
 b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
-b05d86e1-6c98-4619-85fa-ab000vju0073	de	Administrator
-b05d86e1-6c98-4619-85fa-ab000vju0073	en	Administrator
-b05d86e1-6c98-4619-85fa-ab000vju0074	de	Kunde
-b05d86e1-6c98-4619-85fa-ab000vju0074	en	Customer
-b05d86e1-6c98-4619-85fa-ab000vju0075	de	Erstausrüster
-b05d86e1-6c98-4619-85fa-ab000vju0075	en	Original Equipment Manufacturer
+855eeefb-a2ef-4d74-ac10-34a87afcb865	de	Administrator
+855eeefb-a2ef-4d74-ac10-34a87afcb865	en	Administrator
+545c2616-2fce-4f52-b881-331db2fc1e35	de	Kunde
+545c2616-2fce-4f52-b881-331db2fc1e35	en	Customer
+7a9e0777-2b13-4463-a7c4-f699afff3527	de	Erstausrüster
+7a9e0777-2b13-4463-a7c4-f699afff3527	en	Original Equipment Manufacturer
 \.
 
 
