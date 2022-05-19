@@ -66,7 +66,7 @@ COPY portal.identity_providers (identity_provider_category_id, id, date_created)
 1	ac1cf001-7fbc-1f2f-817f-bce057770015	2022-05-05 18:01:33.33
 \.
 
-COPY portal.company_identity_provider (company_id, identity_provider_id) FROM stdin;
+COPY portal.company_identity_providers (company_id, identity_provider_id) FROM stdin;
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0571b0004
 220330ac-170d-4e22-8d72-9467ed042149	ac1cf001-7fbc-1f2f-817f-bce057230006
 bdac6865-2a8d-4bfd-9373-9dfce8190895	ac1cf001-7fbc-1f2f-817f-bce057230007

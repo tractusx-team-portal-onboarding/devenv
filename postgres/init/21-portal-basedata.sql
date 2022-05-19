@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
 -- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -28,10 +28,10 @@ COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
 
 
 --
--- Data for Name: app_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: app_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.app_status (app_status_id, label) FROM stdin;
+COPY portal.app_statuses (app_status_id, label) FROM stdin;
 1	CREATED
 2	IN_REVIEW
 3	ACTIVE
@@ -40,10 +40,10 @@ COPY portal.app_status (app_status_id, label) FROM stdin;
 
 
 --
--- Data for Name: company_application_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: company_application_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_application_status (application_status_id, label) FROM stdin;
+COPY portal.company_application_statuses (application_status_id, label) FROM stdin;
 1	CREATED
 2	ADD_COMPANY_DATA
 3	INVITE_USER
@@ -89,10 +89,10 @@ COPY portal.company_role_descriptions (company_role_id, language_short_name, des
 
 
 --
--- Data for Name: company_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: company_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_status (company_status_id, label) FROM stdin;
+COPY portal.company_statuses (company_status_id, label) FROM stdin;
 1	PENDING
 2	ACTIVE
 3	REJECTED
@@ -101,20 +101,20 @@ COPY portal.company_status (company_status_id, label) FROM stdin;
 
 
 --
--- Data for Name: company_user_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: company_user_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_user_status (company_user_status_id, label) FROM stdin;
+COPY portal.company_user_statuses (company_user_status_id, label) FROM stdin;
 1	ACTIVE
 2	INACTIVE
 \.
 
 
 --
--- Data for Name: consent_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: consent_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.consent_status (consent_status_id, label) FROM stdin;
+COPY portal.consent_statuses (consent_status_id, label) FROM stdin;
 1	ACTIVE
 2	INACTIVE
 \.
@@ -399,10 +399,10 @@ COPY portal.identity_provider_categories (identity_provider_category_id, label) 
 
 
 --
--- Data for Name: invitation_status; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: invitation_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.invitation_status (invitation_status_id, label) FROM stdin;
+COPY portal.invitation_statuses (invitation_status_id, label) FROM stdin;
 1	CREATED
 2	PENDING
 3	ACCEPTED

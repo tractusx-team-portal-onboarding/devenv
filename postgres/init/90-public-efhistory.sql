@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
 -- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: __efmigrations_history_portal; Type: TABLE; Schema: public; Owner: postgres
+-- Name: __efmigrations_history_portal; Type: TABLE; Schema: public; Owner: portal
 --
 
 CREATE TABLE public.__efmigrations_history_portal (
@@ -30,23 +30,15 @@ CREATE TABLE public.__efmigrations_history_portal (
 );
 
 
-ALTER TABLE public.__efmigrations_history_portal OWNER TO postgres;
+ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;
 
 --
--- Data for Name: __efmigrations_history_portal; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: __efmigrations_history_portal; Type: TABLE DATA; Schema: public; Owner: portal
 --
 
 COPY public.__efmigrations_history_portal (migration_id, product_version) FROM stdin;
-20220517170706_InitialCreate	6.0.4
+20220519154644_InitialCreate	6.0.4
 \.
-
-
---
--- Name: __efmigrations_history_portal pk___ef_migrations_history_portal; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.__efmigrations_history_portal
-    ADD CONSTRAINT pk___ef_migrations_history_portal PRIMARY KEY (migration_id);
 
 
 --
