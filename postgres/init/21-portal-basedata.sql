@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -20,7 +20,7 @@ SET row_security = off;
 -- Data for Name: agreement_categories; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
+COPY portal.agreement_categories (id, label) FROM stdin;
 1	CX_FRAME_CONTRACT
 2	APP_CONTRACT
 3	DATA_CONTRACT
@@ -31,7 +31,7 @@ COPY portal.agreement_categories (agreement_category_id, label) FROM stdin;
 -- Data for Name: app_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.app_statuses (app_status_id, label) FROM stdin;
+COPY portal.app_statuses (id, label) FROM stdin;
 1	CREATED
 2	IN_REVIEW
 3	ACTIVE
@@ -43,7 +43,7 @@ COPY portal.app_statuses (app_status_id, label) FROM stdin;
 -- Data for Name: company_application_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_application_statuses (application_status_id, label) FROM stdin;
+COPY portal.company_application_statuses (id, label) FROM stdin;
 1	CREATED
 2	ADD_COMPANY_DATA
 3	INVITE_USER
@@ -60,7 +60,7 @@ COPY portal.company_application_statuses (application_status_id, label) FROM std
 -- Data for Name: company_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_roles (company_role_id, label) FROM stdin;
+COPY portal.company_roles (id, label) FROM stdin;
 1	ACTIVE_PARTICIPANT
 2	APP_PROVIDER
 \.
@@ -92,7 +92,7 @@ COPY portal.company_role_descriptions (company_role_id, language_short_name, des
 -- Data for Name: company_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_statuses (company_status_id, label) FROM stdin;
+COPY portal.company_statuses (id, label) FROM stdin;
 1	PENDING
 2	ACTIVE
 3	REJECTED
@@ -104,9 +104,29 @@ COPY portal.company_statuses (company_status_id, label) FROM stdin;
 -- Data for Name: company_user_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_user_statuses (company_user_status_id, label) FROM stdin;
+COPY portal.company_user_statuses (id, label) FROM stdin;
 1	ACTIVE
 2	INACTIVE
+\.
+
+
+--
+-- Data for Name: connector_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.connector_statuses (id, label) FROM stdin;
+1	PENDING
+2	ACTIVE
+\.
+
+
+--
+-- Data for Name: connector_types; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.connector_types (id, label) FROM stdin;
+1	COMPANY_CONNECTOR
+2	CONNECTOR_AS_A_SERVICE
 \.
 
 
@@ -114,7 +134,7 @@ COPY portal.company_user_statuses (company_user_status_id, label) FROM stdin;
 -- Data for Name: consent_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.consent_statuses (consent_status_id, label) FROM stdin;
+COPY portal.consent_statuses (id, label) FROM stdin;
 1	ACTIVE
 2	INACTIVE
 \.
@@ -379,7 +399,7 @@ ZM	ZMB	Zambia	Zambia
 -- Data for Name: document_types; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.document_types (document_type_id, label) FROM stdin;
+COPY portal.document_types (id, label) FROM stdin;
 1	CX_FRAME_CONTRACT
 2	COMMERCIAL_REGISTER_EXTRACT
 3	APP_CONTRACT
@@ -391,7 +411,7 @@ COPY portal.document_types (document_type_id, label) FROM stdin;
 -- Data for Name: identity_provider_categories; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.identity_provider_categories (identity_provider_category_id, label) FROM stdin;
+COPY portal.identity_provider_categories (id, label) FROM stdin;
 1	KEYCLOAK_SHARED
 2	KEYCLOAK_OIDC
 3	KEYCLOAK_SAML
@@ -402,7 +422,7 @@ COPY portal.identity_provider_categories (identity_provider_category_id, label) 
 -- Data for Name: invitation_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.invitation_statuses (invitation_status_id, label) FROM stdin;
+COPY portal.invitation_statuses (id, label) FROM stdin;
 1	CREATED
 2	PENDING
 3	ACCEPTED

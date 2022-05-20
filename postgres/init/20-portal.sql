@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -70,7 +70,7 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 --
 
 CREATE TABLE portal.agreement_categories (
-    agreement_category_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -170,7 +170,7 @@ CREATE TABLE portal.app_licenses (
 --
 
 CREATE TABLE portal.app_statuses (
-    app_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -227,7 +227,7 @@ CREATE TABLE portal.companies (
 --
 
 CREATE TABLE portal.company_application_statuses (
-    application_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -301,7 +301,7 @@ CREATE TABLE portal.company_role_descriptions (
 --
 
 CREATE TABLE portal.company_roles (
-    company_role_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -311,7 +311,7 @@ CREATE TABLE portal.company_roles (
 --
 
 CREATE TABLE portal.company_statuses (
-    company_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -341,7 +341,7 @@ CREATE TABLE portal.company_user_assigned_roles (
 --
 
 CREATE TABLE portal.company_user_statuses (
-    company_user_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -364,11 +364,47 @@ CREATE TABLE portal.company_users (
 
 
 --
+-- Name: connector_statuses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.connector_statuses (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: connector_types; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.connector_types (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: connectors; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.connectors (
+    id uuid NOT NULL,
+    name character varying(255) NOT NULL,
+    connector_url character varying(255) NOT NULL,
+    type_id integer NOT NULL,
+    status_id integer NOT NULL,
+    provider_id uuid NOT NULL,
+    host_id uuid,
+    location_id character(2) NOT NULL
+);
+
+
+--
 -- Name: consent_statuses; Type: TABLE; Schema: portal; Owner: -
 --
 
 CREATE TABLE portal.consent_statuses (
-    consent_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -420,7 +456,7 @@ CREATE TABLE portal.document_templates (
 --
 
 CREATE TABLE portal.document_types (
-    document_type_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -475,7 +511,7 @@ CREATE TABLE portal.iam_users (
 --
 
 CREATE TABLE portal.identity_provider_categories (
-    identity_provider_category_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -496,7 +532,7 @@ CREATE TABLE portal.identity_providers (
 --
 
 CREATE TABLE portal.invitation_statuses (
-    invitation_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -587,7 +623,7 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 --
 
 ALTER TABLE ONLY portal.agreement_categories
-    ADD CONSTRAINT pk_agreement_categories PRIMARY KEY (agreement_category_id);
+    ADD CONSTRAINT pk_agreement_categories PRIMARY KEY (id);
 
 
 --
@@ -659,7 +695,7 @@ ALTER TABLE ONLY portal.app_licenses
 --
 
 ALTER TABLE ONLY portal.app_statuses
-    ADD CONSTRAINT pk_app_statuses PRIMARY KEY (app_status_id);
+    ADD CONSTRAINT pk_app_statuses PRIMARY KEY (id);
 
 
 --
@@ -691,7 +727,7 @@ ALTER TABLE ONLY portal.companies
 --
 
 ALTER TABLE ONLY portal.company_application_statuses
-    ADD CONSTRAINT pk_company_application_statuses PRIMARY KEY (application_status_id);
+    ADD CONSTRAINT pk_company_application_statuses PRIMARY KEY (id);
 
 
 --
@@ -747,7 +783,7 @@ ALTER TABLE ONLY portal.company_role_descriptions
 --
 
 ALTER TABLE ONLY portal.company_roles
-    ADD CONSTRAINT pk_company_roles PRIMARY KEY (company_role_id);
+    ADD CONSTRAINT pk_company_roles PRIMARY KEY (id);
 
 
 --
@@ -755,7 +791,7 @@ ALTER TABLE ONLY portal.company_roles
 --
 
 ALTER TABLE ONLY portal.company_statuses
-    ADD CONSTRAINT pk_company_statuses PRIMARY KEY (company_status_id);
+    ADD CONSTRAINT pk_company_statuses PRIMARY KEY (id);
 
 
 --
@@ -779,7 +815,7 @@ ALTER TABLE ONLY portal.company_user_assigned_roles
 --
 
 ALTER TABLE ONLY portal.company_user_statuses
-    ADD CONSTRAINT pk_company_user_statuses PRIMARY KEY (company_user_status_id);
+    ADD CONSTRAINT pk_company_user_statuses PRIMARY KEY (id);
 
 
 --
@@ -791,11 +827,35 @@ ALTER TABLE ONLY portal.company_users
 
 
 --
+-- Name: connector_statuses pk_connector_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connector_statuses
+    ADD CONSTRAINT pk_connector_statuses PRIMARY KEY (id);
+
+
+--
+-- Name: connector_types pk_connector_types; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connector_types
+    ADD CONSTRAINT pk_connector_types PRIMARY KEY (id);
+
+
+--
+-- Name: connectors pk_connectors; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT pk_connectors PRIMARY KEY (id);
+
+
+--
 -- Name: consent_statuses pk_consent_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.consent_statuses
-    ADD CONSTRAINT pk_consent_statuses PRIMARY KEY (consent_status_id);
+    ADD CONSTRAINT pk_consent_statuses PRIMARY KEY (id);
 
 
 --
@@ -827,7 +887,7 @@ ALTER TABLE ONLY portal.document_templates
 --
 
 ALTER TABLE ONLY portal.document_types
-    ADD CONSTRAINT pk_document_types PRIMARY KEY (document_type_id);
+    ADD CONSTRAINT pk_document_types PRIMARY KEY (id);
 
 
 --
@@ -867,7 +927,7 @@ ALTER TABLE ONLY portal.iam_users
 --
 
 ALTER TABLE ONLY portal.identity_provider_categories
-    ADD CONSTRAINT pk_identity_provider_categories PRIMARY KEY (identity_provider_category_id);
+    ADD CONSTRAINT pk_identity_provider_categories PRIMARY KEY (id);
 
 
 --
@@ -883,7 +943,7 @@ ALTER TABLE ONLY portal.identity_providers
 --
 
 ALTER TABLE ONLY portal.invitation_statuses
-    ADD CONSTRAINT pk_invitation_statuses PRIMARY KEY (invitation_status_id);
+    ADD CONSTRAINT pk_invitation_statuses PRIMARY KEY (id);
 
 
 --
@@ -1123,6 +1183,41 @@ CREATE INDEX ix_company_users_company_user_status_id ON portal.company_users USI
 
 
 --
+-- Name: ix_connectors_host_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_connectors_host_id ON portal.connectors USING btree (host_id);
+
+
+--
+-- Name: ix_connectors_location_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_connectors_location_id ON portal.connectors USING btree (location_id);
+
+
+--
+-- Name: ix_connectors_provider_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_connectors_provider_id ON portal.connectors USING btree (provider_id);
+
+
+--
+-- Name: ix_connectors_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_connectors_status_id ON portal.connectors USING btree (status_id);
+
+
+--
+-- Name: ix_connectors_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_connectors_type_id ON portal.connectors USING btree (type_id);
+
+
+--
 -- Name: ix_consents_agreement_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1255,7 +1350,7 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_company_roles
-    ADD CONSTRAINT fk_agreement_assigned_company_roles_company_roles_company_role FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id);
+    ADD CONSTRAINT fk_agreement_assigned_company_roles_company_roles_company_role FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id);
 
 
 --
@@ -1279,7 +1374,7 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 --
 
 ALTER TABLE ONLY portal.agreements
-    ADD CONSTRAINT fk_agreements_agreement_categories_agreement_category_id FOREIGN KEY (agreement_category_id) REFERENCES portal.agreement_categories(agreement_category_id);
+    ADD CONSTRAINT fk_agreements_agreement_categories_agreement_category_id FOREIGN KEY (agreement_category_id) REFERENCES portal.agreement_categories(id);
 
 
 --
@@ -1407,7 +1502,7 @@ ALTER TABLE ONLY portal.app_tags
 --
 
 ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_app_statuses_app_status_id FOREIGN KEY (app_status_id) REFERENCES portal.app_statuses(app_status_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_apps_app_statuses_app_status_id FOREIGN KEY (app_status_id) REFERENCES portal.app_statuses(id) ON DELETE CASCADE;
 
 
 --
@@ -1431,7 +1526,7 @@ ALTER TABLE ONLY portal.companies
 --
 
 ALTER TABLE ONLY portal.companies
-    ADD CONSTRAINT fk_companies_company_statuses_company_status_id FOREIGN KEY (company_status_id) REFERENCES portal.company_statuses(company_status_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_companies_company_statuses_company_status_id FOREIGN KEY (company_status_id) REFERENCES portal.company_statuses(id) ON DELETE CASCADE;
 
 
 --
@@ -1447,7 +1542,7 @@ ALTER TABLE ONLY portal.company_applications
 --
 
 ALTER TABLE ONLY portal.company_applications
-    ADD CONSTRAINT fk_company_applications_company_application_statuses_applicati FOREIGN KEY (application_status_id) REFERENCES portal.company_application_statuses(application_status_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_company_applications_company_application_statuses_applicati FOREIGN KEY (application_status_id) REFERENCES portal.company_application_statuses(id) ON DELETE CASCADE;
 
 
 --
@@ -1479,7 +1574,7 @@ ALTER TABLE ONLY portal.company_assigned_roles
 --
 
 ALTER TABLE ONLY portal.company_assigned_roles
-    ADD CONSTRAINT fk_company_assigned_roles_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id);
+    ADD CONSTRAINT fk_company_assigned_roles_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id);
 
 
 --
@@ -1519,7 +1614,7 @@ ALTER TABLE ONLY portal.company_identity_providers
 --
 
 ALTER TABLE ONLY portal.company_role_descriptions
-    ADD CONSTRAINT fk_company_role_descriptions_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(company_role_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_company_role_descriptions_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id) ON DELETE CASCADE;
 
 
 --
@@ -1575,7 +1670,47 @@ ALTER TABLE ONLY portal.company_users
 --
 
 ALTER TABLE ONLY portal.company_users
-    ADD CONSTRAINT fk_company_users_company_user_statuses_company_user_status_id FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_statuses(company_user_status_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_company_users_company_user_statuses_company_user_status_id FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_statuses(id) ON DELETE CASCADE;
+
+
+--
+-- Name: connectors fk_connectors_companies_host_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_companies_host_id FOREIGN KEY (host_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: connectors fk_connectors_companies_provider_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_companies_provider_id FOREIGN KEY (provider_id) REFERENCES portal.companies(id) ON DELETE CASCADE;
+
+
+--
+-- Name: connectors fk_connectors_connector_statuses_status_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_connector_statuses_status_id FOREIGN KEY (status_id) REFERENCES portal.connector_statuses(id);
+
+
+--
+-- Name: connectors fk_connectors_connector_types_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_connector_types_type_id FOREIGN KEY (type_id) REFERENCES portal.connector_types(id);
+
+
+--
+-- Name: connectors fk_connectors_countries_location_temp_id1; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_countries_location_temp_id1 FOREIGN KEY (location_id) REFERENCES portal.countries(alpha2code) ON DELETE CASCADE;
 
 
 --
@@ -1607,7 +1742,7 @@ ALTER TABLE ONLY portal.consents
 --
 
 ALTER TABLE ONLY portal.consents
-    ADD CONSTRAINT fk_consents_consent_statuses_consent_status_id FOREIGN KEY (consent_status_id) REFERENCES portal.consent_statuses(consent_status_id);
+    ADD CONSTRAINT fk_consents_consent_statuses_consent_status_id FOREIGN KEY (consent_status_id) REFERENCES portal.consent_statuses(id);
 
 
 --
@@ -1631,7 +1766,7 @@ ALTER TABLE ONLY portal.documents
 --
 
 ALTER TABLE ONLY portal.documents
-    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(document_type_id);
+    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(id);
 
 
 --
@@ -1655,7 +1790,7 @@ ALTER TABLE ONLY portal.iam_users
 --
 
 ALTER TABLE ONLY portal.identity_providers
-    ADD CONSTRAINT fk_identity_providers_identity_provider_categories_identity_pr FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(identity_provider_category_id);
+    ADD CONSTRAINT fk_identity_providers_identity_provider_categories_identity_pr FOREIGN KEY (identity_provider_category_id) REFERENCES portal.identity_provider_categories(id);
 
 
 --
@@ -1679,7 +1814,7 @@ ALTER TABLE ONLY portal.invitations
 --
 
 ALTER TABLE ONLY portal.invitations
-    ADD CONSTRAINT fk_invitations_invitation_statuses_invitation_status_id FOREIGN KEY (invitation_status_id) REFERENCES portal.invitation_statuses(invitation_status_id);
+    ADD CONSTRAINT fk_invitations_invitation_statuses_invitation_status_id FOREIGN KEY (invitation_status_id) REFERENCES portal.invitation_statuses(id);
 
 
 --
