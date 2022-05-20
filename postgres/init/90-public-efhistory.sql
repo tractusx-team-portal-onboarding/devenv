@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -38,6 +38,8 @@ ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;
 
 COPY public.__efmigrations_history_portal (migration_id, product_version) FROM stdin;
 20220519154644_InitialCreate	6.0.4
+20220520103317_AddConnectors	6.0.4
+20220520121416_RenameEnumEntityKeyColumns	6.0.4
 \.
 
 

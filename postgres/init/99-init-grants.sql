@@ -46,4 +46,6 @@ ALTER TABLE portal.consent_statuses OWNER TO portal;
 ALTER TABLE portal.consents OWNER TO portal;
 ALTER TABLE portal.invitation_statuses OWNER TO portal;
 ALTER TABLE portal.invitations OWNER TO portal;
-
+ALTER TABLE portal.connectors OWNER TO portal;
+ALTER TABLE portal.connector_statuses OWNER TO portal;
+ALTER TABLE portal.connector_types OWNER TO portal;
