@@ -321,7 +321,7 @@ CREATE TABLE portal.company_service_account_assigned_roles (
 --
 
 CREATE TABLE portal.company_service_account_statuses (
-    company_service_account_status_id integer NOT NULL,
+    id integer NOT NULL,
     label character varying(255) NOT NULL
 );
 
@@ -845,7 +845,7 @@ ALTER TABLE ONLY portal.company_service_account_assigned_roles
 --
 
 ALTER TABLE ONLY portal.company_service_account_statuses
-    ADD CONSTRAINT pk_company_service_account_statuses PRIMARY KEY (company_service_account_status_id);
+    ADD CONSTRAINT pk_company_service_account_statuses PRIMARY KEY (id);
 
 
 --
@@ -1774,7 +1774,7 @@ ALTER TABLE ONLY portal.company_service_accounts
 --
 
 ALTER TABLE ONLY portal.company_service_accounts
-    ADD CONSTRAINT fk_company_service_accounts_company_service_account_statuses_c FOREIGN KEY (company_service_account_status_id) REFERENCES portal.company_service_account_statuses(company_service_account_status_id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_company_service_accounts_company_service_account_statuses_c FOREIGN KEY (company_service_account_status_id) REFERENCES portal.company_service_account_statuses(id) ON DELETE CASCADE;
 
 
 --
