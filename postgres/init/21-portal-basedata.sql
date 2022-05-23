@@ -89,6 +89,16 @@ COPY portal.company_role_descriptions (company_role_id, language_short_name, des
 
 
 --
+-- Data for Name: company_service_account_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.company_service_account_statuses (company_service_account_status_id, label) FROM stdin;
+1	ACTIVE
+2	INACTIVE
+\.
+
+
+--
 -- Data for Name: company_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
