@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
 -- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -1572,6 +1572,10 @@ b94ad711-3aa5-4642-8833-0406b2c5bf9b	1648485061605	CX-Central	CREATE	CX-Central	
 e82eb495-7c90-4761-b3ea-c9be010e1c4e	1648490668169	CX-Central	UPDATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3432d787-d7c8-46fb-96d7-cc984c6bfaac	{"id":"3432d787-d7c8-46fb-96d7-cc984c6bfaac","createdTimestamp":1648485062303,"username":"idp2.f99d2698-5670-41f2-a141-e58b0c99560c","enabled":true,"totp":false,"emailVerified":true,"firstName":"Testuser","lastName":"WSL","email":"no.email@catena.net","attributes":{"organisation":["WSL Shared Idp"],"tenant":["idp2"]},"disableableCredentialTypes":[],"requiredActions":[],"federatedIdentities":[{"identityProvider":"idp2","userId":"f99d2698-5670-41f2-a141-e58b0c99560c","userName":"wsl-test"}],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}	\N	USER
 e2571e90-7313-48e1-8303-7c4335d385ee	1652813259627	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/view_submitted_applications	{"id":"6f98c370-cd5d-4ffa-9d38-26d39fdf6e25","name":"view_submitted_applications","composite":false}	\N	CLIENT_ROLE
 77c35853-7576-4c9d-a47e-6e750d875c21	1652813274525	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"6f98c370-cd5d-4ffa-9d38-26d39fdf6e25","name":"view_submitted_applications","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+0282e00c-15d9-42fa-855c-af10c54069e4	1653312900464	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/add_tech_user_management	{"id":"4db614c5-9c59-47a0-a63d-89407fa77810","name":"add_tech_user_management","composite":false}	\N	CLIENT_ROLE
+6fe39c55-f4dd-4625-afa4-5f0dea509956	1653312911376	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/delete_tech_user_management	{"id":"e7fa4253-9664-4bca-9c0f-966648d19b47","name":"delete_tech_user_management","composite":false}	\N	CLIENT_ROLE
+669415d3-8577-46c2-90cc-02c3b1d063ca	1653312920042	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/view_tech_user_management	{"id":"a718d689-a009-484d-a240-9ce86d922ea3","name":"view_tech_user_management","composite":false}	\N	CLIENT_ROLE
+8d137276-ca1c-43a7-a031-00011945f732	1653312940577	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"4db614c5-9c59-47a0-a63d-89407fa77810","name":"add_tech_user_management","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"},{"id":"e7fa4253-9664-4bca-9c0f-966648d19b47","name":"delete_tech_user_management","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"},{"id":"a718d689-a009-484d-a240-9ce86d922ea3","name":"view_tech_user_management","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 \.
 
 
@@ -2462,6 +2466,9 @@ d95f2bd5-0380-4f9b-832b-f80640426002	b5c6e85f-92af-4ba1-b3af-08d6fb34f47b
 84e52241-1d69-46a9-98ad-7954369582f1	1c44f74b-db89-4017-94ec-21c9ee8ce7ea
 314b0ae7-55ac-4ba4-bc67-ca36c48efafd	4d87806a-dc8d-4784-9bf1-a918e4a53402
 e8b9f782-d707-4852-a979-e5a08b19f3c7	6f98c370-cd5d-4ffa-9d38-26d39fdf6e25
+e8b9f782-d707-4852-a979-e5a08b19f3c7	e7fa4253-9664-4bca-9c0f-966648d19b47
+e8b9f782-d707-4852-a979-e5a08b19f3c7	a718d689-a009-484d-a240-9ce86d922ea3
+e8b9f782-d707-4852-a979-e5a08b19f3c7	4db614c5-9c59-47a0-a63d-89407fa77810
 \.
 
 
@@ -3047,6 +3054,9 @@ b5c6e85f-92af-4ba1-b3af-08d6fb34f47b	60313b78-e131-4358-9817-163ee938cc59	t	${ro
 1d7e915f-b970-485b-9071-a12b797e88aa	60313b78-e131-4358-9817-163ee938cc59	t	${role_delete-account}	delete-account	CX-Central	60313b78-e131-4358-9817-163ee938cc59	\N
 4d87806a-dc8d-4784-9bf1-a918e4a53402	3f759b87-a1b1-4a53-a1dd-54e0efd9c08b	t	${role_impersonation}	impersonation	master	3f759b87-a1b1-4a53-a1dd-54e0efd9c08b	\N
 6f98c370-cd5d-4ffa-9d38-26d39fdf6e25	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	view_submitted_applications	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+4db614c5-9c59-47a0-a63d-89407fa77810	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	add_tech_user_management	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+e7fa4253-9664-4bca-9c0f-966648d19b47	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	delete_tech_user_management	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+a718d689-a009-484d-a240-9ce86d922ea3	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	view_tech_user_management	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 \.
 
 
