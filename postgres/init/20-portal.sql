@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -307,6 +307,40 @@ CREATE TABLE portal.company_roles (
 
 
 --
+-- Name: company_service_account_assigned_roles; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_service_account_assigned_roles (
+    company_service_account_id uuid NOT NULL,
+    user_role_id uuid NOT NULL
+);
+
+
+--
+-- Name: company_service_account_statuses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_service_account_statuses (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: company_service_accounts; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_service_accounts (
+    id uuid NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    company_id uuid NOT NULL,
+    name character varying(255) NOT NULL,
+    description text NOT NULL,
+    company_service_account_status_id integer NOT NULL
+);
+
+
+--
 -- Name: company_statuses; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -493,6 +527,18 @@ CREATE TABLE portal.iam_clients (
 CREATE TABLE portal.iam_identity_providers (
     iam_idp_alias character varying(255) NOT NULL,
     identity_provider_id uuid NOT NULL
+);
+
+
+--
+-- Name: iam_service_accounts; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.iam_service_accounts (
+    client_id character varying(36) NOT NULL,
+    client_client_id character varying(255) NOT NULL,
+    user_entity_id character varying(36) NOT NULL,
+    company_service_account_id uuid NOT NULL
 );
 
 
@@ -787,6 +833,30 @@ ALTER TABLE ONLY portal.company_roles
 
 
 --
+-- Name: company_service_account_assigned_roles pk_company_service_account_assigned_roles; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_account_assigned_roles
+    ADD CONSTRAINT pk_company_service_account_assigned_roles PRIMARY KEY (company_service_account_id, user_role_id);
+
+
+--
+-- Name: company_service_account_statuses pk_company_service_account_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_account_statuses
+    ADD CONSTRAINT pk_company_service_account_statuses PRIMARY KEY (id);
+
+
+--
+-- Name: company_service_accounts pk_company_service_accounts; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_accounts
+    ADD CONSTRAINT pk_company_service_accounts PRIMARY KEY (id);
+
+
+--
 -- Name: company_statuses pk_company_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -912,6 +982,14 @@ ALTER TABLE ONLY portal.iam_clients
 
 ALTER TABLE ONLY portal.iam_identity_providers
     ADD CONSTRAINT pk_iam_identity_providers PRIMARY KEY (iam_idp_alias);
+
+
+--
+-- Name: iam_service_accounts pk_iam_service_accounts; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.iam_service_accounts
+    ADD CONSTRAINT pk_iam_service_accounts PRIMARY KEY (client_id);
 
 
 --
@@ -1155,6 +1233,27 @@ CREATE INDEX ix_company_role_descriptions_language_short_name ON portal.company_
 
 
 --
+-- Name: ix_company_service_account_assigned_roles_user_role_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_service_account_assigned_roles_user_role_id ON portal.company_service_account_assigned_roles USING btree (user_role_id);
+
+
+--
+-- Name: ix_company_service_accounts_company_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_service_accounts_company_id ON portal.company_service_accounts USING btree (company_id);
+
+
+--
+-- Name: ix_company_service_accounts_company_service_account_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_service_accounts_company_service_account_status_id ON portal.company_service_accounts USING btree (company_service_account_status_id);
+
+
+--
 -- Name: ix_company_user_assigned_app_favourites_app_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1278,6 +1377,27 @@ CREATE UNIQUE INDEX ix_iam_clients_client_client_id ON portal.iam_clients USING 
 --
 
 CREATE UNIQUE INDEX ix_iam_identity_providers_identity_provider_id ON portal.iam_identity_providers USING btree (identity_provider_id);
+
+
+--
+-- Name: ix_iam_service_accounts_client_client_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_iam_service_accounts_client_client_id ON portal.iam_service_accounts USING btree (client_client_id);
+
+
+--
+-- Name: ix_iam_service_accounts_company_service_account_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_iam_service_accounts_company_service_account_id ON portal.iam_service_accounts USING btree (company_service_account_id);
+
+
+--
+-- Name: ix_iam_service_accounts_user_entity_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_iam_service_accounts_user_entity_id ON portal.iam_service_accounts USING btree (user_entity_id);
 
 
 --
@@ -1626,6 +1746,38 @@ ALTER TABLE ONLY portal.company_role_descriptions
 
 
 --
+-- Name: company_service_account_assigned_roles fk_company_service_account_assigned_roles_company_service_acco; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_account_assigned_roles
+    ADD CONSTRAINT fk_company_service_account_assigned_roles_company_service_acco FOREIGN KEY (company_service_account_id) REFERENCES portal.company_service_accounts(id);
+
+
+--
+-- Name: company_service_account_assigned_roles fk_company_service_account_assigned_roles_user_roles_user_role; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_account_assigned_roles
+    ADD CONSTRAINT fk_company_service_account_assigned_roles_user_roles_user_role FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id);
+
+
+--
+-- Name: company_service_accounts fk_company_service_accounts_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_accounts
+    ADD CONSTRAINT fk_company_service_accounts_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: company_service_accounts fk_company_service_accounts_company_service_account_statuses_c; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_service_accounts
+    ADD CONSTRAINT fk_company_service_accounts_company_service_account_statuses_c FOREIGN KEY (company_service_account_status_id) REFERENCES portal.company_service_account_statuses(id) ON DELETE CASCADE;
+
+
+--
 -- Name: company_user_assigned_app_favourites fk_company_user_assigned_app_favourites_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1775,6 +1927,14 @@ ALTER TABLE ONLY portal.documents
 
 ALTER TABLE ONLY portal.iam_identity_providers
     ADD CONSTRAINT fk_iam_identity_providers_identity_providers_identity_provider FOREIGN KEY (identity_provider_id) REFERENCES portal.identity_providers(id);
+
+
+--
+-- Name: iam_service_accounts fk_iam_service_accounts_company_service_accounts_company_servi; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.iam_service_accounts
+    ADD CONSTRAINT fk_iam_service_accounts_company_service_accounts_company_servi FOREIGN KEY (company_service_account_id) REFERENCES portal.company_service_accounts(id);
 
 
 --

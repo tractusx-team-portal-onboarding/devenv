@@ -49,3 +49,8 @@ ALTER TABLE portal.invitations OWNER TO portal;
 ALTER TABLE portal.connectors OWNER TO portal;
 ALTER TABLE portal.connector_statuses OWNER TO portal;
 ALTER TABLE portal.connector_types OWNER TO portal;
+ALTER TABLE portal.iam_service_accounts OWNER TO portal;
+ALTER TABLE portal.company_service_account_assigned_roles OWNER TO portal;
+ALTER TABLE portal.company_service_account_statuses OWNER TO portal;
+ALTER TABLE portal.company_service_accounts OWNER TO portal;
+

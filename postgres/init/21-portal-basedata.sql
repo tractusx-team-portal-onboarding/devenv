@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -85,6 +85,16 @@ COPY portal.company_role_descriptions (company_role_id, language_short_name, des
 1	en	Participant
 2	de	Softwareanbieter
 2	en	Application Provider
+\.
+
+
+--
+-- Data for Name: company_service_account_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.company_service_account_statuses (id, label) FROM stdin;
+1	ACTIVE
+2	INACTIVE
 \.
 
 
