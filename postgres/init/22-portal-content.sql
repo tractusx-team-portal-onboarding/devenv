@@ -102,6 +102,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022
 5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d2	2022-03-24 18:01:33.388	DTC-Translator	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	https://dtc-translator.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
+5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts	2022-03-24 18:01:33.388	\N	\N	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 \.
 
 
@@ -141,6 +142,9 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 5cf74ef8-e0b7-4984-a872-474828beb5d3	Behavior Twin
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Dismantler
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
+5cf74ef8-e0b7-4984-a872-474828beb5d4	Test
+5cf74ef8-e0b7-4984-a872-474828beb5d4	Chain
+5cf74ef8-e0b7-4984-a872-474828beb5d4	Production
 \.
 
 
@@ -159,6 +163,8 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	de
 f9cad59d-84b3-4880-a550-4072c26a6b94	en
 ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
+5cf74ef8-e0b7-4984-a872-474828beb5d4	en
+5cf74ef8-e0b7-4984-a872-474828beb5d4	de
 \.
 
 
@@ -386,14 +392,16 @@ The service provides information about new bank account fraud cases (e.g. invoic
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
-Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d2	en
-Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d2	de
-Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d3	en
-Test	Test	5cf74ef8-e0b7-4984-a872-474828beb5d3	de
+This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d2	en
+This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d2	de
+This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d3	en
+This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d3	de
 The service provides the possibility to create a fraud case (e.g. invoices with fake bank details) and report them to business partners.	Report Fraud Cases	f9cad59d-84b3-4880-a550-4072c26a6b94	en
-Test	Test	f9cad59d-84b3-4880-a550-4072c26a6b94	de
-Test	Test	ac1cf001-7fbc-1f2f-817f-bce05744000b	de
-Test	Test	ac1cf001-7fbc-1f2f-817f-bce0573f0009	de
+This is only a test text	This is only a test text	f9cad59d-84b3-4880-a550-4072c26a6b94	de
+This is only a test text	This is only a test text	ac1cf001-7fbc-1f2f-817f-bce05744000b	de
+This is only a test text	This is only a test text	ac1cf001-7fbc-1f2f-817f-bce0573f0009	de
+AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.	5cf74ef8-e0b7-4984-a872-474828beb5d4	de
+AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.	5cf74ef8-e0b7-4984-a872-474828beb5d4	en
 \.
 
 
@@ -575,4 +583,18 @@ d54db875-774c-479f-9f14-375f2cb8b258	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a4
 d54db875-774c-479f-9f14-375f2cb8b260	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058020002
 d54db875-774c-479f-9f14-375f2cb8b261	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9d	ac1cf001-7fbc-1f2f-817f-bce058020003
 d54db875-774c-479f-9f14-375f2cb8b262	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9e	ac1cf001-7fbc-1f2f-817f-bce058020004
+\.
+
+
+--
+-- Data for Name: connectors; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.connectors (id, name, connector_url, type_id, status_id, provider_id, host_id, location_id) FROM stdin;
+7e86a0b8-6903-496b-96d1-0ef508206833	Test Connector 1	www.google.de	1	1	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	DE
+7e86a0b8-6903-496b-96d1-0ef508206834	Test Connector 2	www.google.de	1	2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	DE
+7e86a0b8-6903-496b-96d1-0ef508206835	Test Connector 3	www.google.de	1	2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	DE
+7e86a0b8-6903-496b-96d1-0ef508206836	Test Connector 4	www.google.de	1	2	ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac861325-bc54-4583-bcdc-9e9f2a38ff84	DE
+7e86a0b8-6903-496b-96d1-0ef508206837	Test Connector 5	www.google.de	1	1	ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac861325-bc54-4583-bcdc-9e9f2a38ff84	DE
+7e86a0b8-6903-496b-96d1-0ef508206838	Test Connector 6	www.google.de	1	1	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	DE
 \.
