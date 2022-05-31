@@ -598,3 +598,16 @@ COPY portal.connectors (id, name, connector_url, type_id, status_id, provider_id
 7e86a0b8-6903-496b-96d1-0ef508206837	Test Connector 5	www.google.de	1	1	ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac861325-bc54-4583-bcdc-9e9f2a38ff84	DE
 7e86a0b8-6903-496b-96d1-0ef508206838	Test Connector 6	www.google.de	1	1	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	DE
 \.
+
+--
+-- Data for Name: company_service_accounts; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.company_service_accounts (id, date_created, company_id, name, description, company_service_account_status_id) FROM stdin;
+7e85a0b8-0001-ab67-10d1-0ef508201000	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 01	This is a test service account only and not for actual use.	1
+7e85a0b8-0001-ab67-10d1-0ef508201001	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 02	This is a test service account only and not for actual use.	1
+7e85a0b8-0001-ab67-10d1-0ef508201002	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 03	This is a test service account only and not for actual use.	2
+7e85a0b8-0001-ab67-10d1-0ef508201003	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 04	This is a test service account only and not for actual use.	1
+7e85a0b8-0001-ab67-10d1-0ef508201004	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 01	This is a test service account only and not for actual use.	1
+7e85a0b8-0001-ab67-10d1-0ef508201005	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 02	This is a test service account only and not for actual use.	1
+\.
