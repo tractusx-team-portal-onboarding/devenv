@@ -206,13 +206,24 @@ CREATE TABLE portal.apps (
 
 
 --
+-- Name: business_partners; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.business_partners (
+    business_partner_number character varying(20) NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    parent_business_partner_number character varying(20)
+);
+
+
+--
 -- Name: companies; Type: TABLE; Schema: portal; Owner: -
 --
 
 CREATE TABLE portal.companies (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
-    bpn character varying(20),
+    business_partner_number character varying(20),
     tax_id character varying(20),
     name character varying(255) NOT NULL,
     parent character varying(255),
@@ -357,6 +368,16 @@ CREATE TABLE portal.company_statuses (
 CREATE TABLE portal.company_user_assigned_app_favourites (
     company_user_id uuid NOT NULL,
     app_id uuid NOT NULL
+);
+
+
+--
+-- Name: company_user_assigned_business_partners; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_user_assigned_business_partners (
+    business_partner_number character varying(20) NOT NULL,
+    company_user_id uuid NOT NULL
 );
 
 
@@ -761,6 +782,14 @@ ALTER TABLE ONLY portal.apps
 
 
 --
+-- Name: business_partners pk_business_partners; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.business_partners
+    ADD CONSTRAINT pk_business_partners PRIMARY KEY (business_partner_number);
+
+
+--
 -- Name: companies pk_companies; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -870,6 +899,14 @@ ALTER TABLE ONLY portal.company_statuses
 
 ALTER TABLE ONLY portal.company_user_assigned_app_favourites
     ADD CONSTRAINT pk_company_user_assigned_app_favourites PRIMARY KEY (company_user_id, app_id);
+
+
+--
+-- Name: company_user_assigned_business_partners pk_company_user_assigned_business_partners; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_user_assigned_business_partners
+    ADD CONSTRAINT pk_company_user_assigned_business_partners PRIMARY KEY (business_partner_number, company_user_id);
 
 
 --
@@ -1170,10 +1207,24 @@ CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_co
 
 
 --
+-- Name: ix_business_partners_parent_business_partner_number; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_business_partners_parent_business_partner_number ON portal.business_partners USING btree (parent_business_partner_number);
+
+
+--
 -- Name: ix_companies_address_id; Type: INDEX; Schema: portal; Owner: -
 --
 
 CREATE INDEX ix_companies_address_id ON portal.companies USING btree (address_id);
+
+
+--
+-- Name: ix_companies_business_partner_number; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_companies_business_partner_number ON portal.companies USING btree (business_partner_number);
 
 
 --
@@ -1258,6 +1309,13 @@ CREATE INDEX ix_company_service_accounts_company_service_account_status_id ON po
 --
 
 CREATE INDEX ix_company_user_assigned_app_favourites_app_id ON portal.company_user_assigned_app_favourites USING btree (app_id);
+
+
+--
+-- Name: ix_company_user_assigned_business_partners_company_user_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_user_assigned_business_partners_company_user_id ON portal.company_user_assigned_business_partners USING btree (company_user_id);
 
 
 --
@@ -1634,11 +1692,27 @@ ALTER TABLE ONLY portal.apps
 
 
 --
+-- Name: business_partners fk_business_partners_business_partners_parent_business_partner; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.business_partners
+    ADD CONSTRAINT fk_business_partners_business_partners_parent_business_partner FOREIGN KEY (parent_business_partner_number) REFERENCES portal.business_partners(business_partner_number);
+
+
+--
 -- Name: companies fk_companies_addresses_address_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.companies
     ADD CONSTRAINT fk_companies_addresses_address_id FOREIGN KEY (address_id) REFERENCES portal.addresses(id);
+
+
+--
+-- Name: companies fk_companies_business_partners_business_partner_number; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.companies
+    ADD CONSTRAINT fk_companies_business_partners_business_partner_number FOREIGN KEY (business_partner_number) REFERENCES portal.business_partners(business_partner_number);
 
 
 --
@@ -1791,6 +1865,22 @@ ALTER TABLE ONLY portal.company_user_assigned_app_favourites
 
 ALTER TABLE ONLY portal.company_user_assigned_app_favourites
     ADD CONSTRAINT fk_company_user_assigned_app_favourites_company_users_company_ FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id);
+
+
+--
+-- Name: company_user_assigned_business_partners fk_company_user_assigned_business_partners_business_partners_b; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_user_assigned_business_partners
+    ADD CONSTRAINT fk_company_user_assigned_business_partners_business_partners_b FOREIGN KEY (business_partner_number) REFERENCES portal.business_partners(business_partner_number);
+
+
+--
+-- Name: company_user_assigned_business_partners fk_company_user_assigned_business_partners_company_users_compa; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_user_assigned_business_partners
+    ADD CONSTRAINT fk_company_user_assigned_business_partners_company_users_compa FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id);
 
 
 --
