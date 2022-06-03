@@ -41,7 +41,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220520103317_AddConnectors	6.0.4
 20220520121416_RenameEnumEntityKeyColumns	6.0.4
 20220523140724_CPLP-712_service_accounts	6.0.4
-20220603071500_CPLP-1047-BusinessPartners	6.0.4
+20220603124915_CPLP-1047-CompanyUser-BusinessPartners	6.0.4
 \.
 
 

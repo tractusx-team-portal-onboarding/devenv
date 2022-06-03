@@ -15,7 +15,6 @@ ALTER TABLE portal.app_licenses OWNER TO portal;
 ALTER TABLE portal.app_statuses OWNER TO portal;
 ALTER TABLE portal.app_tags OWNER TO portal;
 ALTER TABLE portal.apps OWNER TO portal;
-ALTER TABLE portal.business_partners OWNER TO portal;
 ALTER TABLE portal.connector_statuses OWNER TO portal;
 ALTER TABLE portal.connector_types OWNER TO portal;
 ALTER TABLE portal.connectors OWNER TO portal;
