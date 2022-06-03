@@ -211,7 +211,6 @@ CREATE TABLE portal.apps (
 
 CREATE TABLE portal.business_partners (
     business_partner_number character varying(20) NOT NULL,
-    date_created timestamp with time zone NOT NULL,
     parent_business_partner_number character varying(20)
 );
 
