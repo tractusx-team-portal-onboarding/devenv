@@ -54,4 +54,4 @@ ALTER TABLE portal.languages OWNER TO portal;
 ALTER TABLE portal.use_cases OWNER TO portal;
 ALTER TABLE portal.user_role_descriptions OWNER TO portal;
 ALTER TABLE portal.user_roles OWNER TO portal;
-
+ALTER TABLE portal.app_subscription_statuses OWNER TO portal;
