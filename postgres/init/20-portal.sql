@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -176,6 +176,16 @@ CREATE TABLE portal.app_statuses (
 
 
 --
+-- Name: app_subscription_statuses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.app_subscription_statuses (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: app_tags; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -251,7 +261,8 @@ CREATE TABLE portal.company_applications (
 
 CREATE TABLE portal.company_assigned_apps (
     company_id uuid NOT NULL,
-    app_id uuid NOT NULL
+    app_id uuid NOT NULL,
+    app_subscription_status_id integer DEFAULT 1 NOT NULL
 );
 
 
@@ -745,6 +756,14 @@ ALTER TABLE ONLY portal.app_statuses
 
 
 --
+-- Name: app_subscription_statuses pk_app_subscription_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_subscription_statuses
+    ADD CONSTRAINT pk_app_subscription_statuses PRIMARY KEY (id);
+
+
+--
 -- Name: app_tags pk_app_tags; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1202,6 +1221,13 @@ CREATE INDEX ix_company_applications_company_id ON portal.company_applications U
 --
 
 CREATE INDEX ix_company_assigned_apps_app_id ON portal.company_assigned_apps USING btree (app_id);
+
+
+--
+-- Name: ix_company_assigned_apps_app_subscription_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_assigned_apps_app_subscription_status_id ON portal.company_assigned_apps USING btree (app_subscription_status_id);
 
 
 --
@@ -1663,6 +1689,14 @@ ALTER TABLE ONLY portal.company_applications
 
 ALTER TABLE ONLY portal.company_applications
     ADD CONSTRAINT fk_company_applications_company_application_statuses_applicati FOREIGN KEY (application_status_id) REFERENCES portal.company_application_statuses(id) ON DELETE CASCADE;
+
+
+--
+-- Name: company_assigned_apps fk_company_assigned_apps_app_subscription_statuses_app_subscri; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_assigned_apps
+    ADD CONSTRAINT fk_company_assigned_apps_app_subscription_statuses_app_subscri FOREIGN KEY (app_subscription_status_id) REFERENCES portal.app_subscription_statuses(id);
 
 
 --

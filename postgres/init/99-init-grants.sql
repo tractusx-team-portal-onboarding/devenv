@@ -53,4 +53,4 @@ ALTER TABLE portal.iam_service_accounts OWNER TO portal;
 ALTER TABLE portal.company_service_account_assigned_roles OWNER TO portal;
 ALTER TABLE portal.company_service_account_statuses OWNER TO portal;
 ALTER TABLE portal.company_service_accounts OWNER TO portal;
-
+ALTER TABLE portal.app_subscription_statuses OWNER TO portal;
