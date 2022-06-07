@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -36,6 +36,17 @@ COPY portal.app_statuses (id, label) FROM stdin;
 2	IN_REVIEW
 3	ACTIVE
 4	INACTIVE
+\.
+
+
+--
+-- Data for Name: app_subscription_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.app_subscription_statuses (id, label) FROM stdin;
+1	PENDING
+2	ACTIVE
+3	INACTIVE
 \.
 
 

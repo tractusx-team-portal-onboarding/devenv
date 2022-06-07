@@ -13,6 +13,7 @@ ALTER TABLE portal.app_detail_images OWNER TO portal;
 ALTER TABLE portal.app_languages OWNER TO portal;
 ALTER TABLE portal.app_licenses OWNER TO portal;
 ALTER TABLE portal.app_statuses OWNER TO portal;
+ALTER TABLE portal.app_subscription_statuses OWNER TO portal;
 ALTER TABLE portal.app_tags OWNER TO portal;
 ALTER TABLE portal.apps OWNER TO portal;
 ALTER TABLE portal.connector_statuses OWNER TO portal;
