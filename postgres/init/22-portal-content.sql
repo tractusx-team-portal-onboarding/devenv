@@ -53,8 +53,17 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000
 \.
 
 --
--- Data for Name: identity_providers; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: company_user_assigned_business_partners; Type: TABLE DATA; Schema: public; Owner: admin
 --
+
+
+COPY portal.company_user_assigned_business_partners (company_user_id, business_partner_number) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0575a0011	CAXSDUMMYSAPZZ
+ac1cf001-7fbc-1f2f-817f-bce0577e0015	CAXSCARFACTORY3ZZ
+ac1cf001-7fbc-1f2f-817f-bce058020000	CAXSDUMMYCATENAZZ
+ac1cf001-7fbc-1f2f-817f-bce058020001	CAXSDUMMYCATENAZZ
+\.
+
 
 COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
 2	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-05-05 18:01:33.33
@@ -212,8 +221,8 @@ COPY portal.agreement_assigned_document_templates (agreement_id, document_templa
 --
 
 COPY portal.iam_clients (id, client_client_id) FROM stdin;
-0c9051d0-d032-11ec-9d64-0242ac120002	catenax-portal
-f032a034-d035-11ec-9d64-0242ac120002	catenax-registration
+0c9051d0-d032-11ec-9d64-0242ac120002	Cl2-CX-Portal
+f032a034-d035-11ec-9d64-0242ac120002	Cl1-CX-Registration
 f032a035-d035-11ec-9d64-0242ac120002	Cl3-CX-Semantic
 f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
 f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
@@ -495,8 +504,12 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 --
 
 COPY portal.company_users (id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id, company_user_status_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	\N	\N	\N	220330ac-170d-4e22-8d72-9467ed042149	1
+ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394	2022-03-24 18:01:33.394	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106	1
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	2022-03-24 18:01:33.438	2022-03-24 18:01:33.438	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542	1
+ac1cf001-7fbc-1f2f-817f-bce058019990	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	cx-user-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+ac1cf001-7fbc-1f2f-817f-bce058019991	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	cx-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+ac1cf001-7fbc-1f2f-817f-bce058019992	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	company-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
+ac1cf001-7fbc-1f2f-817f-bce058019993	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	it-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 ac1cf001-7fbc-1f2f-817f-bce058020000	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	CX Admin	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 ac1cf001-7fbc-1f2f-817f-bce058020002	2022-03-24 18:01:33.57	2022-03-24 18:01:33.57	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1
@@ -533,6 +546,10 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	aabcdfeb-6669-4c74-89f0-19cda090873f
 ac1cf001-7fbc-1f2f-817f-bce058020002	7410693c-c893-409e-852f-9ee886ce94a6
 ac1cf001-7fbc-1f2f-817f-bce058020003	7410693c-c893-409e-852f-9ee886ce94a6
 ac1cf001-7fbc-1f2f-817f-bce058020004	7410693c-c893-409e-852f-9ee886ce94a6
+ac1cf001-7fbc-1f2f-817f-bce058019990	58f897ec-0aad-4588-8ffa-5f45d6638633
+ac1cf001-7fbc-1f2f-817f-bce058019991	58f897ec-0aad-4588-8ffa-5f45d6638632
+ac1cf001-7fbc-1f2f-817f-bce058019992	7410693c-c893-409e-852f-9ee886ce94a6
+ac1cf001-7fbc-1f2f-817f-bce058019993	607818be-4978-41f4-bf63-fa8d2de51154
 \.
 
 
@@ -565,11 +582,15 @@ ac1cf001-7fbc-1f2f-817f-bce0575a0106	2022-03-24 18:01:33.394	\N	1	\N	aa0a0000-7f
 COPY portal.iam_users (user_entity_id, company_user_id) FROM stdin;
 ad56702b-5908-44eb-a668-9a11a0e100d6	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 3432d787-d7c8-46fb-96d7-cc984c6bfaac	ac1cf001-7fbc-1f2f-817f-bce0577e0015
-1c6bb65e-5430-403b-8363-8e05b3eeeb46	ac1cf001-7fbc-1f2f-817f-bce058020000
-2b89bee9-49b6-4296-bd8c-f5637034ed47	ac1cf001-7fbc-1f2f-817f-bce058020001
-51d4ce00-9f37-4e25-9f0f-21baaf5fdb18	ac1cf001-7fbc-1f2f-817f-bce058020002
-39984b9b-8a8e-4f53-b914-0359ad4134eb	ac1cf001-7fbc-1f2f-817f-bce058020003
-2e5df43c-4e4d-48ed-8560-fe1506cd18ac	ac1cf001-7fbc-1f2f-817f-bce058020004
+623770c5-cf38-4b9f-9a35-f8b9ae972e2d	ac1cf001-7fbc-1f2f-817f-bce058020000
+3d8142f1-860b-48aa-8c2b-1ccb18699f65	ac1cf001-7fbc-1f2f-817f-bce058020001
+4a23930a-30b6-461c-9ad4-58d3e761a0b5	ac1cf001-7fbc-1f2f-817f-bce058020002
+ee93d4e6-2088-4352-b6e4-21f3fa7f390e	ac1cf001-7fbc-1f2f-817f-bce058020003
+e756e57e-e236-4f6e-b410-92a16ff8be85	ac1cf001-7fbc-1f2f-817f-bce058020004
+623770c5-cf38-4b9f-9a35-f8b9ae972e2e	ac1cf001-7fbc-1f2f-817f-bce058019990
+3d8142f1-860b-48aa-8c2b-1ccb18699f66	ac1cf001-7fbc-1f2f-817f-bce058019991
+47ea7f1f-f10d-4cb2-acaf-b77323ef25b4	ac1cf001-7fbc-1f2f-817f-bce058019992
+070e2c20-4b09-4670-84c8-af882589e7eb	ac1cf001-7fbc-1f2f-817f-bce058019993
 \.
 
 --
@@ -583,6 +604,10 @@ d54db875-774c-479f-9f14-375f2cb8b258	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a4
 d54db875-774c-479f-9f14-375f2cb8b260	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058020002
 d54db875-774c-479f-9f14-375f2cb8b261	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9d	ac1cf001-7fbc-1f2f-817f-bce058020003
 d54db875-774c-479f-9f14-375f2cb8b262	2022-03-24 18:01:33.439	1	6b2d1263-c073-4a48-bfaf-704dc154ca9e	ac1cf001-7fbc-1f2f-817f-bce058020004
+d54db875-774c-479f-9f14-375f2cb8b263	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019990
+d54db875-774c-479f-9f14-375f2cb8b264	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019991
+d54db875-774c-479f-9f14-375f2cb8b265	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019992
+d54db875-774c-479f-9f14-375f2cb8b266	2022-03-24 18:01:33.439	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019993
 \.
 
 
@@ -610,4 +635,38 @@ COPY portal.company_service_accounts (id, date_created, company_id, name, descri
 7e85a0b8-0001-ab67-10d1-0ef508201003	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 04	This is a test service account only and not for actual use.	1
 7e85a0b8-0001-ab67-10d1-0ef508201004	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 01	This is a test service account only and not for actual use.	1
 7e85a0b8-0001-ab67-10d1-0ef508201005	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 02	This is a test service account only and not for actual use.	1
+7e85a0b8-0001-ab67-10d1-0ef508201006	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-1	sa-cl5-custodian-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201007	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-2	sa-cl5-custodian-2	1
+7e85a0b8-0001-ab67-10d1-0ef508201008	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-internaltest	sa-cl5-custodian-internaltest	1
+7e85a0b8-0001-ab67-10d1-0ef508201009	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-1	sa-cl6-cx-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201010	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-2	sa-cl6-cx-2	1
+7e85a0b8-0001-ab67-10d1-0ef508201011	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	sa-cl6-cx-3	sa-cl6-cx-3	1
+7e85a0b8-0001-ab67-10d1-0ef508201012	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-4	sa-cl6-cx-4	1
+7e85a0b8-0001-ab67-10d1-0ef508201013	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-5	sa-cl6-cx-5	1
+7e85a0b8-0001-ab67-10d1-0ef508201014	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-6	sa-cl6-cx-6	1
+7e85a0b8-0001-ab67-10d1-0ef508201015	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-7	sa-cl6-cx-7	1
+7e85a0b8-0001-ab67-10d1-0ef508201016	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-8	sa-cl6-cx-8	1
+7e85a0b8-0001-ab67-10d1-0ef508201017	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-9	sa-cl6-cx-9	1
+7e85a0b8-0001-ab67-10d1-0ef508201018	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-10	sa-cl6-cx-10	1
+7e85a0b8-0001-ab67-10d1-0ef508201019	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-11	sa-cl6-cx-11	1
+7e85a0b8-0001-ab67-10d1-0ef508201020	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-12	sa-cl6-cx-12	1
+7e85a0b8-0001-ab67-10d1-0ef508201021	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-13	sa-cl6-cx-13	1
+7e85a0b8-0001-ab67-10d1-0ef508201022	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-cx-1	sa-cl5-cx-1	1
+\.
+
+
+--
+-- Data for Name: company_service_account_assigned_roles; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.company_service_account_assigned_roles (company_service_account_id, user_role_id) FROM stdin;
+\.
+
+
+
+--
+-- Data for Name: iam_service_accounts; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.iam_service_accounts (client_id, client_client_id, user_entity_id, company_service_account_id) FROM stdin;
 \.
