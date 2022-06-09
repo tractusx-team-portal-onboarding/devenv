@@ -52,19 +52,6 @@ d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	CAXLDUMMYCORPZZ	000
 cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	1	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
 \.
 
---
--- Data for Name: company_user_assigned_business_partners; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-
-COPY portal.company_user_assigned_business_partners (company_user_id, business_partner_number) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0575a0011	CAXSDUMMYSAPZZ
-ac1cf001-7fbc-1f2f-817f-bce0577e0015	CAXSCARFACTORY3ZZ
-ac1cf001-7fbc-1f2f-817f-bce058020000	CAXSDUMMYCATENAZZ
-ac1cf001-7fbc-1f2f-817f-bce058020001	CAXSDUMMYCATENAZZ
-\.
-
-
 COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
 2	ac1cf001-7fbc-1f2f-817f-bce0571b0004	2022-05-05 18:01:33.33
 1	ac1cf001-7fbc-1f2f-817f-bce057230006	2022-05-05 18:01:33.33
@@ -519,6 +506,19 @@ ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57	2022-03-24 18:01:33.
 
 
 --
+-- Data for Name: company_user_assigned_business_partners; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+
+COPY portal.company_user_assigned_business_partners (company_user_id, business_partner_number) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0575a0011	CAXSDUMMYSAPZZ
+ac1cf001-7fbc-1f2f-817f-bce0577e0015	CAXSCARFACTORY3ZZ
+ac1cf001-7fbc-1f2f-817f-bce058020000	CAXSDUMMYCATENAZZ
+ac1cf001-7fbc-1f2f-817f-bce058020001	CAXSDUMMYCATENAZZ
+\.
+
+
+--
 -- Data for Name: company_user_assigned_app_favourites; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
@@ -635,23 +635,23 @@ COPY portal.company_service_accounts (id, date_created, company_id, name, descri
 7e85a0b8-0001-ab67-10d1-0ef508201003	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	Service Account 04	This is a test service account only and not for actual use.	1
 7e85a0b8-0001-ab67-10d1-0ef508201004	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 01	This is a test service account only and not for actual use.	1
 7e85a0b8-0001-ab67-10d1-0ef508201005	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	Service Account 02	This is a test service account only and not for actual use.	1
-7e85a0b8-0001-ab67-10d1-0ef508201006	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-1	sa-cl5-custodian-1	1
-7e85a0b8-0001-ab67-10d1-0ef508201007	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-2	sa-cl5-custodian-2	1
-7e85a0b8-0001-ab67-10d1-0ef508201008	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-custodian-internaltest	sa-cl5-custodian-internaltest	1
-7e85a0b8-0001-ab67-10d1-0ef508201009	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-1	sa-cl6-cx-1	1
-7e85a0b8-0001-ab67-10d1-0ef508201010	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-2	sa-cl6-cx-2	1
+7e85a0b8-0001-ab67-10d1-0ef508201006	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl5-custodian-1	sa-cl5-custodian-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201007	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl5-custodian-2	sa-cl5-custodian-2	1
+7e85a0b8-0001-ab67-10d1-0ef508201008	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl5-custodian-internaltest	sa-cl5-custodian-internaltest	1
+7e85a0b8-0001-ab67-10d1-0ef508201009	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-1	sa-cl6-cx-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201010	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-2	sa-cl6-cx-2	1
 7e85a0b8-0001-ab67-10d1-0ef508201011	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff84	sa-cl6-cx-3	sa-cl6-cx-3	1
-7e85a0b8-0001-ab67-10d1-0ef508201012	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-4	sa-cl6-cx-4	1
-7e85a0b8-0001-ab67-10d1-0ef508201013	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-5	sa-cl6-cx-5	1
-7e85a0b8-0001-ab67-10d1-0ef508201014	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-6	sa-cl6-cx-6	1
-7e85a0b8-0001-ab67-10d1-0ef508201015	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-7	sa-cl6-cx-7	1
-7e85a0b8-0001-ab67-10d1-0ef508201016	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-8	sa-cl6-cx-8	1
-7e85a0b8-0001-ab67-10d1-0ef508201017	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-9	sa-cl6-cx-9	1
-7e85a0b8-0001-ab67-10d1-0ef508201018	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-10	sa-cl6-cx-10	1
-7e85a0b8-0001-ab67-10d1-0ef508201019	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-11	sa-cl6-cx-11	1
-7e85a0b8-0001-ab67-10d1-0ef508201020	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-12	sa-cl6-cx-12	1
-7e85a0b8-0001-ab67-10d1-0ef508201021	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl6-cx-13	sa-cl6-cx-13	1
-7e85a0b8-0001-ab67-10d1-0ef508201022	2022-06-01 18:01:33.439	ac861325-bc54-4583-bcdc-9e9f2a38ff87	sa-cl5-cx-1	sa-cl5-cx-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201012	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-4	sa-cl6-cx-4	1
+7e85a0b8-0001-ab67-10d1-0ef508201013	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-5	sa-cl6-cx-5	1
+7e85a0b8-0001-ab67-10d1-0ef508201014	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-6	sa-cl6-cx-6	1
+7e85a0b8-0001-ab67-10d1-0ef508201015	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-7	sa-cl6-cx-7	1
+7e85a0b8-0001-ab67-10d1-0ef508201016	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-8	sa-cl6-cx-8	1
+7e85a0b8-0001-ab67-10d1-0ef508201017	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-9	sa-cl6-cx-9	1
+7e85a0b8-0001-ab67-10d1-0ef508201018	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-10	sa-cl6-cx-10	1
+7e85a0b8-0001-ab67-10d1-0ef508201019	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-11	sa-cl6-cx-11	1
+7e85a0b8-0001-ab67-10d1-0ef508201020	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-12	sa-cl6-cx-12	1
+7e85a0b8-0001-ab67-10d1-0ef508201021	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-13	sa-cl6-cx-13	1
+7e85a0b8-0001-ab67-10d1-0ef508201022	2022-06-01 18:01:33.439	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl5-cx-1	sa-cl5-cx-1	1
 \.
 
 
