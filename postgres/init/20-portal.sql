@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
+-- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -493,6 +493,16 @@ CREATE TABLE portal.countries (
 
 
 --
+-- Name: document_status; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.document_status (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: document_templates; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -522,11 +532,12 @@ CREATE TABLE portal.document_types (
 CREATE TABLE portal.documents (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
-    document oid NOT NULL,
-    documenthash character varying(255) NOT NULL,
-    documentname character varying(255) NOT NULL,
+    document_name character varying(255) NOT NULL,
     document_type_id integer,
-    company_user_id uuid
+    company_user_id uuid,
+    document_hash bytea NOT NULL,
+    document_content bytea NOT NULL,
+    document_status_id integer NOT NULL
 );
 
 
@@ -981,6 +992,14 @@ ALTER TABLE ONLY portal.countries
 
 
 --
+-- Name: document_status pk_document_status; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.document_status
+    ADD CONSTRAINT pk_document_status PRIMARY KEY (id);
+
+
+--
 -- Name: document_templates pk_document_templates; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1399,6 +1418,13 @@ CREATE INDEX ix_consents_document_id ON portal.consents USING btree (document_id
 --
 
 CREATE INDEX ix_documents_company_user_id ON portal.documents USING btree (company_user_id);
+
+
+--
+-- Name: ix_documents_document_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_documents_document_status_id ON portal.documents USING btree (document_status_id);
 
 
 --
@@ -1970,6 +1996,14 @@ ALTER TABLE ONLY portal.consents
 
 ALTER TABLE ONLY portal.documents
     ADD CONSTRAINT fk_documents_company_users_company_user_id FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id);
+
+
+--
+-- Name: documents fk_documents_document_status_document_status_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.documents
+    ADD CONSTRAINT fk_documents_document_status_document_status_id FOREIGN KEY (document_status_id) REFERENCES portal.document_status(id) ON DELETE CASCADE;
 
 
 --

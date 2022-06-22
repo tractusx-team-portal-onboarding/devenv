@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
--- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
+-- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -413,6 +413,17 @@ YE	YEM	Yemen	Yemen
 YT	MYT	Mayotte	Mayotte
 ZA	ZAF	South Africa	South Africa
 ZM	ZMB	Zambia	Zambia
+\.
+
+
+--
+-- Data for Name: document_status; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.document_status (id, label) FROM stdin;
+1	PENDING
+2	LOCKED
+3	INACTIVE
 \.
 
 
