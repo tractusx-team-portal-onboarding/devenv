@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
--- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -535,9 +535,9 @@ CREATE TABLE portal.documents (
     document_name character varying(255) NOT NULL,
     document_type_id integer,
     company_user_id uuid,
-    document_hash bytea,
+    document_hash bytea NOT NULL,
     document_content bytea NOT NULL,
-    document_status_id integer DEFAULT 2 NOT NULL
+    document_status_id integer NOT NULL
 );
 
 
