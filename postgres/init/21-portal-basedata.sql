@@ -417,6 +417,17 @@ ZM	ZMB	Zambia	Zambia
 
 
 --
+-- Data for Name: document_status; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.document_status (id, label) FROM stdin;
+1	PENDING
+2	LOCKED
+3	INACTIVE
+\.
+
+
+--
 -- Data for Name: document_types; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 

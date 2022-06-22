@@ -40,6 +40,7 @@ ALTER TABLE portal.company_service_account_statuses OWNER TO portal;
 ALTER TABLE portal.company_service_accounts OWNER TO portal;
 ALTER TABLE portal.company_statuses OWNER TO portal;
 ALTER TABLE portal.countries OWNER TO portal;
+ALTER TABLE portal.document_status OWNER TO portal;
 ALTER TABLE portal.document_templates OWNER TO portal;
 ALTER TABLE portal.document_types OWNER TO portal;
 ALTER TABLE portal.documents OWNER TO portal;

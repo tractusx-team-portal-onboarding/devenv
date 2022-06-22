@@ -536,8 +536,8 @@ CREATE TABLE portal.documents (
     document_type_id integer,
     company_user_id uuid,
     document_hash bytea,
-    document_content bytea DEFAULT '\x'::bytea NOT NULL,
-    document_status_id integer DEFAULT 0 NOT NULL
+    document_content bytea NOT NULL,
+    document_status_id integer DEFAULT 2 NOT NULL
 );
 
 
