@@ -1787,8 +1787,8 @@ db4a211d-97fd-4786-b830-84fba6e855fc	t	f	admin-cli	0	t	\N	\N	f	\N	f	master	openi
 2d37c8a9-7036-4e36-a085-12fec6e22938	t	f	account-console	0	t	\N	/realms/CX-Central/account/	f	\N	f	CX-Central	openid-connect	0	f	f	${client_account-console}	f	client-secret	${authBaseUrl}	\N	\N	t	f	f	f
 38d072af-d85b-4b39-ad55-13ed5ce45791	t	f	admin-cli	0	t	\N	\N	f	\N	f	CX-Central	openid-connect	0	f	f	${client_admin-cli}	f	client-secret	\N	\N	\N	f	f	t	f
 03885031-084a-4317-aa51-de9b4acf8fa9	t	f	broker	0	f	\N	\N	t	\N	f	CX-Central	openid-connect	0	f	f	${client_broker}	f	client-secret	\N	\N	\N	t	f	f	f
-dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	t	catenax-portal	0	t	\N	\N	f	https://catenaxintaksportal.germanywestcentral.cloudapp.azure.com/home	f	CX-Central	openid-connect	-1	f	f	\N	f	client-secret	https://catenaxintaksportal.germanywestcentral.cloudapp.azure.com/home	\N	\N	t	f	t	f
-789fed9d-e369-41db-92d9-5058e21fdd6d	t	t	catenax-registration	0	t	\N	\N	f	\N	f	CX-Central	openid-connect	-1	f	f	\N	f	client-secret		\N	\N	t	f	t	f
+dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	t	Cl2-CX-Portal	0	t	\N	\N	f	https://catenaxintaksportal.germanywestcentral.cloudapp.azure.com/home	f	CX-Central	openid-connect	-1	f	f	\N	f	client-secret	https://catenaxintaksportal.germanywestcentral.cloudapp.azure.com/home	\N	\N	t	f	t	f
+789fed9d-e369-41db-92d9-5058e21fdd6d	t	t	Cl1-CX-Registration	0	t	\N	\N	f	\N	f	CX-Central	openid-connect	-1	f	f	\N	f	client-secret		\N	\N	t	f	t	f
 213ea3ce-b036-405f-8abd-3ee08ff72857	t	f	realm-management	0	f	\N	\N	t	\N	f	CX-Central	openid-connect	0	f	f	${client_realm-management}	f	client-secret	\N	\N	\N	t	f	f	f
 d5265cd8-d128-4dc9-8602-d49d1df0a86c	t	f	security-admin-console	0	t	\N	/admin/CX-Central/console/	f	\N	f	CX-Central	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
 7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	t	t	sa-cl1-reg-2	0	f	pgQxQMEohdbsam9rExxoul6JqN3bu8ZM	\N	f	\N	f	CX-Central	openid-connect	-1	f	f	\N	t	client-secret	\N	\N	\N	t	f	t	f
@@ -3159,10 +3159,10 @@ fb918735-48a7-4f96-8830-606815788dfb	picture	openid-connect	oidc-usermodel-attri
 a3b92823-3028-45b8-a59b-aa679d4b5774	audience resolve	openid-connect	oidc-audience-resolve-mapper	2d37c8a9-7036-4e36-a085-12fec6e22938	\N
 7032993a-ee90-4ac3-84c7-e39014732523	idp mapper	openid-connect	oidc-usermodel-attribute-mapper	2d37c8a9-7036-4e36-a085-12fec6e22938	\N
 540b21f4-b5e5-41ff-9f10-8a85268baa49	idp mapper	openid-connect	oidc-usermodel-attribute-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
-9c248eae-4081-4bdd-8255-522d63cdd4c7	catenax-registration audience-mapper	openid-connect	oidc-audience-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+9c248eae-4081-4bdd-8255-522d63cdd4c7	Cl1-CX-Registration audience-mapper	openid-connect	oidc-audience-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 c6d77a7d-5171-44d9-a659-22b9daea784c	organisation-mapper	openid-connect	oidc-usermodel-attribute-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 94eccfae-488f-43b9-8771-72dbdb558fe1	BPN	openid-connect	oidc-usermodel-attribute-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
-13a97a74-91e3-480f-8bbf-cb4b30c8688a	catenax-portal audience-mapper	openid-connect	oidc-audience-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+13a97a74-91e3-480f-8bbf-cb4b30c8688a	Cl2-CX-Portal audience-mapper	openid-connect	oidc-audience-mapper	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 5eb2df4d-608a-4338-8f6a-171c82f2abbd	idp mapper	openid-connect	oidc-usermodel-attribute-mapper	789fed9d-e369-41db-92d9-5058e21fdd6d	\N
 ee07bab9-a017-44b9-b82c-c4d62670516d	audience-mapper	openid-connect	oidc-audience-mapper	789fed9d-e369-41db-92d9-5058e21fdd6d	\N
 2423df79-1ca8-40eb-915e-29cee841111c	organisation-mapper	openid-connect	oidc-usermodel-attribute-mapper	789fed9d-e369-41db-92d9-5058e21fdd6d	\N
@@ -3477,7 +3477,7 @@ fb918735-48a7-4f96-8830-606815788dfb	String	jsonType.label
 540b21f4-b5e5-41ff-9f10-8a85268baa49	true	access.token.claim
 540b21f4-b5e5-41ff-9f10-8a85268baa49	tenant	claim.name
 540b21f4-b5e5-41ff-9f10-8a85268baa49	String	jsonType.label
-9c248eae-4081-4bdd-8255-522d63cdd4c7	catenax-registration	included.client.audience
+9c248eae-4081-4bdd-8255-522d63cdd4c7	Cl1-CX-Registration	included.client.audience
 9c248eae-4081-4bdd-8255-522d63cdd4c7	true	id.token.claim
 9c248eae-4081-4bdd-8255-522d63cdd4c7	true	access.token.claim
 9c248eae-4081-4bdd-8255-522d63cdd4c7	true	userinfo.token.claim
@@ -3493,7 +3493,7 @@ c6d77a7d-5171-44d9-a659-22b9daea784c	String	jsonType.label
 94eccfae-488f-43b9-8771-72dbdb558fe1	true	access.token.claim
 94eccfae-488f-43b9-8771-72dbdb558fe1	bpn	claim.name
 94eccfae-488f-43b9-8771-72dbdb558fe1	String	jsonType.label
-13a97a74-91e3-480f-8bbf-cb4b30c8688a	catenax-portal	included.client.audience
+13a97a74-91e3-480f-8bbf-cb4b30c8688a	Cl2-CX-Portal	included.client.audience
 13a97a74-91e3-480f-8bbf-cb4b30c8688a	true	id.token.claim
 13a97a74-91e3-480f-8bbf-cb4b30c8688a	true	access.token.claim
 13a97a74-91e3-480f-8bbf-cb4b30c8688a	true	userinfo.token.claim
@@ -3503,7 +3503,7 @@ c6d77a7d-5171-44d9-a659-22b9daea784c	String	jsonType.label
 5eb2df4d-608a-4338-8f6a-171c82f2abbd	true	access.token.claim
 5eb2df4d-608a-4338-8f6a-171c82f2abbd	tenant	claim.name
 5eb2df4d-608a-4338-8f6a-171c82f2abbd	String	jsonType.label
-ee07bab9-a017-44b9-b82c-c4d62670516d	catenax-registration	included.client.audience
+ee07bab9-a017-44b9-b82c-c4d62670516d	Cl1-CX-Registration	included.client.audience
 ee07bab9-a017-44b9-b82c-c4d62670516d	true	id.token.claim
 ee07bab9-a017-44b9-b82c-c4d62670516d	true	access.token.claim
 ee07bab9-a017-44b9-b82c-c4d62670516d	true	userinfo.token.claim
