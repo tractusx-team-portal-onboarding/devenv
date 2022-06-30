@@ -89,7 +89,7 @@ COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url
 ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	\N	0000	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3
 ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	Material Traceability.png	\N	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler Cockpit	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com/login	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3
+ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	https://ec-qas.d13fe27.kyma.ondemand.com	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3
 f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	Fraud Dashboard	2022-03-24 18:01:33.388	Fraud Dash.png	https://dash.catenax-cdq.com/	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022-03-24 18:01:33.388	lead.png	https://apps.cdq.com/dashboard/fraud/report-fraud	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
@@ -236,10 +236,11 @@ ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-024
 916e4be9-0ff7-48fb-bb80-97d2e93fca14	Data Specialist (INT only)	0c9051d0-d032-11ec-9d64-0242ac120002
 0d9eb9e4-b6df-49bd-b045-d9cef96a879d	Technical User Semantic & Digital Twin	0c9051d0-d032-11ec-9d64-0242ac120002
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
-efc20368-9e82-46ff-b88f-6495b9810253	Vehicle Purchaser	cf207afb-d213-4c33-becc-0cabeef174a7
-aabcdfeb-6669-4c74-89f0-19cda090873f	Dismantling Lead	cf207afb-d213-4c33-becc-0cabeef174a7
-efc20368-9e82-46ff-b88f-6495b9810250	Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
-aabcdfeb-6669-4c74-89f0-19cda0908730	Advanced Buyer	cf207afb-d213-4c33-becc-0cabeef174a7
+efc20368-9e82-46ff-b88f-6495b9810253	EarthCommerce.AdministratorRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda090873f	EarthCommerce.Advanced.BuyerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
+efc20368-9e82-46ff-b88f-6495b9810250	EarthCommerce.BuyerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda0908730	EarthCommerce.Content.ManagerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
+aabcdfeb-6669-4c74-89f0-19cda0908731	EarthCommerce.UserRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
 b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f032a040-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f032a040-d035-11ec-9d64-0242ac120002
@@ -423,31 +424,31 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 -- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_assigned_apps (company_id, app_id) FROM stdin;
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3
+COPY portal.company_assigned_apps (company_id, app_id, app_subscription_status_id) FROM stdin;
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2
 \.
 
 
