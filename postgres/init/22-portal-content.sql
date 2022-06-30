@@ -99,6 +99,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022
 5cf74ef8-e0b7-4984-a872-474828beb5d2	2022-03-24 18:01:33.388	DTC-Translator	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	https://dtc-translator.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts	2022-03-24 18:01:33.388	\N	\N	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
+5cf74ef8-e0b7-4984-a872-474828beb5d5	2022-06-29 18:01:33.388	Smart Factory Web Portal	2022-03-24 18:01:33.388	\N	https://www.smartfactoryweb.de/	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 \.
 
 
@@ -141,6 +142,9 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d4	Test
 5cf74ef8-e0b7-4984-a872-474828beb5d4	Chain
 5cf74ef8-e0b7-4984-a872-474828beb5d4	Production
+5cf74ef8-e0b7-4984-a872-474828beb5d5	Manufacturer-as-a-service
+5cf74ef8-e0b7-4984-a872-474828beb5d5	Network
+5cf74ef8-e0b7-4984-a872-474828beb5d5	Chain
 \.
 
 
@@ -161,6 +165,7 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	de
+5cf74ef8-e0b7-4984-a872-474828beb5d5	en
 \.
 
 
@@ -220,6 +225,7 @@ f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
 f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
 f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
+f032a045-d035-11ec-9d64-0242ac120002	missing
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 \.
@@ -249,6 +255,8 @@ b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242
 855eeefb-a2ef-4d74-ac10-34a87afcb865	admin	f032a043-d035-11ec-9d64-0242ac120002
 545c2616-2fce-4f52-b881-331db2fc1e35	customer	f032a043-d035-11ec-9d64-0242ac120002
 7a9e0777-2b13-4463-a7c4-f699afff3527	oem	f032a043-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080004	Buyer	f032a045-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080005	Supplier	f032a045-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -312,6 +320,7 @@ ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
 f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
 f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
 \.
 
 --
@@ -399,6 +408,10 @@ This is only a test text	This is only a test text	ac1cf001-7fbc-1f2f-817f-bce057
 This is only a test text	This is only a test text	ac1cf001-7fbc-1f2f-817f-bce0573f0009	de
 AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.	5cf74ef8-e0b7-4984-a872-474828beb5d4	de
 AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.	5cf74ef8-e0b7-4984-a872-474828beb5d4	en
+The Smart Factory Web Portal is a web-based application to allow suppliers and MaaS platforms to offer production capabilities and capacities. At the same time, the Smart Factory Web Portal offers a search environment where a buyer can upload engineering files and configure procurement requirements which the Smart Factory Web Search Engine the portal exploits uses to calculate all possible supply chain alternatives by matching it to the registered supplier information.
+This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	Das ist nur ein Test	5cf74ef8-e0b7-4984-a872-474828beb5d5	de
+The Smart Factory Web Portal is a web-based application to allow suppliers and MaaS platforms to offer production capabilities and capacities. At the same time, the Smart Factory Web Portal offers a search environment where a buyer can upload engineering files and configure procurement requirements which the Smart Factory Web Search Engine the portal exploits uses to calculate all possible supply chain alternatives by matching it to the registered supplier information.
+This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d5	en
 \.
 
 
