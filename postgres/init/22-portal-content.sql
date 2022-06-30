@@ -116,6 +116,9 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000007	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image1.png
 5cf74ef8-a0a1-0000-a000-000000000008	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image2.png
 5cf74ef8-a0a1-0000-a000-000000000009	ac1cf001-7fbc-1f2f-817f-bce05744000b	CE_Marketplace_Image3.png
+5cf74ef8-a0a1-0000-a000-0000000000010	5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory-Details1.png
+5cf74ef8-a0a1-0000-a000-0000000000011	5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory-Details2.png
+5cf74ef8-a0a1-0000-a000-0000000000012	5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory-Details3.png
 \.
 
 
