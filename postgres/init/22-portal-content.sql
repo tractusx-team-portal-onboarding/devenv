@@ -100,6 +100,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022
 5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts	2022-03-24 18:01:33.388	\N	\N	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d5	2022-06-29 18:01:33.388	Smart Factory Web Portal	2022-03-24 18:01:33.388	Smart Factory.png	https://www.smartfactoryweb.de/	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
+5cf74ef8-e0b7-4984-a872-474828beb5d6	2022-06-29 18:01:33.388	Production Planning and Control	2022-03-24 18:01:33.388	PP&C.png	https://www.istos.com/en/demo-version	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 \.
 
 
@@ -131,6 +132,9 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-0000000000022	ac1cf001-7fbc-1f2f-817f-bce0573f0009	Test-Image2.png
 5cf74ef8-a0a1-0000-a000-0000000000023	ac1cf001-7fbc-1f2f-817f-bce05748000d	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-0000000000024	ac1cf001-7fbc-1f2f-817f-bce05748000d	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-0000000000025	5cf74ef8-e0b7-4984-a872-474828beb5d6	PP&C.png
+5cf74ef8-a0a1-0000-a000-0000000000026	5cf74ef8-e0b7-4984-a872-474828beb5d6	Test-Image1.png
+5cf74ef8-a0a1-0000-a000-0000000000027	5cf74ef8-e0b7-4984-a872-474828beb5d6	Test-Image2.png
 \.
 
 
@@ -160,6 +164,9 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d5	Manufacturer-as-a-service
 5cf74ef8-e0b7-4984-a872-474828beb5d5	Network
 5cf74ef8-e0b7-4984-a872-474828beb5d5	Chain
+5cf74ef8-e0b7-4984-a872-474828beb5d6	Manufacturer-as-a-service
+5cf74ef8-e0b7-4984-a872-474828beb5d6	Network
+5cf74ef8-e0b7-4984-a872-474828beb5d6	Chain
 \.
 
 
@@ -181,6 +188,7 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	de
 5cf74ef8-e0b7-4984-a872-474828beb5d5	en
+5cf74ef8-e0b7-4984-a872-474828beb5d6	en
 \.
 
 
@@ -240,7 +248,8 @@ f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
 f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
 f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
-f032a045-d035-11ec-9d64-0242ac120002	missing
+f032a045-d035-11ec-9d64-0242ac120002	not yet known-1
+f032a046-d035-11ec-9d64-0242ac120002	not yet known-2
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 \.
@@ -272,6 +281,8 @@ b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242
 7a9e0777-2b13-4463-a7c4-f699afff3527	oem	f032a043-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080004	Buyer	f032a045-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080005	Supplier	f032a045-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080006	Buyer	f032a046-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080007	Supplier	f032a046-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -336,6 +347,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
 f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d6	f032a046-d035-11ec-9d64-0242ac120002
 \.
 
 --
@@ -396,6 +408,9 @@ ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 5cf74ef8-e0b7-4984-a872-474828beb5d2	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 5cf74ef8-e0b7-4984-a872-474828beb5d3	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
+5cf74ef8-e0b7-4984-a872-474828beb5d4	06b243a4-ba51-4bf3-bc40-5d79a2231b88
+5cf74ef8-e0b7-4984-a872-474828beb5d5	06b243a4-ba51-4bf3-bc40-5d79a2231b88
+5cf74ef8-e0b7-4984-a872-474828beb5d6	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 \.
 
 
@@ -427,6 +442,14 @@ The Smart Factory Web Portal is a web-based application to allow suppliers and M
 This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	Das ist nur ein Test	5cf74ef8-e0b7-4984-a872-474828beb5d5	de
 The Smart Factory Web Portal is a web-based application to allow suppliers and MaaS platforms to offer production capabilities and capacities. At the same time, the Smart Factory Web Portal offers a search environment where a buyer can upload engineering files and configure procurement requirements which the Smart Factory Web Search Engine the portal exploits uses to calculate all possible supply chain alternatives by matching it to the registered supplier information.
 This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d5	en
+PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control.
+PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees.
+PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD.
+PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d6	de
+PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control.
+PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees.
+PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD.
+PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d6	de
 \.
 
 
