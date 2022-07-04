@@ -1645,6 +1645,9 @@ e1931be3-8d0e-4dbc-8478-0fd7df182b86	1656927938868	CX-Central	CREATE	master	d228
 43500ec9-39dd-4925-bd0c-81a7fc8c3e01	1656927958036	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/39fe2dc5-ff91-48aa-b33f-1f9859eedc33/roles/EarthCommerce.BuyerRC_QAS2	{"id":"238a42c5-e401-4153-ade0-45789cee3c1d","name":"EarthCommerce.BuyerRC_QAS2","composite":false}	\N	CLIENT_ROLE
 5a7439ea-e4d6-4c07-8473-bd39dfb8f4fa	1656927976821	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/39fe2dc5-ff91-48aa-b33f-1f9859eedc33/roles/EarthCommerce.Advanced.BuyerRC_QAS2	{"id":"dce238cf-ed54-438d-934e-947686aa468c","name":"EarthCommerce.Advanced.BuyerRC_QAS2","composite":false}	\N	CLIENT_ROLE
 1ed94c1a-1e0c-45ef-9875-6fdd75cfb30c	1656927999558	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/39fe2dc5-ff91-48aa-b33f-1f9859eedc33/roles/EarthCommerce.AdministratorRC_QAS2	{"id":"de890a05-9258-4609-ae60-a66e32932e89","name":"EarthCommerce.AdministratorRC_QAS2","composite":false}	\N	CLIENT_ROLE
+8cce3f95-6d90-44f1-88e9-0b6035f1089f	1656932737288	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"4330f77b-9de3-4e4f-bef5-38c55b419728","name":"view_app_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+1acd22e5-d020-481c-9f4a-be01c7c5765e	1656932765233	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"88977fb0-4bcf-4a6b-b0d7-7ddad52000d6","name":"view_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+b16b4909-b902-40a6-b902-a461d0864663	1656932793651	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"d1be902b-f6ef-4d7b-9c86-fb5fc5825e07","name":"activate_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 \.
 
 
@@ -2714,6 +2717,9 @@ e8b9f782-d707-4852-a979-e5a08b19f3c7	e7fa4253-9664-4bca-9c0f-966648d19b47
 e8b9f782-d707-4852-a979-e5a08b19f3c7	a718d689-a009-484d-a240-9ce86d922ea3
 e8b9f782-d707-4852-a979-e5a08b19f3c7	4db614c5-9c59-47a0-a63d-89407fa77810
 e8b9f782-d707-4852-a979-e5a08b19f3c7	c7e88346-ccb7-4d8c-ace3-e22722b2100f
+e8b9f782-d707-4852-a979-e5a08b19f3c7	4330f77b-9de3-4e4f-bef5-38c55b419728
+e8b9f782-d707-4852-a979-e5a08b19f3c7	88977fb0-4bcf-4a6b-b0d7-7ddad52000d6
+e8b9f782-d707-4852-a979-e5a08b19f3c7	d1be902b-f6ef-4d7b-9c86-fb5fc5825e07
 \.
 
 
