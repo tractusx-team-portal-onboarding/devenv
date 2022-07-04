@@ -98,9 +98,10 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022
 5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d2	2022-03-24 18:01:33.388	DTC-Translator	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	https://dtc-translator.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
-5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts	2022-03-24 18:01:33.388	\N	\N	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
+5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts cloud	2022-03-24 18:01:33.388	up2parts.png	https://cloud.up2parts.com/	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d5	2022-06-29 18:01:33.388	Smart Factory Web Portal	2022-03-24 18:01:33.388	Smart Factory.png	https://www.smartfactoryweb.de/	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 5cf74ef8-e0b7-4984-a872-474828beb5d6	2022-06-29 18:01:33.388	Production Planning and Control	2022-03-24 18:01:33.388	PP&C.png	https://www.istos.com/en/demo-version	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
+5cf74ef8-e0b7-4984-a872-474828beb5d7	2022-06-29 18:01:33.388	Logistics Network, Material Traceability (LBN-MT)	2022-03-24 18:01:33.388	LBN.png	https://pt-demo-owner-1lusu8r1.lbn-mt-demo.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3
 \.
 
 
@@ -135,6 +136,11 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-0000000000025	5cf74ef8-e0b7-4984-a872-474828beb5d6	PP&C.png
 5cf74ef8-a0a1-0000-a000-0000000000026	5cf74ef8-e0b7-4984-a872-474828beb5d6	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-0000000000027	5cf74ef8-e0b7-4984-a872-474828beb5d6	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-0000000000028	5cf74ef8-e0b7-4984-a872-474828beb5d4	Test-Image1.png
+5cf74ef8-a0a1-0000-a000-0000000000029	5cf74ef8-e0b7-4984-a872-474828beb5d4	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-0000000000030	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN1.png
+5cf74ef8-a0a1-0000-a000-0000000000031	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN2.png
+5cf74ef8-a0a1-0000-a000-0000000000032	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN3.png
 \.
 
 
@@ -167,6 +173,9 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d6	Manufacturer-as-a-service
 5cf74ef8-e0b7-4984-a872-474828beb5d6	Network
 5cf74ef8-e0b7-4984-a872-474828beb5d6	Chain
+5cf74ef8-e0b7-4984-a872-474828beb5d7	Manufacturer-as-a-service
+5cf74ef8-e0b7-4984-a872-474828beb5d7	Network
+5cf74ef8-e0b7-4984-a872-474828beb5d7	Traceability
 \.
 
 
@@ -189,6 +198,14 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	de
 5cf74ef8-e0b7-4984-a872-474828beb5d5	en
 5cf74ef8-e0b7-4984-a872-474828beb5d6	en
+5cf74ef8-e0b7-4984-a872-474828beb5d7	en
+5cf74ef8-e0b7-4984-a872-474828beb5d7	de
+5cf74ef8-e0b7-4984-a872-474828beb5d7	pt
+5cf74ef8-e0b7-4984-a872-474828beb5d7	es
+5cf74ef8-e0b7-4984-a872-474828beb5d7	fr
+5cf74ef8-e0b7-4984-a872-474828beb5d7	ru
+5cf74ef8-e0b7-4984-a872-474828beb5d7	jp
+5cf74ef8-e0b7-4984-a872-474828beb5d7	cn
 \.
 
 
@@ -250,6 +267,8 @@ f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
 f032a045-d035-11ec-9d64-0242ac120002	not yet known-1
 f032a046-d035-11ec-9d64-0242ac120002	not yet known-2
+f032a047-d035-11ec-9d64-0242ac120002	not yet known-3
+f032a048-d035-11ec-9d64-0242ac120002	not yet known-4
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 \.
@@ -283,6 +302,13 @@ b05d86e1-6c98-4619-85fa-9a425e080004	Buyer	f032a045-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080005	Supplier	f032a045-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080006	Buyer	f032a046-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080007	Supplier	f032a046-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080008	Administrator	f032a047-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080009	User	f032a047-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080010	Viewer	f032a047-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080011	Modifier	f032a047-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080012	Network Owner	f032a048-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080013	Network Participant	f032a048-d035-11ec-9d64-0242ac120002
+b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	f032a048-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -348,6 +374,8 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
 5cf74ef8-e0b7-4984-a872-474828beb5d6	f032a046-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d4	f032a047-d035-11ec-9d64-0242ac120002
+5cf74ef8-e0b7-4984-a872-474828beb5d7	f032a048-d035-11ec-9d64-0242ac120002
 \.
 
 --
@@ -411,6 +439,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d4	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d5	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d6	06b243a4-ba51-4bf3-bc40-5d79a2231b88
+5cf74ef8-e0b7-4984-a872-474828beb5d7	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 \.
 
 
@@ -450,6 +479,8 @@ PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLA
 PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees.
 PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD.
 PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d6	de
+The "SAP Logistics Business Network, Material Traceability (LBN-MT)" is a solution for cross-company supply chain transparency and material traceability. The network-based solution approach creates a data basis for automotive manufacturers and suppliers alike to shorten response times in case of anomalies and to execute recalls along the supply chain more precisely. The analysis and capture of the entire batch and serial number genealogy is simple, structured, and user-friendly by using Fiori UI. Furthermore, these can be displayed graphically via a network graph. The existing standard integration with S/4HANA and ECC enables seamless data provision from the backend system in the network. Other systems can be integrated, and data provided via corresponding interfaces. With LBN-MT, customers can operate according to the principles of data interoperability and sovereignty in the Catena-X network with all relevant business partners and establish new business models along the value chain.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d7	en
+Das „SAP Logistics Business Network, Material Traceability (LBN-MT)“ stellt eine Lösung zur unternehmensübergreifenden Lieferkettentransparenz und Material Rückverfolgbarkeit dar. Der netzwerkbasierte Lösungsansatz schafft eine Datengrundlage für Automobilhersteller und Zulieferer gleichermaßen, um Reaktionszeiten bei Anomalien zu verkürzen und Rückrufe entlang der Lieferkette präziser auszuführen. Die Analyse und Erfassung der gesamten Chargen- und Serialnummerngeneralogie ist mittels Fiori UI einfach, strukturiert und anwenderfreundlich. Ebenso lässt sich diese über einen Netzwerkgrafen graphisch darstellen. Durch die vorhandene Standardintegration mit S/4HANA und ECC ist eine nahtlose Datenbereitstellung aus dem Backendsystem im Netzwerk möglich. Andere Systeme können über entsprechende Schnittstellen integriert und Daten bereitgestellt werden. Mit LBN-MT können Kunden nach den Prinzipien der Dateninteroperabilität und Souveränität im Catena-X Netzwerk mit allen relevanten Geschäftspartnern agieren und neue Geschäftsfelder entlang der Wertschöpfungskette etablieren.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d7	de
 \.
 
 
