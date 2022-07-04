@@ -1648,6 +1648,7 @@ e1931be3-8d0e-4dbc-8478-0fd7df182b86	1656927938868	CX-Central	CREATE	master	d228
 8cce3f95-6d90-44f1-88e9-0b6035f1089f	1656932737288	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"4330f77b-9de3-4e4f-bef5-38c55b419728","name":"view_app_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 1acd22e5-d020-481c-9f4a-be01c7c5765e	1656932765233	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"88977fb0-4bcf-4a6b-b0d7-7ddad52000d6","name":"view_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 b16b4909-b902-40a6-b902-a461d0864663	1656932793651	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"d1be902b-f6ef-4d7b-9c86-fb5fc5825e07","name":"activate_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+a6d100c1-ef8a-4527-9a9e-120533ec4230	1656933267057	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"b00cf7d9-9e08-4899-8a70-bcdf96a104dc","name":"add_connectors","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 \.
 
 
@@ -2720,6 +2721,7 @@ e8b9f782-d707-4852-a979-e5a08b19f3c7	c7e88346-ccb7-4d8c-ace3-e22722b2100f
 e8b9f782-d707-4852-a979-e5a08b19f3c7	4330f77b-9de3-4e4f-bef5-38c55b419728
 e8b9f782-d707-4852-a979-e5a08b19f3c7	88977fb0-4bcf-4a6b-b0d7-7ddad52000d6
 e8b9f782-d707-4852-a979-e5a08b19f3c7	d1be902b-f6ef-4d7b-9c86-fb5fc5825e07
+e8b9f782-d707-4852-a979-e5a08b19f3c7	b00cf7d9-9e08-4899-8a70-bcdf96a104dc
 \.
 
 
