@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.3 (Debian 14.3-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -44,6 +44,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220603124915_CPLP-1047-CompanyUser-BusinessPartners	6.0.4
 20220607073601_CPLP-748-AddAppSubscriptionStatus	6.0.4
 20220622143338_CPLP-1103-AddDocumentStatusAndContent	6.0.4
+20220704105649_CPLP-1134-AddNotification	6.0.4
 \.
 
 
