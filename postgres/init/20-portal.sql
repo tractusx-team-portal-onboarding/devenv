@@ -664,15 +664,15 @@ CREATE TABLE portal.notification_type (
 
 CREATE TABLE portal.notifications (
     id uuid NOT NULL,
-    company_user_id uuid NOT NULL,
+    receiver_user_id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
-    title character varying(255) NOT NULL,
+    title character varying(150) NOT NULL,
     message text NOT NULL,
     notification_type_id integer NOT NULL,
     read_status_id integer NOT NULL,
     app_id uuid,
     due_date timestamp with time zone,
-    creator_id uuid
+    creator_user_id uuid
 );
 
 
@@ -1574,17 +1574,17 @@ CREATE INDEX ix_notifications_app_id ON portal.notifications USING btree (app_id
 
 
 --
--- Name: ix_notifications_company_user_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_notifications_receiver_user_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_notifications_company_user_id ON portal.notifications USING btree (company_user_id);
+CREATE INDEX ix_notifications_receiver_user_id ON portal.notifications USING btree (receiver_user_id);
 
 
 --
--- Name: ix_notifications_creator_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_notifications_creator_user_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_notifications_creator_id ON portal.notifications USING btree (creator_id);
+CREATE INDEX ix_notifications_creator_user_id ON portal.notifications USING btree (creator_user_id);
 
 
 --
@@ -2176,19 +2176,19 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
--- Name: notifications fk_notifications_company_users_company_user_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: notifications fk_notifications_company_users_receiver_user_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.notifications
-    ADD CONSTRAINT fk_notifications_company_users_company_user_id FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id);
+    ADD CONSTRAINT fk_notifications_company_users_receiver_user_id FOREIGN KEY (receiver_user_id) REFERENCES portal.company_users(id);
 
 
 --
--- Name: notifications fk_notifications_company_users_creator_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: notifications fk_notifications_company_users_creator_user_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.notifications
-    ADD CONSTRAINT fk_notifications_company_users_creator_id FOREIGN KEY (creator_id) REFERENCES portal.company_users(id);
+    ADD CONSTRAINT fk_notifications_company_users_creator_user_id FOREIGN KEY (creator_user_id) REFERENCES portal.company_users(id);
 
 
 --
