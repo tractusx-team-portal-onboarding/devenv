@@ -84,6 +84,12 @@ COPY portal.company_roles (id, label) FROM stdin;
 COPY portal.languages (short_name, long_name_de, long_name_en) FROM stdin;
 de	deutsch	german
 en	englisch	english
+pt	portugisisch	portuguese
+es	spanisch	spanish
+fr	franzoesisch	french
+ru	russisch	russian
+jp	japanisch	japanese
+cn	chinesisch	chinese
 \.
 
 
