@@ -666,11 +666,9 @@ CREATE TABLE portal.notifications (
     id uuid NOT NULL,
     receiver_user_id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
-    title character varying(150) NOT NULL,
-    message text NOT NULL,
+    content text NOT NULL,
     notification_type_id integer NOT NULL,
     read_status_id integer NOT NULL,
-    app_id uuid,
     due_date timestamp with time zone,
     creator_user_id uuid
 );
@@ -1567,13 +1565,6 @@ CREATE INDEX ix_invitations_invitation_status_id ON portal.invitations USING btr
 
 
 --
--- Name: ix_notifications_app_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_notifications_app_id ON portal.notifications USING btree (app_id);
-
-
---
 -- Name: ix_notifications_receiver_user_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2165,14 +2156,6 @@ ALTER TABLE ONLY portal.invitations
 
 ALTER TABLE ONLY portal.invitations
     ADD CONSTRAINT fk_invitations_invitation_statuses_invitation_status_id FOREIGN KEY (invitation_status_id) REFERENCES portal.invitation_statuses(id);
-
-
---
--- Name: notifications fk_notifications_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.notifications
-    ADD CONSTRAINT fk_notifications_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
 
 
 --
