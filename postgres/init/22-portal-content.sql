@@ -271,6 +271,7 @@ f032a047-d035-11ec-9d64-0242ac120002	not yet known-3
 f032a048-d035-11ec-9d64-0242ac120002	not yet known-4
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
+f032a045-d035-11ec-9d64-0242ac120002	technical_roles_management
 \.
 
 COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
@@ -309,6 +310,9 @@ b05d86e1-6c98-4619-85fa-9a425e080011	Modifier	f032a047-d035-11ec-9d64-0242ac1200
 b05d86e1-6c98-4619-85fa-9a425e080012	Network Owner	f032a048-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080013	Network Participant	f032a048-d035-11ec-9d64-0242ac120002
 b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	f032a048-d035-11ec-9d64-0242ac120002
+607818be-4978-41f4-bf63-fa8d2de51155	Digital Twin Management	f032a045-d035-11ec-9d64-0242ac120002
+607818be-4978-41f4-bf63-fa8d2de51156	Semantic Model Management	f032a045-d035-11ec-9d64-0242ac120002
+607818be-4978-41f4-bf63-fa8d2de51157	Wallet Management	f032a045-d035-11ec-9d64-0242ac120002
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -358,6 +362,12 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 545c2616-2fce-4f52-b881-331db2fc1e35	en	Customer
 7a9e0777-2b13-4463-a7c4-f699afff3527	de	Erstausrüster
 7a9e0777-2b13-4463-a7c4-f699afff3527	en	Original Equipment Manufacturer
+607818be-4978-41f4-bf63-fa8d2de51155	de	Hinzufügen, Ändern und Löschen von eigenen Digitalen Zwillingen
+607818be-4978-41f4-bf63-fa8d2de51155	en	Add, Change and Delete own Digital Twins
+607818be-4978-41f4-bf63-fa8d2de51156	de	Hinzufügen, Ändern und Löschen von Semantic Models
+607818be-4978-41f4-bf63-fa8d2de51156	en	Add, Change and Delete Semnatic Models
+607818be-4978-41f4-bf63-fa8d2de51157	de	Anzeigen und Ändern des Unternehmens-Wallets
+607818be-4978-41f4-bf63-fa8d2de51157	en	View and modify own company wallet
 \.
 
 
