@@ -54,7 +54,6 @@ ALTER TABLE portal.invitation_statuses OWNER TO portal;
 ALTER TABLE portal.invitations OWNER TO portal;
 ALTER TABLE portal.languages OWNER TO portal;
 ALTER TABLE portal.notifications OWNER TO portal;
-ALTER TABLE portal.notification_status OWNER TO portal;
 ALTER TABLE portal.notification_type OWNER TO portal;
 ALTER TABLE portal.use_cases OWNER TO portal;
 ALTER TABLE portal.user_role_descriptions OWNER TO portal;
