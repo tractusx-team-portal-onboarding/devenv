@@ -469,6 +469,16 @@ COPY portal.invitation_statuses (id, label) FROM stdin;
 
 
 --
+-- Data for Name: notification_type; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.notification_type (id, label) FROM stdin;
+1	INFO
+2	ACTION
+\.
+
+
+--
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
