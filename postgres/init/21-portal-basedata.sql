@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -475,6 +475,21 @@ COPY portal.invitation_statuses (id, label) FROM stdin;
 COPY portal.notification_type (id, label) FROM stdin;
 1	INFO
 2	ACTION
+3	WELCOME
+4	WELCOME_USE_CASES
+5	WELCOME_SERVICE_PROVIDER
+6	WELCOME_CONNECTOR_REGISTRATION
+7	WELCOME_APP_MARKETPLACE
+8	APP_SUBSCRIPTION_REQUEST
+9	APP_SUBSCRIPTION_ACTIVATION
+\.
+
+
+--
+-- Data for Name: notifications; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.notifications (id, receiver_user_id, date_created, content, notification_type_id, is_read, due_date, creator_user_id) FROM stdin;
 \.
 
 
