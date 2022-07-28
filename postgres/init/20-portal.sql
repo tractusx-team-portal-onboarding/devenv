@@ -211,7 +211,8 @@ CREATE TABLE portal.apps (
     contact_number character varying(255),
     provider character varying(255) NOT NULL,
     provider_company_id uuid,
-    app_status_id integer NOT NULL
+    app_status_id integer NOT NULL,
+    date_last_changed timestamp with time zone
 );
 
 
