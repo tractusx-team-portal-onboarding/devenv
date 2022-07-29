@@ -475,7 +475,16 @@ COPY portal.invitation_statuses (id, label) FROM stdin;
 COPY portal.notification_type (id, label) FROM stdin;
 1	INFO
 2	ACTION
+3	WELCOME
+4	WELCOME_USE_CASES
+5	WELCOME_SERVICE_PROVIDER
+6	WELCOME_CONNECTOR_REGISTRATION
+7	WELCOME_APP_MARKETPLACE
+8	APP_SUBSCRIPTION_REQUEST
+9	APP_SUBSCRIPTION_ACTIVATION
+10	CONNECTOR_REGISTERED
 \.
+
 
 --
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
