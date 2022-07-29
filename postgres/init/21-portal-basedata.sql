@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -476,7 +476,6 @@ COPY portal.notification_type (id, label) FROM stdin;
 1	INFO
 2	ACTION
 \.
-
 
 --
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
