@@ -40,7 +40,7 @@ cd $PSScriptRoot
 
 # Set environment variables for the database
 $DEVENV_IP = '172.19.0.2'
-$BASETABLES='(agreement_categories|app_subscription_statuses|app_statuses|company_application_statuses|company_role_descriptions|company_roles|company_service_account_statuses|company_statuses|company_user_statuses|connector_statuses|connector_types|consent_statuses|countries|document_types|document_status|identity_provider_categories|invitation_statuses|languages|notifications|notification_type|use_cases)'
+$BASETABLES='(agreement_categories|app_subscription_statuses|app_statuses|company_application_statuses|company_role_descriptions|company_roles|company_service_account_statuses|company_statuses|company_user_statuses|connector_statuses|connector_types|consent_statuses|countries|document_types|document_status|identity_provider_categories|invitation_statuses|languages|notification_type|use_cases)'
 
 docker run -it --rm -e PGPASSWORD=pwpostgres postgres pg_dump -h $DEVENV_IP -n portal -s -O -U postgres postgres > postgres/init/20-portal.sql
 docker run -it --rm -e PGPASSWORD=pwportal postgres pg_dump -h $DEVENV_IP -a -t $BASETABLES -U portal postgres > postgres/init/21-portal-basedata.sql

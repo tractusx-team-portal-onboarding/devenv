@@ -477,15 +477,6 @@ COPY portal.notification_type (id, label) FROM stdin;
 2	ACTION
 \.
 
-
---
--- Data for Name: notifications; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.notifications (id, receiver_user_id, date_created, content, notification_type_id, is_read, due_date, creator_user_id) FROM stdin;
-\.
-
-
 --
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
