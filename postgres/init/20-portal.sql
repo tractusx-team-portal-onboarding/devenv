@@ -217,6 +217,36 @@ CREATE TABLE portal.apps (
 
 
 --
+-- Name: audit_company_users_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    audit_operation_id integer NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    email character varying(255),
+    firstname character varying(255),
+    lastlogin bytea,
+    lastname character varying(255),
+    company_id uuid NOT NULL,
+    company_user_status_id integer NOT NULL,
+    last_editor_id uuid
+);
+
+
+--
+-- Name: audit_operation; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_operation (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: companies; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -414,7 +444,8 @@ CREATE TABLE portal.company_users (
     lastlogin bytea,
     lastname character varying(255),
     company_id uuid NOT NULL,
-    company_user_status_id integer NOT NULL
+    company_user_status_id integer NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -824,6 +855,22 @@ ALTER TABLE ONLY portal.app_tags
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT pk_apps PRIMARY KEY (id);
+
+
+--
+-- Name: audit_company_users_cplp_1254_db_audit pk_audit_company_users_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
+    ADD CONSTRAINT pk_audit_company_users_cplp_1254_db_audit PRIMARY KEY (id);
+
+
+--
+-- Name: audit_operation pk_audit_operation; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_operation
+    ADD CONSTRAINT pk_audit_operation PRIMARY KEY (id);
 
 
 --
@@ -1268,6 +1315,13 @@ CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_co
 
 
 --
+-- Name: ix_audit_company_users_cplp_1254_db_audit_company_user_status_; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_audit_company_users_cplp_1254_db_audit_company_user_status_ ON portal.audit_company_users_cplp_1254_db_audit USING btree (company_user_status_id);
+
+
+--
 -- Name: ix_companies_address_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1583,6 +1637,13 @@ CREATE INDEX ix_user_roles_iam_client_id ON portal.user_roles USING btree (iam_c
 
 
 --
+-- Name: company_users audit_company_users; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION public.process_company_users_audit();
+
+
+--
 -- Name: addresses fk_addresses_countries_country_temp_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1764,6 +1825,14 @@ ALTER TABLE ONLY portal.apps
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: audit_company_users_cplp_1254_db_audit fk_audit_company_users_cplp_1254_db_audit_company_user_statuse; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
+    ADD CONSTRAINT fk_audit_company_users_cplp_1254_db_audit_company_user_statuse FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_statuses(id) ON DELETE CASCADE;
 
 
 --
