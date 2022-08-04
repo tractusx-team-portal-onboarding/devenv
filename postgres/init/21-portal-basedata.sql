@@ -74,6 +74,7 @@ COPY portal.company_application_statuses (id, label) FROM stdin;
 COPY portal.company_roles (id, label) FROM stdin;
 1	ACTIVE_PARTICIPANT
 2	APP_PROVIDER
+3	SERVICE_PROVIDER
 \.
 
 
@@ -98,10 +99,12 @@ cn	chinesisch	chinese
 --
 
 COPY portal.company_role_descriptions (company_role_id, language_short_name, description) FROM stdin;
-1	de	Netzwerkteilnehmer
-1	en	Participant
-2	de	Softwareanbieter
-2	en	Application Provider
+1	de	Der Netzwerkteilnehmer deckt die Rollen Datenanbieter-, Datenkonsumenten- und App-Benutzer ab. Als Teilnehmer sind Sie ein aktives Mitglied des Netzwerks mit allen Diensten, um als Mitwirkender und Benutzer teilzunehmen.
+1	en	The participant role is covering the data provider, data consumer or app user scenario. As participant you are an active member of the network with enabled services to particiapte as contributer and user.
+2	de	Als App-Anbieter können Anwednungen über den CX-Marktplatz angeboten werden. Als App-Anbieter können außerdem am Developer Hub teilnehmen, Anwendungen im Netzwerk anbieten und diese verwalten.
+2	en	The App Provider is a company which is providing application software via the CX marketplace. As app provider you can participate and use the developer hub, release and offer applications to the network and manage your applications.
+3	de	Als Service Anbieter können 3rd Party angebote - wie z.b. Dataspace Services, EDCs und ähnliches im Netzwerk angeboten werden.
+3	en	The Service Provider is able to offer 3rd party services, such as dataspace service offerings to CX Members. CX members can subscribe for those services.
 \.
 
 
@@ -507,4 +510,3 @@ c065a349-f649-47f8-94d5-1a504a855419	Quality Management	QM
 --
 -- PostgreSQL database dump complete
 --
-
