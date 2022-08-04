@@ -127,7 +127,6 @@ COPY portal.company_statuses (id, label) FROM stdin;
 2	ACTIVE
 3	REJECTED
 4	INACTIVE
-5	DELETED
 \.
 
 
@@ -138,7 +137,6 @@ COPY portal.company_statuses (id, label) FROM stdin;
 COPY portal.company_user_statuses (id, label) FROM stdin;
 1	ACTIVE
 2	INACTIVE
-3	DELETED
 \.
 
 
