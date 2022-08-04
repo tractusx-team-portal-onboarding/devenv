@@ -51,6 +51,17 @@ COPY portal.app_subscription_statuses (id, label) FROM stdin;
 
 
 --
+-- Data for Name: audit_operation; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_operation (id, label) FROM stdin;
+1	INSERT
+2	UPDATE
+3	DELETE
+\.
+
+
+--
 -- Data for Name: company_application_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 

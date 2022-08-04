@@ -505,6 +505,15 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 
 
 --
+-- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operation_id, date_last_changed, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
+\.
+
+
+
+--
 -- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
