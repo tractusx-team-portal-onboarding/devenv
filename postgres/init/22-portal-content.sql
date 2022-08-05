@@ -487,7 +487,34 @@ Das „SAP Logistics Business Network, Material Traceability (LBN-MT)“ stellt 
 
 
 --
--- Data for Name: company_applications; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: audit_company_assigned_apps_cplp_1253_company_assigned_app; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_assigned_apps_cplp_1253_company_assigned_app (id, audit_id, date_last_changed, audit_operation_id, last_editor_id, company_id, app_id, app_subscription_status_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operation_id, date_last_changed, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
+5dbda444-cdc9-4e4e-9e00-67bdfc8185bd	ac1cf001-7fbc-1f2f-817f-bce0575a0011	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.394+00	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106	1	\N
+82e8dd93-872e-4b69-b938-3a8c89ec76a6	ac1cf001-7fbc-1f2f-817f-bce0577e0015	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.438+00	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+95fc4d19-6c7a-4d5e-b5c0-d8cf5e1a3497	ac1cf001-7fbc-1f2f-817f-bce058019990	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-user-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+9b5fd59a-4126-4191-b915-10421bb3e249	ac1cf001-7fbc-1f2f-817f-bce058019991	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+2dccde7c-9a66-4413-a0bf-e4d5a2c892a3	ac1cf001-7fbc-1f2f-817f-bce058019992	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	company-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+7a86acaa-1250-422a-af22-fb548b3706e9	ac1cf001-7fbc-1f2f-817f-bce058019993	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	it-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+e46382bb-e4fb-4c37-8f22-6f2fc8b95805	ac1cf001-7fbc-1f2f-817f-bce058020000	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+fcde789d-4806-4bc0-b6db-b5e979d804b2	ac1cf001-7fbc-1f2f-817f-bce058020001	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	CX Admin	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+1a4af655-c4a7-4e08-9b3d-ce46cb0538b2	ac1cf001-7fbc-1f2f-817f-bce058020002	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1	\N
+90873874-5266-4773-876d-2ee53a8c83bc	ac1cf001-7fbc-1f2f-817f-bce058020003	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 2	bdac6865-2a8d-4bfd-9373-9dfce8190895	1	\N
+9dbbd59c-9def-4952-85de-8f7cbc1813d1	ac1cf001-7fbc-1f2f-817f-bce058020004	1	2022-08-05 00:00:00+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 3	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+\.
+
+
+--
+-- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
 COPY portal.company_applications (id, date_created, date_last_changed, application_status_id, company_id) FROM stdin;
@@ -505,43 +532,34 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 
 
 --
--- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operation_id, date_last_changed, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
-\.
-
-
-
---
--- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-COPY portal.company_assigned_apps (company_id, app_id, app_subscription_status_id) FROM stdin;
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2
+COPY portal.company_assigned_apps (company_id, app_id, app_subscription_status_id, id, last_editor_id) FROM stdin;
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	4ac97884-30fa-4cd2-ad3b-bd70a572d3b8	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	eb6366ce-d086-4f3c-b2b2-f68bd14f8923	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	e0a337ff-f7f6-4a1f-85b1-fa65aed2b994	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	1ff0ae2f-6fc9-47ed-8752-57d7770c2536	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	af2482b1-6a58-4971-9d6d-390947f3206a	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	8faa34b6-ae03-4744-9cf3-1ad5415df209	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	1a26079a-c83c-4823-94f2-8d171ee0e4e6	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	edef4164-1a98-4c0f-a4b3-824c17ffb6f2	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	4defcf0f-6dea-45b7-80ff-500f189acb88	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	108d764e-02ab-4ff5-946d-97f689ad9ca8	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	79709768-934f-49c6-a201-c5518599bd95	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	d362d6bd-ed2a-45c0-b2da-ec42850a6dfc	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	c6692c46-f207-4d68-b900-b01a464b8d35	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	3a1c1278-5afb-44bd-b9d1-10cf4344bbea	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	6022f0fd-6f07-42c1-8399-5ddba14304ac	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	95979b93-e1f3-472d-b9a0-31935fc8d8da	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	e0151747-99bc-4f56-bfda-6f6ad42bf89d	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	655ad8e2-c124-402f-b9cb-330bbf222def	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	e9b5c0e2-a3f1-41e0-8bc1-b7be26f2f05e	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	3f468df4-4bda-4df7-8e6a-d24e096a2a7a	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	7a0d66d9-4b4e-45d7-87d4-4c8f2d4f7c6e	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	c0a5fa73-8a3d-4070-a0ab-a1d6bb6d0d3c	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	d06354b2-9709-46c3-b5c8-eba342a889d9	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	b5fc1523-941d-4b01-8b24-9adf15210a58	\N
 \.
 
 
