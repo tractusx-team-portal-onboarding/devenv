@@ -23,6 +23,37 @@ SET row_security = off;
 CREATE SCHEMA portal;
 
 
+--
+-- Name: process_company_users_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_company_users_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+BEGIN
+
+IF (TG_OP = 'DELETE') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.email,OLD.firstname,OLD.lastlogin,OLD.lastname,OLD.company_id,OLD.company_user_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+END IF;
+
+RETURN NULL;
+
+END;
+
+$$;
+
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -1640,7 +1671,7 @@ CREATE INDEX ix_user_roles_iam_client_id ON portal.user_roles USING btree (iam_c
 -- Name: company_users audit_company_users; Type: TRIGGER; Schema: portal; Owner: -
 --
 
-CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION public.process_company_users_audit();
+CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION portal.process_company_users_audit();
 
 
 --
