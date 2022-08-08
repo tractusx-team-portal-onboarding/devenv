@@ -35,15 +35,15 @@ BEGIN
 
 IF (TG_OP = 'DELETE') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1253_company_assigned_app ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
 
 ELSIF (TG_OP = 'UPDATE') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1253_company_assigned_app ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
 
 ELSIF (TG_OP = 'INSERT') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1253_company_assigned_app ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
 
 END IF;
 
@@ -279,10 +279,10 @@ CREATE TABLE portal.apps (
 
 
 --
--- Name: audit_company_assigned_apps_cplp_1253_company_assigned_app; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_company_assigned_apps_cplp_1253_company_assigned_app (
+CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
     id uuid NOT NULL,
     audit_id uuid NOT NULL,
     date_last_changed timestamp with time zone NOT NULL,
@@ -938,11 +938,11 @@ ALTER TABLE ONLY portal.apps
 
 
 --
--- Name: audit_company_assigned_apps_cplp_1253_company_assigned_app pk_audit_company_assigned_apps_cplp_1253_company_assigned_app; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_company_assigned_apps_cplp_1254_db_audit pk_audit_company_assigned_apps_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1253_company_assigned_app
-    ADD CONSTRAINT pk_audit_company_assigned_apps_cplp_1253_company_assigned_app PRIMARY KEY (id);
+ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1254_db_audit
+    ADD CONSTRAINT pk_audit_company_assigned_apps_cplp_1254_db_audit PRIMARY KEY (id);
 
 
 --
