@@ -212,7 +212,8 @@ CREATE TABLE portal.apps (
     provider character varying(255) NOT NULL,
     provider_company_id uuid,
     app_status_id integer NOT NULL,
-    date_last_changed timestamp with time zone
+    date_last_changed timestamp with time zone,
+    sales_manager_id uuid NOT NULL
 );
 
 
@@ -262,7 +263,8 @@ CREATE TABLE portal.company_applications (
 CREATE TABLE portal.company_assigned_apps (
     company_id uuid NOT NULL,
     app_id uuid NOT NULL,
-    app_subscription_status_id integer DEFAULT 1 NOT NULL
+    app_subscription_status_id integer DEFAULT 1 NOT NULL,
+    requester_id uuid NOT NULL
 );
 
 
@@ -1268,6 +1270,13 @@ CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_co
 
 
 --
+-- Name: ix_apps_sales_manager_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_apps_sales_manager_id ON portal.apps USING btree (sales_manager_id);
+
+
+--
 -- Name: ix_companies_address_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1764,6 +1773,14 @@ ALTER TABLE ONLY portal.apps
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: apps fk_apps_company_users_sales_manager_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.apps
+    ADD CONSTRAINT fk_apps_company_users_sales_manager_id FOREIGN KEY (sales_manager_id) REFERENCES portal.company_users(id) ON DELETE CASCADE;
 
 
 --

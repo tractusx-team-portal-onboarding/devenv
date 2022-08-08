@@ -47,6 +47,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220725103649_CPLP-1134-AddNotification	6.0.4
 20220728080922_CPLP-1241-AddLastChangedDateToApp	6.0.4
 20220729104549_CPLP-1247-ExtendNotificationTypes	6.0.4
+20220808102805_CPLP-1248-app-notification	6.0.4
 \.
 
 
