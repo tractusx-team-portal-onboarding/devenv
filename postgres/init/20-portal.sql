@@ -213,7 +213,7 @@ CREATE TABLE portal.apps (
     provider_company_id uuid,
     app_status_id integer NOT NULL,
     date_last_changed timestamp with time zone,
-    sales_manager_id uuid NOT NULL
+    sales_manager_id uuid
 );
 
 
@@ -1773,14 +1773,6 @@ ALTER TABLE ONLY portal.apps
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
-
-
---
--- Name: apps fk_apps_company_users_sales_manager_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_company_users_sales_manager_id FOREIGN KEY (sales_manager_id) REFERENCES portal.company_users(id) ON DELETE CASCADE;
 
 
 --
