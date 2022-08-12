@@ -274,53 +274,8 @@ CREATE TABLE portal.apps (
     provider character varying(255) NOT NULL,
     provider_company_id uuid,
     app_status_id integer NOT NULL,
-    date_last_changed timestamp with time zone
-);
-
-
---
--- Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL,
-    last_editor_id uuid,
-    company_id uuid NOT NULL,
-    app_id uuid NOT NULL,
-    app_subscription_status_id integer NOT NULL
-);
-
-
---
--- Name: audit_company_users_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    date_created timestamp with time zone NOT NULL,
-    email character varying(255),
-    firstname character varying(255),
-    lastlogin bytea,
-    lastname character varying(255),
-    company_id uuid NOT NULL,
-    company_user_status_id integer NOT NULL,
-    last_editor_id uuid
-);
-
-
---
--- Name: audit_operation; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_operation (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
+    date_last_changed timestamp with time zone,
+    sales_manager_id uuid
 );
 
 
@@ -371,8 +326,7 @@ CREATE TABLE portal.company_assigned_apps (
     company_id uuid NOT NULL,
     app_id uuid NOT NULL,
     app_subscription_status_id integer DEFAULT 1 NOT NULL,
-    id uuid DEFAULT gen_random_uuid() NOT NULL,
-    last_editor_id uuid
+    requester_id uuid NOT NULL
 );
 
 
@@ -1403,10 +1357,10 @@ CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_co
 
 
 --
--- Name: ix_audit_company_users_cplp_1254_db_audit_company_user_status_; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_apps_sales_manager_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_audit_company_users_cplp_1254_db_audit_company_user_status_ ON portal.audit_company_users_cplp_1254_db_audit USING btree (company_user_status_id);
+CREATE INDEX ix_apps_sales_manager_id ON portal.apps USING btree (sales_manager_id);
 
 
 --
