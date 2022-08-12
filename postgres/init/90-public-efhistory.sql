@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
 -- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -48,6 +48,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220728080922_CPLP-1241-AddLastChangedDateToApp	6.0.4
 20220729104549_CPLP-1247-ExtendNotificationTypes	6.0.4
 20220811060613_CPLP-1248-app-notification	6.0.4
+20220812133428_CPLP-1254-db-audit	6.0.4
 \.
 
 

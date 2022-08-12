@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
 -- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -21,6 +21,68 @@ SET row_security = off;
 --
 
 CREATE SCHEMA portal;
+
+
+--
+-- Name: process_company_assigned_apps_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_company_assigned_apps_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+BEGIN
+
+IF (TG_OP = 'DELETE') THEN
+
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+END IF;
+
+RETURN NULL;
+
+END;
+
+$$;
+
+
+--
+-- Name: process_company_users_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_company_users_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+BEGIN
+
+IF (TG_OP = 'DELETE') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.email,OLD.firstname,OLD.lastlogin,OLD.lastname,OLD.company_id,OLD.company_user_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+END IF;
+
+RETURN NULL;
+
+END;
+
+$$;
 
 
 SET default_tablespace = '';
@@ -218,6 +280,53 @@ CREATE TABLE portal.apps (
 
 
 --
+-- Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    audit_operation_id integer NOT NULL,
+    company_id uuid NOT NULL,
+    app_id uuid NOT NULL,
+    app_subscription_status_id integer NOT NULL,
+    requester_id uuid NOT NULL,
+    last_editor_id uuid
+);
+
+
+--
+-- Name: audit_company_users_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    audit_operation_id integer NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    email character varying(255),
+    firstname character varying(255),
+    lastlogin bytea,
+    lastname character varying(255),
+    company_id uuid NOT NULL,
+    company_user_status_id integer NOT NULL,
+    last_editor_id uuid
+);
+
+
+--
+-- Name: audit_operation; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_operation (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: companies; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -264,7 +373,9 @@ CREATE TABLE portal.company_assigned_apps (
     company_id uuid NOT NULL,
     app_id uuid NOT NULL,
     app_subscription_status_id integer DEFAULT 1 NOT NULL,
-    requester_id uuid NOT NULL
+    requester_id uuid NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -416,7 +527,8 @@ CREATE TABLE portal.company_users (
     lastlogin bytea,
     lastname character varying(255),
     company_id uuid NOT NULL,
-    company_user_status_id integer NOT NULL
+    company_user_status_id integer NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -826,6 +938,30 @@ ALTER TABLE ONLY portal.app_tags
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT pk_apps PRIMARY KEY (id);
+
+
+--
+-- Name: audit_company_assigned_apps_cplp_1254_db_audit pk_audit_company_assigned_apps_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1254_db_audit
+    ADD CONSTRAINT pk_audit_company_assigned_apps_cplp_1254_db_audit PRIMARY KEY (id);
+
+
+--
+-- Name: audit_company_users_cplp_1254_db_audit pk_audit_company_users_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
+    ADD CONSTRAINT pk_audit_company_users_cplp_1254_db_audit PRIMARY KEY (id);
+
+
+--
+-- Name: audit_operation pk_audit_operation; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_operation
+    ADD CONSTRAINT pk_audit_operation PRIMARY KEY (id);
 
 
 --
@@ -1277,6 +1413,13 @@ CREATE INDEX ix_apps_sales_manager_id ON portal.apps USING btree (sales_manager_
 
 
 --
+-- Name: ix_audit_company_users_cplp_1254_db_audit_company_user_status_; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_audit_company_users_cplp_1254_db_audit_company_user_status_ ON portal.audit_company_users_cplp_1254_db_audit USING btree (company_user_status_id);
+
+
+--
 -- Name: ix_companies_address_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1592,6 +1735,20 @@ CREATE INDEX ix_user_roles_iam_client_id ON portal.user_roles USING btree (iam_c
 
 
 --
+-- Name: company_assigned_apps audit_company_assigned_apps; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_company_assigned_apps AFTER INSERT OR DELETE OR UPDATE ON portal.company_assigned_apps FOR EACH ROW EXECUTE FUNCTION portal.process_company_assigned_apps_audit();
+
+
+--
+-- Name: company_users audit_company_users; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION portal.process_company_users_audit();
+
+
+--
 -- Name: addresses fk_addresses_countries_country_temp_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1773,6 +1930,14 @@ ALTER TABLE ONLY portal.apps
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: audit_company_users_cplp_1254_db_audit fk_audit_company_users_cplp_1254_db_audit_company_user_statuse; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
+    ADD CONSTRAINT fk_audit_company_users_cplp_1254_db_audit_company_user_statuse FOREIGN KEY (company_user_status_id) REFERENCES portal.company_user_statuses(id) ON DELETE CASCADE;
 
 
 --

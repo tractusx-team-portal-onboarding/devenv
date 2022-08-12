@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
 -- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -47,6 +47,43 @@ COPY portal.app_subscription_statuses (id, label) FROM stdin;
 1	PENDING
 2	ACTIVE
 3	INACTIVE
+\.
+
+
+--
+-- Data for Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_assigned_apps_cplp_1254_db_audit (id, audit_id, date_last_changed, audit_operation_id, company_id, app_id, app_subscription_status_id, requester_id, last_editor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: company_user_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.company_user_statuses (id, label) FROM stdin;
+1	ACTIVE
+2	INACTIVE
+\.
+
+
+--
+-- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operation_id, date_last_changed, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_operation; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_operation (id, label) FROM stdin;
+1	INSERT
+2	UPDATE
+3	DELETE
 \.
 
 
@@ -127,16 +164,6 @@ COPY portal.company_statuses (id, label) FROM stdin;
 2	ACTIVE
 3	REJECTED
 4	INACTIVE
-\.
-
-
---
--- Data for Name: company_user_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.company_user_statuses (id, label) FROM stdin;
-1	ACTIVE
-2	INACTIVE
 \.
 
 
