@@ -391,7 +391,7 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 
 
 --
--- Data for Name: app_assigned_user_roles; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: app_assigned_user_clients; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
 COPY portal.app_assigned_clients (app_id, iam_client_id) FROM stdin;
