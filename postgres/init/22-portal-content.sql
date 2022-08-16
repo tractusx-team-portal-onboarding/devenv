@@ -514,6 +514,14 @@ COPY portal.audit_company_assigned_apps_cplp_1254_db_audit (id, audit_id, date_l
 
 
 --
+-- Data for Name: audit_services_cplp_1213_add_services; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_services_cplp_1213_add_services (id, audit_id, date_last_changed, audit_operation_id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
+\.
+
+
+--
 -- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -798,7 +806,36 @@ fdaa99b6-c8e9-4521-a70c-4d535a1e573e	sa-cl6-cx-8	b0297640-9074-4003-adb9-cbf9f23
 c3af980d-b1f6-447a-ba96-5dacd52a7adf	sa-cl6-cx-9	2c5e74e2-0561-46f9-b27e-beadb44f1f75	7e85a0b8-0001-ab67-10d1-0ef508201017
 \.
 
+--
+-- Data for Name: services; Type: TABLE DATA; Schema: portal; Owner: portal
+--
 
+COPY portal.services (id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_assigned_licenses (service_id, service_license_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_descriptions (id, description, service_id, language_short_name) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_licenses (id, license_text) FROM stdin;
+\.
 
 --
 -- Data for Name: notifications; Type: TABLE DATA; Schema: portal; Owner: portal

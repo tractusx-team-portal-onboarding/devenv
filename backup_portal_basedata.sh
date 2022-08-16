@@ -4,7 +4,7 @@ if [ -z $1 ]; then
 else
   export DEVENV_SERVERNAME=$1
   export DEVENV_IP=`getent hosts $DEVENV_SERVERNAME | awk '{ print $1 }'`
-  BASETABLES='(agreement_categories|app_subscription_statuses|app_statuses|audit_operation|company_application_statuses|company_role_descriptions|company_roles|company_service_account_statuses|company_statuses|company_user_statuses|connector_statuses|connector_types|consent_statuses|countries|document_types|document_status|identity_provider_categories|invitation_statuses|languages|notification_type|use_cases|audit_company_users_CPLP_1254_db_audit|audit_company_assigned_apps_cplp_1254_db_audit)'
+  BASETABLES='(agreement_categories|app_subscription_statuses|app_statuses|audit_operation|company_application_statuses|company_role_descriptions|company_roles|company_service_account_statuses|company_statuses|company_user_statuses|connector_statuses|connector_types|consent_statuses|countries|document_types|document_status|identity_provider_categories|invitation_statuses|languages|notification_type|use_cases|audit_company_users_CPLP_1254_db_audit|audit_company_assigned_apps_cplp_1254_db_audit|service_assigned_licenses|service_descriptions|service_licenses|service_statuses|service_subscription_statuses|services|audit_services_cplp_1213_add_services)'
   if [ -z "$DEVENV_IP" ]; then
     echo "hostname $DEVENV_SERVERNAME unknown (run 'sudo ./set_wsl_hosts.sh' resp. 'sudo ./set_devhost_hosts.sh' first)"
   else
