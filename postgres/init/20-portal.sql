@@ -340,16 +340,6 @@ CREATE TABLE portal.agreements (
 
 
 --
--- Name: app_assigned_clients; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_assigned_clients (
-    app_id uuid NOT NULL,
-    iam_client_id uuid NOT NULL
-);
-
-
---
 -- Name: app_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -389,6 +379,17 @@ CREATE TABLE portal.app_detail_images (
     id uuid NOT NULL,
     app_id uuid NOT NULL,
     image_url character varying(255) NOT NULL
+);
+
+
+--
+-- Name: app_instances; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.app_instances (
+    id uuid NOT NULL,
+    app_id uuid NOT NULL,
+    iam_client_id uuid NOT NULL
 );
 
 
@@ -452,7 +453,6 @@ CREATE TABLE portal.apps (
     date_created timestamp with time zone NOT NULL,
     date_released timestamp with time zone,
     thumbnail_url character varying(255),
-    app_url character varying(255),
     marketing_url character varying(255),
     contact_email character varying(255),
     contact_number character varying(255),
@@ -460,7 +460,8 @@ CREATE TABLE portal.apps (
     provider_company_id uuid,
     app_status_id integer NOT NULL,
     date_last_changed timestamp with time zone,
-    sales_manager_id uuid
+    sales_manager_id uuid,
+    is_core_component boolean DEFAULT false NOT NULL
 );
 
 
@@ -477,7 +478,9 @@ CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
     app_id uuid NOT NULL,
     app_subscription_status_id integer NOT NULL,
     requester_id uuid NOT NULL,
-    last_editor_id uuid
+    last_editor_id uuid,
+    app_instance_id uuid,
+    app_url character varying(255)
 );
 
 
@@ -580,7 +583,9 @@ CREATE TABLE portal.company_assigned_apps (
     app_subscription_status_id integer DEFAULT 1 NOT NULL,
     requester_id uuid NOT NULL,
     id uuid DEFAULT gen_random_uuid() NOT NULL,
-    last_editor_id uuid
+    last_editor_id uuid,
+    app_instance_id uuid,
+    app_url character varying(255)
 );
 
 
@@ -1094,7 +1099,7 @@ CREATE TABLE portal.user_role_descriptions (
 CREATE TABLE portal.user_roles (
     id uuid NOT NULL,
     user_role character varying(255) NOT NULL,
-    iam_client_id uuid NOT NULL
+    app_id uuid NOT NULL
 );
 
 
@@ -1139,14 +1144,6 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_clients pk_app_assigned_clients; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_clients
-    ADD CONSTRAINT pk_app_assigned_clients PRIMARY KEY (app_id, iam_client_id);
-
-
---
 -- Name: app_assigned_licenses pk_app_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1176,6 +1173,14 @@ ALTER TABLE ONLY portal.app_descriptions
 
 ALTER TABLE ONLY portal.app_detail_images
     ADD CONSTRAINT pk_app_detail_images PRIMARY KEY (id);
+
+
+--
+-- Name: app_instances pk_app_instances; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_instances
+    ADD CONSTRAINT pk_app_instances PRIMARY KEY (id);
 
 
 --
@@ -1700,13 +1705,6 @@ CREATE INDEX ix_agreements_use_case_id ON portal.agreements USING btree (use_cas
 
 
 --
--- Name: ix_app_assigned_clients_iam_client_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_assigned_clients_iam_client_id ON portal.app_assigned_clients USING btree (iam_client_id);
-
-
---
 -- Name: ix_app_assigned_licenses_app_license_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1732,6 +1730,20 @@ CREATE INDEX ix_app_descriptions_language_short_name ON portal.app_descriptions 
 --
 
 CREATE INDEX ix_app_detail_images_app_id ON portal.app_detail_images USING btree (app_id);
+
+
+--
+-- Name: ix_app_instances_app_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_app_instances_app_id ON portal.app_instances USING btree (app_id);
+
+
+--
+-- Name: ix_app_instances_iam_client_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_app_instances_iam_client_id ON portal.app_instances USING btree (iam_client_id);
 
 
 --
@@ -1802,6 +1814,13 @@ CREATE INDEX ix_company_applications_company_id ON portal.company_applications U
 --
 
 CREATE INDEX ix_company_assigned_apps_app_id ON portal.company_assigned_apps USING btree (app_id);
+
+
+--
+-- Name: ix_company_assigned_apps_app_instance_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_assigned_apps_app_instance_id ON portal.company_assigned_apps USING btree (app_instance_id);
 
 
 --
@@ -2134,10 +2153,10 @@ CREATE INDEX ix_user_role_descriptions_language_short_name ON portal.user_role_d
 
 
 --
--- Name: ix_user_roles_iam_client_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_user_roles_app_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_user_roles_iam_client_id ON portal.user_roles USING btree (iam_client_id);
+CREATE INDEX ix_user_roles_app_id ON portal.user_roles USING btree (app_id);
 
 
 --
@@ -2234,22 +2253,6 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_clients fk_app_assigned_clients_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_clients
-    ADD CONSTRAINT fk_app_assigned_clients_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: app_assigned_clients fk_app_assigned_clients_iam_clients_iam_client_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_clients
-    ADD CONSTRAINT fk_app_assigned_clients_iam_clients_iam_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id) ON DELETE CASCADE;
-
-
---
 -- Name: app_assigned_licenses fk_app_assigned_licenses_app_licenses_app_license_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2303,6 +2306,22 @@ ALTER TABLE ONLY portal.app_descriptions
 
 ALTER TABLE ONLY portal.app_detail_images
     ADD CONSTRAINT fk_app_detail_images_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+
+
+--
+-- Name: app_instances fk_app_instances_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_instances
+    ADD CONSTRAINT fk_app_instances_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id) ON DELETE SET NULL;
+
+
+--
+-- Name: app_instances fk_app_instances_iam_clients_iam_client_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_instances
+    ADD CONSTRAINT fk_app_instances_iam_clients_iam_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id) ON DELETE SET NULL;
 
 
 --
@@ -2383,6 +2402,14 @@ ALTER TABLE ONLY portal.company_applications
 
 ALTER TABLE ONLY portal.company_applications
     ADD CONSTRAINT fk_company_applications_company_application_statuses_applicati FOREIGN KEY (application_status_id) REFERENCES portal.company_application_statuses(id) ON DELETE CASCADE;
+
+
+--
+-- Name: company_assigned_apps fk_company_assigned_apps_app_instances_app_instance_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_assigned_apps
+    ADD CONSTRAINT fk_company_assigned_apps_app_instances_app_instance_id FOREIGN KEY (app_instance_id) REFERENCES portal.app_instances(id);
 
 
 --
@@ -2842,11 +2869,11 @@ ALTER TABLE ONLY portal.user_role_descriptions
 
 
 --
--- Name: user_roles fk_user_roles_iam_clients_iam_client_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: user_roles fk_user_roles_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.user_roles
-    ADD CONSTRAINT fk_user_roles_iam_clients_iam_client_id FOREIGN KEY (iam_client_id) REFERENCES portal.iam_clients(id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_user_roles_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id) ON DELETE CASCADE;
 
 
 --
