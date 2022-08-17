@@ -530,6 +530,14 @@ COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operatio
 
 
 --
+-- Data for Name: audit_services_cplp_1213_add_services; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_services_cplp_1213_add_services (id, audit_id, date_last_changed, audit_operation_id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
+\.
+
+
+--
 -- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -597,6 +605,14 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2
 220330ac-170d-4e22-8d72-9467ed042149	1
 bdac6865-2a8d-4bfd-9373-9dfce8190895	1
 41fd2ab8-71cd-4546-9bef-a388d91b2542	1
+\.
+
+
+--
+-- Data for Name: company_assigned_services; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.company_assigned_services (service_id, company_id, service_subscription_status_id, requester_id) FROM stdin;
 \.
 
 
@@ -847,4 +863,36 @@ b753cd7f-24c7-44a7-a88e-08ed00c31601	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-0
 b753cd7f-24c7-44a7-a88e-08ed00c31602	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	5	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31603	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	6	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31604	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	7	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
+\.
+
+
+--
+-- Data for Name: services; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.services (id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_licenses (id, license_text) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_assigned_licenses (service_id, service_license_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: service_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_descriptions (id, description, service_id, language_short_name) FROM stdin;
 \.
