@@ -34,6 +34,7 @@ ALTER TABLE portal.company_assigned_use_cases OWNER TO portal;
 ALTER TABLE portal.company_user_assigned_app_favourites OWNER TO portal;
 ALTER TABLE portal.company_user_assigned_business_partners OWNER TO portal;
 ALTER TABLE portal.company_user_assigned_roles OWNER TO portal;
+ALTER TABLE portal.company_assigned_services OWNER TO portal;
 ALTER TABLE portal.company_user_statuses OWNER TO portal;
 ALTER TABLE portal.company_users OWNER TO portal;
 ALTER TABLE portal.company_identity_providers OWNER TO portal;

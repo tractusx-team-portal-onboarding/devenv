@@ -33,7 +33,15 @@ CREATE FUNCTION portal.process_company_assigned_apps_audit() RETURNS trigger
 
 
 
+
+
+
+
 BEGIN
+
+
+
+
 
 
 
@@ -41,7 +49,15 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
+
+
 
 
 
@@ -49,7 +65,15 @@ ELSIF (TG_OP = 'UPDATE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+
+
+
 
 
 
@@ -57,7 +81,15 @@ ELSIF (TG_OP = 'INSERT') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+
+
+
 
 
 
@@ -65,11 +97,23 @@ END IF;
 
 
 
+
+
+
+
 RETURN NULL;
 
 
 
+
+
+
+
 END;
+
+
+
+
 
 
 
@@ -86,7 +130,15 @@ CREATE FUNCTION portal.process_company_users_audit() RETURNS trigger
 
 
 
+
+
+
+
 BEGIN
+
+
+
+
 
 
 
@@ -94,7 +146,15 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.email,OLD.firstname,OLD.lastlogin,OLD.lastname,OLD.company_id,OLD.company_user_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
+
+
 
 
 
@@ -102,7 +162,15 @@ ELSIF (TG_OP = 'UPDATE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+
+
+
 
 
 
@@ -110,7 +178,15 @@ ELSIF (TG_OP = 'INSERT') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+
+
+
 
 
 
@@ -118,11 +194,23 @@ END IF;
 
 
 
+
+
+
+
 RETURN NULL;
 
 
 
+
+
+
+
 END;
+
+
+
+
 
 
 
@@ -137,25 +225,47 @@ CREATE FUNCTION portal.process_services_audit() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 
+
+
 BEGIN
+
+
 
 IF (TG_OP = 'DELETE') THEN
 
+
+
 INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.name,OLD.thumbnail_url,OLD.provider_company_id,OLD.service_status_id,OLD.contact_email,OLD.sales_manager_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
 
 ELSIF (TG_OP = 'UPDATE') THEN
 
+
+
 INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.name,NEW.thumbnail_url,NEW.provider_company_id,NEW.service_status_id,NEW.contact_email,NEW.sales_manager_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+
 
 ELSIF (TG_OP = 'INSERT') THEN
 
+
+
 INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.name,NEW.thumbnail_url,NEW.provider_company_id,NEW.service_status_id,NEW.contact_email,NEW.sales_manager_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+
 
 END IF;
 
+
+
 RETURN NULL;
 
+
+
 END;
+
+
 
 $$;
 
