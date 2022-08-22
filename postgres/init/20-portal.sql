@@ -24,6 +24,59 @@ CREATE SCHEMA portal;
 
 
 --
+-- Name: process_company_applications_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_company_applications_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+
+
+BEGIN
+
+
+
+IF (TG_OP = 'DELETE') THEN
+
+
+
+INSERT INTO portal.audit_company_applications_cplp_1255_audit_company_applications ( id, audit_id, date_created,application_status_id,company_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.application_status_id,OLD.company_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+
+
+INSERT INTO portal.audit_company_applications_cplp_1255_audit_company_applications ( id, audit_id, date_created,application_status_id,company_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.application_status_id,NEW.company_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+
+
+INSERT INTO portal.audit_company_applications_cplp_1255_audit_company_applications ( id, audit_id, date_created,application_status_id,company_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.application_status_id,NEW.company_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+
+
+END IF;
+
+
+
+RETURN NULL;
+
+
+
+END;
+
+
+
+$$;
+
+
+--
 -- Name: process_company_assigned_apps_audit(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -35,11 +88,7 @@ CREATE FUNCTION portal.process_company_assigned_apps_audit() RETURNS trigger
 
 
 
-
-
 BEGIN
-
-
 
 
 
@@ -51,13 +100,7 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
-
-
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-
-
-
 
 
 
@@ -65,15 +108,7 @@ ELSIF (TG_OP = 'UPDATE') THEN
 
 
 
-
-
-
-
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-
-
-
 
 
 
@@ -81,15 +116,7 @@ ELSIF (TG_OP = 'INSERT') THEN
 
 
 
-
-
-
-
 INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
-
-
-
-
 
 
 
@@ -97,15 +124,7 @@ END IF;
 
 
 
-
-
-
-
 RETURN NULL;
-
-
-
-
 
 
 
@@ -113,7 +132,56 @@ END;
 
 
 
+$$;
 
+
+--
+-- Name: process_company_user_assigned_roles_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_company_user_assigned_roles_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+
+
+BEGIN
+
+
+
+IF (TG_OP = 'DELETE') THEN
+
+
+
+INSERT INTO portal.audit_company_user_assigned_roles_cplp_1255_audit_company_applications ( id, audit_id, company_user_id,user_role_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_user_id,OLD.user_role_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+
+
+INSERT INTO portal.audit_company_user_assigned_roles_cplp_1255_audit_company_applications ( id, audit_id, company_user_id,user_role_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_user_id,NEW.user_role_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+
+
+INSERT INTO portal.audit_company_user_assigned_roles_cplp_1255_audit_company_applications ( id, audit_id, company_user_id,user_role_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_user_id,NEW.user_role_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+
+
+END IF;
+
+
+
+RETURN NULL;
+
+
+
+END;
 
 
 
@@ -130,13 +198,7 @@ CREATE FUNCTION portal.process_company_users_audit() RETURNS trigger
 
 
 
-
-
-
-
 BEGIN
-
-
 
 
 
@@ -146,15 +208,7 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
-
-
-
-
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.email,OLD.firstname,OLD.lastlogin,OLD.lastname,OLD.company_id,OLD.company_user_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-
-
-
 
 
 
@@ -164,13 +218,7 @@ ELSIF (TG_OP = 'UPDATE') THEN
 
 
 
-
-
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-
-
-
 
 
 
@@ -178,15 +226,7 @@ ELSIF (TG_OP = 'INSERT') THEN
 
 
 
-
-
-
-
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.email,NEW.firstname,NEW.lastlogin,NEW.lastname,NEW.company_id,NEW.company_user_status_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
-
-
-
-
 
 
 
@@ -194,23 +234,11 @@ END IF;
 
 
 
-
-
-
-
 RETURN NULL;
 
 
 
-
-
-
-
 END;
-
-
-
-
 
 
 
@@ -466,6 +494,22 @@ CREATE TABLE portal.apps (
 
 
 --
+-- Name: audit_company_applications_cplp_1255_audit_company_applications; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_applications_cplp_1255_audit_company_applications (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    audit_operation_id integer NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    application_status_id integer NOT NULL,
+    company_id uuid NOT NULL,
+    last_editor_id uuid
+);
+
+
+--
 -- Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -481,6 +525,21 @@ CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
     last_editor_id uuid,
     app_instance_id uuid,
     app_url character varying(255)
+);
+
+
+--
+-- Name: audit_company_user_assigned_roles_cplp_1255_audit_company_appli; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_user_assigned_roles_cplp_1255_audit_company_appli (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    audit_operation_id integer NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    company_user_id uuid NOT NULL,
+    user_role_id uuid NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -569,7 +628,8 @@ CREATE TABLE portal.company_applications (
     date_created timestamp with time zone NOT NULL,
     date_last_changed timestamp with time zone,
     application_status_id integer NOT NULL,
-    company_id uuid NOT NULL
+    company_id uuid NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -722,7 +782,9 @@ CREATE TABLE portal.company_user_assigned_business_partners (
 
 CREATE TABLE portal.company_user_assigned_roles (
     company_user_id uuid NOT NULL,
-    user_role_id uuid NOT NULL
+    user_role_id uuid NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -1232,11 +1294,27 @@ ALTER TABLE ONLY portal.apps
 
 
 --
+-- Name: audit_company_applications_cplp_1255_audit_company_applications pk_audit_company_applications_cplp_1255_audit_company_applicat; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_applications_cplp_1255_audit_company_applications
+    ADD CONSTRAINT pk_audit_company_applications_cplp_1255_audit_company_applicat PRIMARY KEY (id);
+
+
+--
 -- Name: audit_company_assigned_apps_cplp_1254_db_audit pk_audit_company_assigned_apps_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1254_db_audit
     ADD CONSTRAINT pk_audit_company_assigned_apps_cplp_1254_db_audit PRIMARY KEY (id);
+
+
+--
+-- Name: audit_company_user_assigned_roles_cplp_1255_audit_company_appli pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_user_assigned_roles_cplp_1255_audit_company_appli
+    ADD CONSTRAINT pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a PRIMARY KEY (id);
 
 
 --
@@ -2160,10 +2238,24 @@ CREATE INDEX ix_user_roles_app_id ON portal.user_roles USING btree (app_id);
 
 
 --
+-- Name: company_applications audit_company_applications; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_company_applications AFTER INSERT OR DELETE OR UPDATE ON portal.company_applications FOR EACH ROW EXECUTE FUNCTION portal.process_company_applications_audit();
+
+
+--
 -- Name: company_assigned_apps audit_company_assigned_apps; Type: TRIGGER; Schema: portal; Owner: -
 --
 
 CREATE TRIGGER audit_company_assigned_apps AFTER INSERT OR DELETE OR UPDATE ON portal.company_assigned_apps FOR EACH ROW EXECUTE FUNCTION portal.process_company_assigned_apps_audit();
+
+
+--
+-- Name: company_user_assigned_roles audit_company_user_assigned_roles; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_company_user_assigned_roles AFTER INSERT OR DELETE OR UPDATE ON portal.company_user_assigned_roles FOR EACH ROW EXECUTE FUNCTION portal.process_company_user_assigned_roles_audit();
 
 
 --
