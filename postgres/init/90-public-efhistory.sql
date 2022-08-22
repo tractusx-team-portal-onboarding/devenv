@@ -51,6 +51,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220812133428_CPLP-1254-db-audit	6.0.4
 20220816061525_CPLP-1213-AddServices	6.0.4
 20220817151929_CPLP-1255-AuditCompanyApplications	6.0.4
+20220822092105_CPLP-1353-MultiTenantApp	6.0.4
 \.
 
 

@@ -101,26 +101,29 @@ ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57	2022-03-24 18:01:33.
 
 
 --
--- Data for Name: apps; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: apps; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.apps (id, date_created, name, date_released, thumbnail_url,  app_url, marketing_url,  contact_email,  contact_number, provider, provider_company_id, app_status_id, date_last_changed, sales_manager_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	2022-03-24 18:01:33.348	Part Chain	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	\N	0000	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001
-ac1cf001-7fbc-1f2f-817f-bce05748000d	2022-03-24 18:01:33.384	Material Traceability	2022-03-24 18:01:33.384	Material Traceability.png	\N	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	2022-03-24 18:01:33.375	Dismantler Cockpit	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001
-ac1cf001-7fbc-1f2f-817f-bce05744000b	2022-03-24 18:01:33.38	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	https://ec-qas.d13fe27.kyma.ondemand.com	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	2022-03-24 18:01:33.388	Component Performance	2022-03-24 18:01:33.388	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-f9cad59d-84b3-4880-a550-4072c26a6b93	2022-03-24 18:01:33.388	Fraud Dashboard	2022-03-24 18:01:33.388	Fraud Dash.png	https://dash.catenax-cdq.com/	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-f9cad59d-84b3-4880-a550-4072c26a6b94	2022-03-24 18:01:33.388	Fraud Reporter	2022-03-24 18:01:33.388	lead.png	https://apps.cdq.com/dashboard/fraud/report-fraud	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-8488044e-b8df-403a-9cbd-16dad7e4a08c	2022-03-24 18:01:33.388	Covanto - AFQM	2022-03-24 18:01:33.388	AFQM_screen.jpg	https://portal-staging.afqm-services.com/	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d8	2022-03-24 18:01:33.388	Test MultiApp	2022-03-24 18:01:33.388	\N	\N	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d1	2022-03-24 18:01:33.388	Smart MOM	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d2	2022-03-24 18:01:33.388	DTC-Translator	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	https://dtc-translator.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d3	2022-03-24 18:01:33.388	Fleet Manager	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	https://fleet-management.adac.openresearch.com	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d4	2022-03-24 18:01:33.388	up2parts cloud	2022-03-24 18:01:33.388	up2parts.png	https://cloud.up2parts.com/	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d5	2022-06-29 18:01:33.388	Smart Factory Web Portal	2022-03-24 18:01:33.388	Smart Factory.png	https://www.smartfactoryweb.de/	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d6	2022-06-29 18:01:33.388	Production Planning and Control	2022-03-24 18:01:33.388	PP&C.png	https://www.istos.com/en/demo-version	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
-5cf74ef8-e0b7-4984-a872-474828beb5d7	2022-06-29 18:01:33.388	Logistics Network, Material Traceability (LBN-MT)	2022-03-24 18:01:33.388	LBN.png	https://pt-demo-owner-1lusu8r1.lbn-mt-demo.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001
+COPY portal.apps (id, name, date_created, date_released, thumbnail_url, marketing_url, contact_email, contact_number, provider, provider_company_id, app_status_id, date_last_changed, sales_manager_id, is_core_component) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Part Chain	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	0000	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Material Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Test MultiApp	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d3	Fleet Manager	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d4	up2parts cloud	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	up2parts.png	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory Web Portal	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	Smart Factory.png	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d6	Production Planning and Control	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	PP&C.png	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d7	Logistics Network, Material Traceability (LBN-MT)	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	LBN.png	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+9b957704-3505-4445-822c-d7ef80f27fcd	Portal	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	Registration	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 \.
 
 
@@ -293,45 +296,45 @@ cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.aut
 f032a049-d035-11ec-9d64-0242ac120002	technical_roles_management
 \.
 
-COPY portal.user_roles (id, user_role, iam_client_id) FROM stdin;
-7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	f032a034-d035-11ec-9d64-0242ac120002
-7410693c-c893-409e-852f-9ee886ce94a7	Legal Admin	f032a034-d035-11ec-9d64-0242ac120002
-58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	0c9051d0-d032-11ec-9d64-0242ac120002
-58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	0c9051d0-d032-11ec-9d64-0242ac120002
-607818be-4978-41f4-bf63-fa8d2de51154	IT Admin	0c9051d0-d032-11ec-9d64-0242ac120002
-ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	f032a034-d035-11ec-9d64-0242ac120002
-95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	0c9051d0-d032-11ec-9d64-0242ac120002
-04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	0c9051d0-d032-11ec-9d64-0242ac120002
-916e4be9-0ff7-48fb-bb80-97d2e93fca14	Data Specialist (INT only)	0c9051d0-d032-11ec-9d64-0242ac120002
-0d9eb9e4-b6df-49bd-b045-d9cef96a879d	Technical User Semantic & Digital Twin	0c9051d0-d032-11ec-9d64-0242ac120002
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Administrator	0c9051d0-d032-11ec-9d64-0242ac120002
-efc20368-9e82-46ff-b88f-6495b9810253	EarthCommerce.AdministratorRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
-aabcdfeb-6669-4c74-89f0-19cda090873f	EarthCommerce.Advanced.BuyerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
-efc20368-9e82-46ff-b88f-6495b9810250	EarthCommerce.BuyerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
-aabcdfeb-6669-4c74-89f0-19cda0908730	EarthCommerce.Content.ManagerRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
-aabcdfeb-6669-4c74-89f0-19cda0908731	EarthCommerce.UserRC_QAS2	cf207afb-d213-4c33-becc-0cabeef174a7
-b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	0c9051d0-d032-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f032a040-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f032a040-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f032a041-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f032a041-d035-11ec-9d64-0242ac120002
-855eeefb-a2ef-4d74-ac10-34a87afcb865	admin	f032a043-d035-11ec-9d64-0242ac120002
-545c2616-2fce-4f52-b881-331db2fc1e35	customer	f032a043-d035-11ec-9d64-0242ac120002
-7a9e0777-2b13-4463-a7c4-f699afff3527	oem	f032a043-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080004	Buyer	f032a045-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080005	Supplier	f032a045-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080006	Buyer	f032a046-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080007	Supplier	f032a046-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080008	Administrator	f032a047-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080009	User	f032a047-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080010	Viewer	f032a047-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080011	Modifier	f032a047-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080012	Network Owner	f032a048-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080013	Network Participant	f032a048-d035-11ec-9d64-0242ac120002
-b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	f032a048-d035-11ec-9d64-0242ac120002
-607818be-4978-41f4-bf63-fa8d2de51155	Digital Twin Management	f032a049-d035-11ec-9d64-0242ac120002
-607818be-4978-41f4-bf63-fa8d2de51156	Semantic Model Management	f032a049-d035-11ec-9d64-0242ac120002
-607818be-4978-41f4-bf63-fa8d2de51157	Wallet Management	f032a049-d035-11ec-9d64-0242ac120002
+COPY portal.user_roles (id, user_role, app_id) FROM stdin;
+7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2
+7410693c-c893-409e-852f-9ee886ce94a7	Legal Admin	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2
+58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	9b957704-3505-4445-822c-d7ef80f27fcd
+58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	9b957704-3505-4445-822c-d7ef80f27fcd
+607818be-4978-41f4-bf63-fa8d2de51154	IT Admin	9b957704-3505-4445-822c-d7ef80f27fcd
+ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2
+95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	9b957704-3505-4445-822c-d7ef80f27fcd
+04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	9b957704-3505-4445-822c-d7ef80f27fcd
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	Data Specialist (INT only)	9b957704-3505-4445-822c-d7ef80f27fcd
+0d9eb9e4-b6df-49bd-b045-d9cef96a879d	Technical User Semantic & Digital Twin	9b957704-3505-4445-822c-d7ef80f27fcd
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Administrator	9b957704-3505-4445-822c-d7ef80f27fcd
+efc20368-9e82-46ff-b88f-6495b9810253	EarthCommerce.AdministratorRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b
+aabcdfeb-6669-4c74-89f0-19cda090873f	EarthCommerce.Advanced.BuyerRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b
+efc20368-9e82-46ff-b88f-6495b9810250	EarthCommerce.BuyerRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b
+aabcdfeb-6669-4c74-89f0-19cda0908730	EarthCommerce.Content.ManagerRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b
+aabcdfeb-6669-4c74-89f0-19cda0908731	EarthCommerce.UserRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b
+b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	9b957704-3505-4445-822c-d7ef80f27fcd
+b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f9cad59d-84b3-4880-a550-4072c26a6b93
+b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f9cad59d-84b3-4880-a550-4072c26a6b93
+b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f9cad59d-84b3-4880-a550-4072c26a6b94
+b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f9cad59d-84b3-4880-a550-4072c26a6b94
+855eeefb-a2ef-4d74-ac10-34a87afcb865	admin	5cf74ef8-e0b7-4984-a872-474828beb5d3
+545c2616-2fce-4f52-b881-331db2fc1e35	customer	5cf74ef8-e0b7-4984-a872-474828beb5d3
+7a9e0777-2b13-4463-a7c4-f699afff3527	oem	5cf74ef8-e0b7-4984-a872-474828beb5d3
+b05d86e1-6c98-4619-85fa-9a425e080004	Buyer	5cf74ef8-e0b7-4984-a872-474828beb5d5
+b05d86e1-6c98-4619-85fa-9a425e080005	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d5
+b05d86e1-6c98-4619-85fa-9a425e080006	Buyer	5cf74ef8-e0b7-4984-a872-474828beb5d6
+b05d86e1-6c98-4619-85fa-9a425e080007	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d6
+b05d86e1-6c98-4619-85fa-9a425e080008	Administrator	5cf74ef8-e0b7-4984-a872-474828beb5d4
+b05d86e1-6c98-4619-85fa-9a425e080009	User	5cf74ef8-e0b7-4984-a872-474828beb5d4
+b05d86e1-6c98-4619-85fa-9a425e080010	Viewer	5cf74ef8-e0b7-4984-a872-474828beb5d4
+b05d86e1-6c98-4619-85fa-9a425e080011	Modifier	5cf74ef8-e0b7-4984-a872-474828beb5d4
+b05d86e1-6c98-4619-85fa-9a425e080012	Network Owner	5cf74ef8-e0b7-4984-a872-474828beb5d7
+b05d86e1-6c98-4619-85fa-9a425e080013	Network Participant	5cf74ef8-e0b7-4984-a872-474828beb5d7
+b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-474828beb5d7
+607818be-4978-41f4-bf63-fa8d2de51155	Digital Twin Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51156	Semantic Model Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51157	Wallet Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -391,20 +394,23 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 
 
 --
--- Data for Name: app_assigned_user_clients; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: app_instances; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.app_assigned_clients (app_id, iam_client_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	789e31ee-0fdb-4e42-a819-23e0cfb1179b
-ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
-f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
-f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
-5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
-5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
-5cf74ef8-e0b7-4984-a872-474828beb5d6	f032a046-d035-11ec-9d64-0242ac120002
-5cf74ef8-e0b7-4984-a872-474828beb5d4	f032a047-d035-11ec-9d64-0242ac120002
-5cf74ef8-e0b7-4984-a872-474828beb5d7	f032a048-d035-11ec-9d64-0242ac120002
+COPY portal.app_instances (id, app_id, iam_client_id) FROM stdin;
+2C252614-AE87-4EFC-8AF8-4D011E70544B	ac1cf001-7fbc-1f2f-817f-bce0573f0009	789e31ee-0fdb-4e42-a819-23e0cfb1179b
+AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
+B161D570-F6FF-45B4-A077-243F72487AF6	ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
+D69075B4-9BCE-489C-BA80-8F7F08C4A011	f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
+CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
+7E828901-27CB-4078-BD15-00EFD247C56A	5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
+D6BC1BC6-DCE9-46FC-A2F2-370688BA3212	5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
+9C272EB4-0A60-43B3-AAA6-F57EA09A8271	5cf74ef8-e0b7-4984-a872-474828beb5d6	f032a046-d035-11ec-9d64-0242ac120002
+148E9FBE-1A78-4796-AED2-46DBBBE46674	5cf74ef8-e0b7-4984-a872-474828beb5d4	f032a047-d035-11ec-9d64-0242ac120002
+476B0600-965B-4F10-8EB5-E4568859A885	5cf74ef8-e0b7-4984-a872-474828beb5d7	f032a048-d035-11ec-9d64-0242ac120002
+47fa908a-99a4-4265-9936-2c890ad97a4c	9b957704-3505-4445-822c-d7ef80f27fcd	0c9051d0-d032-11ec-9d64-0242ac120002
+e080bb4b-567b-477e-adcf-080efc457d38	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	f032a034-d035-11ec-9d64-0242ac120002
+1ef3a9b0-e8ef-48cc-9b88-65bacd6f05fb	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	f032a049-d035-11ec-9d64-0242ac120002
 \.
 
 --
@@ -559,31 +565,31 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 -- Data for Name: company_assigned_apps; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.company_assigned_apps (company_id, app_id, app_subscription_status_id, requester_id, id, last_editor_id) FROM stdin;
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56d878d9-9574-4673-b32a-ebf5753042f5	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56faf2e0-88ec-4ee5-a736-6c52688250f8	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	0b2ca541-206d-48ad-bc02-fb61fbcb5552	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab2e5e1-df8f-496b-aa12-c11067805992	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	52c8a212-83a9-4de1-b3de-eb684e75e1f7	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	846ec83b-4b84-4c29-b7ce-3e57d7405844	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	85064593-0aaa-48c4-95a2-2700223aca5e	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	60f00bd0-98fe-4ed3-ad3b-90045921660c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	d65e367c-0968-4be9-bd2a-6c3d6339d65c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1d28a224-6293-4148-8b60-6714a0f1465d	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	769a8864-64fb-4533-9c85-2a0b0ddc8c88	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N
+COPY portal.company_assigned_apps (company_id, app_id, app_subscription_status_id, requester_id, id, last_editor_id, app_instance_id, app_url) FROM stdin;
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56d878d9-9574-4673-b32a-ebf5753042f5	\N	B161D570-F6FF-45B4-A077-243F72487AF6	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N	\N	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56faf2e0-88ec-4ee5-a736-6c52688250f8	\N	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	0b2ca541-206d-48ad-bc02-fb61fbcb5552	\N	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N	\N	https://portal-staging.afqm-services.com/
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	52c8a212-83a9-4de1-b3de-eb684e75e1f7	\N	\N	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	\N	https://dtc-translator.adac.openresearch.com
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	846ec83b-4b84-4c29-b7ce-3e57d7405844	\N	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	\N	B161D570-F6FF-45B4-A077-243F72487AF6	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	60f00bd0-98fe-4ed3-ad3b-90045921660c	\N	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	d65e367c-0968-4be9-bd2a-6c3d6339d65c	\N	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1d28a224-6293-4148-8b60-6714a0f1465d	\N	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N	\N	https://portal-staging.afqm-services.com/
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	769a8864-64fb-4533-9c85-2a0b0ddc8c88	\N	\N	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	\N	https://dtc-translator.adac.openresearch.com
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
 \.
 
 
@@ -858,11 +864,11 @@ COPY portal.service_licenses (id, license_text) FROM stdin;
 --
 
 COPY portal.notifications (id, receiver_user_id, date_created, content, notification_type_id, is_read, due_date, creator_user_id) FROM stdin;
-b753cd7f-24c7-44a7-a88e-08ed00c31600	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	3	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
-b753cd7f-24c7-44a7-a88e-08ed00c31601	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	4	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
-b753cd7f-24c7-44a7-a88e-08ed00c31602	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	5	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
-b753cd7f-24c7-44a7-a88e-08ed00c31603	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	6	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
-b753cd7f-24c7-44a7-a88e-08ed00c31604	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57+00	\N	7	false	2022-09-10 18:01:33.57+00	ac1cf001-7fbc-1f2f-817f-bce058020001
+b753cd7f-24c7-44a7-a88e-08ed00c31600	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	3	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
+b753cd7f-24c7-44a7-a88e-08ed00c31601	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	4	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
+b753cd7f-24c7-44a7-a88e-08ed00c31602	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	5	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
+b753cd7f-24c7-44a7-a88e-08ed00c31603	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	6	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
+b753cd7f-24c7-44a7-a88e-08ed00c31604	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	7	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
 \.
 
 
