@@ -16,6 +16,7 @@ ALTER TABLE portal.app_statuses OWNER TO portal;
 ALTER TABLE portal.app_subscription_statuses OWNER TO portal;
 ALTER TABLE portal.app_tags OWNER TO portal;
 ALTER TABLE portal.apps OWNER TO portal;
+ALTER TABLE portal.app_assigned_documents OWNER TO portal;
 ALTER TABLE portal.audit_operation OWNER TO portal;
 ALTER TABLE portal.audit_company_applications_cplp_1255_audit_company_applications OWNER TO portal;
 ALTER TABLE portal.audit_company_users_cplp_1254_db_audit OWNER TO portal;
