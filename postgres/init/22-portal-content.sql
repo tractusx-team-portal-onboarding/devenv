@@ -25,6 +25,8 @@ SET time zone 'UTC';
 
 COPY portal.addresses (id, date_created, date_last_changed, city, region, streetadditional, streetname, streetnumber, zipcode, country_alpha2code) FROM stdin;
 b4db3945-19a7-4a50-97d6-e66e8dfd04fb	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Munich	\N	\N	Street	1	00001	DE
+b4db3945-19a7-4a50-97d6-e66e8dfd04fc	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Munich	\N	\N	Street	1	00001	DE
+b4db3945-19a7-4a50-97d6-e66e8dfd04fd	2022-03-24 18:01:33.306	2022-03-24 18:01:33.306	Munich	\N	\N	Street	1	00001	DE
 12302f9b-418c-4b8c-aea8-3eedf67e6a02	2022-03-24 18:01:33.341	2022-03-24 18:01:33.341	Munich	\N	\N	Street	2	00001	DE
 3a52099d-4988-4a56-9787-10a669c41338	2022-03-24 18:01:33.344	2022-03-24 18:01:33.344	Munich	\N	\N	Street	3	00001	DE
 aa49c0ec-4e65-4115-a01c-7adfc36d220e	2022-03-24 18:01:33.391	2022-03-24 18:01:33.391	Munich	\N	\N	Street	4	00001	DE
@@ -50,6 +52,8 @@ bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43	CAXSCARFACTORY2ZZ	00
 d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	CAXLDUMMYCORPZZ	0000000000	Dummy Corp. 1	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb
 9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442	CAXLCDQCORPZZ	0000000000	CDQ	CDQ	1	095ca573-bef1-4092-ad60-b7f651678fcd
 cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	1	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
+dfd90abe-b20e-4aff-87c6-f30f2bf9b104	2022-08-08 18:01:33.442	BPNL000000000009	0000000000	Siemens	Siemens	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fc
+fe55fe20-5f19-401e-91a2-dfa37b44a0be	2022-08-08 18:01:33.442	BPNL000000000010	0000000000	German Edge Cloud GmbH & Co. KG	GEC	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fd
 \.
 
 COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
@@ -105,25 +109,26 @@ ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57	2022-03-24 18:01:33.
 --
 
 COPY portal.apps (id, name, date_created, date_released, thumbnail_url, marketing_url, contact_email, contact_number, provider, provider_company_id, app_status_id, date_last_changed, sales_manager_id, is_core_component) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	Part Chain	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	0000	BMW	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-ac1cf001-7fbc-1f2f-817f-bce05748000d	Material Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	Material Traceability.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Trace-X	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Trusted Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	STT.png	\N	\N	0000	Catena-X	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d8	Test MultiApp	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	fe55fe20-5f19-401e-91a2-dfa37b44a0be	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d3	Fleet Manager	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d4	up2parts cloud	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	up2parts.png	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory Web Portal	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	Smart Factory.png	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d6	Production Planning and Control	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	PP&C.png	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 5cf74ef8-e0b7-4984-a872-474828beb5d7	Logistics Network, Material Traceability (LBN-MT)	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	LBN.png	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-9b957704-3505-4445-822c-d7ef80f27fcd	Portal	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	Registration	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+9b957704-3505-4445-822c-d7ef80f27fcd	Portal	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
+9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	Registration	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
+0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
+5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	f
 \.
 
 
@@ -163,6 +168,10 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000030	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN1.png
 5cf74ef8-a0a1-0000-a000-000000000031	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN2.png
 5cf74ef8-a0a1-0000-a000-000000000032	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN3.png
+5cf74ef8-a0a1-0000-a000-000000000033	5cf74ef8-e0b7-4984-a872-474828beb5d8	Test-Image1.png
+5cf74ef8-a0a1-0000-a000-000000000034	5cf74ef8-e0b7-4984-a872-474828beb5d8	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-000000000033	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image1.png
+5cf74ef8-a0a1-0000-a000-000000000034	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image2.png
 \.
 
 
@@ -180,7 +189,6 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Data
 f9cad59d-84b3-4880-a550-4072c26a6b93	Business Partner
 f9cad59d-84b3-4880-a550-4072c26a6b93	Partner Network
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Traceability
-5cf74ef8-e0b7-4984-a872-474828beb5d8	Test
 5cf74ef8-e0b7-4984-a872-474828beb5d1	Traceability
 5cf74ef8-e0b7-4984-a872-474828beb5d2	Behavior Twin
 5cf74ef8-e0b7-4984-a872-474828beb5d3	Behavior Twin
@@ -198,6 +206,12 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d7	Manufacturer-as-a-service
 5cf74ef8-e0b7-4984-a872-474828beb5d7	Network
 5cf74ef8-e0b7-4984-a872-474828beb5d7	Traceability
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Network
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Manufacturer-as-a-service
+5cf74ef8-e0b7-4984-a872-474828beb5d8	Delivery
+5cf74ef8-e0b7-4984-a872-474828beb5d9	Network
+5cf74ef8-e0b7-4984-a872-474828beb5d9	Manufacturer-as-a-service
+5cf74ef8-e0b7-4984-a872-474828beb5d9	Delivery
 \.
 
 
@@ -228,6 +242,8 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d7	ru
 5cf74ef8-e0b7-4984-a872-474828beb5d7	jp
 5cf74ef8-e0b7-4984-a872-474828beb5d7	cn
+5cf74ef8-e0b7-4984-a872-474828beb5d8	en
+5cf74ef8-e0b7-4984-a872-474828beb5d9	en
 \.
 
 
@@ -291,6 +307,7 @@ f032a045-d035-11ec-9d64-0242ac120002	not yet known-1
 f032a046-d035-11ec-9d64-0242ac120002	not yet known-2
 f032a047-d035-11ec-9d64-0242ac120002	not yet known-3
 f032a048-d035-11ec-9d64-0242ac120002	not yet known-4
+f032a050-d035-11ec-9d64-0242ac120002	not yet known-5
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 f032a049-d035-11ec-9d64-0242ac120002	technical_roles_management
@@ -335,6 +352,10 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51155	Digital Twin Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51156	Semantic Model Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51157	Wallet Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51158	Buyer	5cf74ef8-e0b7-4984-a872-474828beb5d8
+607818be-4978-41f4-bf63-fa8d2de51159	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d8
+607818be-4978-41f4-bf63-fa8d2de51160	Buyer	5cf74ef8-e0b7-4984-a872-474828beb5d9
+607818be-4978-41f4-bf63-fa8d2de51161	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d9
 \.
 
 COPY portal.user_role_descriptions (user_role_id, language_short_name, description) FROM stdin;
@@ -411,6 +432,8 @@ D6BC1BC6-DCE9-46FC-A2F2-370688BA3212	5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a0
 47fa908a-99a4-4265-9936-2c890ad97a4c	9b957704-3505-4445-822c-d7ef80f27fcd	0c9051d0-d032-11ec-9d64-0242ac120002
 e080bb4b-567b-477e-adcf-080efc457d38	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	f032a034-d035-11ec-9d64-0242ac120002
 1ef3a9b0-e8ef-48cc-9b88-65bacd6f05fb	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	f032a049-d035-11ec-9d64-0242ac120002
+476B0600-965B-4F10-8EB5-E4568859A886	5cf74ef8-e0b7-4984-a872-474828beb5d8	f032a050-d035-11ec-9d64-0242ac120002
+476B0600-965B-4F10-8EB5-E4568859A887	5cf74ef8-e0b7-4984-a872-474828beb5d9	f032a051-d035-11ec-9d64-0242ac120002
 \.
 
 --
@@ -445,7 +468,6 @@ ac1cf001-7fbc-1f2f-817f-bce05748000d	ac1cf001-7fbc-1f2f-817f-bce0574c000e
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	ac1cf001-7fbc-1f2f-817f-bce0574f0010
 f9cad59d-84b3-4880-a550-4072c26a6b93	0f956bce-7ec3-4171-b6d2-ba7fc57c37d5
 8488044e-b8df-403a-9cbd-16dad7e4a08c	37eee74c-95fb-40ee-ae9c-95953a80bd66
-5cf74ef8-e0b7-4984-a872-474828beb5d8	500518a7-9b14-4b55-bdba-2ecd53cff831
 f9cad59d-84b3-4880-a550-4072c26a6b94	37eee74c-95fb-40ee-ae9c-95953a80bd67
 5cf74ef8-e0b7-4984-a872-474828beb5d1	37eee74c-95fb-40ee-ae9c-95953a80bd68
 5cf74ef8-e0b7-4984-a872-474828beb5d2	37eee74c-95fb-40ee-ae9c-95953a80bd69
@@ -464,8 +486,6 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
 ac1cf001-7fbc-1f2f-817f-bce05748000d	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
 8488044e-b8df-403a-9cbd-16dad7e4a08c	41e4a4c0-aae4-41c0-97c9-ebafde410de4
-5cf74ef8-e0b7-4984-a872-474828beb5d8	41e4a4c0-aae4-41c0-97c9-ebafde410de4
-5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d2	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
@@ -474,7 +494,9 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d4	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d5	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d6	06b243a4-ba51-4bf3-bc40-5d79a2231b88
-5cf74ef8-e0b7-4984-a872-474828beb5d7	06b243a4-ba51-4bf3-bc40-5d79a2231b88
+5cf74ef8-e0b7-4984-a872-474828beb5d7	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+5cf74ef8-e0b7-4984-a872-474828beb5d9	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 \.
 
 
@@ -490,7 +512,6 @@ Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabrat
 Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
 The service provides information about new bank account fraud cases (e.g. invoices with fake bank details) reported by companies to the community.	Dashboard to manage and monitor fraud cases	f9cad59d-84b3-4880-a550-4072c26a6b93	en
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
-Works with multiple use cases	Works with multiple use cases	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
 This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d2	en
 This is only a test text	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d2	de
@@ -508,6 +529,10 @@ PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLA
 PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control. PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees. PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD. PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d6	de
 The "SAP Logistics Business Network, Material Traceability (LBN-MT)" is a solution for cross-company supply chain transparency and material traceability. The network-based solution approach creates a data basis for automotive manufacturers and suppliers alike to shorten response times in case of anomalies and to execute recalls along the supply chain more precisely. The analysis and capture of the entire batch and serial number genealogy is simple, structured, and user-friendly by using Fiori UI. Furthermore, these can be displayed graphically via a network graph. The existing standard integration with S/4HANA and ECC enables seamless data provision from the backend system in the network. Other systems can be integrated, and data provided via corresponding interfaces. With LBN-MT, customers can operate according to the principles of data interoperability and sovereignty in the Catena-X network with all relevant business partners and establish new business models along the value chain.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d7	en
 Das „SAP Logistics Business Network, Material Traceability (LBN-MT)“ stellt eine Lösung zur unternehmensübergreifenden Lieferkettentransparenz und Material Rückverfolgbarkeit dar. Der netzwerkbasierte Lösungsansatz schafft eine Datengrundlage für Automobilhersteller und Zulieferer gleichermaßen, um Reaktionszeiten bei Anomalien zu verkürzen und Rückrufe entlang der Lieferkette präziser auszuführen. Die Analyse und Erfassung der gesamten Chargen- und Serialnummerngeneralogie ist mittels Fiori UI einfach, strukturiert und anwenderfreundlich. Ebenso lässt sich diese über einen Netzwerkgrafen graphisch darstellen. Durch die vorhandene Standardintegration mit S/4HANA und ECC ist eine nahtlose Datenbereitstellung aus dem Backendsystem im Netzwerk möglich. Andere Systeme können über entsprechende Schnittstellen integriert und Daten bereitgestellt werden. Mit LBN-MT können Kunden nach den Prinzipien der Dateninteroperabilität und Souveränität im Catena-X Netzwerk mit allen relevanten Geschäftspartnern agieren und neue Geschäftsfelder entlang der Wertschöpfungskette etablieren.	This is only a test text	5cf74ef8-e0b7-4984-a872-474828beb5d7	de
+Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.	5cf74ef8-e0b7-4984-a872-474828beb5d8	de
+Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.	5cf74ef8-e0b7-4984-a872-474828beb5d8	en
+mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.	5cf74ef8-e0b7-4984-a872-474828beb5d9	de
+mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.	5cf74ef8-e0b7-4984-a872-474828beb5d9	en
 \.
 
 
@@ -574,7 +599,6 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1c
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N	\N	https://portal-staging.afqm-services.com/
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	52c8a212-83a9-4de1-b3de-eb684e75e1f7	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	\N	https://dtc-translator.adac.openresearch.com
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	846ec83b-4b84-4c29-b7ce-3e57d7405844	\N	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
@@ -586,7 +610,6 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1c
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N	\N	https://portal-staging.afqm-services.com/
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d8	2	ac1cf001-7fbc-1f2f-817f-bce058020001	769a8864-64fb-4533-9c85-2a0b0ddc8c88	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	\N	https://dtc-translator.adac.openresearch.com
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
