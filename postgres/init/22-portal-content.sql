@@ -167,6 +167,15 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 
 
 --
+-- Data for Name: app_assigned_documents; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.app_assigned_documents (app_id, document_id) FROM stdin;
+\.
+
+
+
+--
 -- Data for Name: app_tags; Type: TABLE DATA; Schema: public; Owner: admin
 --
 

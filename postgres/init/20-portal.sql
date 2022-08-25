@@ -368,6 +368,16 @@ CREATE TABLE portal.agreements (
 
 
 --
+-- Name: app_assigned_documents; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.app_assigned_documents (
+    app_id uuid NOT NULL,
+    document_id uuid NOT NULL
+);
+
+
+--
 -- Name: app_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -490,15 +500,6 @@ CREATE TABLE portal.apps (
     date_last_changed timestamp with time zone,
     sales_manager_id uuid,
     is_core_component boolean DEFAULT false NOT NULL
-);
-
---
--- Name: app_assigned_documents; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_assigned_documents (
-    app_id uuid NOT NULL,
-    document_id uuid NOT NULL
 );
 
 
@@ -1215,6 +1216,14 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
+-- Name: app_assigned_documents pk_app_assigned_documents; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_assigned_documents
+    ADD CONSTRAINT pk_app_assigned_documents PRIMARY KEY (app_id, document_id);
+
+
+--
 -- Name: app_assigned_licenses pk_app_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1300,14 +1309,6 @@ ALTER TABLE ONLY portal.app_tags
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT pk_apps PRIMARY KEY (id);
-
-
---
--- Name: app_assigned_documents pk_app_assigned_documents; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT pk_app_assigned_documents PRIMARY KEY (app_id, document_id);
 
 
 --
@@ -1800,6 +1801,13 @@ CREATE INDEX ix_agreements_use_case_id ON portal.agreements USING btree (use_cas
 
 
 --
+-- Name: ix_app_assigned_documents_document_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_app_assigned_documents_document_id ON portal.app_assigned_documents USING btree (document_id);
+
+
+--
 -- Name: ix_app_assigned_licenses_app_license_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1867,13 +1875,6 @@ CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_co
 --
 
 CREATE INDEX ix_apps_sales_manager_id ON portal.apps USING btree (sales_manager_id);
-
-
---
--- Name: ix_app_assigned_documents_document_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_assigned_documents_document_id ON portal.app_assigned_documents USING btree (document_id);
 
 
 --
@@ -2369,6 +2370,22 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
+-- Name: app_assigned_documents fk_app_assigned_documents_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_assigned_documents
+    ADD CONSTRAINT fk_app_assigned_documents_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+
+
+--
+-- Name: app_assigned_documents fk_app_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_assigned_documents
+    ADD CONSTRAINT fk_app_assigned_documents_documents_document_id FOREIGN KEY (document_id) REFERENCES portal.documents(id);
+
+
+--
 -- Name: app_assigned_licenses fk_app_assigned_licenses_app_licenses_app_license_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2478,22 +2495,6 @@ ALTER TABLE ONLY portal.apps
 
 ALTER TABLE ONLY portal.apps
     ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
-
-
---
--- Name: app_assigned_documents fk_app_assigned_documents_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT fk_app_assigned_documents_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: app_assigned_documents fk_app_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT fk_app_assigned_documents_documents_document_id FOREIGN KEY (document_id) REFERENCES portal.documents(id);
 
 
 --
