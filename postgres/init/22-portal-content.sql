@@ -170,8 +170,8 @@ COPY portal.app_detail_images (id, app_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000032	5cf74ef8-e0b7-4984-a872-474828beb5d7	LBN3.png
 5cf74ef8-a0a1-0000-a000-000000000033	5cf74ef8-e0b7-4984-a872-474828beb5d8	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-000000000034	5cf74ef8-e0b7-4984-a872-474828beb5d8	Test-Image2.png
-5cf74ef8-a0a1-0000-a000-000000000033	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image1.png
-5cf74ef8-a0a1-0000-a000-000000000034	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-000000000035	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image1.png
+5cf74ef8-a0a1-0000-a000-000000000036	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image2.png
 \.
 
 
@@ -285,34 +285,6 @@ COPY portal.document_templates (id, date_created, date_last_changed, documenttem
 COPY portal.agreement_assigned_document_templates (agreement_id, document_template_id) FROM stdin;
 \.
 
-
---
--- Data for Name: iam_clients; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-COPY portal.iam_clients (id, client_client_id) FROM stdin;
-0c9051d0-d032-11ec-9d64-0242ac120002	Cl2-CX-Portal
-f032a034-d035-11ec-9d64-0242ac120002	Cl1-CX-Registration
-f032a035-d035-11ec-9d64-0242ac120002	Cl3-CX-Semantic
-f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
-f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
-f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
-f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
-f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
-f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
-f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
-f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
-f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
-f032a045-d035-11ec-9d64-0242ac120002	not yet known-1
-f032a046-d035-11ec-9d64-0242ac120002	not yet known-2
-f032a047-d035-11ec-9d64-0242ac120002	not yet known-3
-f032a048-d035-11ec-9d64-0242ac120002	not yet known-4
-f032a050-d035-11ec-9d64-0242ac120002	not yet known-5
-789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
-cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
-f032a049-d035-11ec-9d64-0242ac120002	technical_roles_management
-\.
-
 COPY portal.user_roles (id, user_role, app_id) FROM stdin;
 7410693c-c893-409e-852f-9ee886ce94a6	Company Admin	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2
 7410693c-c893-409e-852f-9ee886ce94a7	Legal Admin	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2
@@ -411,6 +383,35 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51156	en	Add, Change and Delete Semnatic Models
 607818be-4978-41f4-bf63-fa8d2de51157	de	Anzeigen und Ändern des Unternehmens-Wallets
 607818be-4978-41f4-bf63-fa8d2de51157	en	View and modify own company wallet
+\.
+
+
+--
+-- Data for Name: iam_clients; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.iam_clients (id, client_client_id) FROM stdin;
+0c9051d0-d032-11ec-9d64-0242ac120002	Cl2-CX-Portal
+f032a034-d035-11ec-9d64-0242ac120002	Cl1-CX-Registration
+f032a035-d035-11ec-9d64-0242ac120002	Cl3-CX-Semantic
+f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
+f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
+f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
+f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
+f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
+f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
+f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
+f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
+f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
+f032a045-d035-11ec-9d64-0242ac120002	not yet known-1
+f032a046-d035-11ec-9d64-0242ac120002	not yet known-2
+f032a047-d035-11ec-9d64-0242ac120002	not yet known-3
+f032a048-d035-11ec-9d64-0242ac120002	not yet known-4
+f032a050-d035-11ec-9d64-0242ac120002	not yet known-5
+f032a051-d035-11ec-9d64-0242ac120002	not yet known-6
+789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
+cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
+f032a049-d035-11ec-9d64-0242ac120002	technical_roles_management
 \.
 
 
