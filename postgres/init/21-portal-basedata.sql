@@ -51,6 +51,17 @@ COPY portal.app_subscription_statuses (id, label) FROM stdin;
 
 
 --
+-- Data for Name: app_type; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.app_type (id, label) FROM stdin;
+1	APP
+2	CORE_COMPONENT
+3	SERVICE
+\.
+
+
+--
 -- Data for Name: audit_operation; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -499,29 +510,6 @@ COPY portal.notification_type (id, label) FROM stdin;
 8	APP_SUBSCRIPTION_REQUEST
 9	APP_SUBSCRIPTION_ACTIVATION
 10	CONNECTOR_REGISTERED
-\.
-
-
---
--- Data for Name: service_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_statuses (id, label) FROM stdin;
-1	CREATED
-2	IN_REVIEW
-3	ACTIVE
-4	INACTIVE
-\.
-
-
---
--- Data for Name: service_subscription_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_subscription_statuses (id, label) FROM stdin;
-1	PENDING
-2	ACTIVE
-3	INACTIVE
 \.
 
 

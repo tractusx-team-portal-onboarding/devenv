@@ -108,27 +108,27 @@ ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57	2022-03-24 18:01:33.
 -- Data for Name: apps; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.apps (id, name, date_created, date_released, thumbnail_url, marketing_url, contact_email, contact_number, provider, provider_company_id, app_status_id, date_last_changed, sales_manager_id, is_core_component) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	Trace-X	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-ac1cf001-7fbc-1f2f-817f-bce05748000d	Trusted Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	STT.png	\N	\N	0000	Catena-X	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	fe55fe20-5f19-401e-91a2-dfa37b44a0be	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d3	Fleet Manager	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d4	up2parts cloud	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	up2parts.png	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory Web Portal	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	Smart Factory.png	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d6	Production Planning and Control	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	PP&C.png	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d7	Logistics Network, Material Traceability (LBN-MT)	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	LBN.png	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-9b957704-3505-4445-822c-d7ef80f27fcd	Portal	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
-9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	Registration	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
-0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	t
-5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	f
-5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	f
+COPY portal.apps (id, name, date_created, date_released, thumbnail_url, marketing_url, contact_email, contact_number, provider, provider_company_id, app_status_id, date_last_changed, sales_manager_id, app_type_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	Trace-X	2022-03-24 18:01:33.348	2022-03-24 18:01:33.348	Part Chain.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.348	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce05748000d	Trusted Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	STT.png	\N	\N	0000	Catena-X	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	fe55fe20-5f19-401e-91a2-dfa37b44a0be	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	DTC-Translator_LP.svg	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d3	Fleet Manager	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fleet_Manager_LP.png	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d4	up2parts cloud	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	up2parts.png	\N	info@up2parts.com	0000	up2parts GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory Web Portal	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	Smart Factory.png	\N	florian.patzer@iosb.fraunhofer.de	0000	Fraunhofer IOSB	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d6	Production Planning and Control	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	PP&C.png	\N	Cemil Can	0000	ISTOS GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d7	Logistics Network, Material Traceability (LBN-MT)	2022-06-29 18:01:33.388	2022-03-24 18:01:33.388	LBN.png	\N	janina.reintjes@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-06-29 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+9b957704-3505-4445-822c-d7ef80f27fcd	Portal	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	2
+9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	Registration	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	2
+0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	2
+5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00.000	2022-08-28 00:00:00.000	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00.000	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 \.
 
 
@@ -547,38 +547,6 @@ mipart is an on-demand manufacturing platform for the digital procurement of com
 
 
 --
--- Data for Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.audit_company_assigned_apps_cplp_1254_db_audit (id, audit_id, date_last_changed, audit_operation_id, last_editor_id, company_id, app_id, app_subscription_status_id) FROM stdin;
-\.
-
-
---
--- Data for Name: audit_services_cplp_1213_add_services; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.audit_services_cplp_1213_add_services (id, audit_id, date_last_changed, audit_operation_id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
-\.
-
-
---
--- Data for Name: audit_company_users_cplp_1254_db_audit; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.audit_company_users_cplp_1254_db_audit (id, audit_id, audit_operation_id, date_last_changed, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
-\.
-
-
---
--- Data for Name: audit_services_cplp_1213_add_services; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.audit_services_cplp_1213_add_services (id, audit_id, date_last_changed, audit_operation_id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
-\.
-
-
---
 -- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -644,14 +612,6 @@ cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2
 220330ac-170d-4e22-8d72-9467ed042149	1
 bdac6865-2a8d-4bfd-9373-9dfce8190895	1
 41fd2ab8-71cd-4546-9bef-a388d91b2542	1
-\.
-
-
---
--- Data for Name: company_assigned_services; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.company_assigned_services (service_id, company_id, service_subscription_status_id, requester_id) FROM stdin;
 \.
 
 
@@ -862,37 +822,6 @@ c3af980d-b1f6-447a-ba96-5dacd52a7adf	sa-cl6-cx-9	2c5e74e2-0561-46f9-b27e-beadb44
 \.
 
 --
--- Data for Name: services; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.services (id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
-\.
-
-
---
--- Data for Name: service_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_assigned_licenses (service_id, service_license_id) FROM stdin;
-\.
-
-
---
--- Data for Name: service_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_descriptions (id, description, service_id, language_short_name) FROM stdin;
-\.
-
-
---
--- Data for Name: service_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_licenses (id, license_text) FROM stdin;
-\.
-
---
 -- Data for Name: notifications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -902,36 +831,4 @@ b753cd7f-24c7-44a7-a88e-08ed00c31601	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-0
 b753cd7f-24c7-44a7-a88e-08ed00c31602	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	5	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31603	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	6	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31604	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	7	false	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
-\.
-
-
---
--- Data for Name: services; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.services (id, date_created, name, thumbnail_url, provider_company_id, service_status_id, contact_email, sales_manager_id, last_editor_id) FROM stdin;
-\.
-
-
---
--- Data for Name: service_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_licenses (id, license_text) FROM stdin;
-\.
-
-
---
--- Data for Name: service_assigned_licenses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_assigned_licenses (service_id, service_license_id) FROM stdin;
-\.
-
-
---
--- Data for Name: service_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_descriptions (id, description, service_id, language_short_name) FROM stdin;
 \.

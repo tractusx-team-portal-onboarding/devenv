@@ -84,53 +84,25 @@ CREATE FUNCTION portal.process_company_assigned_apps_audit() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 
-
-
-
-
 BEGIN
-
-
-
-
 
 IF (TG_OP = 'DELETE') THEN
 
-
-
-
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-
+INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_instance_id,OLD.app_subscription_status_id,OLD.display_name,OLD.description,OLD.requester_id,OLD.app_url, OLD.last_editor_id, CURRENT_DATE, 3 ;
 
 ELSIF (TG_OP = 'UPDATE') THEN
 
-
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-
+INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_instance_id,NEW.app_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_url, NEW.last_editor_id, CURRENT_DATE, 2 ;
 
 ELSIF (TG_OP = 'INSERT') THEN
 
-
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
-
-
+INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_instance_id,NEW.app_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_url, NEW.last_editor_id, CURRENT_DATE, 1 ;
 
 END IF;
 
-
-
 RETURN NULL;
 
-
-
 END;
-
-
 
 $$;
 
@@ -145,7 +117,15 @@ CREATE FUNCTION portal.process_company_user_assigned_roles_audit() RETURNS trigg
 
 
 
+
+
+
+
 BEGIN
+
+
+
+
 
 
 
@@ -153,7 +133,15 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_user_assigned_roles_cplp_1255_audit_company_applications ( id, audit_id, company_user_id,user_role_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_user_id,OLD.user_role_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+
+
+
 
 
 
@@ -161,11 +149,23 @@ ELSIF (TG_OP = 'UPDATE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_user_assigned_roles_cplp_1255_audit_company_applications ( id, audit_id, company_user_id,user_role_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_user_id,NEW.user_role_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
 
 
 
+
+
+
+
 ELSIF (TG_OP = 'INSERT') THEN
+
+
+
+
 
 
 
@@ -482,6 +482,16 @@ CREATE TABLE portal.app_tags (
 
 
 --
+-- Name: app_type; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.app_type (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: apps; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -499,7 +509,7 @@ CREATE TABLE portal.apps (
     app_status_id integer NOT NULL,
     date_last_changed timestamp with time zone,
     sales_manager_id uuid,
-    is_core_component boolean DEFAULT false NOT NULL
+    app_type_id integer DEFAULT 1 NOT NULL
 );
 
 
@@ -535,6 +545,27 @@ CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
     last_editor_id uuid,
     app_instance_id uuid,
     app_url character varying(255)
+);
+
+
+--
+-- Name: audit_company_assigned_apps_cplp_1427_combine_service_and_apps; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    audit_operation_id integer NOT NULL,
+    company_id uuid NOT NULL,
+    app_id uuid NOT NULL,
+    app_subscription_status_id integer NOT NULL,
+    app_instance_id uuid,
+    app_url character varying(255),
+    requester_id uuid NOT NULL,
+    last_editor_id uuid,
+    display_name character varying(256),
+    description character varying(4096)
 );
 
 
@@ -580,26 +611,6 @@ CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
 CREATE TABLE portal.audit_operation (
     id integer NOT NULL,
     label character varying(255) NOT NULL
-);
-
-
---
--- Name: audit_services_cplp_1213_add_services; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_services_cplp_1213_add_services (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_created timestamp with time zone NOT NULL,
-    name text NOT NULL,
-    thumbnail_url text,
-    provider_company_id uuid NOT NULL,
-    service_status_id integer NOT NULL,
-    contact_email text,
-    sales_manager_id uuid,
-    last_editor_id uuid
 );
 
 
@@ -655,7 +666,9 @@ CREATE TABLE portal.company_assigned_apps (
     id uuid DEFAULT gen_random_uuid() NOT NULL,
     last_editor_id uuid,
     app_instance_id uuid,
-    app_url character varying(255)
+    app_url character varying(255),
+    description character varying(4096),
+    display_name character varying(255)
 );
 
 
@@ -666,18 +679,6 @@ CREATE TABLE portal.company_assigned_apps (
 CREATE TABLE portal.company_assigned_roles (
     company_id uuid NOT NULL,
     company_role_id integer NOT NULL
-);
-
-
---
--- Name: company_assigned_services; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.company_assigned_services (
-    service_id uuid NOT NULL,
-    company_id uuid NOT NULL,
-    service_subscription_status_id integer DEFAULT 1 NOT NULL,
-    requester_id uuid NOT NULL
 );
 
 
@@ -1074,75 +1075,6 @@ CREATE TABLE portal.notifications (
 
 
 --
--- Name: service_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.service_assigned_licenses (
-    service_id uuid NOT NULL,
-    service_license_id uuid NOT NULL
-);
-
-
---
--- Name: service_descriptions; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.service_descriptions (
-    id uuid NOT NULL,
-    description text NOT NULL,
-    service_id uuid NOT NULL,
-    language_short_name text NOT NULL
-);
-
-
---
--- Name: service_licenses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.service_licenses (
-    id uuid NOT NULL,
-    license_text text NOT NULL
-);
-
-
---
--- Name: service_statuses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.service_statuses (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
-);
-
-
---
--- Name: service_subscription_statuses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.service_subscription_statuses (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
-);
-
-
---
--- Name: services; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.services (
-    id uuid NOT NULL,
-    date_created timestamp with time zone NOT NULL,
-    name text NOT NULL,
-    thumbnail_url text,
-    provider_company_id uuid NOT NULL,
-    service_status_id integer NOT NULL,
-    contact_email text,
-    sales_manager_id uuid,
-    last_editor_id uuid
-);
-
-
---
 -- Name: use_cases; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1173,6 +1105,14 @@ CREATE TABLE portal.user_roles (
     user_role character varying(255) NOT NULL,
     app_id uuid NOT NULL
 );
+
+
+--
+-- Name: audit_company_assigned_apps_cplp_1427_combine_service_and_apps audit_company_assigned_apps_cplp_1427_combine_service_and_a; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps
+    ADD CONSTRAINT audit_company_assigned_apps_cplp_1427_combine_service_and_a PRIMARY KEY (id);
 
 
 --
@@ -1304,6 +1244,14 @@ ALTER TABLE ONLY portal.app_tags
 
 
 --
+-- Name: app_type pk_app_type; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_type
+    ADD CONSTRAINT pk_app_type PRIMARY KEY (id);
+
+
+--
 -- Name: apps pk_apps; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1352,14 +1300,6 @@ ALTER TABLE ONLY portal.audit_operation
 
 
 --
--- Name: audit_services_cplp_1213_add_services pk_audit_services_cplp_1213_add_services; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.audit_services_cplp_1213_add_services
-    ADD CONSTRAINT pk_audit_services_cplp_1213_add_services PRIMARY KEY (id);
-
-
---
 -- Name: companies pk_companies; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1388,7 +1328,7 @@ ALTER TABLE ONLY portal.company_applications
 --
 
 ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT pk_company_assigned_apps PRIMARY KEY (company_id, app_id);
+    ADD CONSTRAINT pk_company_assigned_apps PRIMARY KEY (id);
 
 
 --
@@ -1397,14 +1337,6 @@ ALTER TABLE ONLY portal.company_assigned_apps
 
 ALTER TABLE ONLY portal.company_assigned_roles
     ADD CONSTRAINT pk_company_assigned_roles PRIMARY KEY (company_id, company_role_id);
-
-
---
--- Name: company_assigned_services pk_company_assigned_services; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_services
-    ADD CONSTRAINT pk_company_assigned_services PRIMARY KEY (service_id, company_id);
 
 
 --
@@ -1680,54 +1612,6 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
--- Name: service_assigned_licenses pk_service_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_assigned_licenses
-    ADD CONSTRAINT pk_service_assigned_licenses PRIMARY KEY (service_id, service_license_id);
-
-
---
--- Name: service_descriptions pk_service_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_descriptions
-    ADD CONSTRAINT pk_service_descriptions PRIMARY KEY (id);
-
-
---
--- Name: service_licenses pk_service_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_licenses
-    ADD CONSTRAINT pk_service_licenses PRIMARY KEY (id);
-
-
---
--- Name: service_statuses pk_service_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_statuses
-    ADD CONSTRAINT pk_service_statuses PRIMARY KEY (id);
-
-
---
--- Name: service_subscription_statuses pk_service_subscription_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_subscription_statuses
-    ADD CONSTRAINT pk_service_subscription_statuses PRIMARY KEY (id);
-
-
---
--- Name: services pk_services; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.services
-    ADD CONSTRAINT pk_services PRIMARY KEY (id);
-
-
---
 -- Name: use_cases pk_use_cases; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1864,6 +1748,13 @@ CREATE INDEX ix_apps_app_status_id ON portal.apps USING btree (app_status_id);
 
 
 --
+-- Name: ix_apps_app_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_apps_app_type_id ON portal.apps USING btree (app_type_id);
+
+
+--
 -- Name: ix_apps_provider_company_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1934,31 +1825,17 @@ CREATE INDEX ix_company_assigned_apps_app_subscription_status_id ON portal.compa
 
 
 --
+-- Name: ix_company_assigned_apps_company_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_company_assigned_apps_company_id ON portal.company_assigned_apps USING btree (company_id);
+
+
+--
 -- Name: ix_company_assigned_roles_company_role_id; Type: INDEX; Schema: portal; Owner: -
 --
 
 CREATE INDEX ix_company_assigned_roles_company_role_id ON portal.company_assigned_roles USING btree (company_role_id);
-
-
---
--- Name: ix_company_assigned_services_company_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_services_company_id ON portal.company_assigned_services USING btree (company_id);
-
-
---
--- Name: ix_company_assigned_services_requester_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_services_requester_id ON portal.company_assigned_services USING btree (requester_id);
-
-
---
--- Name: ix_company_assigned_services_service_subscription_status_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_services_service_subscription_status_id ON portal.company_assigned_services USING btree (service_subscription_status_id);
 
 
 --
@@ -2214,41 +2091,6 @@ CREATE INDEX ix_notifications_receiver_user_id ON portal.notifications USING btr
 
 
 --
--- Name: ix_service_assigned_licenses_service_license_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_service_assigned_licenses_service_license_id ON portal.service_assigned_licenses USING btree (service_license_id);
-
-
---
--- Name: ix_service_descriptions_service_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_service_descriptions_service_id ON portal.service_descriptions USING btree (service_id);
-
-
---
--- Name: ix_services_provider_company_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_services_provider_company_id ON portal.services USING btree (provider_company_id);
-
-
---
--- Name: ix_services_sales_manager_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_services_sales_manager_id ON portal.services USING btree (sales_manager_id);
-
-
---
--- Name: ix_services_service_status_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_services_service_status_id ON portal.services USING btree (service_status_id);
-
-
---
 -- Name: ix_user_role_descriptions_language_short_name; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2288,13 +2130,6 @@ CREATE TRIGGER audit_company_user_assigned_roles AFTER INSERT OR DELETE OR UPDAT
 --
 
 CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION portal.process_company_users_audit();
-
-
---
--- Name: services audit_services; Type: TRIGGER; Schema: portal; Owner: -
---
-
-CREATE TRIGGER audit_services AFTER INSERT OR DELETE OR UPDATE ON portal.services FOR EACH ROW EXECUTE FUNCTION portal.process_services_audit();
 
 
 --
@@ -2490,6 +2325,14 @@ ALTER TABLE ONLY portal.apps
 
 
 --
+-- Name: apps fk_apps_app_type_app_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.apps
+    ADD CONSTRAINT fk_apps_app_type_app_type_id FOREIGN KEY (app_type_id) REFERENCES portal.app_type(id) ON DELETE CASCADE;
+
+
+--
 -- Name: apps fk_apps_companies_provider_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2583,38 +2426,6 @@ ALTER TABLE ONLY portal.company_assigned_roles
 
 ALTER TABLE ONLY portal.company_assigned_roles
     ADD CONSTRAINT fk_company_assigned_roles_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id);
-
-
---
--- Name: company_assigned_services fk_company_assigned_services_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_services
-    ADD CONSTRAINT fk_company_assigned_services_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
-
-
---
--- Name: company_assigned_services fk_company_assigned_services_company_users_requester_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_services
-    ADD CONSTRAINT fk_company_assigned_services_company_users_requester_id FOREIGN KEY (requester_id) REFERENCES portal.company_users(id);
-
-
---
--- Name: company_assigned_services fk_company_assigned_services_service_subscription_statuses_ser; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_services
-    ADD CONSTRAINT fk_company_assigned_services_service_subscription_statuses_ser FOREIGN KEY (service_subscription_status_id) REFERENCES portal.service_subscription_statuses(id);
-
-
---
--- Name: company_assigned_services fk_company_assigned_services_services_service_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_services
-    ADD CONSTRAINT fk_company_assigned_services_services_service_id FOREIGN KEY (service_id) REFERENCES portal.services(id);
 
 
 --
@@ -2935,54 +2746,6 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_notification_type_notification_type_id FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
-
-
---
--- Name: service_assigned_licenses fk_service_assigned_licenses_service_licenses_service_license_; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_assigned_licenses
-    ADD CONSTRAINT fk_service_assigned_licenses_service_licenses_service_license_ FOREIGN KEY (service_license_id) REFERENCES portal.service_licenses(id);
-
-
---
--- Name: service_assigned_licenses fk_service_assigned_licenses_services_service_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_assigned_licenses
-    ADD CONSTRAINT fk_service_assigned_licenses_services_service_id FOREIGN KEY (service_id) REFERENCES portal.services(id);
-
-
---
--- Name: service_descriptions fk_service_descriptions_services_service_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.service_descriptions
-    ADD CONSTRAINT fk_service_descriptions_services_service_id FOREIGN KEY (service_id) REFERENCES portal.services(id) ON DELETE CASCADE;
-
-
---
--- Name: services fk_services_companies_provider_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.services
-    ADD CONSTRAINT fk_services_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
-
-
---
--- Name: services fk_services_company_users_sales_manager_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.services
-    ADD CONSTRAINT fk_services_company_users_sales_manager_id FOREIGN KEY (sales_manager_id) REFERENCES portal.company_users(id);
-
-
---
--- Name: services fk_services_service_statuses_service_status_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.services
-    ADD CONSTRAINT fk_services_service_statuses_service_status_id FOREIGN KEY (service_status_id) REFERENCES portal.service_statuses(id);
 
 
 --
