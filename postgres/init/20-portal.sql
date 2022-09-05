@@ -321,6 +321,16 @@ CREATE TABLE portal.addresses (
 
 
 --
+-- Name: agreement_assigned_apps; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.agreement_assigned_apps (
+    agreement_id uuid NOT NULL,
+    app_id uuid NOT NULL
+);
+
+
+--
 -- Name: agreement_assigned_company_roles; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -361,7 +371,6 @@ CREATE TABLE portal.agreements (
     date_last_changed timestamp with time zone,
     agreement_type character varying(255),
     name character varying(255) NOT NULL,
-    app_id uuid,
     issuer_company_id uuid NOT NULL,
     use_case_id uuid
 );
@@ -1124,6 +1133,14 @@ ALTER TABLE ONLY portal.addresses
 
 
 --
+-- Name: agreement_assigned_apps pk_agreement_assigned_apps; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_apps
+    ADD CONSTRAINT pk_agreement_assigned_apps PRIMARY KEY (agreement_id, app_id);
+
+
+--
 -- Name: agreement_assigned_company_roles pk_agreement_assigned_company_roles; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1643,6 +1660,13 @@ CREATE INDEX ix_addresses_country_alpha2code ON portal.addresses USING btree (co
 
 
 --
+-- Name: ix_agreement_assigned_apps_app_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_agreement_assigned_apps_app_id ON portal.agreement_assigned_apps USING btree (app_id);
+
+
+--
 -- Name: ix_agreement_assigned_company_roles_company_role_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1661,13 +1685,6 @@ CREATE UNIQUE INDEX ix_agreement_assigned_document_templates_document_template_i
 --
 
 CREATE INDEX ix_agreements_agreement_category_id ON portal.agreements USING btree (agreement_category_id);
-
-
---
--- Name: ix_agreements_app_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_agreements_app_id ON portal.agreements USING btree (app_id);
 
 
 --
@@ -2141,6 +2158,22 @@ ALTER TABLE ONLY portal.addresses
 
 
 --
+-- Name: agreement_assigned_apps fk_agreement_assigned_apps_agreements_agreement_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_apps
+    ADD CONSTRAINT fk_agreement_assigned_apps_agreements_agreement_id FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id);
+
+
+--
+-- Name: agreement_assigned_apps fk_agreement_assigned_apps_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_apps
+    ADD CONSTRAINT fk_agreement_assigned_apps_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+
+
+--
 -- Name: agreement_assigned_company_roles fk_agreement_assigned_company_roles_agreements_agreement_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2178,14 +2211,6 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 ALTER TABLE ONLY portal.agreements
     ADD CONSTRAINT fk_agreements_agreement_categories_agreement_category_id FOREIGN KEY (agreement_category_id) REFERENCES portal.agreement_categories(id);
-
-
---
--- Name: agreements fk_agreements_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.agreements
-    ADD CONSTRAINT fk_agreements_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
 
 
 --
@@ -2329,7 +2354,7 @@ ALTER TABLE ONLY portal.apps
 --
 
 ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_app_type_app_type_id FOREIGN KEY (app_type_id) REFERENCES portal.app_type(id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_apps_app_type_app_type_id FOREIGN KEY (app_type_id) REFERENCES portal.app_type(id);
 
 
 --
