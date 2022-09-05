@@ -88,15 +88,15 @@ BEGIN
 
 IF (TG_OP = 'DELETE') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_instance_id,OLD.app_subscription_status_id,OLD.display_name,OLD.description,OLD.requester_id,OLD.app_url, OLD.last_editor_id, CURRENT_DATE, 3 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
 
 ELSIF (TG_OP = 'UPDATE') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_instance_id,NEW.app_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_url, NEW.last_editor_id, CURRENT_DATE, 2 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
 
 ELSIF (TG_OP = 'INSERT') THEN
 
-INSERT INTO portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps ( id, audit_id, company_id,app_id,app_instance_id,app_subscription_status_id,display_name,description,requester_id,app_url, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_instance_id,NEW.app_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_url, NEW.last_editor_id, CURRENT_DATE, 1 ;
+INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
 
 END IF;
 
@@ -246,6 +246,37 @@ $$;
 
 
 --
+-- Name: process_offer_subscriptions_audit(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.process_offer_subscriptions_audit() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+BEGIN
+
+IF (TG_OP = 'DELETE') THEN
+
+INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.offer_id,OLD.offer_subscription_status_id,OLD.display_name,OLD.description,OLD.requester_id,OLD.app_subscription_detail_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
+
+ELSIF (TG_OP = 'UPDATE') THEN
+
+INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.offer_id,NEW.offer_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_subscription_detail_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
+
+ELSIF (TG_OP = 'INSERT') THEN
+
+INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.offer_id,NEW.offer_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_subscription_detail_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
+
+END IF;
+
+RETURN NULL;
+
+END;
+
+$$;
+
+
+--
 -- Name: process_services_audit(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -361,7 +392,7 @@ CREATE TABLE portal.agreements (
     date_last_changed timestamp with time zone,
     agreement_type character varying(255),
     name character varying(255) NOT NULL,
-    app_id uuid,
+    offer_id uuid,
     issuer_company_id uuid NOT NULL,
     use_case_id uuid
 );
@@ -378,45 +409,12 @@ CREATE TABLE portal.app_assigned_documents (
 
 
 --
--- Name: app_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_assigned_licenses (
-    app_id uuid NOT NULL,
-    app_license_id uuid NOT NULL
-);
-
-
---
 -- Name: app_assigned_use_cases; Type: TABLE; Schema: portal; Owner: -
 --
 
 CREATE TABLE portal.app_assigned_use_cases (
     app_id uuid NOT NULL,
     use_case_id uuid NOT NULL
-);
-
-
---
--- Name: app_descriptions; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_descriptions (
-    app_id uuid NOT NULL,
-    language_short_name character(2) NOT NULL,
-    description_long character varying(4096) NOT NULL,
-    description_short character varying(255) NOT NULL
-);
-
-
---
--- Name: app_detail_images; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_detail_images (
-    id uuid NOT NULL,
-    app_id uuid NOT NULL,
-    image_url character varying(255) NOT NULL
 );
 
 
@@ -442,74 +440,13 @@ CREATE TABLE portal.app_languages (
 
 
 --
--- Name: app_licenses; Type: TABLE; Schema: portal; Owner: -
+-- Name: app_subscription_details; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.app_licenses (
+CREATE TABLE portal.app_subscription_details (
     id uuid NOT NULL,
-    licensetext character varying(255) NOT NULL
-);
-
-
---
--- Name: app_statuses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_statuses (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
-);
-
-
---
--- Name: app_subscription_statuses; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_subscription_statuses (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
-);
-
-
---
--- Name: app_tags; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_tags (
-    app_id uuid NOT NULL,
-    tag_name character varying(255) NOT NULL
-);
-
-
---
--- Name: app_type; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_type (
-    id integer NOT NULL,
-    label character varying(255) NOT NULL
-);
-
-
---
--- Name: apps; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.apps (
-    id uuid NOT NULL,
-    name character varying(255),
-    date_created timestamp with time zone NOT NULL,
-    date_released timestamp with time zone,
-    thumbnail_url character varying(255),
-    marketing_url character varying(255),
-    contact_email character varying(255),
-    contact_number character varying(255),
-    provider character varying(255) NOT NULL,
-    provider_company_id uuid,
-    app_status_id integer NOT NULL,
-    date_last_changed timestamp with time zone,
-    sales_manager_id uuid,
-    app_type_id integer DEFAULT 1 NOT NULL
+    app_instance_id uuid,
+    app_subscription_url character varying(255)
 );
 
 
@@ -549,27 +486,6 @@ CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
 
 
 --
--- Name: audit_company_assigned_apps_cplp_1427_combine_service_and_apps; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL,
-    company_id uuid NOT NULL,
-    app_id uuid NOT NULL,
-    app_subscription_status_id integer NOT NULL,
-    app_instance_id uuid,
-    app_url character varying(255),
-    requester_id uuid NOT NULL,
-    last_editor_id uuid,
-    display_name character varying(256),
-    description character varying(4096)
-);
-
-
---
 -- Name: audit_company_user_assigned_roles_cplp_1255_audit_company_appli; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -601,6 +517,26 @@ CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
     company_id uuid NOT NULL,
     company_user_status_id integer NOT NULL,
     last_editor_id uuid
+);
+
+
+--
+-- Name: audit_offer_subscription_cplp_1212_change_app_to_offer; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_offer_subscription_cplp_1212_change_app_to_offer (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    audit_operation_id integer NOT NULL,
+    company_id uuid NOT NULL,
+    offer_id uuid NOT NULL,
+    offer_subscription_status_id integer NOT NULL,
+    display_name character varying(255),
+    description character varying(4096),
+    requester_id uuid NOT NULL,
+    last_editor_id uuid,
+    app_subscription_detail_id uuid
 );
 
 
@@ -651,24 +587,6 @@ CREATE TABLE portal.company_applications (
     application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
     last_editor_id uuid
-);
-
-
---
--- Name: company_assigned_apps; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.company_assigned_apps (
-    company_id uuid NOT NULL,
-    app_id uuid NOT NULL,
-    app_subscription_status_id integer DEFAULT 1 NOT NULL,
-    requester_id uuid NOT NULL,
-    id uuid DEFAULT gen_random_uuid() NOT NULL,
-    last_editor_id uuid,
-    app_instance_id uuid,
-    app_url character varying(255),
-    description character varying(4096),
-    display_name character varying(255)
 );
 
 
@@ -1075,6 +993,128 @@ CREATE TABLE portal.notifications (
 
 
 --
+-- Name: offer_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_assigned_licenses (
+    offer_id uuid NOT NULL,
+    offer_license_id uuid NOT NULL
+);
+
+
+--
+-- Name: offer_descriptions; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_descriptions (
+    offer_id uuid NOT NULL,
+    language_short_name character(2) NOT NULL,
+    description_long character varying(4096) NOT NULL,
+    description_short character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_detail_images; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_detail_images (
+    id uuid NOT NULL,
+    offer_id uuid NOT NULL,
+    image_url character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_licenses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_licenses (
+    id uuid NOT NULL,
+    licensetext character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_statuses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_statuses (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_subscription_statuses; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_subscription_statuses (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_subscriptions; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_subscriptions (
+    id uuid NOT NULL,
+    company_id uuid NOT NULL,
+    offer_id uuid NOT NULL,
+    offer_subscription_status_id integer DEFAULT 1 NOT NULL,
+    display_name character varying(255),
+    description character varying(4096),
+    requester_id uuid NOT NULL,
+    last_editor_id uuid,
+    app_subscription_detail_id uuid
+);
+
+
+--
+-- Name: offer_tags; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_tags (
+    offer_id uuid NOT NULL,
+    tag_name character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offer_types; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_types (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: offers; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offers (
+    id uuid NOT NULL,
+    name character varying(255),
+    date_created timestamp with time zone NOT NULL,
+    date_released timestamp with time zone,
+    thumbnail_url character varying(255),
+    marketing_url character varying(255),
+    contact_email character varying(255),
+    contact_number character varying(255),
+    provider character varying(255) NOT NULL,
+    offer_type_id integer NOT NULL,
+    sales_manager_id uuid,
+    provider_company_id uuid,
+    offer_status_id integer NOT NULL,
+    date_last_changed timestamp with time zone
+);
+
+
+--
 -- Name: use_cases; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1103,16 +1143,8 @@ CREATE TABLE portal.user_role_descriptions (
 CREATE TABLE portal.user_roles (
     id uuid NOT NULL,
     user_role character varying(255) NOT NULL,
-    app_id uuid NOT NULL
+    offer_id uuid NOT NULL
 );
-
-
---
--- Name: audit_company_assigned_apps_cplp_1427_combine_service_and_apps audit_company_assigned_apps_cplp_1427_combine_service_and_a; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1427_combine_service_and_apps
-    ADD CONSTRAINT audit_company_assigned_apps_cplp_1427_combine_service_and_a PRIMARY KEY (id);
 
 
 --
@@ -1164,35 +1196,11 @@ ALTER TABLE ONLY portal.app_assigned_documents
 
 
 --
--- Name: app_assigned_licenses pk_app_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_licenses
-    ADD CONSTRAINT pk_app_assigned_licenses PRIMARY KEY (app_id, app_license_id);
-
-
---
 -- Name: app_assigned_use_cases pk_app_assigned_use_cases; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.app_assigned_use_cases
     ADD CONSTRAINT pk_app_assigned_use_cases PRIMARY KEY (app_id, use_case_id);
-
-
---
--- Name: app_descriptions pk_app_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_descriptions
-    ADD CONSTRAINT pk_app_descriptions PRIMARY KEY (app_id, language_short_name);
-
-
---
--- Name: app_detail_images pk_app_detail_images; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_detail_images
-    ADD CONSTRAINT pk_app_detail_images PRIMARY KEY (id);
 
 
 --
@@ -1212,51 +1220,11 @@ ALTER TABLE ONLY portal.app_languages
 
 
 --
--- Name: app_licenses pk_app_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_subscription_details pk_app_subscription_details; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.app_licenses
-    ADD CONSTRAINT pk_app_licenses PRIMARY KEY (id);
-
-
---
--- Name: app_statuses pk_app_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_statuses
-    ADD CONSTRAINT pk_app_statuses PRIMARY KEY (id);
-
-
---
--- Name: app_subscription_statuses pk_app_subscription_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_subscription_statuses
-    ADD CONSTRAINT pk_app_subscription_statuses PRIMARY KEY (id);
-
-
---
--- Name: app_tags pk_app_tags; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_tags
-    ADD CONSTRAINT pk_app_tags PRIMARY KEY (app_id, tag_name);
-
-
---
--- Name: app_type pk_app_type; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_type
-    ADD CONSTRAINT pk_app_type PRIMARY KEY (id);
-
-
---
--- Name: apps pk_apps; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT pk_apps PRIMARY KEY (id);
+ALTER TABLE ONLY portal.app_subscription_details
+    ADD CONSTRAINT pk_app_subscription_details PRIMARY KEY (id);
 
 
 --
@@ -1292,6 +1260,14 @@ ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
 
 
 --
+-- Name: audit_offer_subscription_cplp_1212_change_app_to_offer pk_audit_offer_subscription_cplp_1212_change_app_to_offer; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_offer_subscription_cplp_1212_change_app_to_offer
+    ADD CONSTRAINT pk_audit_offer_subscription_cplp_1212_change_app_to_offer PRIMARY KEY (id);
+
+
+--
 -- Name: audit_operation pk_audit_operation; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1321,14 +1297,6 @@ ALTER TABLE ONLY portal.company_application_statuses
 
 ALTER TABLE ONLY portal.company_applications
     ADD CONSTRAINT pk_company_applications PRIMARY KEY (id);
-
-
---
--- Name: company_assigned_apps pk_company_assigned_apps; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT pk_company_assigned_apps PRIMARY KEY (id);
 
 
 --
@@ -1612,6 +1580,86 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
+-- Name: offer_assigned_licenses pk_offer_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_licenses
+    ADD CONSTRAINT pk_offer_assigned_licenses PRIMARY KEY (offer_id, offer_license_id);
+
+
+--
+-- Name: offer_descriptions pk_offer_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_descriptions
+    ADD CONSTRAINT pk_offer_descriptions PRIMARY KEY (offer_id, language_short_name);
+
+
+--
+-- Name: offer_detail_images pk_offer_detail_images; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_detail_images
+    ADD CONSTRAINT pk_offer_detail_images PRIMARY KEY (id);
+
+
+--
+-- Name: offer_licenses pk_offer_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_licenses
+    ADD CONSTRAINT pk_offer_licenses PRIMARY KEY (id);
+
+
+--
+-- Name: offer_statuses pk_offer_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_statuses
+    ADD CONSTRAINT pk_offer_statuses PRIMARY KEY (id);
+
+
+--
+-- Name: offer_subscription_statuses pk_offer_subscription_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscription_statuses
+    ADD CONSTRAINT pk_offer_subscription_statuses PRIMARY KEY (id);
+
+
+--
+-- Name: offer_subscriptions pk_offer_subscriptions; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT pk_offer_subscriptions PRIMARY KEY (id);
+
+
+--
+-- Name: offer_tags pk_offer_tags; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_tags
+    ADD CONSTRAINT pk_offer_tags PRIMARY KEY (offer_id, tag_name);
+
+
+--
+-- Name: offer_types pk_offer_types; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_types
+    ADD CONSTRAINT pk_offer_types PRIMARY KEY (id);
+
+
+--
+-- Name: offers pk_offers; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offers
+    ADD CONSTRAINT pk_offers PRIMARY KEY (id);
+
+
+--
 -- Name: use_cases pk_use_cases; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1664,17 +1712,17 @@ CREATE INDEX ix_agreements_agreement_category_id ON portal.agreements USING btre
 
 
 --
--- Name: ix_agreements_app_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_agreements_app_id ON portal.agreements USING btree (app_id);
-
-
---
 -- Name: ix_agreements_issuer_company_id; Type: INDEX; Schema: portal; Owner: -
 --
 
 CREATE INDEX ix_agreements_issuer_company_id ON portal.agreements USING btree (issuer_company_id);
+
+
+--
+-- Name: ix_agreements_offer_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_agreements_offer_id ON portal.agreements USING btree (offer_id);
 
 
 --
@@ -1692,31 +1740,10 @@ CREATE INDEX ix_app_assigned_documents_document_id ON portal.app_assigned_docume
 
 
 --
--- Name: ix_app_assigned_licenses_app_license_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_assigned_licenses_app_license_id ON portal.app_assigned_licenses USING btree (app_license_id);
-
-
---
 -- Name: ix_app_assigned_use_cases_use_case_id; Type: INDEX; Schema: portal; Owner: -
 --
 
 CREATE INDEX ix_app_assigned_use_cases_use_case_id ON portal.app_assigned_use_cases USING btree (use_case_id);
-
-
---
--- Name: ix_app_descriptions_language_short_name; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_descriptions_language_short_name ON portal.app_descriptions USING btree (language_short_name);
-
-
---
--- Name: ix_app_detail_images_app_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_detail_images_app_id ON portal.app_detail_images USING btree (app_id);
 
 
 --
@@ -1741,31 +1768,10 @@ CREATE INDEX ix_app_languages_language_short_name ON portal.app_languages USING 
 
 
 --
--- Name: ix_apps_app_status_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_app_subscription_details_app_instance_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_apps_app_status_id ON portal.apps USING btree (app_status_id);
-
-
---
--- Name: ix_apps_app_type_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_apps_app_type_id ON portal.apps USING btree (app_type_id);
-
-
---
--- Name: ix_apps_provider_company_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_apps_provider_company_id ON portal.apps USING btree (provider_company_id);
-
-
---
--- Name: ix_apps_sales_manager_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_apps_sales_manager_id ON portal.apps USING btree (sales_manager_id);
+CREATE INDEX ix_app_subscription_details_app_instance_id ON portal.app_subscription_details USING btree (app_instance_id);
 
 
 --
@@ -1801,34 +1807,6 @@ CREATE INDEX ix_company_applications_application_status_id ON portal.company_app
 --
 
 CREATE INDEX ix_company_applications_company_id ON portal.company_applications USING btree (company_id);
-
-
---
--- Name: ix_company_assigned_apps_app_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_apps_app_id ON portal.company_assigned_apps USING btree (app_id);
-
-
---
--- Name: ix_company_assigned_apps_app_instance_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_apps_app_instance_id ON portal.company_assigned_apps USING btree (app_instance_id);
-
-
---
--- Name: ix_company_assigned_apps_app_subscription_status_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_apps_app_subscription_status_id ON portal.company_assigned_apps USING btree (app_subscription_status_id);
-
-
---
--- Name: ix_company_assigned_apps_company_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_company_assigned_apps_company_id ON portal.company_assigned_apps USING btree (company_id);
 
 
 --
@@ -2091,6 +2069,83 @@ CREATE INDEX ix_notifications_receiver_user_id ON portal.notifications USING btr
 
 
 --
+-- Name: ix_offer_assigned_licenses_offer_license_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_assigned_licenses_offer_license_id ON portal.offer_assigned_licenses USING btree (offer_license_id);
+
+
+--
+-- Name: ix_offer_descriptions_language_short_name; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_descriptions_language_short_name ON portal.offer_descriptions USING btree (language_short_name);
+
+
+--
+-- Name: ix_offer_detail_images_offer_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_detail_images_offer_id ON portal.offer_detail_images USING btree (offer_id);
+
+
+--
+-- Name: ix_offer_subscriptions_app_subscription_detail_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_subscriptions_app_subscription_detail_id ON portal.offer_subscriptions USING btree (app_subscription_detail_id);
+
+
+--
+-- Name: ix_offer_subscriptions_company_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_subscriptions_company_id ON portal.offer_subscriptions USING btree (company_id);
+
+
+--
+-- Name: ix_offer_subscriptions_offer_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_subscriptions_offer_id ON portal.offer_subscriptions USING btree (offer_id);
+
+
+--
+-- Name: ix_offer_subscriptions_offer_subscription_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_subscriptions_offer_subscription_status_id ON portal.offer_subscriptions USING btree (offer_subscription_status_id);
+
+
+--
+-- Name: ix_offers_offer_status_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offers_offer_status_id ON portal.offers USING btree (offer_status_id);
+
+
+--
+-- Name: ix_offers_offer_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offers_offer_type_id ON portal.offers USING btree (offer_type_id);
+
+
+--
+-- Name: ix_offers_provider_company_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offers_provider_company_id ON portal.offers USING btree (provider_company_id);
+
+
+--
+-- Name: ix_offers_sales_manager_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offers_sales_manager_id ON portal.offers USING btree (sales_manager_id);
+
+
+--
 -- Name: ix_user_role_descriptions_language_short_name; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2098,10 +2153,10 @@ CREATE INDEX ix_user_role_descriptions_language_short_name ON portal.user_role_d
 
 
 --
--- Name: ix_user_roles_app_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_user_roles_offer_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE INDEX ix_user_roles_app_id ON portal.user_roles USING btree (app_id);
+CREATE INDEX ix_user_roles_offer_id ON portal.user_roles USING btree (offer_id);
 
 
 --
@@ -2109,13 +2164,6 @@ CREATE INDEX ix_user_roles_app_id ON portal.user_roles USING btree (app_id);
 --
 
 CREATE TRIGGER audit_company_applications AFTER INSERT OR DELETE OR UPDATE ON portal.company_applications FOR EACH ROW EXECUTE FUNCTION portal.process_company_applications_audit();
-
-
---
--- Name: company_assigned_apps audit_company_assigned_apps; Type: TRIGGER; Schema: portal; Owner: -
---
-
-CREATE TRIGGER audit_company_assigned_apps AFTER INSERT OR DELETE OR UPDATE ON portal.company_assigned_apps FOR EACH ROW EXECUTE FUNCTION portal.process_company_assigned_apps_audit();
 
 
 --
@@ -2130,6 +2178,13 @@ CREATE TRIGGER audit_company_user_assigned_roles AFTER INSERT OR DELETE OR UPDAT
 --
 
 CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.company_users FOR EACH ROW EXECUTE FUNCTION portal.process_company_users_audit();
+
+
+--
+-- Name: offer_subscriptions audit_offer_subscriptions; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER audit_offer_subscriptions AFTER INSERT OR DELETE OR UPDATE ON portal.offer_subscriptions FOR EACH ROW EXECUTE FUNCTION portal.process_offer_subscriptions_audit();
 
 
 --
@@ -2181,19 +2236,19 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: agreements fk_agreements_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.agreements
-    ADD CONSTRAINT fk_agreements_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
 -- Name: agreements fk_agreements_companies_issuer_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.agreements
     ADD CONSTRAINT fk_agreements_companies_issuer_company_id FOREIGN KEY (issuer_company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: agreements fk_agreements_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreements
+    ADD CONSTRAINT fk_agreements_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
 
 
 --
@@ -2205,14 +2260,6 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_documents fk_app_assigned_documents_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT fk_app_assigned_documents_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
 -- Name: app_assigned_documents fk_app_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2221,27 +2268,19 @@ ALTER TABLE ONLY portal.app_assigned_documents
 
 
 --
--- Name: app_assigned_licenses fk_app_assigned_licenses_app_licenses_app_license_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_assigned_documents fk_app_assigned_documents_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.app_assigned_licenses
-    ADD CONSTRAINT fk_app_assigned_licenses_app_licenses_app_license_id FOREIGN KEY (app_license_id) REFERENCES portal.app_licenses(id);
-
-
---
--- Name: app_assigned_licenses fk_app_assigned_licenses_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_licenses
-    ADD CONSTRAINT fk_app_assigned_licenses_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+ALTER TABLE ONLY portal.app_assigned_documents
+    ADD CONSTRAINT fk_app_assigned_documents_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id);
 
 
 --
--- Name: app_assigned_use_cases fk_app_assigned_use_cases_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_assigned_use_cases fk_app_assigned_use_cases_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.app_assigned_use_cases
-    ADD CONSTRAINT fk_app_assigned_use_cases_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+    ADD CONSTRAINT fk_app_assigned_use_cases_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id);
 
 
 --
@@ -2253,38 +2292,6 @@ ALTER TABLE ONLY portal.app_assigned_use_cases
 
 
 --
--- Name: app_descriptions fk_app_descriptions_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_descriptions
-    ADD CONSTRAINT fk_app_descriptions_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: app_descriptions fk_app_descriptions_languages_language_temp_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_descriptions
-    ADD CONSTRAINT fk_app_descriptions_languages_language_temp_id FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name);
-
-
---
--- Name: app_detail_images fk_app_detail_images_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_detail_images
-    ADD CONSTRAINT fk_app_detail_images_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: app_instances fk_app_instances_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_instances
-    ADD CONSTRAINT fk_app_instances_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id) ON DELETE SET NULL;
-
-
---
 -- Name: app_instances fk_app_instances_iam_clients_iam_client_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2293,51 +2300,35 @@ ALTER TABLE ONLY portal.app_instances
 
 
 --
--- Name: app_languages fk_app_languages_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_instances fk_app_instances_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_instances
+    ADD CONSTRAINT fk_app_instances_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id) ON DELETE SET NULL;
+
+
+--
+-- Name: app_languages fk_app_languages_languages_language_temp_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.app_languages
-    ADD CONSTRAINT fk_app_languages_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
+    ADD CONSTRAINT fk_app_languages_languages_language_temp_id FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name);
 
 
 --
--- Name: app_languages fk_app_languages_languages_language_temp_id1; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_languages fk_app_languages_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.app_languages
-    ADD CONSTRAINT fk_app_languages_languages_language_temp_id1 FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name);
+    ADD CONSTRAINT fk_app_languages_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id);
 
 
 --
--- Name: app_tags fk_app_tags_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: app_subscription_details fk_app_subscription_details_app_instances_app_instance_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.app_tags
-    ADD CONSTRAINT fk_app_tags_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: apps fk_apps_app_statuses_app_status_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_app_statuses_app_status_id FOREIGN KEY (app_status_id) REFERENCES portal.app_statuses(id) ON DELETE CASCADE;
-
-
---
--- Name: apps fk_apps_app_type_app_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_app_type_app_type_id FOREIGN KEY (app_type_id) REFERENCES portal.app_type(id) ON DELETE CASCADE;
-
-
---
--- Name: apps fk_apps_companies_provider_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.apps
-    ADD CONSTRAINT fk_apps_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
+ALTER TABLE ONLY portal.app_subscription_details
+    ADD CONSTRAINT fk_app_subscription_details_app_instances_app_instance_id FOREIGN KEY (app_instance_id) REFERENCES portal.app_instances(id);
 
 
 --
@@ -2378,38 +2369,6 @@ ALTER TABLE ONLY portal.company_applications
 
 ALTER TABLE ONLY portal.company_applications
     ADD CONSTRAINT fk_company_applications_company_application_statuses_applicati FOREIGN KEY (application_status_id) REFERENCES portal.company_application_statuses(id) ON DELETE CASCADE;
-
-
---
--- Name: company_assigned_apps fk_company_assigned_apps_app_instances_app_instance_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT fk_company_assigned_apps_app_instances_app_instance_id FOREIGN KEY (app_instance_id) REFERENCES portal.app_instances(id);
-
-
---
--- Name: company_assigned_apps fk_company_assigned_apps_app_subscription_statuses_app_subscri; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT fk_company_assigned_apps_app_subscription_statuses_app_subscri FOREIGN KEY (app_subscription_status_id) REFERENCES portal.app_subscription_statuses(id);
-
-
---
--- Name: company_assigned_apps fk_company_assigned_apps_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT fk_company_assigned_apps_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
--- Name: company_assigned_apps fk_company_assigned_apps_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_assigned_apps
-    ADD CONSTRAINT fk_company_assigned_apps_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
 
 
 --
@@ -2469,11 +2428,11 @@ ALTER TABLE ONLY portal.company_role_descriptions
 
 
 --
--- Name: company_role_descriptions fk_company_role_descriptions_languages_language_temp_id2; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: company_role_descriptions fk_company_role_descriptions_languages_language_temp_id1; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.company_role_descriptions
-    ADD CONSTRAINT fk_company_role_descriptions_languages_language_temp_id2 FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_company_role_descriptions_languages_language_temp_id1 FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name) ON DELETE CASCADE;
 
 
 --
@@ -2509,19 +2468,19 @@ ALTER TABLE ONLY portal.company_service_accounts
 
 
 --
--- Name: company_user_assigned_app_favourites fk_company_user_assigned_app_favourites_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.company_user_assigned_app_favourites
-    ADD CONSTRAINT fk_company_user_assigned_app_favourites_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id);
-
-
---
 -- Name: company_user_assigned_app_favourites fk_company_user_assigned_app_favourites_company_users_company_; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.company_user_assigned_app_favourites
     ADD CONSTRAINT fk_company_user_assigned_app_favourites_company_users_company_ FOREIGN KEY (company_user_id) REFERENCES portal.company_users(id);
+
+
+--
+-- Name: company_user_assigned_app_favourites fk_company_user_assigned_app_favourites_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_user_assigned_app_favourites
+    ADD CONSTRAINT fk_company_user_assigned_app_favourites_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id);
 
 
 --
@@ -2749,6 +2708,118 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
+-- Name: offer_assigned_licenses fk_offer_assigned_licenses_offer_licenses_offer_license_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_licenses
+    ADD CONSTRAINT fk_offer_assigned_licenses_offer_licenses_offer_license_id FOREIGN KEY (offer_license_id) REFERENCES portal.offer_licenses(id);
+
+
+--
+-- Name: offer_assigned_licenses fk_offer_assigned_licenses_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_licenses
+    ADD CONSTRAINT fk_offer_assigned_licenses_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: offer_descriptions fk_offer_descriptions_languages_language_short_name; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_descriptions
+    ADD CONSTRAINT fk_offer_descriptions_languages_language_short_name FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name);
+
+
+--
+-- Name: offer_descriptions fk_offer_descriptions_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_descriptions
+    ADD CONSTRAINT fk_offer_descriptions_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: offer_detail_images fk_offer_detail_images_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_detail_images
+    ADD CONSTRAINT fk_offer_detail_images_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_app_subscription_details_app_subscripti; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_app_subscription_details_app_subscripti FOREIGN KEY (app_subscription_detail_id) REFERENCES portal.app_subscription_details(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_offer_subscription_statuses_offer_subsc; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_offer_subscription_statuses_offer_subsc FOREIGN KEY (offer_subscription_status_id) REFERENCES portal.offer_subscription_statuses(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: offer_tags fk_offer_tags_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_tags
+    ADD CONSTRAINT fk_offer_tags_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: offers fk_offers_companies_provider_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offers
+    ADD CONSTRAINT fk_offers_companies_provider_company_id FOREIGN KEY (provider_company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: offers fk_offers_company_users_sales_manager_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offers
+    ADD CONSTRAINT fk_offers_company_users_sales_manager_id FOREIGN KEY (sales_manager_id) REFERENCES portal.company_users(id);
+
+
+--
+-- Name: offers fk_offers_offer_statuses_offer_status_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offers
+    ADD CONSTRAINT fk_offers_offer_statuses_offer_status_id FOREIGN KEY (offer_status_id) REFERENCES portal.offer_statuses(id) ON DELETE CASCADE;
+
+
+--
+-- Name: offers fk_offers_offer_types_offer_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offers
+    ADD CONSTRAINT fk_offers_offer_types_offer_type_id FOREIGN KEY (offer_type_id) REFERENCES portal.offer_types(id) ON DELETE CASCADE;
+
+
+--
 -- Name: user_role_descriptions fk_user_role_descriptions_languages_language_short_name; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2765,11 +2836,11 @@ ALTER TABLE ONLY portal.user_role_descriptions
 
 
 --
--- Name: user_roles fk_user_roles_apps_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: user_roles fk_user_roles_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.user_roles
-    ADD CONSTRAINT fk_user_roles_apps_app_id FOREIGN KEY (app_id) REFERENCES portal.apps(id) ON DELETE CASCADE;
+    ADD CONSTRAINT fk_user_roles_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id) ON DELETE CASCADE;
 
 
 --
