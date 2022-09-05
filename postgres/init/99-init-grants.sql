@@ -14,7 +14,7 @@ ALTER TABLE portal.app_subscription_details OWNER TO portal;
 ALTER TABLE portal.audit_operation OWNER TO portal;
 ALTER TABLE portal.audit_company_applications_cplp_1255_audit_company_applications OWNER TO portal;
 ALTER TABLE portal.audit_company_users_cplp_1254_db_audit OWNER TO portal;
-ALTER TABLE portal.audit_offer_subscription_cplp_1212_change_app_to_offer OWNER TO portal;
+ALTER TABLE portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer OWNER TO portal;
 ALTER TABLE portal.audit_company_user_assigned_roles_cplp_1255_audit_company_appli OWNER TO portal;
 ALTER TABLE portal.connector_statuses OWNER TO portal;
 ALTER TABLE portal.connector_types OWNER TO portal;

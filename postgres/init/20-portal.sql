@@ -521,10 +521,10 @@ CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
 
 
 --
--- Name: audit_offer_subscription_cplp_1212_change_app_to_offer; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_offer_subscriptions_cplp_1212_change_app_to_offer; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_offer_subscription_cplp_1212_change_app_to_offer (
+CREATE TABLE portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer (
     id uuid NOT NULL,
     audit_id uuid NOT NULL,
     date_last_changed timestamp with time zone NOT NULL,
@@ -1260,11 +1260,11 @@ ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
 
 
 --
--- Name: audit_offer_subscription_cplp_1212_change_app_to_offer pk_audit_offer_subscription_cplp_1212_change_app_to_offer; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_offer_subscriptions_cplp_1212_change_app_to_offer pk_audit_offer_subscriptions_cplp_1212_change_app_to_offer; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_offer_subscription_cplp_1212_change_app_to_offer
-    ADD CONSTRAINT pk_audit_offer_subscription_cplp_1212_change_app_to_offer PRIMARY KEY (id);
+ALTER TABLE ONLY portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer
+    ADD CONSTRAINT pk_audit_offer_subscriptions_cplp_1212_change_app_to_offer PRIMARY KEY (id);
 
 
 --
