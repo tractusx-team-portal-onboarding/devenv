@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
+-- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1755,6 +1755,8 @@ fd0a3e4a-2997-4975-9752-217d3dede715	t	f	account-console	0	t	\N	/realms/idp2/acc
 28bff4e7-9868-486d-93ae-374994b60819	t	f	security-admin-console	0	t	\N	/admin/idp2/console/	f	\N	f	idp2	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
 2a4e93f9-1f46-49a5-a5d2-276b22df6fc9	t	f	admin-cli	0	t	\N	\N	f	\N	f	idp2	openid-connect	0	f	f	${client_admin-cli}	f	client-secret	\N	\N	\N	f	f	t	f
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	t	t	central-idp	0	f	QReqzpGw1VeIMHLaEltcmu1u1zOj2SBz	\N	f	\N	f	idp2	openid-connect	-1	f	f	\N	f	client-jwt	\N	\N	\N	t	f	t	f
+503fd407-6e27-47a9-8001-97e53892cc0a	t	t	saidp1	0	f	IFeLV58INRHwfu3GQg5PSZnroG0TWNqH	\N	f	\N	f	master	openid-connect	-1	f	f	\N	t	client-secret	\N	\N	\N	t	f	t	f
+19324db5-81e8-4b25-8f67-a085e8fd6222	t	t	saidp2	0	f	xCNKGZzbhNsD8IOh9LRp6yBvvr9vS36n	\N	f	\N	f	master	openid-connect	-1	f	f	\N	t	client-secret	\N	\N	\N	t	f	t	f
 \.
 
 
@@ -1823,6 +1825,50 @@ fd0a3e4a-2997-4975-9752-217d3dede715	S256	pkce.code.challenge.method
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	true	use.jwks.url
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	true	backchannel.logout.session.required
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	false	backchannel.logout.revoke.offline.tokens
+503fd407-6e27-47a9-8001-97e53892cc0a	true	backchannel.logout.session.required
+503fd407-6e27-47a9-8001-97e53892cc0a	false	backchannel.logout.revoke.offline.tokens
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.artifact.binding
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.server.signature
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.server.signature.keyinfo.ext
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.assertion.signature
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.client.signature
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.encrypt
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.authnstatement
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.onetimeuse.condition
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml_force_name_id_format
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.multivalued.roles
+503fd407-6e27-47a9-8001-97e53892cc0a	false	saml.force.post.binding
+503fd407-6e27-47a9-8001-97e53892cc0a	false	exclude.session.state.from.auth.response
+503fd407-6e27-47a9-8001-97e53892cc0a	false	oauth2.device.authorization.grant.enabled
+503fd407-6e27-47a9-8001-97e53892cc0a	false	oidc.ciba.grant.enabled
+503fd407-6e27-47a9-8001-97e53892cc0a	true	use.refresh.tokens
+503fd407-6e27-47a9-8001-97e53892cc0a	false	id.token.as.detached.signature
+503fd407-6e27-47a9-8001-97e53892cc0a	false	tls.client.certificate.bound.access.tokens
+503fd407-6e27-47a9-8001-97e53892cc0a	false	require.pushed.authorization.requests
+503fd407-6e27-47a9-8001-97e53892cc0a	false	client_credentials.use_refresh_token
+503fd407-6e27-47a9-8001-97e53892cc0a	false	display.on.consent.screen
+19324db5-81e8-4b25-8f67-a085e8fd6222	true	backchannel.logout.session.required
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	backchannel.logout.revoke.offline.tokens
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.artifact.binding
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.server.signature
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.server.signature.keyinfo.ext
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.assertion.signature
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.client.signature
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.encrypt
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.authnstatement
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.onetimeuse.condition
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml_force_name_id_format
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.multivalued.roles
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	saml.force.post.binding
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	exclude.session.state.from.auth.response
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	oauth2.device.authorization.grant.enabled
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	oidc.ciba.grant.enabled
+19324db5-81e8-4b25-8f67-a085e8fd6222	true	use.refresh.tokens
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	id.token.as.detached.signature
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	tls.client.certificate.bound.access.tokens
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	require.pushed.authorization.requests
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	client_credentials.use_refresh_token
+19324db5-81e8-4b25-8f67-a085e8fd6222	false	display.on.consent.screen
 \.
 
 
@@ -2146,6 +2192,22 @@ fd0a3e4a-2997-4975-9752-217d3dede715	1b5f828d-701d-49ea-a9da-b1c83606240d	f
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	4784e596-acbe-42bb-8887-09a7bc21eadd	f
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	0b573c62-d03f-4bdd-ad9d-05950d11ebdf	f
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	1b5f828d-701d-49ea-a9da-b1c83606240d	f
+503fd407-6e27-47a9-8001-97e53892cc0a	72fbe764-b192-463e-992b-ee50971b9a5a	t
+503fd407-6e27-47a9-8001-97e53892cc0a	a92ad0e3-298b-4c29-b026-bfbc23e550e4	t
+503fd407-6e27-47a9-8001-97e53892cc0a	7d35c604-2bf0-41fb-9e0a-84721050d48f	t
+503fd407-6e27-47a9-8001-97e53892cc0a	3d7c7e6d-e8f2-4d0e-ba63-1ee879299964	t
+503fd407-6e27-47a9-8001-97e53892cc0a	92d99ca8-0faa-4df6-aecb-ec264afc1a08	f
+503fd407-6e27-47a9-8001-97e53892cc0a	d5909064-37a4-4cd8-995f-da6675c81629	f
+503fd407-6e27-47a9-8001-97e53892cc0a	3750c622-b41b-40fb-9129-9fe4a5928591	f
+503fd407-6e27-47a9-8001-97e53892cc0a	ab36e86d-028d-4c3c-b626-a58c855ab0f0	f
+19324db5-81e8-4b25-8f67-a085e8fd6222	72fbe764-b192-463e-992b-ee50971b9a5a	t
+19324db5-81e8-4b25-8f67-a085e8fd6222	a92ad0e3-298b-4c29-b026-bfbc23e550e4	t
+19324db5-81e8-4b25-8f67-a085e8fd6222	7d35c604-2bf0-41fb-9e0a-84721050d48f	t
+19324db5-81e8-4b25-8f67-a085e8fd6222	3d7c7e6d-e8f2-4d0e-ba63-1ee879299964	t
+19324db5-81e8-4b25-8f67-a085e8fd6222	92d99ca8-0faa-4df6-aecb-ec264afc1a08	f
+19324db5-81e8-4b25-8f67-a085e8fd6222	d5909064-37a4-4cd8-995f-da6675c81629	f
+19324db5-81e8-4b25-8f67-a085e8fd6222	3750c622-b41b-40fb-9129-9fe4a5928591	f
+19324db5-81e8-4b25-8f67-a085e8fd6222	ab36e86d-028d-4c3c-b626-a58c855ab0f0	f
 \.
 
 
@@ -3071,6 +3133,12 @@ fc954288-74fd-4004-a9d8-acd7bbb8b784	phone number verified	openid-connect	oidc-u
 b9651a04-65a7-465b-8c37-dd8b739496c1	upn	openid-connect	oidc-usermodel-property-mapper	\N	1b5f828d-701d-49ea-a9da-b1c83606240d
 7081204e-3261-4b41-b489-2031b02790bc	groups	openid-connect	oidc-usermodel-realm-role-mapper	\N	1b5f828d-701d-49ea-a9da-b1c83606240d
 98da81ac-c6fe-413e-9a79-ec17dfc5d830	locale	openid-connect	oidc-usermodel-attribute-mapper	28bff4e7-9868-486d-93ae-374994b60819	\N
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	Client ID	openid-connect	oidc-usersessionmodel-note-mapper	503fd407-6e27-47a9-8001-97e53892cc0a	\N
+47e3901d-b9e8-4d8a-92ee-064476554394	Client Host	openid-connect	oidc-usersessionmodel-note-mapper	503fd407-6e27-47a9-8001-97e53892cc0a	\N
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	Client IP Address	openid-connect	oidc-usersessionmodel-note-mapper	503fd407-6e27-47a9-8001-97e53892cc0a	\N
+472651d9-ec42-44c1-9817-05a2bb373b90	Client ID	openid-connect	oidc-usersessionmodel-note-mapper	19324db5-81e8-4b25-8f67-a085e8fd6222	\N
+2a1a9214-65ba-4288-abbb-37cdc1e06460	Client Host	openid-connect	oidc-usersessionmodel-note-mapper	19324db5-81e8-4b25-8f67-a085e8fd6222	\N
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	Client IP Address	openid-connect	oidc-usersessionmodel-note-mapper	19324db5-81e8-4b25-8f67-a085e8fd6222	\N
 \.
 
 
@@ -3544,6 +3612,36 @@ b9651a04-65a7-465b-8c37-dd8b739496c1	String	jsonType.label
 98da81ac-c6fe-413e-9a79-ec17dfc5d830	true	access.token.claim
 98da81ac-c6fe-413e-9a79-ec17dfc5d830	locale	claim.name
 98da81ac-c6fe-413e-9a79-ec17dfc5d830	String	jsonType.label
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	clientId	user.session.note
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	true	id.token.claim
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	true	access.token.claim
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	clientId	claim.name
+eb3a5951-4e92-40a4-8f51-59a1ab92245f	String	jsonType.label
+47e3901d-b9e8-4d8a-92ee-064476554394	clientHost	user.session.note
+47e3901d-b9e8-4d8a-92ee-064476554394	true	id.token.claim
+47e3901d-b9e8-4d8a-92ee-064476554394	true	access.token.claim
+47e3901d-b9e8-4d8a-92ee-064476554394	clientHost	claim.name
+47e3901d-b9e8-4d8a-92ee-064476554394	String	jsonType.label
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	clientAddress	user.session.note
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	true	id.token.claim
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	true	access.token.claim
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	clientAddress	claim.name
+f61033d5-14f0-42f3-8c07-d4dddffcd4d8	String	jsonType.label
+472651d9-ec42-44c1-9817-05a2bb373b90	clientId	user.session.note
+472651d9-ec42-44c1-9817-05a2bb373b90	true	id.token.claim
+472651d9-ec42-44c1-9817-05a2bb373b90	true	access.token.claim
+472651d9-ec42-44c1-9817-05a2bb373b90	clientId	claim.name
+472651d9-ec42-44c1-9817-05a2bb373b90	String	jsonType.label
+2a1a9214-65ba-4288-abbb-37cdc1e06460	clientHost	user.session.note
+2a1a9214-65ba-4288-abbb-37cdc1e06460	true	id.token.claim
+2a1a9214-65ba-4288-abbb-37cdc1e06460	true	access.token.claim
+2a1a9214-65ba-4288-abbb-37cdc1e06460	clientHost	claim.name
+2a1a9214-65ba-4288-abbb-37cdc1e06460	String	jsonType.label
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	clientAddress	user.session.note
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	true	id.token.claim
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	true	access.token.claim
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	clientAddress	claim.name
+f4ba15d0-c9f7-42a4-90e0-aa723796d851	String	jsonType.label
 \.
 
 
@@ -3776,6 +3874,8 @@ aa0e2a76-477b-4855-89f8-39f90c2afe34	https://devhost:8443/iamcentral/auth/realms
 fd0a3e4a-2997-4975-9752-217d3dede715	/realms/idp2/account/*
 28bff4e7-9868-486d-93ae-374994b60819	/admin/idp2/console/*
 6485fa7b-ba42-4456-8e61-d8d82fb0141c	https://wsl:8443/iamcentral/auth/realms/CX-Central/broker/idp2/endpoint/*
+503fd407-6e27-47a9-8001-97e53892cc0a	https://null
+19324db5-81e8-4b25-8f67-a085e8fd6222	https://null
 \.
 
 
@@ -3949,6 +4049,8 @@ COPY iamshared.user_entity (id, email, email_constraint, email_verified, enabled
 63628715-dba2-47b7-9d61-e2262680cb05	\N	5ead5e5c-1821-4171-8c3b-22e2e93ccc2d	f	t	\N	\N	\N	master	service-account-sa-cl1-reg-1	1648468360019	f9ea5e59-8453-4997-9e7a-0524931be1ac	0
 6ec46cd4-5aec-46c3-88dc-2a283994ab92	no.email@catena.net	no.email@catena.net	t	t	\N	Testuser	Devhost	idp1	devhost-test	1648483534341	\N	0
 f99d2698-5670-41f2-a141-e58b0c99560c	no.email@catena.net	no.email@catena.net	t	t	\N	Testuser	WSL	idp2	wsl-test	1648485062070	\N	0
+20f59983-a8b9-42f7-9714-e945f0902689	\N	2384afe6-e405-46e6-acb6-12ee339ede71	f	t	\N	\N	\N	master	service-account-saidp1	1662115132128	503fd407-6e27-47a9-8001-97e53892cc0a	0
+fde58b74-4516-4740-a3c6-b4b4ca3a00e0	\N	5e8e4d3f-963f-4f42-8661-c2596a1fa73a	f	t	\N	\N	\N	master	service-account-saidp2	1662115218221	19324db5-81e8-4b25-8f67-a085e8fd6222	0
 \.
 
 
@@ -4010,7 +4112,6 @@ COPY iamshared.user_role_mapping (role_id, user_id) FROM stdin;
 84b1eb02-4876-41dd-9bff-8dd2b68b3e80	5a7bc7f6-8c14-4007-b5c8-4ff59d828aad
 6a06c9d3-9bbc-47bb-9c46-b6c616da9de6	5a7bc7f6-8c14-4007-b5c8-4ff59d828aad
 84b1eb02-4876-41dd-9bff-8dd2b68b3e80	63628715-dba2-47b7-9d61-e2262680cb05
-6a06c9d3-9bbc-47bb-9c46-b6c616da9de6	63628715-dba2-47b7-9d61-e2262680cb05
 c1920118-66a3-4763-956a-55d67dee536f	63628715-dba2-47b7-9d61-e2262680cb05
 b5b36764-26de-409b-bb75-d9e7c940e3ee	63628715-dba2-47b7-9d61-e2262680cb05
 f56ad518-6189-4452-a47d-e612c6bd4b6d	63628715-dba2-47b7-9d61-e2262680cb05
@@ -4047,6 +4148,45 @@ b194978c-78c4-40aa-9884-52e54484e2df	63628715-dba2-47b7-9d61-e2262680cb05
 680e748d-76ff-4556-9beb-31309c10a3ce	63628715-dba2-47b7-9d61-e2262680cb05
 7797edc4-1757-4f6f-8f8d-d5c3b2a8f6fe	63628715-dba2-47b7-9d61-e2262680cb05
 0a60b261-fcaf-4d0c-b26d-d6297abbd6cd	f99d2698-5670-41f2-a141-e58b0c99560c
+111b076b-edb1-4006-9291-ae2b7fbb5d08	63628715-dba2-47b7-9d61-e2262680cb05
+84b1eb02-4876-41dd-9bff-8dd2b68b3e80	20f59983-a8b9-42f7-9714-e945f0902689
+c1920118-66a3-4763-956a-55d67dee536f	20f59983-a8b9-42f7-9714-e945f0902689
+36c17efb-8bdf-4ac7-a1ed-f538c710abe6	20f59983-a8b9-42f7-9714-e945f0902689
+3ee2f8eb-4b0c-4029-86bc-caf2840913a6	20f59983-a8b9-42f7-9714-e945f0902689
+44f56580-4264-44f8-b387-bdd2fd3ae32c	20f59983-a8b9-42f7-9714-e945f0902689
+399fb6db-e5cb-4e17-ac31-8740a78f30b2	20f59983-a8b9-42f7-9714-e945f0902689
+279d9f0e-f028-4269-a0f7-4a934671ff5d	20f59983-a8b9-42f7-9714-e945f0902689
+d6601946-f90e-4071-be79-244e790a0180	20f59983-a8b9-42f7-9714-e945f0902689
+51fe83f7-45c6-46da-bdca-67d1dbf874f7	20f59983-a8b9-42f7-9714-e945f0902689
+7e6ad334-ebea-4ed0-9b39-b28e5364d8cb	20f59983-a8b9-42f7-9714-e945f0902689
+9dd94d5a-95a1-4d80-bac2-4179e7171146	20f59983-a8b9-42f7-9714-e945f0902689
+2754ef57-9963-452c-b218-628ec0bf3e4d	20f59983-a8b9-42f7-9714-e945f0902689
+04966c2a-96c5-4739-b293-7213900fd480	20f59983-a8b9-42f7-9714-e945f0902689
+a1a28a53-fc05-49c3-9f6b-98a63f723be6	20f59983-a8b9-42f7-9714-e945f0902689
+bf97e54d-663b-42c0-8244-37d1414f7043	20f59983-a8b9-42f7-9714-e945f0902689
+5eae02a3-9f69-429f-be6f-27b23cfb4a06	20f59983-a8b9-42f7-9714-e945f0902689
+b5b36764-26de-409b-bb75-d9e7c940e3ee	20f59983-a8b9-42f7-9714-e945f0902689
+f56ad518-6189-4452-a47d-e612c6bd4b6d	20f59983-a8b9-42f7-9714-e945f0902689
+84b1eb02-4876-41dd-9bff-8dd2b68b3e80	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+c0061df0-7944-4e94-bd24-8a1607b591cf	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+7a754049-d964-43f1-b89c-498c0e3eb0db	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+e3d11ee6-66df-4c90-8e45-8386f256ec7f	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+ca0b13fd-1ad0-4cae-8c32-5fadba3bfde2	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+b194978c-78c4-40aa-9884-52e54484e2df	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+1adbb3cb-fe7e-40e9-8e37-7bcb36a28526	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+3a0bc9ec-2be8-4ed4-8cb4-d7e047d77fa6	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+73a48b58-5ad2-4ba0-b8fb-0d1d4fde3f6e	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+7797edc4-1757-4f6f-8f8d-d5c3b2a8f6fe	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+680e748d-76ff-4556-9beb-31309c10a3ce	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+663ee0d8-6c92-4b61-9426-0a3a83f93160	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+5d55e37d-b3d3-45f9-98c4-a31d43e280f2	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+f471661a-ae0e-487d-9a12-06c03b07448d	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+771cf602-5543-46a9-891d-3e0536b18455	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+f8095801-f7ef-4634-8786-4e4fda2bbc8f	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+e5298cbe-bb78-4e2b-b7fe-4bc019ba58c3	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+66b8ceaf-05e3-4ab6-bd03-913eed39cc80	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+6a06c9d3-9bbc-47bb-9c46-b6c616da9de6	fde58b74-4516-4740-a3c6-b4b4ca3a00e0
+6a06c9d3-9bbc-47bb-9c46-b6c616da9de6	20f59983-a8b9-42f7-9714-e945f0902689
 \.
 
 
