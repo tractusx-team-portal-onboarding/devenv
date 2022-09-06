@@ -61,7 +61,15 @@ INSERT INTO portal.audit_company_applications_cplp_1255_audit_company_applicatio
 
 
 
+
+
+
+
 END IF;
+
+
+
+
 
 
 
@@ -69,40 +77,17 @@ RETURN NULL;
 
 
 
-END;
 
 
 
-$$;
-
-
---
--- Name: process_company_assigned_apps_audit(); Type: FUNCTION; Schema: portal; Owner: -
---
-
-CREATE FUNCTION portal.process_company_assigned_apps_audit() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-IF (TG_OP = 'DELETE') THEN
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.app_id,OLD.app_subscription_status_id,OLD.requester_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-ELSIF (TG_OP = 'UPDATE') THEN
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-ELSIF (TG_OP = 'INSERT') THEN
-
-INSERT INTO portal.audit_company_assigned_apps_cplp_1254_db_audit ( id, audit_id, company_id,app_id,app_subscription_status_id,requester_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.app_id,NEW.app_subscription_status_id,NEW.requester_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
-
-END IF;
-
-RETURN NULL;
 
 END;
+
+
+
+
+
+
 
 $$;
 
@@ -198,7 +183,17 @@ CREATE FUNCTION portal.process_company_users_audit() RETURNS trigger
 
 
 
+
+
+
+
 BEGIN
+
+
+
+
+
+
 
 
 
@@ -208,11 +203,25 @@ IF (TG_OP = 'DELETE') THEN
 
 
 
+
+
+
+
 INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_created,email,firstname,lastlogin,lastname,company_id,company_user_status_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.email,OLD.firstname,OLD.lastlogin,OLD.lastname,OLD.company_id,OLD.company_user_status_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
 
 
 
+
+
+
+
 ELSIF (TG_OP = 'UPDATE') THEN
+
+
+
+
+
+
 
 
 
@@ -222,7 +231,15 @@ INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_c
 
 
 
+
+
+
+
 ELSIF (TG_OP = 'INSERT') THEN
+
+
+
+
 
 
 
@@ -230,87 +247,7 @@ INSERT INTO portal.audit_company_users_cplp_1254_db_audit ( id, audit_id, date_c
 
 
 
-END IF;
 
-
-
-RETURN NULL;
-
-
-
-END;
-
-
-
-$$;
-
-
---
--- Name: process_offer_subscriptions_audit(); Type: FUNCTION; Schema: portal; Owner: -
---
-
-CREATE FUNCTION portal.process_offer_subscriptions_audit() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-IF (TG_OP = 'DELETE') THEN
-
-INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.company_id,OLD.offer_id,OLD.offer_subscription_status_id,OLD.display_name,OLD.description,OLD.requester_id,OLD.app_subscription_detail_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-ELSIF (TG_OP = 'UPDATE') THEN
-
-INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.offer_id,NEW.offer_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_subscription_detail_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-ELSIF (TG_OP = 'INSERT') THEN
-
-INSERT INTO portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer ( id, audit_id, company_id,offer_id,offer_subscription_status_id,display_name,description,requester_id,app_subscription_detail_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.company_id,NEW.offer_id,NEW.offer_subscription_status_id,NEW.display_name,NEW.description,NEW.requester_id,NEW.app_subscription_detail_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
-
-END IF;
-
-RETURN NULL;
-
-END;
-
-$$;
-
-
---
--- Name: process_services_audit(); Type: FUNCTION; Schema: portal; Owner: -
---
-
-CREATE FUNCTION portal.process_services_audit() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$
-
-
-
-BEGIN
-
-
-
-IF (TG_OP = 'DELETE') THEN
-
-
-
-INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), OLD.id, OLD.date_created,OLD.name,OLD.thumbnail_url,OLD.provider_company_id,OLD.service_status_id,OLD.contact_email,OLD.sales_manager_id, OLD.last_editor_id, CURRENT_DATE, 3 ;
-
-
-
-ELSIF (TG_OP = 'UPDATE') THEN
-
-
-
-INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.name,NEW.thumbnail_url,NEW.provider_company_id,NEW.service_status_id,NEW.contact_email,NEW.sales_manager_id, NEW.last_editor_id, CURRENT_DATE, 2 ;
-
-
-
-ELSIF (TG_OP = 'INSERT') THEN
-
-
-
-INSERT INTO portal.audit_services_audit_services_cplp_1213_add_services ( id, audit_id, date_created,name,thumbnail_url,provider_company_id,service_status_id,contact_email,sales_manager_id, last_editor_id, date_last_changed, audit_operation_id ) SELECT gen_random_uuid(), NEW.id, NEW.date_created,NEW.name,NEW.thumbnail_url,NEW.provider_company_id,NEW.service_status_id,NEW.contact_email,NEW.sales_manager_id, NEW.last_editor_id, CURRENT_DATE, 1 ;
 
 
 
@@ -318,11 +255,23 @@ END IF;
 
 
 
+
+
+
+
 RETURN NULL;
 
 
 
+
+
+
+
 END;
+
+
+
+
 
 
 
@@ -399,16 +348,6 @@ CREATE TABLE portal.agreements (
 
 
 --
--- Name: app_assigned_documents; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.app_assigned_documents (
-    app_id uuid NOT NULL,
-    document_id uuid NOT NULL
-);
-
-
---
 -- Name: app_assigned_use_cases; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -445,6 +384,7 @@ CREATE TABLE portal.app_languages (
 
 CREATE TABLE portal.app_subscription_details (
     id uuid NOT NULL,
+    offer_subscription_id uuid NOT NULL,
     app_instance_id uuid,
     app_subscription_url character varying(255)
 );
@@ -463,25 +403,6 @@ CREATE TABLE portal.audit_company_applications_cplp_1255_audit_company_applicati
     application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
     last_editor_id uuid
-);
-
-
---
--- Name: audit_company_assigned_apps_cplp_1254_db_audit; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_company_assigned_apps_cplp_1254_db_audit (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL,
-    company_id uuid NOT NULL,
-    app_id uuid NOT NULL,
-    app_subscription_status_id integer NOT NULL,
-    requester_id uuid NOT NULL,
-    last_editor_id uuid,
-    app_instance_id uuid,
-    app_url character varying(255)
 );
 
 
@@ -517,26 +438,6 @@ CREATE TABLE portal.audit_company_users_cplp_1254_db_audit (
     company_id uuid NOT NULL,
     company_user_status_id integer NOT NULL,
     last_editor_id uuid
-);
-
-
---
--- Name: audit_offer_subscriptions_cplp_1212_change_app_to_offer; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL,
-    company_id uuid NOT NULL,
-    offer_id uuid NOT NULL,
-    offer_subscription_status_id integer NOT NULL,
-    display_name character varying(255),
-    description character varying(4096),
-    requester_id uuid NOT NULL,
-    last_editor_id uuid,
-    app_subscription_detail_id uuid
 );
 
 
@@ -993,6 +894,16 @@ CREATE TABLE portal.notifications (
 
 
 --
+-- Name: offer_assigned_documents; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.offer_assigned_documents (
+    offer_id uuid NOT NULL,
+    document_id uuid NOT NULL
+);
+
+
+--
 -- Name: offer_assigned_licenses; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1067,8 +978,7 @@ CREATE TABLE portal.offer_subscriptions (
     display_name character varying(255),
     description character varying(4096),
     requester_id uuid NOT NULL,
-    last_editor_id uuid,
-    app_subscription_detail_id uuid
+    last_editor_id uuid
 );
 
 
@@ -1188,14 +1098,6 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_documents pk_app_assigned_documents; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT pk_app_assigned_documents PRIMARY KEY (app_id, document_id);
-
-
---
 -- Name: app_assigned_use_cases pk_app_assigned_use_cases; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1236,14 +1138,6 @@ ALTER TABLE ONLY portal.audit_company_applications_cplp_1255_audit_company_appli
 
 
 --
--- Name: audit_company_assigned_apps_cplp_1254_db_audit pk_audit_company_assigned_apps_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.audit_company_assigned_apps_cplp_1254_db_audit
-    ADD CONSTRAINT pk_audit_company_assigned_apps_cplp_1254_db_audit PRIMARY KEY (id);
-
-
---
 -- Name: audit_company_user_assigned_roles_cplp_1255_audit_company_appli pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1257,14 +1151,6 @@ ALTER TABLE ONLY portal.audit_company_user_assigned_roles_cplp_1255_audit_compan
 
 ALTER TABLE ONLY portal.audit_company_users_cplp_1254_db_audit
     ADD CONSTRAINT pk_audit_company_users_cplp_1254_db_audit PRIMARY KEY (id);
-
-
---
--- Name: audit_offer_subscriptions_cplp_1212_change_app_to_offer pk_audit_offer_subscriptions_cplp_1212_change_app_to_offer; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.audit_offer_subscriptions_cplp_1212_change_app_to_offer
-    ADD CONSTRAINT pk_audit_offer_subscriptions_cplp_1212_change_app_to_offer PRIMARY KEY (id);
 
 
 --
@@ -1580,6 +1466,14 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
+-- Name: offer_assigned_documents pk_offer_assigned_documents; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_documents
+    ADD CONSTRAINT pk_offer_assigned_documents PRIMARY KEY (offer_id, document_id);
+
+
+--
 -- Name: offer_assigned_licenses pk_offer_assigned_licenses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1733,13 +1627,6 @@ CREATE INDEX ix_agreements_use_case_id ON portal.agreements USING btree (use_cas
 
 
 --
--- Name: ix_app_assigned_documents_document_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_app_assigned_documents_document_id ON portal.app_assigned_documents USING btree (document_id);
-
-
---
 -- Name: ix_app_assigned_use_cases_use_case_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -1772,6 +1659,13 @@ CREATE INDEX ix_app_languages_language_short_name ON portal.app_languages USING 
 --
 
 CREATE INDEX ix_app_subscription_details_app_instance_id ON portal.app_subscription_details USING btree (app_instance_id);
+
+
+--
+-- Name: ix_app_subscription_details_offer_subscription_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_app_subscription_details_offer_subscription_id ON portal.app_subscription_details USING btree (offer_subscription_id);
 
 
 --
@@ -2069,6 +1963,13 @@ CREATE INDEX ix_notifications_receiver_user_id ON portal.notifications USING btr
 
 
 --
+-- Name: ix_offer_assigned_documents_document_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_assigned_documents_document_id ON portal.offer_assigned_documents USING btree (document_id);
+
+
+--
 -- Name: ix_offer_assigned_licenses_offer_license_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2087,13 +1988,6 @@ CREATE INDEX ix_offer_descriptions_language_short_name ON portal.offer_descripti
 --
 
 CREATE INDEX ix_offer_detail_images_offer_id ON portal.offer_detail_images USING btree (offer_id);
-
-
---
--- Name: ix_offer_subscriptions_app_subscription_detail_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_offer_subscriptions_app_subscription_detail_id ON portal.offer_subscriptions USING btree (app_subscription_detail_id);
 
 
 --
@@ -2181,13 +2075,6 @@ CREATE TRIGGER audit_company_users AFTER INSERT OR DELETE OR UPDATE ON portal.co
 
 
 --
--- Name: offer_subscriptions audit_offer_subscriptions; Type: TRIGGER; Schema: portal; Owner: -
---
-
-CREATE TRIGGER audit_offer_subscriptions AFTER INSERT OR DELETE OR UPDATE ON portal.offer_subscriptions FOR EACH ROW EXECUTE FUNCTION portal.process_offer_subscriptions_audit();
-
-
---
 -- Name: addresses fk_addresses_countries_country_temp_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2260,22 +2147,6 @@ ALTER TABLE ONLY portal.agreements
 
 
 --
--- Name: app_assigned_documents fk_app_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT fk_app_assigned_documents_documents_document_id FOREIGN KEY (document_id) REFERENCES portal.documents(id);
-
-
---
--- Name: app_assigned_documents fk_app_assigned_documents_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.app_assigned_documents
-    ADD CONSTRAINT fk_app_assigned_documents_offers_app_id FOREIGN KEY (app_id) REFERENCES portal.offers(id);
-
-
---
 -- Name: app_assigned_use_cases fk_app_assigned_use_cases_offers_app_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2329,6 +2200,14 @@ ALTER TABLE ONLY portal.app_languages
 
 ALTER TABLE ONLY portal.app_subscription_details
     ADD CONSTRAINT fk_app_subscription_details_app_instances_app_instance_id FOREIGN KEY (app_instance_id) REFERENCES portal.app_instances(id);
+
+
+--
+-- Name: app_subscription_details fk_app_subscription_details_offer_subscriptions_offer_subscrip; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.app_subscription_details
+    ADD CONSTRAINT fk_app_subscription_details_offer_subscriptions_offer_subscrip FOREIGN KEY (offer_subscription_id) REFERENCES portal.offer_subscriptions(id);
 
 
 --
@@ -2708,6 +2587,22 @@ ALTER TABLE ONLY portal.notifications
 
 
 --
+-- Name: offer_assigned_documents fk_offer_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_documents
+    ADD CONSTRAINT fk_offer_assigned_documents_documents_document_id FOREIGN KEY (document_id) REFERENCES portal.documents(id);
+
+
+--
+-- Name: offer_assigned_documents fk_offer_assigned_documents_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_assigned_documents
+    ADD CONSTRAINT fk_offer_assigned_documents_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
+
+
+--
 -- Name: offer_assigned_licenses fk_offer_assigned_licenses_offer_licenses_offer_license_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2745,14 +2640,6 @@ ALTER TABLE ONLY portal.offer_descriptions
 
 ALTER TABLE ONLY portal.offer_detail_images
     ADD CONSTRAINT fk_offer_detail_images_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
-
-
---
--- Name: offer_subscriptions fk_offer_subscriptions_app_subscription_details_app_subscripti; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.offer_subscriptions
-    ADD CONSTRAINT fk_offer_subscriptions_app_subscription_details_app_subscripti FOREIGN KEY (app_subscription_detail_id) REFERENCES portal.app_subscription_details(id);
 
 
 --

@@ -176,10 +176,10 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 
 
 --
--- Data for Name: app_assigned_documents; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: offer_assigned_documents; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.app_assigned_documents (app_id, document_id) FROM stdin;
+COPY portal.offer_assigned_documents (offer_id, document_id) FROM stdin;
 \.
 
 
@@ -446,32 +446,6 @@ e080bb4b-567b-477e-adcf-080efc457d38	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	f032a0
 476B0600-965B-4F10-8EB5-E4568859A887	5cf74ef8-e0b7-4984-a872-474828beb5d9	f032a051-d035-11ec-9d64-0242ac120002
 \.
 
-
---
--- Data for Name: app_subscription_details; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-COPY portal.app_subscription_details (id, app_instance_id, app_subscription_url) FROM stdin;
-5810447d-0b3e-4221-9573-d965cdb24ef3	B161D570-F6FF-45B4-A077-243F72487AF6	\N
-8dc84d10-ccff-41d7-ad3b-30d507bb808e	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
-2ad98aa7-8127-4d0d-87c0-fa91891badd6	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
-b92306d9-aadd-4787-ae42-4314dba76bc2	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
-c05d229e-65a9-4fb5-a808-e40652641a84	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
-f0d4b732-fa8a-468d-ae9c-49e91fbf6d5f	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
-05fe68dc-2826-46fb-aec4-2071e6707293	\N	https://portal-staging.afqm-services.com/
-b7862a41-c9fa-4563-9450-21fc128ef023	\N	https://dtc-translator.adac.openresearch.com
-898f009d-5538-4c4e-b28b-35d7713302f4	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
-b2024750-9f18-4b44-8598-bfa4fb4b4b04	B161D570-F6FF-45B4-A077-243F72487AF6	\N
-a6f12ab5-1893-4c4b-8733-02f7496f30ee	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
-f5f416ec-6942-417f-b8c4-1363038d9ee3	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
-6b3ecb61-4596-4449-8c79-99e0d6bfc308	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
-81577421-6560-41ca-b27c-6bcbdcede384	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
-48cc0016-0efb-44ec-9050-8b33a1d168f7	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
-17f58d02-78e1-46c9-baad-4d7e608bc9ea	\N	https://portal-staging.afqm-services.com/
-02d60f66-8160-48bc-9fd5-da3a73fcda84	\N	https://dtc-translator.adac.openresearch.com
-d849ffd6-a56a-405f-a0cd-b233852623c9	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
-\.
-
 --
 -- Data for Name: offer_licenses; Type: TABLE DATA; Schema: public; Owner: admin
 --
@@ -594,29 +568,55 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 -- Data for Name: offer_subscriptions; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.offer_subscriptions (company_id, offer_id, offer_subscription_status_id, app_subscription_detail_id, requester_id, id, last_editor_id) FROM stdin;
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	5810447d-0b3e-4221-9573-d965cdb24ef3	ac1cf001-7fbc-1f2f-817f-bce058020001	56d878d9-9574-4673-b32a-ebf5753042f5	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	\N	ac1cf001-7fbc-1f2f-817f-bce058020001	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	8dc84d10-ccff-41d7-ad3b-30d507bb808e	ac1cf001-7fbc-1f2f-817f-bce058020001	56faf2e0-88ec-4ee5-a736-6c52688250f8	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	2ad98aa7-8127-4d0d-87c0-fa91891badd6	ac1cf001-7fbc-1f2f-817f-bce058020001	0b2ca541-206d-48ad-bc02-fb61fbcb5552	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	b92306d9-aadd-4787-ae42-4314dba76bc2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab2e5e1-df8f-496b-aa12-c11067805992	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	c05d229e-65a9-4fb5-a808-e40652641a84	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	f0d4b732-fa8a-468d-ae9c-49e91fbf6d5f	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	05fe68dc-2826-46fb-aec4-2071e6707293	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	\N	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	b7862a41-c9fa-4563-9450-21fc128ef023	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	898f009d-5538-4c4e-b28b-35d7713302f4	ac1cf001-7fbc-1f2f-817f-bce058020001	846ec83b-4b84-4c29-b7ce-3e57d7405844	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	b2024750-9f18-4b44-8598-bfa4fb4b4b04	ac1cf001-7fbc-1f2f-817f-bce058020001	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	\N	ac1cf001-7fbc-1f2f-817f-bce058020001	85064593-0aaa-48c4-95a2-2700223aca5e	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	a6f12ab5-1893-4c4b-8733-02f7496f30ee	ac1cf001-7fbc-1f2f-817f-bce058020001	60f00bd0-98fe-4ed3-ad3b-90045921660c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	f5f416ec-6942-417f-b8c4-1363038d9ee3	ac1cf001-7fbc-1f2f-817f-bce058020001	d65e367c-0968-4be9-bd2a-6c3d6339d65c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	6b3ecb61-4596-4449-8c79-99e0d6bfc308	ac1cf001-7fbc-1f2f-817f-bce058020001	1d28a224-6293-4148-8b60-6714a0f1465d	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	81577421-6560-41ca-b27c-6bcbdcede384	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	48cc0016-0efb-44ec-9050-8b33a1d168f7	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	17f58d02-78e1-46c9-baad-4d7e608bc9ea	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	\N	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	02d60f66-8160-48bc-9fd5-da3a73fcda84	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	d849ffd6-a56a-405f-a0cd-b233852623c9	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N
+COPY portal.offer_subscriptions (company_id, offer_id, offer_subscription_status_id, requester_id, id, last_editor_id) FROM stdin;
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56d878d9-9574-4673-b32a-ebf5753042f5	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	56faf2e0-88ec-4ee5-a736-6c52688250f8	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	0b2ca541-206d-48ad-bc02-fb61fbcb5552	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab2e5e1-df8f-496b-aa12-c11067805992	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	846ec83b-4b84-4c29-b7ce-3e57d7405844	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0572c0007	2	ac1cf001-7fbc-1f2f-817f-bce058020001	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05748000d	2	ac1cf001-7fbc-1f2f-817f-bce058020001	85064593-0aaa-48c4-95a2-2700223aca5e	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1cf001-7fbc-1f2f-817f-bce058020001	60f00bd0-98fe-4ed3-ad3b-90045921660c	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	d65e367c-0968-4be9-bd2a-6c3d6339d65c	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1d28a224-6293-4148-8b60-6714a0f1465d	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N
+\.
+
+
+--
+-- Data for Name: app_subscription_details; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.app_subscription_details (id, offer_subscription_id, app_instance_id, app_subscription_url) FROM stdin;
+5810447d-0b3e-4221-9573-d965cdb24ef3	56d878d9-9574-4673-b32a-ebf5753042f5	B161D570-F6FF-45B4-A077-243F72487AF6	\N
+8dc84d10-ccff-41d7-ad3b-30d507bb808e	56faf2e0-88ec-4ee5-a736-6c52688250f8	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
+2ad98aa7-8127-4d0d-87c0-fa91891badd6	0b2ca541-206d-48ad-bc02-fb61fbcb5552	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
+b92306d9-aadd-4787-ae42-4314dba76bc2	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
+c05d229e-65a9-4fb5-a808-e40652641a84	02d5575d-b110-43f0-b0dd-53dbc37147dc	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
+f0d4b732-fa8a-468d-ae9c-49e91fbf6d5f	4e861f6a-86ad-4188-8ba7-0f214248b120	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
+05fe68dc-2826-46fb-aec4-2071e6707293	34a93025-18de-4c7a-8677-0fd9801248d1	\N	https://portal-staging.afqm-services.com/
+b7862a41-c9fa-4563-9450-21fc128ef023	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	https://dtc-translator.adac.openresearch.com
+898f009d-5538-4c4e-b28b-35d7713302f4	846ec83b-4b84-4c29-b7ce-3e57d7405844	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
+b2024750-9f18-4b44-8598-bfa4fb4b4b04	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	B161D570-F6FF-45B4-A077-243F72487AF6	\N
+a6f12ab5-1893-4c4b-8733-02f7496f30ee	60f00bd0-98fe-4ed3-ad3b-90045921660c	2C252614-AE87-4EFC-8AF8-4D011E70544B	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
+f5f416ec-6942-417f-b8c4-1363038d9ee3	d65e367c-0968-4be9-bd2a-6c3d6339d65c	AB25C218-9AB3-4F1A-B6F4-6394FBC33C5A	https://ec-qas.d13fe27.kyma.ondemand.com
+6b3ecb61-4596-4449-8c79-99e0d6bfc308	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
+81577421-6560-41ca-b27c-6bcbdcede384	6da4b991-b594-4b80-933a-26383d6d465f	D69075B4-9BCE-489C-BA80-8F7F08C4A011	https://dash.catenax-cdq.com/
+48cc0016-0efb-44ec-9050-8b33a1d168f7	773e7152-8d94-4f90-8689-956a7bdf4f4e	CDEA99B7-1068-426A-AD7F-7B10F21FC4D6	https://apps.cdq.com/dashboard/fraud/report-fraud
+17f58d02-78e1-46c9-baad-4d7e608bc9ea	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/
+02d60f66-8160-48bc-9fd5-da3a73fcda84	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com
+d849ffd6-a56a-405f-a0cd-b233852623c9	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	7E828901-27CB-4078-BD15-00EFD247C56A	https://fleet-management.adac.openresearch.com
 \.
 
 
