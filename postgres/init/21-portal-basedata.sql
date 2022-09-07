@@ -28,29 +28,6 @@ COPY portal.agreement_categories (id, label) FROM stdin;
 
 
 --
--- Data for Name: app_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.app_statuses (id, label) FROM stdin;
-1	CREATED
-2	IN_REVIEW
-3	ACTIVE
-4	INACTIVE
-\.
-
-
---
--- Data for Name: app_subscription_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.app_subscription_statuses (id, label) FROM stdin;
-1	PENDING
-2	ACTIVE
-3	INACTIVE
-\.
-
-
---
 -- Data for Name: audit_operation; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -503,10 +480,10 @@ COPY portal.notification_type (id, label) FROM stdin;
 
 
 --
--- Data for Name: service_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: offer_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.service_statuses (id, label) FROM stdin;
+COPY portal.offer_statuses (id, label) FROM stdin;
 1	CREATED
 2	IN_REVIEW
 3	ACTIVE
@@ -515,13 +492,24 @@ COPY portal.service_statuses (id, label) FROM stdin;
 
 
 --
--- Data for Name: service_subscription_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: offer_subscription_statuses; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.service_subscription_statuses (id, label) FROM stdin;
+COPY portal.offer_subscription_statuses (id, label) FROM stdin;
 1	PENDING
 2	ACTIVE
 3	INACTIVE
+\.
+
+
+--
+-- Data for Name: offer_types; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.offer_types (id, label) FROM stdin;
+1	APP
+2	CORE_COMPONENT
+3	SERVICE
 \.
 
 
