@@ -984,7 +984,7 @@ CREATE TABLE portal.offer_subscriptions (
     offer_id uuid NOT NULL,
     offer_subscription_status_id integer DEFAULT 1 NOT NULL,
     requester_id uuid NOT NULL,
-    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    id uuid NOT NULL,
     last_editor_id uuid,
     display_name character varying(255),
     description character varying(4096)
