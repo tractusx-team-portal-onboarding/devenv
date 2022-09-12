@@ -2179,7 +2179,7 @@ ALTER TABLE ONLY portal.agreement_assigned_offers
 --
 
 ALTER TABLE ONLY portal.agreement_assigned_offers
-    ADD CONSTRAINT fk_agreement_assigned_offers_offers_offer_id FOREIGN KEY (agreement_id) REFERENCES portal.offers(id);
+    ADD CONSTRAINT fk_agreement_assigned_offers_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
 
 
 --
