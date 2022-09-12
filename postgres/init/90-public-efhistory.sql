@@ -54,7 +54,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220822092105_CPLP-1353-MultiTenantApp	6.0.4
 20220825071607_CPLP-1378-AddAppAssignedDocuments	6.0.4
 20220906074920_CPLP-1212-ChangeAppToOffer	6.0.4
-20220906145503_CPLP-1406-AddAgreementAssignedApps	6.0.4
+20220909133703_CPLP-1330-NotificationAppReleaseRequest	6.0.4
 \.
 
 
