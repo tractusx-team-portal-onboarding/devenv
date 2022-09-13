@@ -987,7 +987,8 @@ CREATE TABLE portal.offer_subscriptions (
     id uuid NOT NULL,
     last_editor_id uuid,
     display_name character varying(255),
-    description character varying(4096)
+    description character varying(4096),
+    consent_id uuid
 );
 
 
@@ -1616,6 +1617,13 @@ CREATE UNIQUE INDEX ix_agreement_assigned_document_templates_document_template_i
 
 
 --
+-- Name: ix_agreement_assigned_offers_offer_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_agreement_assigned_offers_offer_id ON portal.agreement_assigned_offers USING btree (offer_id);
+
+
+--
 -- Name: ix_agreements_agreement_category_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2047,6 +2055,13 @@ CREATE INDEX ix_offer_detail_images_offer_id ON portal.offer_detail_images USING
 --
 
 CREATE INDEX ix_offer_subscriptions_company_id ON portal.offer_subscriptions USING btree (company_id);
+
+
+--
+-- Name: ix_offer_subscriptions_consent_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_offer_subscriptions_consent_id ON portal.offer_subscriptions USING btree (consent_id);
 
 
 --
@@ -2748,6 +2763,14 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_notification_type_notification_type_id FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_consents_consent_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_consents_consent_id FOREIGN KEY (consent_id) REFERENCES portal.consents(id);
 
 
 --
