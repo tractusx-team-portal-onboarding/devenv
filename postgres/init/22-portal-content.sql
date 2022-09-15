@@ -43,17 +43,17 @@ c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33
 --
 
 COPY portal.companies (id, date_created, business_partner_number, tax_id, name, shortname, company_status_id, address_id) FROM stdin;
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	CAXSDUMMYCATENAZZ	0000000000	Catena-X	Catena-X	1	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	CAXSDUMMYBMWZZ	0000000000	Bayerische Motorenwerke AG	BMW AG	1	12302f9b-418c-4b8c-aea8-3eedf67e6a02
-0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	CAXSDUMMYSAPZZ	0000000000	SAP AG	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
-220330ac-170d-4e22-8d72-9467ed042149	2022-03-24 18:01:33.393	CAXSCARFACTORY1ZZ	0000000000	Car Factory 1	Car Factory 1	1	aa49c0ec-4e65-4115-a01c-7adfc36d220e
-bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43	CAXSCARFACTORY2ZZ	0000000000	Car Factory 2	Car Factory 2	1	c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07
-41fd2ab8-71cd-4546-9bef-a388d91b2542	2022-03-24 18:01:33.438	CAXSCARFACTORY3ZZ	0000000000	Car Factory 3	Car Factory 3	1	86da3e1c-a634-41a6-ad44-9880746123e4
-d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	CAXLDUMMYCORPZZ	0000000000	Dummy Corp. 1	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	BPNL00000003CRHK	0000000000	Catena-X	Catena-X	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
+ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	BPNL00000003AYRE	0000000000	Bayerische Motorenwerke AG	BMW AG	2	12302f9b-418c-4b8c-aea8-3eedf67e6a02
+0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	BPNL00000003LLHA	0000000000	SAP AG	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
+220330ac-170d-4e22-8d72-9467ed042149	2022-03-24 18:01:33.393	BPNL00000001LLHA	0000000000	Car Factory 1	Car Factory 1	1	aa49c0ec-4e65-4115-a01c-7adfc36d220e
+bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43	BPNL00000002LLHA	0000000000	Car Factory 2	Car Factory 2	1	c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07
+41fd2ab8-71cd-4546-9bef-a388d91b2542	2022-03-24 18:01:33.438	BPNL00000003LLHA	0000000000	Car Factory 3	Car Factory 3	1	86da3e1c-a634-41a6-ad44-9880746123e4
+d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442	BPNL00000003LLHB	0000000000	Dummy Corp. 1	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb
 9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442	CAXLCDQCORPZZ	0000000000	CDQ	CDQ	1	095ca573-bef1-4092-ad60-b7f651678fcd
-cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	1	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
+cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	2	081c8bfd-c6d1-4119-a5f8-a69726dfc11d
 dfd90abe-b20e-4aff-87c6-f30f2bf9b104	2022-08-08 18:01:33.442	BPNL000000000009	0000000000	Siemens	Siemens	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fc
-fe55fe20-5f19-401e-91a2-dfa37b44a0be	2022-08-08 18:01:33.442	BPNL000000000010	0000000000	German Edge Cloud GmbH & Co. KG	GEC	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fd
+fe55fe20-5f19-401e-91a2-dfa37b44a0be	2022-08-08 18:01:33.442	BPNL00000003CSGV	0000000000	German Edge Cloud GmbH & Co. KG	GEC	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fd
 \.
 
 COPY portal.identity_providers (identity_provider_category_id, id, date_created) FROM stdin;
@@ -113,7 +113,7 @@ ac1cf001-7fbc-1f2f-817f-bce0572c0007	Trace-X	2022-03-24 18:01:33.348	2022-03-24 
 ac1cf001-7fbc-1f2f-817f-bce05748000d	Trusted Traceability	2022-03-24 18:01:33.384	2022-03-24 18:01:33.384	STT.png	\N	\N	0000	Catena-X	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-03-24 18:01:33.384	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375	2022-03-24 18:01:33.375	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38	2022-03-24 18:01:33.38	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38	ac1cf001-7fbc-1f2f-817f-bce058020001	1
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance Monitor	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Palantir.png	https://www.palantir.com/explore/cpm/	cpm-info@palantir.com	0000	Palantir Technologies	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388	2022-03-24 18:01:33.388	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388	ac1cf001-7fbc-1f2f-817f-bce058020001	1
@@ -180,6 +180,9 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 --
 
 COPY portal.offer_assigned_documents (offer_id, document_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aaa
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aab
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aac
 \.
 
 
@@ -498,7 +501,7 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	1aacde78-35ec-4df3-ba1e-f988cddcbbd8
 ac1cf001-7fbc-1f2f-817f-bce05748000d	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 f9cad59d-84b3-4880-a550-4072c26a6b93	6909ccc7-37c8-4088-99ab-790f20702460
 8488044e-b8df-403a-9cbd-16dad7e4a08c	41e4a4c0-aae4-41c0-97c9-ebafde410de4
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	c065a349-f649-47f8-94d5-1a504a855419
 5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d2	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 5cf74ef8-e0b7-4984-a872-474828beb5d3	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
@@ -521,7 +524,8 @@ Seamless part traceability through the n.tier supply chain\n\nknowledge you get 
 The Dismantler Cockpit provides decision support for Vehicle Purchaser and Dismantling lead. At a dismantling company, these are responsible for the procurement of end-of-life vehicles and the decisions on reuse, remanufacture or recycling of the whole vehicle, or of parts and components. The Dismantler Cockpit support these decisions by fetching data about a specific vehicle from the Catena-X-network and presenting the most relevant information about the potential of the vehicle and its components: The structure of the vehicle and the parts it contains are presented by visualizing the "Digital Twins" available from the OEM and the suppliers of the components (e.g. gearbox, high voltage battery). KPIs such as the material composition of the vehicle further serve to analyze the commercial potential in a circular value chain.	Dismantler buy decision and 3R strategy decision support	ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 Cross-industry trading platform for buying and selling secondary components and materials, opening new opportunities for collaborating across the value chain and closing the loop on component and material level.	platform for buying and selling secondary components and materials	ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 Description\n\nCreate an Intelligent Enterprise with Advanced Logistic collabration and Insights. SAP Logistics Business Network, material traceability options connect partners for inter-company collaboration and transparency. It supports a comprehensive set capabilities, allowing to manage freight more efficiently, benefit form situational awareness through track and trace, and create a trust chain for up- and downstream product genealogy.	SAP App Material Traceability Details	ac1cf001-7fbc-1f2f-817f-bce05748000d	en
-Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
+The Component Performance Monitor is a point-and-click analysis tooling that enables OEMs and Tier-1 suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live connected vehicle data, empowering quality experts to: Identify failure patterns and root-cause quality issues proactively; Monitor the effectiveness of remediation measures in the fleet using connected vehicle data and proactively request faulty parts from the OEM in a data-driven way for further root-cause analysis. ...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences. Leading automotive suppliers are collaborating with their OEM counterparts using the Component Performance Monitor today powered by a shared data fabric using Palantir’s Foundry technology. Find out more how these suppliers and OEMs pioneer the future of quality by uncovering new opportunities to generate value through data by reading the CPM Whitepaper. More information including the Whitepaper and Demo Video can be found on the CPM Landing Page: https://www.palantir.com/explore/cpm/	Component Performance Monitor Quality App	ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
+Automotive suppliers must constantly monitor product performance and resolve quality issues quickly to ensure they do not face costly claims. For quality analysts and engineers this involves a long, manual process of analyzing claims and failed parts that lacks vital information - including live vehicle data(such as Diagnostic Trouble Codes). Identifying root-cause issues is complex, issue resolution is slow, and costs quickly escalate. Component Performance Monitor (CPM) enables suppliers to better manage quality risk and significantly reduce the costs incurred from faulty parts by leveraging near-live vehicle data, empowering quality experts to:\n\nIdentify failure patterns and root- cause quality issues in real time\nMonitor the effectiveness of remediation measures in the fleet using live vehicle data\nand proactively request faulty parts for further analysis.\n\n...all in a single collaborative interface that supercharges the supplier to OEM feedback cycle, leading to faster proactive issue resolution, a reduction in claims, and better customer experiences.	BMW App Component Performance Monitor Details	ac1cf001-7fbc-1f2f-817f-bce0574c000f	de
 The service provides information about new bank account fraud cases (e.g. invoices with fake bank details) reported by companies to the community.	Dashboard to manage and monitor fraud cases	f9cad59d-84b3-4880-a550-4072c26a6b93	en
 Automatic monitoring (Early Warning System) of diagnostic data	Automatic monitoring (Early Warning System) of diagnostic data	8488044e-b8df-403a-9cbd-16dad7e4a08c	en
 smart MOM (Manufacturing Operations Management) consolidates all production processes and systems for managing manufacturing processes in order to increase efficiency. The smart MOM solution from German Edge Cloud includes various services and enables a holistic production management. This includes, for example, the management of production processes including specific production rules, bill of materials (BOM), recipient data, resource/asset management and much more.	smart MOM can be operated as part of our scalable Edge Cloud data center “GEC Digital Production System”, which can combine various MES (Manufacturing Execution System), MOM functionalities and integration services. Thus, smart MOM can use integrated dat	5cf74ef8-e0b7-4984-a872-474828beb5d1	en
@@ -709,7 +713,10 @@ ac1cf001-7fbc-1f2f-817f-bce058019993	607818be-4978-41f4-bf63-fa8d2de51154
 -- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-COPY portal.documents (id, date_created, document_hash, document_name, document_type_id, company_user_id, document_content, document_status_id) FROM stdin;
+COPY portal.documents (id, date_created, document_name, document_type_id, company_user_id, document_hash, document_content, document_status_id) FROM stdin;
+fda6c9cb-62be-4a98-99c1-d9c5a2df4aaa	2022-09-06 00:00:00.000000+00	App Test Contract	3	ac1cf001-7fbc-1f2f-817f-bce058020001	\N	\N	1
+fda6c9cb-62be-4a98-99c1-d9c5a2df4aab	2022-09-06 00:00:00.000000+00	App Test Data Contract	4	ac1cf001-7fbc-1f2f-817f-bce058020001	\N	\N	1
+fda6c9cb-62be-4a98-99c1-d9c5a2df4aac	2022-09-06 00:00:00.000000+00	App Test Additional Data	5	ac1cf001-7fbc-1f2f-817f-bce058020001	\N	\N	1
 \.
 
 
