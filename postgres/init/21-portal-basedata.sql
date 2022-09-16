@@ -24,6 +24,7 @@ COPY portal.agreement_categories (id, label) FROM stdin;
 1	CX_FRAME_CONTRACT
 2	APP_CONTRACT
 3	DATA_CONTRACT
+4	SERVICE_CONTRACT
 \.
 
 
