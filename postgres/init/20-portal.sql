@@ -692,6 +692,16 @@ CREATE TABLE portal.connectors (
 
 
 --
+-- Name: consent_assigned_offer_subscriptions; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.consent_assigned_offer_subscriptions (
+    offer_subscription_id uuid NOT NULL,
+    consent_id uuid NOT NULL
+);
+
+
+--
 -- Name: consent_statuses; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -987,8 +997,7 @@ CREATE TABLE portal.offer_subscriptions (
     id uuid NOT NULL,
     last_editor_id uuid,
     display_name character varying(255),
-    description character varying(4096),
-    consent_id uuid
+    description character varying(4096)
 );
 
 
@@ -1409,6 +1418,14 @@ ALTER TABLE ONLY portal.connector_types
 
 ALTER TABLE ONLY portal.connectors
     ADD CONSTRAINT pk_connectors PRIMARY KEY (id);
+
+
+--
+-- Name: consent_assigned_offer_subscriptions pk_consent_assigned_offer_subscriptions; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
+    ADD CONSTRAINT pk_consent_assigned_offer_subscriptions PRIMARY KEY (consent_id, offer_subscription_id);
 
 
 --
@@ -1897,6 +1914,13 @@ CREATE INDEX ix_connectors_type_id ON portal.connectors USING btree (type_id);
 
 
 --
+-- Name: ix_consent_assigned_offer_subscriptions_offer_subscription_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_consent_assigned_offer_subscriptions_offer_subscription_id ON portal.consent_assigned_offer_subscriptions USING btree (offer_subscription_id);
+
+
+--
 -- Name: ix_consents_agreement_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2055,13 +2079,6 @@ CREATE INDEX ix_offer_detail_images_offer_id ON portal.offer_detail_images USING
 --
 
 CREATE INDEX ix_offer_subscriptions_company_id ON portal.offer_subscriptions USING btree (company_id);
-
-
---
--- Name: ix_offer_subscriptions_consent_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE UNIQUE INDEX ix_offer_subscriptions_consent_id ON portal.offer_subscriptions USING btree (consent_id);
 
 
 --
@@ -2622,6 +2639,22 @@ ALTER TABLE ONLY portal.connectors
 
 
 --
+-- Name: consent_assigned_offer_subscriptions fk_consent_assigned_offer_subscriptions_consents_consent_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
+    ADD CONSTRAINT fk_consent_assigned_offer_subscriptions_consents_consent_id FOREIGN KEY (consent_id) REFERENCES portal.consents(id);
+
+
+--
+-- Name: consent_assigned_offer_subscriptions fk_consent_assigned_offer_subscriptions_offer_subscriptions_of; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
+    ADD CONSTRAINT fk_consent_assigned_offer_subscriptions_offer_subscriptions_of FOREIGN KEY (offer_subscription_id) REFERENCES portal.offer_subscriptions(id);
+
+
+--
 -- Name: consents fk_consents_agreements_agreement_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2763,14 +2796,6 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_notification_type_notification_type_id FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
-
-
---
--- Name: offer_subscriptions fk_offer_subscriptions_consents_consent_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.offer_subscriptions
-    ADD CONSTRAINT fk_offer_subscriptions_consents_consent_id FOREIGN KEY (consent_id) REFERENCES portal.consents(id);
 
 
 --
