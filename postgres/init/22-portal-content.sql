@@ -43,7 +43,6 @@ c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428	2022-03-24 18:01:33
 --
 
 COPY portal.companies (id, date_created, business_partner_number, tax_id, name, shortname, company_status_id, address_id) FROM stdin;
-COPY portal.companies (id, date_created, business_partner_number, tax_id, name, shortname, company_status_id, address_id) FROM stdin;
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2022-03-24 18:01:33.306	BPNL00000003CRHK	0000000000	Catena-X	Catena-X	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fb
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341	BPNL00000003AYRE	0000000000	Bayerische Motorenwerke AG	BMW AG	2	12302f9b-418c-4b8c-aea8-3eedf67e6a02
 0dcd8209-85e2-4073-b130-ac094fb47106	2022-03-24 18:01:33.344	BPNL00000003LLHA	0000000000	SAP AG	SAP	1	3a52099d-4988-4a56-9787-10a669c41338
