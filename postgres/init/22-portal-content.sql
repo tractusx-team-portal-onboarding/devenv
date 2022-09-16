@@ -553,6 +553,16 @@ fda6c9cb-62be-4a98-99c1-d9c5a2df4aac	2022-09-06 00:00:00.000000+00	App Test Addi
 
 
 --
+-- Data for Name: offer_assigned_documents; Type: TABLE DATA; Schema: public; Owner: admin
+--
+
+COPY portal.offer_assigned_documents (offer_id, document_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aaa
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aab
+ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aac
+\.
+
+--
 -- Data for Name: consents; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
@@ -628,17 +638,6 @@ b753cd7f-24c7-44a7-a88e-08ed00c31601	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-0
 b753cd7f-24c7-44a7-a88e-08ed00c31602	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	5	f	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31603	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	6	f	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
 b753cd7f-24c7-44a7-a88e-08ed00c31604	ac1cf001-7fbc-1f2f-817f-bce058020001	2022-08-10 18:01:33.57	\N	7	f	2022-09-10 18:01:33.57	ac1cf001-7fbc-1f2f-817f-bce058020001
-\.
-
-
---
--- Data for Name: offer_assigned_documents; Type: TABLE DATA; Schema: public; Owner: admin
---
-
-COPY portal.offer_assigned_documents (offer_id, document_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aaa
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aab
-ac1cf001-7fbc-1f2f-817f-bce0572c0007	fda6c9cb-62be-4a98-99c1-d9c5a2df4aac
 \.
 
 
