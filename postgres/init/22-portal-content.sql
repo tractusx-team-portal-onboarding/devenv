@@ -575,6 +575,15 @@ COPY portal.consent_assigned_offer_subscriptions (offer_subscription_id, consent
 
 
 --
+-- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
+\.
+
+
+
+--
 -- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
