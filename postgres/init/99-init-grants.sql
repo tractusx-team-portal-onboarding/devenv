@@ -17,6 +17,7 @@ ALTER TABLE portal.audit_company_user_assigned_roles_cplp_1255_audit_company_app
 ALTER TABLE portal.connector_statuses OWNER TO portal;
 ALTER TABLE portal.connector_types OWNER TO portal;
 ALTER TABLE portal.connectors OWNER TO portal;
+ALTER TABLE portal.consent_assigned_offer_subscriptions OWNER TO portal;
 ALTER TABLE portal.consent_statuses OWNER TO portal;
 ALTER TABLE portal.consents OWNER TO portal;
 ALTER TABLE portal.companies OWNER TO portal;
