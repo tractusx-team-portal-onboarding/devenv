@@ -321,6 +321,16 @@ CREATE TABLE portal.agreement_assigned_document_templates (
 
 
 --
+-- Name: agreement_assigned_offer_types; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.agreement_assigned_offer_types (
+    agreement_id uuid NOT NULL,
+    offer_type_id integer NOT NULL
+);
+
+
+--
 -- Name: agreement_assigned_offers; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -697,6 +707,16 @@ CREATE TABLE portal.connectors (
 
 CREATE TABLE portal.consent_assigned_offer_subscriptions (
     offer_subscription_id uuid NOT NULL,
+    consent_id uuid NOT NULL
+);
+
+
+--
+-- Name: consent_assigned_offers; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.consent_assigned_offers (
+    offer_id uuid NOT NULL,
     consent_id uuid NOT NULL
 );
 
@@ -1101,6 +1121,14 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 
 --
+-- Name: agreement_assigned_offer_types pk_agreement_assigned_offer_types; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_offer_types
+    ADD CONSTRAINT pk_agreement_assigned_offer_types PRIMARY KEY (agreement_id, offer_type_id);
+
+
+--
 -- Name: agreement_assigned_offers pk_agreement_assigned_offers; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1429,6 +1457,14 @@ ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
 
 
 --
+-- Name: consent_assigned_offers pk_consent_assigned_offers; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offers
+    ADD CONSTRAINT pk_consent_assigned_offers PRIMARY KEY (consent_id, offer_id);
+
+
+--
 -- Name: consent_statuses pk_consent_statuses; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1631,6 +1667,13 @@ CREATE INDEX ix_agreement_assigned_company_roles_company_role_id ON portal.agree
 --
 
 CREATE UNIQUE INDEX ix_agreement_assigned_document_templates_document_template_id ON portal.agreement_assigned_document_templates USING btree (document_template_id);
+
+
+--
+-- Name: ix_agreement_assigned_offer_types_offer_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_agreement_assigned_offer_types_offer_type_id ON portal.agreement_assigned_offer_types USING btree (offer_type_id);
 
 
 --
@@ -1921,6 +1964,13 @@ CREATE INDEX ix_consent_assigned_offer_subscriptions_offer_subscription_id ON po
 
 
 --
+-- Name: ix_consent_assigned_offers_offer_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_consent_assigned_offers_offer_id ON portal.consent_assigned_offers USING btree (offer_id);
+
+
+--
 -- Name: ix_consents_agreement_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2196,6 +2246,22 @@ ALTER TABLE ONLY portal.agreement_assigned_document_templates
 
 ALTER TABLE ONLY portal.agreement_assigned_document_templates
     ADD CONSTRAINT fk_agreement_assigned_document_templates_document_templates_do FOREIGN KEY (document_template_id) REFERENCES portal.document_templates(id);
+
+
+--
+-- Name: agreement_assigned_offer_types fk_agreement_assigned_offer_types_agreements_agreement_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_offer_types
+    ADD CONSTRAINT fk_agreement_assigned_offer_types_agreements_agreement_id FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id);
+
+
+--
+-- Name: agreement_assigned_offer_types fk_agreement_assigned_offer_types_offer_types_offer_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.agreement_assigned_offer_types
+    ADD CONSTRAINT fk_agreement_assigned_offer_types_offer_types_offer_type_id FOREIGN KEY (offer_type_id) REFERENCES portal.offer_types(id);
 
 
 --
@@ -2652,6 +2718,22 @@ ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
 
 ALTER TABLE ONLY portal.consent_assigned_offer_subscriptions
     ADD CONSTRAINT fk_consent_assigned_offer_subscriptions_offer_subscriptions_of FOREIGN KEY (offer_subscription_id) REFERENCES portal.offer_subscriptions(id);
+
+
+--
+-- Name: consent_assigned_offers fk_consent_assigned_offers_consents_consent_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offers
+    ADD CONSTRAINT fk_consent_assigned_offers_consents_consent_id FOREIGN KEY (consent_id) REFERENCES portal.consents(id);
+
+
+--
+-- Name: consent_assigned_offers fk_consent_assigned_offers_offers_offer_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.consent_assigned_offers
+    ADD CONSTRAINT fk_consent_assigned_offers_offers_offer_id FOREIGN KEY (offer_id) REFERENCES portal.offers(id);
 
 
 --
