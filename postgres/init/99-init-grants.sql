@@ -2,6 +2,7 @@ ALTER SCHEMA portal OWNER TO portal;
 
 ALTER TABLE portal.addresses OWNER TO portal;
 ALTER TABLE portal.agreement_categories OWNER TO portal;
+ALTER TABLE portal.agreement_assigned_offer_types OWNER TO portal;
 ALTER TABLE portal.agreement_assigned_offers OWNER TO portal;
 ALTER TABLE portal.agreement_assigned_company_roles OWNER TO portal;
 ALTER TABLE portal.agreement_assigned_document_templates OWNER TO portal;
@@ -18,6 +19,7 @@ ALTER TABLE portal.connector_statuses OWNER TO portal;
 ALTER TABLE portal.connector_types OWNER TO portal;
 ALTER TABLE portal.connectors OWNER TO portal;
 ALTER TABLE portal.consent_assigned_offer_subscriptions OWNER TO portal;
+ALTER TABLE portal.consent_assigned_offers OWNER TO portal;
 ALTER TABLE portal.consent_statuses OWNER TO portal;
 ALTER TABLE portal.consents OWNER TO portal;
 ALTER TABLE portal.companies OWNER TO portal;

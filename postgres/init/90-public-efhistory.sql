@@ -58,7 +58,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220914063503_CPLP-1378-AddNewDocumentTypes	6.0.4
 20220914081150_CPLP-1406-AddAgreementAssignedApps	6.0.4
 20220916132329_CPLP-1406-AddConsentAssignedOfferSubscription	6.0.4
-20220919103742_CPLP-1408-ServiceProviderCompanyDetail	6.0.4
+20220920100432_CPLP-831-AddConsentAssignedOffer	6.0.4
 \.
 
 
