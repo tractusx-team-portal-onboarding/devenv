@@ -697,7 +697,8 @@ CREATE TABLE portal.connectors (
     status_id integer NOT NULL,
     provider_id uuid NOT NULL,
     host_id uuid,
-    location_id character(2) NOT NULL
+    location_id character(2) NOT NULL,
+    self_description_document_id uuid
 );
 
 
@@ -1943,6 +1944,13 @@ CREATE INDEX ix_connectors_provider_id ON portal.connectors USING btree (provide
 
 
 --
+-- Name: ix_connectors_self_description_document_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_connectors_self_description_document_id ON portal.connectors USING btree (self_description_document_id);
+
+
+--
 -- Name: ix_connectors_status_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2702,6 +2710,14 @@ ALTER TABLE ONLY portal.connectors
 
 ALTER TABLE ONLY portal.connectors
     ADD CONSTRAINT fk_connectors_countries_location_temp_id1 FOREIGN KEY (location_id) REFERENCES portal.countries(alpha2code) ON DELETE CASCADE;
+
+
+--
+-- Name: connectors fk_connectors_documents_self_description_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.connectors
+    ADD CONSTRAINT fk_connectors_documents_self_description_document_id FOREIGN KEY (self_description_document_id) REFERENCES portal.documents(id);
 
 
 --
