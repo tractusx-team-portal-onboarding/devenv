@@ -60,8 +60,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220916132329_CPLP-1406-AddConsentAssignedOfferSubscription	6.0.4
 20220920100432_CPLP-831-AddConsentAssignedOffer	6.0.4
 20220921112615_CPLP-1409-ExpandNotificationTypes	6.0.4
-20220927074415_CPLP-1440-RemoveExistingTrigger	6.0.4
-20220929061037_CPLP-1440-DbAuditing	6.0.4
+20220929071516_CPLP-1408-ServiceProviderCompanyDetail	6.0.4
 \.
 
 
