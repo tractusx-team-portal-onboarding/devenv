@@ -66,6 +66,7 @@ ALTER TABLE portal.offer_subscriptions OWNER TO portal;
 ALTER TABLE portal.offer_subscription_statuses OWNER TO portal;
 ALTER TABLE portal.offer_tags OWNER TO portal;
 ALTER TABLE portal.offer_types OWNER TO portal;
+ALTER TABLE portal.service_provider_company_details OWNER TO portal;
 ALTER TABLE portal.use_cases OWNER TO portal;
 ALTER TABLE portal.user_role_descriptions OWNER TO portal;
 ALTER TABLE portal.user_roles OWNER TO portal;
