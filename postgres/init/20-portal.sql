@@ -1070,8 +1070,8 @@ CREATE TABLE portal.offers (
 CREATE TABLE portal.service_provider_company_details (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
-    auto_setup_url text,
-    company_id uuid
+    auto_setup_url text NOT NULL,
+    company_id uuid NOT NULL
 );
 
 
