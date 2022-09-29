@@ -1064,6 +1064,18 @@ CREATE TABLE portal.offers (
 
 
 --
+-- Name: service_provider_company_details; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.service_provider_company_details (
+    id uuid NOT NULL,
+    date_created timestamp with time zone NOT NULL,
+    auto_setup_url text NOT NULL,
+    company_id uuid NOT NULL
+);
+
+
+--
 -- Name: use_cases; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1625,6 +1637,14 @@ ALTER TABLE ONLY portal.offer_types
 
 
 --
+-- Name: service_provider_company_details pk_service_provider_company_details; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.service_provider_company_details
+    ADD CONSTRAINT pk_service_provider_company_details PRIMARY KEY (id);
+
+
+--
 -- Name: use_cases pk_use_cases; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2171,6 +2191,13 @@ CREATE INDEX ix_offers_provider_company_id ON portal.offers USING btree (provide
 --
 
 CREATE INDEX ix_offers_sales_manager_id ON portal.offers USING btree (sales_manager_id);
+
+
+--
+-- Name: ix_service_provider_company_details_company_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_service_provider_company_details_company_id ON portal.service_provider_company_details USING btree (company_id);
 
 
 --
@@ -2878,6 +2905,14 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_notification_type_notification_type_id FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
+
+
+--
+-- Name: service_provider_company_details fk_service_provider_company_details_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.service_provider_company_details
+    ADD CONSTRAINT fk_service_provider_company_details_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
 
 
 --
