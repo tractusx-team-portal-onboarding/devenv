@@ -12,7 +12,7 @@ ALTER TABLE portal.app_instances OWNER TO portal;
 ALTER TABLE portal.app_languages OWNER TO portal;
 ALTER TABLE portal.app_subscription_details OWNER TO portal;
 ALTER TABLE portal.audit_operation OWNER TO portal;
-ALTER TABLE audit_company_application20220929 OWNER TO portal;
+ALTER TABLE portal.audit_company_application20220929 OWNER TO portal;
 ALTER TABLE portal.audit_company_user_assigned_role20220929 OWNER TO portal;
 ALTER TABLE portal.audit_company_user20220929 OWNER TO portal;
 ALTER TABLE portal.audit_offer_subscription20220929 OWNER TO portal;
