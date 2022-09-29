@@ -33,7 +33,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -66,7 +66,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -107,7 +107,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -138,7 +138,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -177,7 +177,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -210,7 +210,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -251,7 +251,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -282,7 +282,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -321,7 +321,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -354,7 +354,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -395,7 +395,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -426,7 +426,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription_cplp1440db_auditing ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -587,10 +587,10 @@ CREATE TABLE portal.app_subscription_details (
 
 
 --
--- Name: audit_company_application_cplp1440db_auditing; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_company_application20220929; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_company_application_cplp1440db_auditing (
+CREATE TABLE portal.audit_company_application20220929 (
     id uuid NOT NULL,
     audit_id uuid NOT NULL,
     audit_operation_id integer NOT NULL,
@@ -603,25 +603,10 @@ CREATE TABLE portal.audit_company_application_cplp1440db_auditing (
 
 
 --
--- Name: audit_company_user_assigned_role_cplp1440db_auditing; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_company_user20220929; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_company_user_assigned_role_cplp1440db_auditing (
-    id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
-    company_user_id uuid NOT NULL,
-    user_role_id uuid NOT NULL,
-    last_editor_id uuid
-);
-
-
---
--- Name: audit_company_user_cplp1440db_auditing; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.audit_company_user_cplp1440db_auditing (
+CREATE TABLE portal.audit_company_user20220929 (
     id uuid NOT NULL,
     audit_id uuid NOT NULL,
     audit_operation_id integer NOT NULL,
@@ -638,10 +623,25 @@ CREATE TABLE portal.audit_company_user_cplp1440db_auditing (
 
 
 --
--- Name: audit_offer_subscription_cplp1440db_auditing; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_company_user_assigned_role20220929; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_offer_subscription_cplp1440db_auditing (
+CREATE TABLE portal.audit_company_user_assigned_role20220929 (
+    id uuid NOT NULL,
+    audit_id uuid NOT NULL,
+    audit_operation_id integer NOT NULL,
+    date_last_changed timestamp with time zone NOT NULL,
+    company_user_id uuid NOT NULL,
+    user_role_id uuid NOT NULL,
+    last_editor_id uuid
+);
+
+
+--
+-- Name: audit_offer_subscription20220929; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_offer_subscription20220929 (
     id uuid NOT NULL,
     audit_id uuid NOT NULL,
     company_id uuid NOT NULL,
@@ -1453,35 +1453,35 @@ ALTER TABLE ONLY portal.offers
 
 
 --
--- Name: audit_company_application_cplp1440db_auditing pk_audit_company_applications_cplp_1255_audit_company_applicat; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_company_application20220929 pk_audit_company_applications_cplp_1255_audit_company_applicat; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_company_application_cplp1440db_auditing
+ALTER TABLE ONLY portal.audit_company_application20220929
     ADD CONSTRAINT pk_audit_company_applications_cplp_1255_audit_company_applicat PRIMARY KEY (id);
 
 
 --
--- Name: audit_company_user_assigned_role_cplp1440db_auditing pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_company_user_assigned_role20220929 pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_company_user_assigned_role_cplp1440db_auditing
+ALTER TABLE ONLY portal.audit_company_user_assigned_role20220929
     ADD CONSTRAINT pk_audit_company_user_assigned_roles_cplp_1255_audit_company_a PRIMARY KEY (id);
 
 
 --
--- Name: audit_company_user_cplp1440db_auditing pk_audit_company_users_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_company_user20220929 pk_audit_company_users_cplp_1254_db_audit; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_company_user_cplp1440db_auditing
+ALTER TABLE ONLY portal.audit_company_user20220929
     ADD CONSTRAINT pk_audit_company_users_cplp_1254_db_audit PRIMARY KEY (id);
 
 
 --
--- Name: audit_offer_subscription_cplp1440db_auditing pk_audit_offer_subscription_cplp1440db_auditing; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_offer_subscription20220929 pk_audit_offer_subscription20220929; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_offer_subscription_cplp1440db_auditing
-    ADD CONSTRAINT pk_audit_offer_subscription_cplp1440db_auditing PRIMARY KEY (id);
+ALTER TABLE ONLY portal.audit_offer_subscription20220929
+    ADD CONSTRAINT pk_audit_offer_subscription20220929 PRIMARY KEY (id);
 
 
 --
