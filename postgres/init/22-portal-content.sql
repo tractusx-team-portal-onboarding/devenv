@@ -821,6 +821,14 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 
 
 --
+-- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
+\.
+
+
+--
 -- Data for Name: user_role_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
