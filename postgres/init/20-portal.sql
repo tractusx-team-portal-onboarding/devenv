@@ -33,7 +33,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_v1id", "audit_v1operation_id", "application_status_id", "date_created", "company_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -66,7 +66,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -107,7 +107,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_v1id", "audit_v1operation_id", "user_role_id", "company_user_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -138,7 +138,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -177,7 +177,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_v1id", "audit_v1operation_id", "application_status_id", "date_created", "company_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -210,7 +210,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -251,7 +251,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_v1id", "audit_v1operation_id", "user_role_id", "company_user_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -282,7 +282,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   NEW.id, 
 
@@ -321,7 +321,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyapplication() RETURNS trig
 
 BEGIN
 
-  INSERT INTO portal.audit_company_application20220929 ("id", "audit_id", "audit_operation_id", "application_status_id", "date_created", "company_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_application20220929 ("id", "audit_v1id", "audit_v1operation_id", "application_status_id", "date_created", "company_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -354,7 +354,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyuser() RETURNS trigger
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user20220929 ("id", "audit_id", "audit_operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "company_user_status_id", "date_created", "email", "firstname", "lastlogin", "lastname", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -395,7 +395,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_id", "audit_operation_id", "user_role_id", "company_user_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_company_user_assigned_role20220929 ("id", "audit_v1id", "audit_v1operation_id", "user_role_id", "company_user_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -426,7 +426,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_offersubscription() RETURNS trigg
 
 BEGIN
 
-  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_id", "audit_operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "date_last_changed") SELECT gen_random_uuid(), 
+  INSERT INTO portal.audit_offer_subscription20220929 ("id", "audit_v1id", "audit_v1operation_id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "audit_v1last_editor_id", "audit_v1date_last_changed") SELECT gen_random_uuid(), 
 
   OLD.id, 
 
@@ -592,13 +592,13 @@ CREATE TABLE portal.app_subscription_details (
 
 CREATE TABLE portal.audit_company_application20220929 (
     id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
+    audit_v1id uuid NOT NULL,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL,
     date_created timestamp with time zone NOT NULL,
     application_status_id integer NOT NULL,
     company_id uuid NOT NULL,
-    last_editor_id uuid
+    audit_v1last_editor_id uuid
 );
 
 
@@ -608,9 +608,9 @@ CREATE TABLE portal.audit_company_application20220929 (
 
 CREATE TABLE portal.audit_company_user20220929 (
     id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
+    audit_v1id uuid NOT NULL,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL,
     date_created timestamp with time zone NOT NULL,
     email character varying(255),
     firstname character varying(255),
@@ -618,7 +618,7 @@ CREATE TABLE portal.audit_company_user20220929 (
     lastname character varying(255),
     company_id uuid NOT NULL,
     company_user_status_id integer NOT NULL,
-    last_editor_id uuid
+    audit_v1last_editor_id uuid
 );
 
 
@@ -628,12 +628,12 @@ CREATE TABLE portal.audit_company_user20220929 (
 
 CREATE TABLE portal.audit_company_user_assigned_role20220929 (
     id uuid NOT NULL,
-    audit_id uuid NOT NULL,
-    audit_operation_id integer NOT NULL,
-    date_last_changed timestamp with time zone NOT NULL,
+    audit_v1id uuid NOT NULL,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL,
     company_user_id uuid NOT NULL,
     user_role_id uuid NOT NULL,
-    last_editor_id uuid
+    audit_v1last_editor_id uuid
 );
 
 
@@ -643,16 +643,16 @@ CREATE TABLE portal.audit_company_user_assigned_role20220929 (
 
 CREATE TABLE portal.audit_offer_subscription20220929 (
     id uuid NOT NULL,
-    audit_id uuid NOT NULL,
+    audit_v1id uuid NOT NULL,
     company_id uuid NOT NULL,
     offer_id uuid NOT NULL,
     offer_subscription_status_id integer NOT NULL,
     display_name text,
     description text,
     requester_id uuid NOT NULL,
-    last_editor_id uuid,
-    date_last_changed timestamp with time zone NOT NULL,
-    audit_operation_id integer NOT NULL
+    audit_v1last_editor_id uuid,
+    audit_v1date_last_changed timestamp with time zone NOT NULL,
+    audit_v1operation_id integer NOT NULL
 );
 
 

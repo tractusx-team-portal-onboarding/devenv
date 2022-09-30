@@ -62,7 +62,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220921112615_CPLP-1409-ExpandNotificationTypes	6.0.4
 20220929071516_CPLP-1408-ServiceProviderCompanyDetail	6.0.4
 20220929160015_CPLP-1440-RemoveExistingTrigger	6.0.4
-20220929160513_CPLP-1440-DbAuditing	6.0.4
+20220930144720_CPLP-1440-DbAuditing	6.0.4
 \.
 
 
