@@ -64,8 +64,8 @@ aa0a0000-7fbc-1f2f-817f-bce0502c1011	1	2022-03-24 18:01:33.388+00	2022-03-24 18:
 aa0a0000-7fbc-1f2f-817f-bce0502c1012	1	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	Terms & Conditions - Consultant	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1013	1	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	Security Regulations - Active Participant	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1014	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Terms & Conditions - Service Marketplace	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1015	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Service Agreement DFT	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Service Agreement DFT	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1015	1	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Data Sovereignty Guidelines	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Marketplace Terms & Conditions	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
@@ -116,7 +116,7 @@ ac1cf001-7fbc-1f2f-817f-bce0572c0007	Trace-X	2022-03-24 18:01:33.348+00	2022-03-
 ac1cf001-7fbc-1f2f-817f-bce05748000d	Trusted Traceability	2022-03-24 18:01:33.384+00	2022-03-24 18:01:33.384+00	STT.png	\N	\N	0000	Catena-X	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-03-24 18:01:33.384+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375+00	2022-03-24 18:01:33.375+00	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.375+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38+00	2022-03-24 18:01:33.38+00	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
-ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance Monitor	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	Palantir.png	https://www.palantir.com/explore/cpm/	cpm-info@palantir.com	0000	Palantir Technologies	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance Monitor	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	PalantirCPM.png	https://www.palantir.com/explore/cpm/	cpm-info@palantir.com	0000	Palantir Technologies	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
@@ -249,6 +249,7 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d7	cn
 5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 5cf74ef8-e0b7-4984-a872-474828beb5d9	en
+ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
 \.
 
 
@@ -309,6 +310,38 @@ ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	htt
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
 3d8cb906-76a3-4cd7-ae99-4f9225437a27	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com
 37241577-3730-4d39-ab5b-3555a0d11c42	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com
+\.
+
+
+--
+-- Data for Name: audit_company_application20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_application20221005 (audit_v1id, id, date_created, application_status_id, company_id, date_last_changed, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_company_user20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_user20221005 (audit_v1id, id, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, date_last_changed, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_company_user_assigned_role20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_user_assigned_role20221005 (audit_v1id, id, company_user_id, user_role_id, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_offer_subscription20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_offer_subscription20221005 (audit_v1id, id, company_id, offer_id, offer_subscription_status_id, display_name, description, requester_id, last_editor_id, audit_v1last_editor_id, audit_v1date_last_changed, audit_v1operation_id) FROM stdin;
 \.
 
 
@@ -586,15 +619,6 @@ COPY portal.consent_assigned_offer_subscriptions (offer_subscription_id, consent
 
 
 --
--- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
-\.
-
-
-
---
 -- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -830,6 +854,14 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 
 
 --
+-- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
+\.
+
+
+--
 -- Data for Name: user_role_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -892,4 +924,3 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 --
 -- PostgreSQL database dump complete
 --
-
