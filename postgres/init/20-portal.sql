@@ -29,34 +29,20 @@ CREATE SCHEMA portal;
 
 CREATE FUNCTION portal.lc_trigger_after_delete_companyapplication() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
-
-  OLD.date_created, 
-
-  OLD.date_last_changed, 
-
-  OLD.application_status_id, 
-
-  OLD.company_id, 
-
-  OLD.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  3, 
-
-  CURRENT_DATE, 
-
-  OLD.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.date_created, 
+  OLD.date_last_changed, 
+  OLD.application_status_id, 
+  OLD.company_id, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -66,42 +52,24 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_delete_companyuser() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
-
-  OLD.date_created, 
-
-  OLD.email, 
-
-  OLD.firstname, 
-
-  OLD.lastlogin, 
-
-  OLD.lastname, 
-
-  OLD.company_id, 
-
-  OLD.company_user_status_id, 
-
-  OLD.date_last_changed, 
-
-  OLD.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  3, 
-
-  CURRENT_DATE, 
-
-  OLD.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.date_created, 
+  OLD.email, 
+  OLD.firstname, 
+  OLD.lastlogin, 
+  OLD.lastname, 
+  OLD.company_id, 
+  OLD.company_user_status_id, 
+  OLD.date_last_changed, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -111,30 +79,18 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_delete_companyuserassignedrole() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
-
-  OLD.company_user_id, 
-
-  OLD.user_role_id, 
-
-  OLD.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  3, 
-
-  CURRENT_DATE, 
-
-  OLD.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.company_user_id, 
+  OLD.user_role_id, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -144,38 +100,22 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_delete_offersubscription() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
-
-  OLD.company_id, 
-
-  OLD.offer_id, 
-
-  OLD.offer_subscription_status_id, 
-
-  OLD.display_name, 
-
-  OLD.description, 
-
-  OLD.requester_id, 
-
-  OLD.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  3, 
-
-  CURRENT_DATE, 
-
-  OLD.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.company_id, 
+  OLD.offer_id, 
+  OLD.offer_subscription_status_id, 
+  OLD.display_name, 
+  OLD.description, 
+  OLD.requester_id, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -185,34 +125,20 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_insert_companyapplication() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.date_created, 
-
-  NEW.date_last_changed, 
-
-  NEW.application_status_id, 
-
-  NEW.company_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  1, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.date_created, 
+  NEW.date_last_changed, 
+  NEW.application_status_id, 
+  NEW.company_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -222,42 +148,24 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_insert_companyuser() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.date_created, 
-
-  NEW.email, 
-
-  NEW.firstname, 
-
-  NEW.lastlogin, 
-
-  NEW.lastname, 
-
-  NEW.company_id, 
-
-  NEW.company_user_status_id, 
-
-  NEW.date_last_changed, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  1, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.date_created, 
+  NEW.email, 
+  NEW.firstname, 
+  NEW.lastlogin, 
+  NEW.lastname, 
+  NEW.company_id, 
+  NEW.company_user_status_id, 
+  NEW.date_last_changed, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -267,30 +175,18 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_insert_companyuserassignedrole() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.company_user_id, 
-
-  NEW.user_role_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  1, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.company_user_id, 
+  NEW.user_role_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -300,38 +196,22 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_insert_offersubscription() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.company_id, 
-
-  NEW.offer_id, 
-
-  NEW.offer_subscription_status_id, 
-
-  NEW.display_name, 
-
-  NEW.description, 
-
-  NEW.requester_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  1, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.company_id, 
+  NEW.offer_id, 
+  NEW.offer_subscription_status_id, 
+  NEW.display_name, 
+  NEW.description, 
+  NEW.requester_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -341,34 +221,20 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_update_companyapplication() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.date_created, 
-
-  NEW.date_last_changed, 
-
-  NEW.application_status_id, 
-
-  NEW.company_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  2, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_application20221005 ("id", "date_created", "date_last_changed", "application_status_id", "company_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.date_created, 
+  NEW.date_last_changed, 
+  NEW.application_status_id, 
+  NEW.company_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -378,42 +244,24 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_update_companyuser() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.date_created, 
-
-  NEW.email, 
-
-  NEW.firstname, 
-
-  NEW.lastlogin, 
-
-  NEW.lastname, 
-
-  NEW.company_id, 
-
-  NEW.company_user_status_id, 
-
-  NEW.date_last_changed, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  2, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user20221005 ("id", "date_created", "email", "firstname", "lastlogin", "lastname", "company_id", "company_user_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.date_created, 
+  NEW.email, 
+  NEW.firstname, 
+  NEW.lastlogin, 
+  NEW.lastname, 
+  NEW.company_id, 
+  NEW.company_user_status_id, 
+  NEW.date_last_changed, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -423,30 +271,18 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_update_companyuserassignedrole() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.company_user_id, 
-
-  NEW.user_role_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  2, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_company_user_assigned_role20221005 ("id", "company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.company_user_id, 
+  NEW.user_role_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -456,38 +292,22 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_update_offersubscription() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-
-BEGIN
-
-  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-
-  NEW.company_id, 
-
-  NEW.offer_id, 
-
-  NEW.offer_subscription_status_id, 
-
-  NEW.display_name, 
-
-  NEW.description, 
-
-  NEW.requester_id, 
-
-  NEW.last_editor_id, 
-
-  gen_random_uuid(), 
-
-  2, 
-
-  CURRENT_DATE, 
-
-  NEW.last_editor_id;
-
-RETURN NEW;
-
-END;
-
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer_subscription20221005 ("id", "company_id", "offer_id", "offer_subscription_status_id", "display_name", "description", "requester_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.company_id, 
+  NEW.offer_id, 
+  NEW.offer_subscription_status_id, 
+  NEW.display_name, 
+  NEW.description, 
+  NEW.requester_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 

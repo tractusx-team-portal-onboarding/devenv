@@ -313,6 +313,38 @@ ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	htt
 
 
 --
+-- Data for Name: audit_company_application20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_application20221005 (audit_v1id, id, date_created, application_status_id, company_id, date_last_changed, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_company_user20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_user20221005 (audit_v1id, id, date_created, email, firstname, lastlogin, lastname, company_id, company_user_status_id, date_last_changed, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_company_user_assigned_role20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_user_assigned_role20221005 (audit_v1id, id, company_user_id, user_role_id, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
+-- Data for Name: audit_offer_subscription20221005; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_offer_subscription20221005 (audit_v1id, id, company_id, offer_id, offer_subscription_status_id, display_name, description, requester_id, last_editor_id, audit_v1last_editor_id, audit_v1date_last_changed, audit_v1operation_id) FROM stdin;
+\.
+
+
+--
 -- Data for Name: company_applications; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -586,15 +618,6 @@ COPY portal.consent_assigned_offer_subscriptions (offer_subscription_id, consent
 
 
 --
--- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
---
-
-COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
-\.
-
-
-
---
 -- Data for Name: iam_identity_providers; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -826,6 +849,14 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Network
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Manufacturer-as-a-service
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Delivery
+\.
+
+
+--
+-- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
 \.
 
 
