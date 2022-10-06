@@ -544,6 +544,7 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51161	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d9
 607818be-4978-41f4-bf63-fa8d2de51162	BPDM Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51163	BPDM Partner Gate	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51164	DAPS Certificate Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 \.
 
 
@@ -918,6 +919,8 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51156	en	Add, Change and Delete Semnatic Models
 607818be-4978-41f4-bf63-fa8d2de51157	de	Anzeigen und Ändern des Unternehmens-Wallets
 607818be-4978-41f4-bf63-fa8d2de51157	en	View and modify own company wallet
+607818be-4978-41f4-bf63-fa8d2de51164	de	Erstellen von DAPS Zertifikaten
+607818be-4978-41f4-bf63-fa8d2de51164	en	Enables Service Providers to create DAPS certificates
 \.
 
 
