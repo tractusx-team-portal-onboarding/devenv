@@ -132,6 +132,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388+00	2
 0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	2
 5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb510	DFT with EDC	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	\N	Service Provider A	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020005	1
 \.
 
 
@@ -293,7 +294,7 @@ e9e97133-a311-419c-8421-fd70264de9cb	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N	\N
 f550c647-f94f-4e58-bcb9-b3d338af9009	56faf2e0-88ec-4ee5-a736-6c52688250f8	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
 88b0661c-cc22-4a4a-9721-fc4f3cec21f8	0b2ca541-206d-48ad-bc02-fb61fbcb5552	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
 3c7f7825-b2c4-43b8-b91e-8ab6f8e28fac	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
-aa97bc61-149f-4b85-babb-eb40f0424ef5	02d5575d-b110-43f0-b0dd-53dbc37147dc	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://dash.catenax-cdq.com/
+aa97bc61-149f-4b85-babb-eb40f0424ef5	02d5575d-b110-43f0-b0dd-53dbc37147dc	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
 83e9da7d-1208-42b9-91d5-5a4fd7daa2df	4e861f6a-86ad-4188-8ba7-0f214248b120	cdea99b7-1068-426a-ad7f-7b10f21fc4d6	https://apps.cdq.com/dashboard/fraud/report-fraud
 cb0d1b6a-29fd-4583-a924-641dcf3b26a9	34a93025-18de-4c7a-8677-0fd9801248d1	\N	https://portal-staging.afqm-services.com/
 3cafae15-4f03-49c3-9786-b6ca2e29fa76	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N
@@ -304,7 +305,7 @@ d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N
 22835697-99ea-45c8-bce6-9b2553a95c50	60f00bd0-98fe-4ed3-ad3b-90045921660c	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
 f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
 ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
-9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://dash.catenax-cdq.com/
+9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
 6da8bdef-2a21-474b-9618-ec0acffc6703	773e7152-8d94-4f90-8689-956a7bdf4f4e	cdea99b7-1068-426a-ad7f-7b10f21fc4d6	https://apps.cdq.com/dashboard/fraud/report-fraud
 ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
@@ -469,7 +470,7 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57+00	2022-03-24 18:01:
 ac1cf001-7fbc-1f2f-817f-bce058020002	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020003	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 2	bdac6865-2a8d-4bfd-9373-9dfce8190895	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 3	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
-ac1cf001-7fbc-1f2f-817f-bce058020005	2022-10-01 18:01:33.57+00	2022-10-01 18:01:33.57+00	julia.jeroch@bmw.de	Service	\N	Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058020005	2022-10-01 18:01:33.57+00	2022-10-01 18:01:33.57+00	julia.jeroch@bmw.de	Service	\N	Provider	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	1	\N
 \.
 
 
