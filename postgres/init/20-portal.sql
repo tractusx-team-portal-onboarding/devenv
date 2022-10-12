@@ -900,7 +900,8 @@ CREATE TABLE portal.companies (
     name character varying(255) NOT NULL,
     shortname character varying(255),
     company_status_id integer NOT NULL,
-    address_id uuid
+    address_id uuid,
+    self_description_document_id uuid
 );
 
 
@@ -1220,7 +1221,7 @@ CREATE TABLE portal.documents (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
     document_name character varying(255) NOT NULL,
-    document_type_id integer,
+    document_type_id integer DEFAULT 0 NOT NULL,
     company_user_id uuid,
     document_hash bytea NOT NULL,
     document_content bytea NOT NULL,
@@ -2257,6 +2258,13 @@ CREATE INDEX ix_companies_company_status_id ON portal.companies USING btree (com
 
 
 --
+-- Name: ix_companies_self_description_document_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_companies_self_description_document_id ON portal.companies USING btree (self_description_document_id);
+
+
+--
 -- Name: ix_company_applications_application_status_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -2982,6 +2990,14 @@ ALTER TABLE ONLY portal.companies
 
 
 --
+-- Name: companies fk_companies_documents_self_description_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.companies
+    ADD CONSTRAINT fk_companies_documents_self_description_document_id FOREIGN KEY (self_description_document_id) REFERENCES portal.documents(id);
+
+
+--
 -- Name: company_applications fk_company_applications_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -3314,7 +3330,7 @@ ALTER TABLE ONLY portal.documents
 --
 
 ALTER TABLE ONLY portal.documents
-    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(id);
+    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(id) ON DELETE CASCADE;
 
 
 --
