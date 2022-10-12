@@ -132,6 +132,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388+00	2
 0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	Technical User Management	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	\N	\N	0000	Catena-X	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	2
 5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
+5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Dashboard	2022-10-10 00:00:00.000+00	2022-10-10 00:00:00.000+00	Country Risk Icon.PNG	https://vas-country-risk-frontend.dev.demo.catena-x.net/	Alexander.AK.Keppler@bmw.de	0000	Bayrische Motorenwerke	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-10-10 00:00:00.000+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1
 \.
 
 
@@ -165,6 +166,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d7	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d9	06b243a4-ba51-4bf3-bc40-5d79a2231b86
+5cf74ef8-e0b7-4984-a872-474828beb510	6909ccc7-37c8-4088-99ab-790f20702460
 \.
 
 
@@ -250,6 +252,7 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d8	en
 5cf74ef8-e0b7-4984-a872-474828beb5d9	en
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
+5cf74ef8-e0b7-4984-a872-474828beb510	en
 \.
 
 
@@ -548,6 +551,8 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51163	BPDM Partner Gate	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51164	DAPS Certificate Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51165	Dataspace Discovery	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51166	Company Admin	5cf74ef8-e0b7-4984-a872-474828beb510
+607818be-4978-41f4-bf63-fa8d2de51167	User	5cf74ef8-e0b7-4984-a872-474828beb510
 \.
 
 
@@ -772,6 +777,8 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 5cf74ef8-e0b7-4984-a872-474828beb5d8	de	Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.
 5cf74ef8-e0b7-4984-a872-474828beb5d9	de	mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.
 5cf74ef8-e0b7-4984-a872-474828beb5d9	en	mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.
+5cf74ef8-e0b7-4984-a872-474828beb510	de	The value added service solution Country Risk Score gives different users additional information regarding their business partners. This is part of the Know Your Business Partner approach and enables the user to make better decisions based on aggregated information. The main part of the country risk dashboard are information per country regarding corruption, political stability, economic risk and social and structural figures. There are official sources connected like CPI or Basel but the service offers the possibility to upload company/user specific ratings.	The country risk dashboard - country information regarding corruption, political stability, economic risk and social and structural figures.
+5cf74ef8-e0b7-4984-a872-474828beb510	en	The value added service solution Country Risk Score gives different users additional information regarding their business partners. This is part of the Know Your Business Partner approach and enables the user to make better decisions based on aggregated information. The main part of the country risk dashboard are information per country regarding corruption, political stability, economic risk and social and structural figures. There are official sources connected like CPI or Basel but the service offers the possibility to upload company/user specific ratings.	The country risk dashboard - country information regarding corruption, political stability, economic risk and social and structural figures.
 \.
 
 
@@ -816,6 +823,9 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000034	5cf74ef8-e0b7-4984-a872-474828beb5d8	Test-Image2.png
 5cf74ef8-a0a1-0000-a000-000000000035	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-000000000036	5cf74ef8-e0b7-4984-a872-474828beb5d9	Test-Image2.png
+5cf74ef8-a0a1-0000-a000-000000000037	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk World Map.PNG
+5cf74ef8-a0a1-0000-a000-000000000038	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Ratings.PNG
+5cf74ef8-a0a1-0000-a000-000000000039	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Table of Business Partners.PNG
 \.
 
 
@@ -856,6 +866,9 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Network
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Manufacturer-as-a-service
 5cf74ef8-e0b7-4984-a872-474828beb5d9	Delivery
+5cf74ef8-e0b7-4984-a872-474828beb510	BPDM
+5cf74ef8-e0b7-4984-a872-474828beb510	Risk
+5cf74ef8-e0b7-4984-a872-474828beb510	Rating
 \.
 
 
