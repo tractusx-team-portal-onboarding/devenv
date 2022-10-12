@@ -341,7 +341,7 @@ COPY portal.audit_company_user_assigned_role20221005 (audit_v1id, id, company_us
 -- Data for Name: audit_company_user_assigned_role202210052; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.audit_company_user_assigned_role202210052 (audit_v1id, company_user_id, user_role_id, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+COPY portal.audit_company_user_assigned_role20221012 (audit_v1id, company_user_id, user_role_id, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
 \.
 
 
