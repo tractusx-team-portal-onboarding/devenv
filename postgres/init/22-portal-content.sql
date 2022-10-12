@@ -370,6 +370,7 @@ COPY portal.company_applications (id, date_created, date_last_changed, applicati
 COPY portal.company_assigned_roles (company_id, company_role_id) FROM stdin;
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	2
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	1
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	2
 0dcd8209-85e2-4073-b130-ac094fb47106	1
@@ -468,6 +469,7 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57+00	2022-03-24 18:01:
 ac1cf001-7fbc-1f2f-817f-bce058020002	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020003	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 2	bdac6865-2a8d-4bfd-9373-9dfce8190895	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020004	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 3	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058020005	2022-10-01 18:01:33.57+00	2022-10-01 18:01:33.57+00	julia.jeroch@bmw.de	Service	\N	Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
 \.
 
 
@@ -544,6 +546,8 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51161	Supplier	5cf74ef8-e0b7-4984-a872-474828beb5d9
 607818be-4978-41f4-bf63-fa8d2de51162	BPDM Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51163	BPDM Partner Gate	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51164	DAPS Certificate Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51165	Dataspace Discovery	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 \.
 
 
@@ -563,6 +567,7 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	aabcdfeb-6669-4c74-89f0-19cda090873f	4b366a
 ac1cf001-7fbc-1f2f-817f-bce058020002	7410693c-c893-409e-852f-9ee886ce94a6	ea9bedb7-05f6-491a-b515-68033cf359d5	\N
 ac1cf001-7fbc-1f2f-817f-bce058020003	7410693c-c893-409e-852f-9ee886ce94a6	20b22570-a723-47ec-93c4-c1b4781e85c6	\N
 ac1cf001-7fbc-1f2f-817f-bce058020004	7410693c-c893-409e-852f-9ee886ce94a6	f55295fd-8904-440e-983c-826916fa2dfa	\N
+ac1cf001-7fbc-1f2f-817f-bce058020005	58f897ec-0aad-4588-8ffa-5f45d6638632	d09f371d-54ca-4ff0-add4-10a5f2af43aa	\N
 ac1cf001-7fbc-1f2f-817f-bce058019990	58f897ec-0aad-4588-8ffa-5f45d6638633	689bb435-39c1-4625-a736-1853d2bc3e37	\N
 ac1cf001-7fbc-1f2f-817f-bce058019991	58f897ec-0aad-4588-8ffa-5f45d6638632	9ac2746d-f43a-4be7-990c-0f432fc3981f	\N
 ac1cf001-7fbc-1f2f-817f-bce058019992	7410693c-c893-409e-852f-9ee886ce94a6	25d12d7d-56e0-4bbc-9256-8cf9d7c6fb24	\N
@@ -644,6 +649,7 @@ ad56702b-5908-44eb-a668-9a11a0e100d6	ac1cf001-7fbc-1f2f-817f-bce0575a0011
 4a23930a-30b6-461c-9ad4-58d3e761a0b5	ac1cf001-7fbc-1f2f-817f-bce058020002
 ee93d4e6-2088-4352-b6e4-21f3fa7f390e	ac1cf001-7fbc-1f2f-817f-bce058020003
 e756e57e-e236-4f6e-b410-92a16ff8be85	ac1cf001-7fbc-1f2f-817f-bce058020004
+7af2fdee-2ddc-4b2f-a89f-72663fe99962	ac1cf001-7fbc-1f2f-817f-bce058020005
 623770c5-cf38-4b9f-9a35-f8b9ae972e2e	ac1cf001-7fbc-1f2f-817f-bce058019990
 3d8142f1-860b-48aa-8c2b-1ccb18699f66	ac1cf001-7fbc-1f2f-817f-bce058019991
 47ea7f1f-f10d-4cb2-acaf-b77323ef25b4	ac1cf001-7fbc-1f2f-817f-bce058019992
@@ -918,6 +924,10 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51156	en	Add, Change and Delete Semnatic Models
 607818be-4978-41f4-bf63-fa8d2de51157	de	Anzeigen und Ändern des Unternehmens-Wallets
 607818be-4978-41f4-bf63-fa8d2de51157	en	View and modify own company wallet
+607818be-4978-41f4-bf63-fa8d2de51164	de	Erstellen von DAPS Zertifikaten
+607818be-4978-41f4-bf63-fa8d2de51164	en	Enables Service Providers to create DAPS certificates
+607818be-4978-41f4-bf63-fa8d2de51165	de	Discovery Funktion EDC Endpoints
+607818be-4978-41f4-bf63-fa8d2de51165	en	Discovery Function EDC Endpoints
 \.
 
 
