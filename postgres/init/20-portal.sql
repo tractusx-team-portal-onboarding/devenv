@@ -147,7 +147,7 @@ CREATE FUNCTION portal.lc_trigger_after_delete_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role202210052 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.company_user_id, 
+  INSERT INTO portal.audit_company_user_assigned_role20221012 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.company_user_id, 
 
   OLD.user_role_id, 
 
@@ -349,7 +349,7 @@ CREATE FUNCTION portal.lc_trigger_after_insert_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role202210052 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.company_user_id, 
+  INSERT INTO portal.audit_company_user_assigned_role20221012 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.company_user_id, 
 
   NEW.user_role_id, 
 
@@ -551,7 +551,7 @@ CREATE FUNCTION portal.lc_trigger_after_update_companyuserassignedrole() RETURNS
 
 BEGIN
 
-  INSERT INTO portal.audit_company_user_assigned_role202210052 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.company_user_id, 
+  INSERT INTO portal.audit_company_user_assigned_role20221012 ("company_user_id", "user_role_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.company_user_id, 
 
   NEW.user_role_id, 
 
@@ -817,10 +817,10 @@ CREATE TABLE portal.audit_company_user_assigned_role20221005 (
 
 
 --
--- Name: audit_company_user_assigned_role202210052; Type: TABLE; Schema: portal; Owner: -
+-- Name: audit_company_user_assigned_role20221012; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.audit_company_user_assigned_role202210052 (
+CREATE TABLE portal.audit_company_user_assigned_role20221012 (
     audit_v1id uuid NOT NULL,
     company_user_id uuid NOT NULL,
     user_role_id uuid NOT NULL,
@@ -1191,7 +1191,7 @@ CREATE TABLE portal.documents (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
     document_name character varying(255) NOT NULL,
-    document_type_id integer,
+    document_type_id integer DEFAULT 0 NOT NULL,
     company_user_id uuid,
     document_hash bytea NOT NULL,
     document_content bytea NOT NULL,
@@ -1683,11 +1683,11 @@ ALTER TABLE ONLY portal.audit_company_user_assigned_role20221005
 
 
 --
--- Name: audit_company_user_assigned_role202210052 pk_audit_company_user_assigned_role202210052; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: audit_company_user_assigned_role20221012 pk_audit_company_user_assigned_role20221012; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.audit_company_user_assigned_role202210052
-    ADD CONSTRAINT pk_audit_company_user_assigned_role202210052 PRIMARY KEY (audit_v1id);
+ALTER TABLE ONLY portal.audit_company_user_assigned_role20221012
+    ADD CONSTRAINT pk_audit_company_user_assigned_role20221012 PRIMARY KEY (audit_v1id);
 
 
 --
@@ -3278,7 +3278,7 @@ ALTER TABLE ONLY portal.documents
 --
 
 ALTER TABLE ONLY portal.documents
-    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(id);
+    ADD CONSTRAINT fk_documents_document_types_document_type_id FOREIGN KEY (document_type_id) REFERENCES portal.document_types(id) ON DELETE CASCADE;
 
 
 --

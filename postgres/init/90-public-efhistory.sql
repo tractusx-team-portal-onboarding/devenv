@@ -62,7 +62,8 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20220921112615_CPLP-1409-ExpandNotificationTypes	6.0.4
 20220929071516_CPLP-1408-ServiceProviderCompanyDetail	6.0.4
 20221005093339_CPLP-1440-DbAuditing	6.0.4
-20221005135736_CPLP-1417-RemoveCompanyAssignedUserRoleId	6.0.4
+20221007102646_CPLP-1625-ChangeDocumentTypeIdtoNonNullable	6.0.4
+20221012060540_CPLP-1417-RemoveCompanyAssignedUserRoleId	6.0.4
 \.
 
 

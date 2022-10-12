@@ -14,7 +14,7 @@ ALTER TABLE portal.app_subscription_details OWNER TO portal;
 ALTER TABLE portal.audit_operation OWNER TO portal;
 ALTER TABLE portal.audit_company_application20221005 OWNER TO portal;
 ALTER TABLE portal.audit_company_user_assigned_role20221005 OWNER TO portal;
-ALTER TABLE portal.audit_company_user_assigned_role202210052 OWNER TO portal;
+ALTER TABLE portal.audit_company_user_assigned_role20221012 OWNER TO portal;
 ALTER TABLE portal.audit_company_user20221005 OWNER TO portal;
 ALTER TABLE portal.audit_offer_subscription20221005 OWNER TO portal;
 ALTER TABLE portal.connector_statuses OWNER TO portal;
