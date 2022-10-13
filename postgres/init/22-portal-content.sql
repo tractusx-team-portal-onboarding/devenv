@@ -553,6 +553,7 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51165	Dataspace Discovery	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 607818be-4978-41f4-bf63-fa8d2de51166	Company Admin	5cf74ef8-e0b7-4984-a872-474828beb510
 607818be-4978-41f4-bf63-fa8d2de51167	User	5cf74ef8-e0b7-4984-a872-474828beb510
+607818be-4978-41f4-bf63-fa8d2de51168	Service Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
 \.
 
 
@@ -941,6 +942,12 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51164	en	Enables Service Providers to create DAPS certificates
 607818be-4978-41f4-bf63-fa8d2de51165	de	Discovery Funktion EDC Endpoints
 607818be-4978-41f4-bf63-fa8d2de51165	en	Discovery Function EDC Endpoints
+607818be-4978-41f4-bf63-fa8d2de51166	de	tbd
+607818be-4978-41f4-bf63-fa8d2de51166	en	tbd
+607818be-4978-41f4-bf63-fa8d2de51167	de	tbd
+607818be-4978-41f4-bf63-fa8d2de51167	en	tbd
+607818be-4978-41f4-bf63-fa8d2de51168	de	Service Management for Service Providers
+607818be-4978-41f4-bf63-fa8d2de51168	en	Service Management for Service Providers
 \.
 
 
