@@ -183,6 +183,38 @@ $$;
 
 
 --
+-- Name: lc_trigger_after_delete_offer(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_delete_offer() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer20221013 ("id", "name", "date_created", "date_released", "thumbnail_url", "marketing_url", "contact_email", "contact_number", "provider", "offer_type_id", "sales_manager_id", "provider_company_id", "offer_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.name, 
+  OLD.date_created, 
+  OLD.date_released, 
+  OLD.thumbnail_url, 
+  OLD.marketing_url, 
+  OLD.contact_email, 
+  OLD.contact_number, 
+  OLD.provider, 
+  OLD.offer_type_id, 
+  OLD.sales_manager_id, 
+  OLD.provider_company_id, 
+  OLD.offer_status_id, 
+  OLD.date_last_changed, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
+--
 -- Name: lc_trigger_after_delete_offersubscription(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -399,6 +431,38 @@ $$;
 
 
 --
+-- Name: lc_trigger_after_insert_offer(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_insert_offer() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer20221013 ("id", "name", "date_created", "date_released", "thumbnail_url", "marketing_url", "contact_email", "contact_number", "provider", "offer_type_id", "sales_manager_id", "provider_company_id", "offer_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.name, 
+  NEW.date_created, 
+  NEW.date_released, 
+  NEW.thumbnail_url, 
+  NEW.marketing_url, 
+  NEW.contact_email, 
+  NEW.contact_number, 
+  NEW.provider, 
+  NEW.offer_type_id, 
+  NEW.sales_manager_id, 
+  NEW.provider_company_id, 
+  NEW.offer_status_id, 
+  NEW.date_last_changed, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
+--
 -- Name: lc_trigger_after_insert_offersubscription(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -611,6 +675,38 @@ RETURN NEW;
 END;
 
 
+$$;
+
+
+--
+-- Name: lc_trigger_after_update_offer(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_update_offer() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_offer20221013 ("id", "name", "date_created", "date_released", "thumbnail_url", "marketing_url", "contact_email", "contact_number", "provider", "offer_type_id", "sales_manager_id", "provider_company_id", "offer_status_id", "date_last_changed", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.name, 
+  NEW.date_created, 
+  NEW.date_released, 
+  NEW.thumbnail_url, 
+  NEW.marketing_url, 
+  NEW.contact_email, 
+  NEW.contact_number, 
+  NEW.provider, 
+  NEW.offer_type_id, 
+  NEW.sales_manager_id, 
+  NEW.provider_company_id, 
+  NEW.offer_status_id, 
+  NEW.date_last_changed, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -851,6 +947,33 @@ CREATE TABLE portal.audit_company_user_assigned_role20221005 (
     id uuid NOT NULL,
     company_user_id uuid NOT NULL,
     user_role_id uuid NOT NULL,
+    last_editor_id uuid,
+    audit_v1last_editor_id uuid,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL
+);
+
+
+--
+-- Name: audit_offer20221013; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_offer20221013 (
+    audit_v1id uuid NOT NULL,
+    id uuid NOT NULL,
+    name text,
+    date_created timestamp with time zone NOT NULL,
+    date_released timestamp with time zone,
+    thumbnail_url text,
+    marketing_url text,
+    contact_email text,
+    contact_number text,
+    provider text NOT NULL,
+    offer_type_id integer NOT NULL,
+    sales_manager_id uuid,
+    provider_company_id uuid,
+    offer_status_id integer NOT NULL,
+    date_last_changed timestamp with time zone,
     last_editor_id uuid,
     audit_v1last_editor_id uuid,
     audit_v1operation_id integer NOT NULL,
@@ -1479,7 +1602,8 @@ CREATE TABLE portal.offers (
     offer_status_id integer NOT NULL,
     date_last_changed timestamp with time zone,
     sales_manager_id uuid,
-    offer_type_id integer DEFAULT 1 NOT NULL
+    offer_type_id integer DEFAULT 1 NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -1710,6 +1834,14 @@ ALTER TABLE ONLY portal.audit_company_user20221005
 
 ALTER TABLE ONLY portal.audit_company_user_assigned_role20221005
     ADD CONSTRAINT pk_audit_company_user_assigned_role20221005 PRIMARY KEY (audit_v1id);
+
+
+--
+-- Name: audit_offer20221013 pk_audit_offer20221013; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_offer20221013
+    ADD CONSTRAINT pk_audit_offer20221013 PRIMARY KEY (audit_v1id);
 
 
 --
@@ -2671,6 +2803,13 @@ CREATE TRIGGER lc_trigger_after_delete_companyuserassignedrole AFTER DELETE ON p
 
 
 --
+-- Name: offers lc_trigger_after_delete_offer; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_delete_offer AFTER DELETE ON portal.offers FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_delete_offer();
+
+
+--
 -- Name: offer_subscriptions lc_trigger_after_delete_offersubscription; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2699,6 +2838,13 @@ CREATE TRIGGER lc_trigger_after_insert_companyuserassignedrole AFTER INSERT ON p
 
 
 --
+-- Name: offers lc_trigger_after_insert_offer; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_insert_offer AFTER INSERT ON portal.offers FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_insert_offer();
+
+
+--
 -- Name: offer_subscriptions lc_trigger_after_insert_offersubscription; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2724,6 +2870,13 @@ CREATE TRIGGER lc_trigger_after_update_companyuser AFTER UPDATE ON portal.compan
 --
 
 CREATE TRIGGER lc_trigger_after_update_companyuserassignedrole AFTER UPDATE ON portal.company_user_assigned_roles FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_update_companyuserassignedrole();
+
+
+--
+-- Name: offers lc_trigger_after_update_offer; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_update_offer AFTER UPDATE ON portal.offers FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_update_offer();
 
 
 --

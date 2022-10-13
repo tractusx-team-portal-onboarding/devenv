@@ -64,6 +64,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221005093339_CPLP-1440-DbAuditing	6.0.4
 20221007102646_CPLP-1625-ChangeDocumentTypeIdtoNonNullable	6.0.4
 20221012090843_CPLP-1422-AddSelfDescriptionDocuments	6.0.4
+20221013113920_CPLP-1313-AuditOffer	6.0.4
 \.
 
 
