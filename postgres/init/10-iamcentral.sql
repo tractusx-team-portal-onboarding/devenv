@@ -1726,6 +1726,11 @@ e0dd6be1-521e-425c-93cd-9dd2554fe87b	1663665118163	CX-Central	CREATE	master	d228
 119db4d2-c105-478f-b2fc-628256535c6a	1663665159056	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/55e1e90b-ccb4-4771-88ec-ba698696aef8/composites	[{"id":"7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37","name":"view_service_marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 bdf23f17-3550-453a-ae9a-68480fc373d6	1663665208423	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/418dfd6d-ec59-4a69-bd95-2d525e6379b0/composites	[{"id":"7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37","name":"view_service_marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 2638e190-b6e4-4c81-a46f-5e8aeadaaa68	1663665249369	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e718571c-b4bb-4c35-81a7-c37ca147c4c2/composites	[{"id":"7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37","name":"view_service_marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+b4f069c0-8f00-4247-be16-217a805b3577	1665736637611	CX-Central	DELETE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3cbac5d7-d38e-4366-904a-b5829d0819dd/role-mappings/clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34	[{"id":"e8b9f782-d707-4852-a979-e5a08b19f3c7","name":"CX Admin","composite":true,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE_MAPPING
+bc402afc-d60d-4af5-ab73-a1951cc70f1d	1665736646764	CX-Central	DELETE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3cbac5d7-d38e-4366-904a-b5829d0819dd/role-mappings/realm	[{"id":"4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b","name":"default-roles-catena-x realm","description":"${role_default-roles}","composite":true,"clientRole":false,"containerId":"CX-Central"}]	\N	REALM_ROLE_MAPPING
+ce389b32-6ece-4da6-b47c-faa57116ee95	1665736756052	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3d8142f1-860b-48aa-8c2b-1ccb18699f65/role-mappings/clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34	[{"id":"e8b9f782-d707-4852-a979-e5a08b19f3c7","name":"CX Admin","composite":true,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE_MAPPING
+f11f7f37-9e77-42d1-aa73-d95188a9a4ae	1665736973206	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3d8142f1-860b-48aa-8c2b-1ccb18699f65/role-mappings/realm	[{"id":"4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b","name":"default-roles-catena-x realm","description":"${role_default-roles}","composite":true,"clientRole":false,"containerId":"CX-Central"}]	\N	REALM_ROLE_MAPPING
+35dcc27c-ebc8-4b75-a3a7-2a2e93cc6ac0	1665736995379	CX-Central	ACTION	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	users/3d8142f1-860b-48aa-8c2b-1ccb18699f65/reset-password	\N	\N	USER
 \.
 
 
@@ -2883,7 +2888,7 @@ e718571c-b4bb-4c35-81a7-c37ca147c4c2	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
 
 COPY iamcentral.credential (id, salt, type, user_id, created_date, user_label, secret_data, credential_data, priority) FROM stdin;
 a7aa7cad-62d7-49d1-a99a-b7c646583702	\N	password	d25a17f9-1550-4b79-8495-3c1279c4333a	1648455310586	\N	{"value":"xXV6Mf2wLv4iYh6e6G9eGdvWTzh63Dex9N2CApNsZlRt/XFZqBC3kT/88WrkapcpcKrvYu9yVv4Fr0g3vTQdaQ==","salt":"MaPZY0n1tNvcKOZh+MUusA==","additionalParameters":{}}	{"hashIterations":27500,"algorithm":"pbkdf2-sha256","additionalParameters":{}}	10
-ed95045e-367c-4087-87cd-5d843ee81e27	\N	password	3cbac5d7-d38e-4366-904a-b5829d0819dd	1648456790481	\N	{"value":"c8jg0vMuhcSskv4OZwOtsx5c0NOzDITDm5QvF8Zy2bo2Lmi95JrvA/iaVDSerPw1h3TAPTgebU9UOfefig21WA==","salt":"Tx5z9NfPmABWEmA6jcqDHw==","additionalParameters":{}}	{"hashIterations":27500,"algorithm":"pbkdf2-sha256","additionalParameters":{}}	10
+07e05e28-957e-49e7-8346-c3333b5e32bd	\N	password	3d8142f1-860b-48aa-8c2b-1ccb18699f65	1665736995367	\N	{"value":"iy4TVAbNvqSi6U+2ktqbUD5lyhFADDv1S+qaE3uFQvAYX295tf44pOzOyeRqLUrn11SQTFy94VHdJxR2lsOcxw==","salt":"Ch0e653CT19mQ4C9Ooj2xg==","additionalParameters":{}}	{"hashIterations":27500,"algorithm":"pbkdf2-sha256","additionalParameters":{}}	10
 \.
 
 
@@ -4404,9 +4409,9 @@ COPY iamcentral.user_consent_client_scope (user_consent_id, scope_id) FROM stdin
 COPY iamcentral.user_entity (id, email, email_constraint, email_verified, enabled, federation_link, first_name, last_name, realm_id, username, created_timestamp, service_account_client_link, not_before) FROM stdin;
 4575b5b9-fab3-4c85-a722-8816bc487fad	\N	a02a93bd-3ab8-4bdf-aa32-a6060082f353	f	t	\N	\N	\N	CX-Central	service-account-sa-cl1-reg-2	1648455309628	7668d79e-e8ed-4fd8-9700-4bfd18a3dadf	0
 d25a17f9-1550-4b79-8495-3c1279c4333a	\N	78d0c7a6-917d-4c11-9f15-966b72aea8f4	f	t	\N	\N	\N	master	admin	1648455310538	\N	0
-3cbac5d7-d38e-4366-904a-b5829d0819dd	\N	569ca9a7-3092-4c42-9bfc-43aef2aeafb2	f	t	\N	\N	\N	CX-Central	devenv-cx-admin	1648456779494	\N	0
 e9b1c0e4-953d-4539-b703-dca9e911eab5	no.email@catena.net	71daec41-f89c-407e-a9ad-9247b738f4a4	t	t	\N	Testuser	Devhost	CX-Central	idp1.6ec46cd4-5aec-46c3-88dc-2a283994ab92	1648483534694	\N	0
 3432d787-d7c8-46fb-96d7-cc984c6bfaac	no.email@catena.net	a8cfe098-2d4e-4e6d-baa1-75fa7587834b	t	t	\N	Testuser	WSL	CX-Central	idp2.f99d2698-5670-41f2-a141-e58b0c99560c	1648485062303	\N	0
+3d8142f1-860b-48aa-8c2b-1ccb18699f65	\N	569ca9a7-3092-4c42-9bfc-43aef2aeafb2	f	t	\N	\N	\N	CX-Central	devenv-cx-admin	1648456779494	\N	0
 \.
 
 
@@ -4466,8 +4471,6 @@ COPY iamcentral.user_role_mapping (role_id, user_id) FROM stdin;
 4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	4575b5b9-fab3-4c85-a722-8816bc487fad
 496938e7-f432-4eb0-90f4-dcbd8a453eb3	d25a17f9-1550-4b79-8495-3c1279c4333a
 314b0ae7-55ac-4ba4-bc67-ca36c48efafd	d25a17f9-1550-4b79-8495-3c1279c4333a
-4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	3cbac5d7-d38e-4366-904a-b5829d0819dd
-e8b9f782-d707-4852-a979-e5a08b19f3c7	3cbac5d7-d38e-4366-904a-b5829d0819dd
 cc5e185c-5cc5-4b0d-9d60-a9e733f454ec	4575b5b9-fab3-4c85-a722-8816bc487fad
 99dc3a13-e284-493d-b8db-956f1815b14e	4575b5b9-fab3-4c85-a722-8816bc487fad
 8a35d055-6927-499d-80a0-28d1b0280623	4575b5b9-fab3-4c85-a722-8816bc487fad
@@ -4478,6 +4481,8 @@ a83e07cf-e87d-40ca-831a-6b67f0ac4714	4575b5b9-fab3-4c85-a722-8816bc487fad
 d4e90553-21c6-4922-9b47-26ad2db306dc	e9b1c0e4-953d-4539-b703-dca9e911eab5
 4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	3432d787-d7c8-46fb-96d7-cc984c6bfaac
 d4e90553-21c6-4922-9b47-26ad2db306dc	3432d787-d7c8-46fb-96d7-cc984c6bfaac
+e8b9f782-d707-4852-a979-e5a08b19f3c7	3d8142f1-860b-48aa-8c2b-1ccb18699f65
+4c19f2aa-f9b9-473e-ba5c-46c2f4e52c8b	3d8142f1-860b-48aa-8c2b-1ccb18699f65
 \.
 
 
