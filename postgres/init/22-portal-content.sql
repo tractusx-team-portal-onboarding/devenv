@@ -32,6 +32,7 @@ c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	2022-03-24 18:01:33.428+00	2022-03-24 18:01
 0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb	2022-03-24 18:01:33.443+00	2022-03-24 18:01:33.443+00	Munich	\N	\N	Street	7	00001	DE
 095ca573-bef1-4092-ad60-b7f651678fcd	2022-03-24 18:01:33.428+00	2022-03-24 18:01:33.428+00	Munich	\N	\N	Street	8	00001	DE
 081c8bfd-c6d1-4119-a5f8-a69726dfc11d	2022-03-24 18:01:33.428+00	2022-03-24 18:01:33.428+00	Munich	\N	\N	Street	9	00001	DE
+081c8bfd-c6d1-4119-a5f8-a69726dfc11e	2022-03-24 18:01:33.428+00	2022-03-24 18:01:33.428+00	Munich	\N	\N	Street	9	00001	DE
 \.
 
 
@@ -51,7 +52,7 @@ d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442+00	BPNL00000003LLHB
 cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442+00	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	2	081c8bfd-c6d1-4119-a5f8-a69726dfc11d	\N
 dfd90abe-b20e-4aff-87c6-f30f2bf9b104	2022-08-08 18:01:33.442+00	BPNL000000000009	0000000000	Siemens	Siemens	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fc	\N
 fe55fe20-5f19-401e-91a2-dfa37b44a0be	2022-08-08 18:01:33.442+00	BPNL00000003CSGV	0000000000	German Edge Cloud GmbH & Co. KG	GEC	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fd	\N
-3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	2022-10-01 00:00:00+00	\N	0000000000	DFT	\N	2	\N	\N
+3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	2022-10-01 00:00:00.000+00	BPNL07800HZ01643	0000000000	Service Provider	SP	2	081c8bfd-c6d1-4119-a5f8-a69726dfc11e	\N
 \.
 
 
@@ -134,7 +135,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388+00	2
 5cf74ef8-e0b7-4984-a872-474828beb5d8	AM Network	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	additive.manufacturing.industry@siemens.com	0000	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Dashboard	2022-10-10 00:00:00+00	2022-10-10 00:00:00+00	Country Risk Icon.PNG	https://vas-country-risk-frontend.dev.demo.catena-x.net/	Alexander.AK.Keppler@bmw.de	0000	Bayrische Motorenwerke	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-10-10 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
-5cf74ef8-e0b7-4984-a872-474828beb511	DFT with EDC	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	\N	\N	Service Provider A	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020005	1	\N
+a16e73b9-5277-4b69-9f8d-3b227495dfea	SDE with EDC	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	\N	\N	Service Provider A	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020005	3	\N
 \.
 
 
@@ -632,6 +633,7 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51166	Company Admin	5cf74ef8-e0b7-4984-a872-474828beb510
 607818be-4978-41f4-bf63-fa8d2de51167	User	5cf74ef8-e0b7-4984-a872-474828beb510
 607818be-4978-41f4-bf63-fa8d2de51168	Service Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4
+607818be-4978-41f4-bf63-fa8d2de51169	User	a16e73b9-5277-4b69-9f8d-3b227495dfea
 \.
 
 
@@ -1026,6 +1028,8 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51167	en	tbd
 607818be-4978-41f4-bf63-fa8d2de51168	de	Service Management for Service Providers
 607818be-4978-41f4-bf63-fa8d2de51168	en	Service Management for Service Providers
+607818be-4978-41f4-bf63-fa8d2de51169	de	Access to the SDE with data upload rights.
+607818be-4978-41f4-bf63-fa8d2de51169	en	Access to the SDE with data upload rights.
 \.
 
 
