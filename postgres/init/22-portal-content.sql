@@ -344,6 +344,14 @@ COPY portal.audit_company_user_assigned_role20221005 (audit_v1id, id, company_us
 
 
 --
+-- Data for Name: audit_company_user_assigned_role20221018; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.audit_company_user_assigned_role20221018 (audit_v1id, company_user_id, user_role_id, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+--
 -- Data for Name: audit_offer20221013; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -581,23 +589,23 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 -- Data for Name: company_user_assigned_roles; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-COPY portal.company_user_assigned_roles (company_user_id, user_role_id, id, last_editor_id) FROM stdin;
-ac1cf001-7fbc-1f2f-817f-bce0575a0011	b05d86e1-6c98-4619-85fa-9a425e0800b6	735148ca-e203-4de4-a634-a0595fd35484	\N
-ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6	860b9193-1ac6-438d-9df1-3f6783dff556	\N
-ac1cf001-7fbc-1f2f-817f-bce058020000	efc20368-9e82-46ff-b88f-6495b9810253	d2f38052-bad0-4682-b1d1-0402141bb408	\N
-ac1cf001-7fbc-1f2f-817f-bce058020000	aabcdfeb-6669-4c74-89f0-19cda090873f	fb2d01d8-a0c9-462a-b2f3-3f846fc658bd	\N
-ac1cf001-7fbc-1f2f-817f-bce058020000	58f897ec-0aad-4588-8ffa-5f45d6638633	3b9d5bce-435f-4872-92e8-c637af18c62e	\N
-ac1cf001-7fbc-1f2f-817f-bce058020001	58f897ec-0aad-4588-8ffa-5f45d6638632	d09f371d-54ca-4ff0-add4-10a5f2af437f	\N
-ac1cf001-7fbc-1f2f-817f-bce058020001	efc20368-9e82-46ff-b88f-6495b9810253	7b371b0d-c2fb-41b8-8f01-721b30af375f	\N
-ac1cf001-7fbc-1f2f-817f-bce058020001	aabcdfeb-6669-4c74-89f0-19cda090873f	4b366a2a-edb2-47c8-b96a-0698a470437b	\N
-ac1cf001-7fbc-1f2f-817f-bce058020002	7410693c-c893-409e-852f-9ee886ce94a6	ea9bedb7-05f6-491a-b515-68033cf359d5	\N
-ac1cf001-7fbc-1f2f-817f-bce058020003	7410693c-c893-409e-852f-9ee886ce94a6	20b22570-a723-47ec-93c4-c1b4781e85c6	\N
-ac1cf001-7fbc-1f2f-817f-bce058020004	7410693c-c893-409e-852f-9ee886ce94a6	f55295fd-8904-440e-983c-826916fa2dfa	\N
-ac1cf001-7fbc-1f2f-817f-bce058020005	58f897ec-0aad-4588-8ffa-5f45d6638632	d09f371d-54ca-4ff0-add4-10a5f2af43aa	\N
-ac1cf001-7fbc-1f2f-817f-bce058019990	58f897ec-0aad-4588-8ffa-5f45d6638633	689bb435-39c1-4625-a736-1853d2bc3e37	\N
-ac1cf001-7fbc-1f2f-817f-bce058019991	58f897ec-0aad-4588-8ffa-5f45d6638632	9ac2746d-f43a-4be7-990c-0f432fc3981f	\N
-ac1cf001-7fbc-1f2f-817f-bce058019992	7410693c-c893-409e-852f-9ee886ce94a6	25d12d7d-56e0-4bbc-9256-8cf9d7c6fb24	\N
-ac1cf001-7fbc-1f2f-817f-bce058019993	607818be-4978-41f4-bf63-fa8d2de51154	d606f60c-3550-40e5-b828-e85e756ccdf8	\N
+COPY portal.company_user_assigned_roles (company_user_id, user_role_id, last_editor_id) FROM stdin;
+ac1cf001-7fbc-1f2f-817f-bce0575a0011	b05d86e1-6c98-4619-85fa-9a425e0800b6	\N
+ac1cf001-7fbc-1f2f-817f-bce0577e0015	b05d86e1-6c98-4619-85fa-9a425e0800b6	\N
+ac1cf001-7fbc-1f2f-817f-bce058020000	efc20368-9e82-46ff-b88f-6495b9810253	\N
+ac1cf001-7fbc-1f2f-817f-bce058020000	aabcdfeb-6669-4c74-89f0-19cda090873f	\N
+ac1cf001-7fbc-1f2f-817f-bce058020000	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
+ac1cf001-7fbc-1f2f-817f-bce058020001	58f897ec-0aad-4588-8ffa-5f45d6638632	\N
+ac1cf001-7fbc-1f2f-817f-bce058020001	efc20368-9e82-46ff-b88f-6495b9810253	\N
+ac1cf001-7fbc-1f2f-817f-bce058020001	aabcdfeb-6669-4c74-89f0-19cda090873f	\N
+ac1cf001-7fbc-1f2f-817f-bce058020002	7410693c-c893-409e-852f-9ee886ce94a6	\N
+ac1cf001-7fbc-1f2f-817f-bce058020003	7410693c-c893-409e-852f-9ee886ce94a6	\N
+ac1cf001-7fbc-1f2f-817f-bce058020004	7410693c-c893-409e-852f-9ee886ce94a6	\N
+ac1cf001-7fbc-1f2f-817f-bce058020005	58f897ec-0aad-4588-8ffa-5f45d6638632	\N
+ac1cf001-7fbc-1f2f-817f-bce058019990	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
+ac1cf001-7fbc-1f2f-817f-bce058019991	58f897ec-0aad-4588-8ffa-5f45d6638632	\N
+ac1cf001-7fbc-1f2f-817f-bce058019992	7410693c-c893-409e-852f-9ee886ce94a6	\N
+ac1cf001-7fbc-1f2f-817f-bce058019993	607818be-4978-41f4-bf63-fa8d2de51154	\N
 \.
 
 
@@ -976,3 +984,4 @@ b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 --
 -- PostgreSQL database dump complete
 --
+
