@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
 -- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -65,6 +65,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221007102646_CPLP-1625-ChangeDocumentTypeIdtoNonNullable	6.0.4
 20221012090843_CPLP-1422-AddSelfDescriptionDocuments	6.0.4
 20221013113920_CPLP-1313-AuditOffer	6.0.4
+20221017073929_CPLP-1317-AuditUserRole	6.0.4
 \.
 
 

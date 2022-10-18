@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.5 (Debian 14.5-1.pgdg110+1)
+-- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
 -- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
 
 SET statement_timeout = 0;
@@ -272,6 +272,27 @@ $$;
 
 
 --
+-- Name: lc_trigger_after_delete_userrole(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_delete_userrole() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_user_role20221017 ("id", "user_role", "offer_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.user_role, 
+  OLD.offer_id, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
+--
 -- Name: lc_trigger_after_insert_companyapplication(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -516,6 +537,27 @@ RETURN NEW;
 END;
 
 
+$$;
+
+
+--
+-- Name: lc_trigger_after_insert_userrole(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_insert_userrole() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_user_role20221017 ("id", "user_role", "offer_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.user_role, 
+  NEW.offer_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -767,6 +809,27 @@ END;
 $$;
 
 
+--
+-- Name: lc_trigger_after_update_userrole(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_update_userrole() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_user_role20221017 ("id", "user_role", "offer_id", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.user_role, 
+  NEW.offer_id, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -1008,6 +1071,22 @@ CREATE TABLE portal.audit_offer_subscription20221005 (
 CREATE TABLE portal.audit_operation (
     id integer NOT NULL,
     label character varying(255) NOT NULL
+);
+
+
+--
+-- Name: audit_user_role20221017; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_user_role20221017 (
+    audit_v1id uuid NOT NULL,
+    id uuid NOT NULL,
+    user_role text NOT NULL,
+    offer_id uuid NOT NULL,
+    last_editor_id uuid,
+    audit_v1last_editor_id uuid,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL
 );
 
 
@@ -1648,7 +1727,8 @@ CREATE TABLE portal.user_role_descriptions (
 CREATE TABLE portal.user_roles (
     id uuid NOT NULL,
     user_role character varying(255) NOT NULL,
-    offer_id uuid NOT NULL
+    offer_id uuid NOT NULL,
+    last_editor_id uuid
 );
 
 
@@ -1858,6 +1938,14 @@ ALTER TABLE ONLY portal.audit_offer_subscription20221005
 
 ALTER TABLE ONLY portal.audit_operation
     ADD CONSTRAINT pk_audit_operation PRIMARY KEY (id);
+
+
+--
+-- Name: audit_user_role20221017 pk_audit_user_role20221017; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_user_role20221017
+    ADD CONSTRAINT pk_audit_user_role20221017 PRIMARY KEY (audit_v1id);
 
 
 --
@@ -2817,6 +2905,13 @@ CREATE TRIGGER lc_trigger_after_delete_offersubscription AFTER DELETE ON portal.
 
 
 --
+-- Name: user_roles lc_trigger_after_delete_userrole; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_delete_userrole AFTER DELETE ON portal.user_roles FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_delete_userrole();
+
+
+--
 -- Name: company_applications lc_trigger_after_insert_companyapplication; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2852,6 +2947,13 @@ CREATE TRIGGER lc_trigger_after_insert_offersubscription AFTER INSERT ON portal.
 
 
 --
+-- Name: user_roles lc_trigger_after_insert_userrole; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_insert_userrole AFTER INSERT ON portal.user_roles FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_insert_userrole();
+
+
+--
 -- Name: company_applications lc_trigger_after_update_companyapplication; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2884,6 +2986,13 @@ CREATE TRIGGER lc_trigger_after_update_offer AFTER UPDATE ON portal.offers FOR E
 --
 
 CREATE TRIGGER lc_trigger_after_update_offersubscription AFTER UPDATE ON portal.offer_subscriptions FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_update_offersubscription();
+
+
+--
+-- Name: user_roles lc_trigger_after_update_userrole; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_update_userrole AFTER UPDATE ON portal.user_roles FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_update_userrole();
 
 
 --
