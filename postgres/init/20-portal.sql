@@ -500,12 +500,12 @@ CREATE TABLE portal.agreement_assigned_company_roles (
 
 
 --
--- Name: agreement_assigned_document_templates; Type: TABLE; Schema: portal; Owner: -
+-- Name: agreement_assigned_documents; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.agreement_assigned_document_templates (
+CREATE TABLE portal.agreement_assigned_documents (
     agreement_id uuid NOT NULL,
-    document_template_id uuid NOT NULL
+    document_id uuid NOT NULL
 );
 
 
@@ -1044,19 +1044,6 @@ CREATE TABLE portal.document_status (
 
 
 --
--- Name: document_templates; Type: TABLE; Schema: portal; Owner: -
---
-
-CREATE TABLE portal.document_templates (
-    id uuid NOT NULL,
-    date_created timestamp with time zone NOT NULL,
-    date_last_changed timestamp with time zone,
-    documenttemplatename character varying(255) NOT NULL,
-    documenttemplateversion character varying(255) NOT NULL
-);
-
-
---
 -- Name: document_types; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1400,11 +1387,11 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 
 
 --
--- Name: agreement_assigned_document_templates pk_agreement_assigned_document_templates; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: agreement_assigned_documents pk_agreement_assigned_documents; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.agreement_assigned_document_templates
-    ADD CONSTRAINT pk_agreement_assigned_document_templates PRIMARY KEY (agreement_id, document_template_id);
+ALTER TABLE ONLY portal.agreement_assigned_documents
+    ADD CONSTRAINT pk_agreement_assigned_documents PRIMARY KEY (agreement_id, document_id);
 
 
 --
@@ -1816,14 +1803,6 @@ ALTER TABLE ONLY portal.document_status
 
 
 --
--- Name: document_templates pk_document_templates; Type: CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.document_templates
-    ADD CONSTRAINT pk_document_templates PRIMARY KEY (id);
-
-
---
 -- Name: document_types pk_document_types; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -1990,10 +1969,10 @@ CREATE INDEX ix_agreement_assigned_company_roles_company_role_id ON portal.agree
 
 
 --
--- Name: ix_agreement_assigned_document_templates_document_template_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_agreement_assigned_documents_document_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE UNIQUE INDEX ix_agreement_assigned_document_templates_document_template_id ON portal.agreement_assigned_document_templates USING btree (document_template_id);
+CREATE INDEX ix_agreement_assigned_documents_document_id ON portal.agreement_assigned_documents USING btree (document_id);
 
 
 --
@@ -2679,19 +2658,19 @@ ALTER TABLE ONLY portal.agreement_assigned_company_roles
 
 
 --
--- Name: agreement_assigned_document_templates fk_agreement_assigned_document_templates_agreements_agreement_; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: agreement_assigned_documents fk_agreement_assigned_documents_agreements_agreement_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.agreement_assigned_document_templates
-    ADD CONSTRAINT fk_agreement_assigned_document_templates_agreements_agreement_ FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id);
+ALTER TABLE ONLY portal.agreement_assigned_documents
+    ADD CONSTRAINT fk_agreement_assigned_documents_agreements_agreement_id FOREIGN KEY (agreement_id) REFERENCES portal.agreements(id);
 
 
 --
--- Name: agreement_assigned_document_templates fk_agreement_assigned_document_templates_document_templates_do; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: agreement_assigned_documents fk_agreement_assigned_documents_documents_document_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.agreement_assigned_document_templates
-    ADD CONSTRAINT fk_agreement_assigned_document_templates_document_templates_do FOREIGN KEY (document_template_id) REFERENCES portal.document_templates(id);
+ALTER TABLE ONLY portal.agreement_assigned_documents
+    ADD CONSTRAINT fk_agreement_assigned_documents_documents_document_id FOREIGN KEY (document_id) REFERENCES portal.documents(id);
 
 
 --
