@@ -66,6 +66,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221012090843_CPLP-1422-AddSelfDescriptionDocuments	6.0.4
 20221013113920_CPLP-1313-AuditOffer	6.0.4
 20221017073929_CPLP-1317-AuditUserRole	6.0.4
+20221018180404_CPLP-1417-RemoveCompanyAssignedUserRoleId	6.0.4
 \.
 
 
