@@ -77,9 +77,11 @@ aa0a0000-7fbc-1f2f-817f-bce0502c1010	1	2022-03-24 18:01:33.388+00	2022-03-24 18:
 aa0a0000-7fbc-1f2f-817f-bce0502c1011	1	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	Terms & Conditions - App Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1012	1	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	Terms & Conditions - Consultant	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1013	1	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	\N	Security Regulations - Active Participant	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1014	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Terms & Conditions - Service Marketplace	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1015	1	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Data Sovereignty Guidelines	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00		Marketplace Terms & Conditions	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1014	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Terms & Conditions - Service Marketplace	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1015	1	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Data Sovereignty Guidelines	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Marketplace Terms & Conditions	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1017	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Terms & Conditions Service Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1018	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Data Sharing Approval - allow CX to submit company data (company name, requester) to process the subscription	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
@@ -109,10 +111,10 @@ ALTER TABLE portal.company_users DISABLE TRIGGER ALL;
 COPY portal.company_users (id, date_created, date_last_changed, email, firstname, lastlogin, lastname, company_id, company_user_status_id, last_editor_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce0575a0011	2022-03-24 18:01:33.394+00	2022-03-24 18:01:33.394+00	\N	\N	\N	\N	0dcd8209-85e2-4073-b130-ac094fb47106	1	\N
 ac1cf001-7fbc-1f2f-817f-bce0577e0015	2022-03-24 18:01:33.438+00	2022-03-24 18:01:33.438+00	\N	\N	\N	\N	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
-ac1cf001-7fbc-1f2f-817f-bce058019990	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-user-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
-ac1cf001-7fbc-1f2f-817f-bce058019991	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
-ac1cf001-7fbc-1f2f-817f-bce058019992	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	company-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
-ac1cf001-7fbc-1f2f-817f-bce058019993	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	it-admin-2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058019990	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-user-2	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058019991	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	cx-admin-2	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058019992	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	company-admin-2	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058019993	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	it-admin-2	41fd2ab8-71cd-4546-9bef-a388d91b2542	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020000	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	CX User	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	CX Admin	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020002	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1	\N
@@ -179,7 +181,6 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	Dismantler Cockpit	2022-03-24 18:01:33.375+
 ac1cf001-7fbc-1f2f-817f-bce05744000b	Project Implementation: Earth Commerce	2022-03-24 18:01:33.38+00	2022-03-24 18:01:33.38+00	CE_Marketplace_LP.png	\N	support@sap.com	0000	SAP	0dcd8209-85e2-4073-b130-ac094fb47106	3	2022-03-24 18:01:33.38+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	Component Performance Monitor	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	PalantirCPM.png	https://www.palantir.com/explore/cpm/	cpm-info@palantir.com	0000	Palantir Technologies	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	Fraud Dash.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
-f9cad59d-84b3-4880-a550-4072c26a6b94	Fraud Reporter	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	lead.png	\N	\N	0000	Catena-X	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 8488044e-b8df-403a-9cbd-16dad7e4a08c	Covanto - AFQM	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	AFQM_screen.jpg	\N	\N	0000	Catena-X	cac8fa6a-9db7-4bad-9cbd-56298b74bac2	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 5cf74ef8-e0b7-4984-a872-474828beb5d1	Smart MOM	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	logo-GEC.jpg	\N	info@gec.io	+49 69 24747180	German Edge Cloud GmbH & Co. KG	fe55fe20-5f19-401e-91a2-dfa37b44a0be	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 5cf74ef8-e0b7-4984-a872-474828beb5d2	DTC-Translator	2022-03-24 18:01:33.388+00	2022-03-24 18:01:33.388+00	DTC-Translator_LP.svg	\N	gerd.preuss@adac.de	0000	ADAC	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-03-24 18:01:33.388+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
@@ -229,7 +230,6 @@ ac1cf001-7fbc-1f2f-817f-bce0574c000f	c065a349-f649-47f8-94d5-1a504a855419
 5cf74ef8-e0b7-4984-a872-474828beb5d1	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d2	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 5cf74ef8-e0b7-4984-a872-474828beb5d3	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-f9cad59d-84b3-4880-a550-4072c26a6b94	6909ccc7-37c8-4088-99ab-790f20702460
 5cf74ef8-e0b7-4984-a872-474828beb5d4	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d5	06b243a4-ba51-4bf3-bc40-5d79a2231b88
 5cf74ef8-e0b7-4984-a872-474828beb5d6	06b243a4-ba51-4bf3-bc40-5d79a2231b88
@@ -257,7 +257,6 @@ f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
 f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
 f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
 f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
-f032a041-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
 f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
 f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
@@ -286,7 +285,6 @@ COPY portal.app_instances (id, app_id, iam_client_id) FROM stdin;
 ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	ac1cf001-7fbc-1f2f-817f-bce05744000b	cf207afb-d213-4c33-becc-0cabeef174a7
 b161d570-f6ff-45b4-a077-243f72487af6	ac1cf001-7fbc-1f2f-817f-bce0572c0007	f032a042-d035-11ec-9d64-0242ac120002
 d69075b4-9bce-489c-ba80-8f7f08c4a011	f9cad59d-84b3-4880-a550-4072c26a6b93	f032a040-d035-11ec-9d64-0242ac120002
-cdea99b7-1068-426a-ad7f-7b10f21fc4d6	f9cad59d-84b3-4880-a550-4072c26a6b94	f032a041-d035-11ec-9d64-0242ac120002
 7e828901-27cb-4078-bd15-00efd247c56a	5cf74ef8-e0b7-4984-a872-474828beb5d3	f032a043-d035-11ec-9d64-0242ac120002
 d6bc1bc6-dce9-46fc-a2f2-370688ba3212	5cf74ef8-e0b7-4984-a872-474828beb5d5	f032a045-d035-11ec-9d64-0242ac120002
 9c272eb4-0a60-43b3-aaa6-f57ea09a8271	5cf74ef8-e0b7-4984-a872-474828beb5d6	f032a046-d035-11ec-9d64-0242ac120002
@@ -315,8 +313,6 @@ COPY portal.app_languages (app_id, language_short_name) FROM stdin;
 5cf74ef8-e0b7-4984-a872-474828beb5d3	en
 f9cad59d-84b3-4880-a550-4072c26a6b93	de
 f9cad59d-84b3-4880-a550-4072c26a6b93	en
-f9cad59d-84b3-4880-a550-4072c26a6b94	de
-f9cad59d-84b3-4880-a550-4072c26a6b94	en
 ac1cf001-7fbc-1f2f-817f-bce05744000b	en
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d4	en
@@ -353,7 +349,6 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0573f0009	2	ac1c
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	0b2ca541-206d-48ad-bc02-fb61fbcb5552	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	02d5575d-b110-43f0-b0dd-53dbc37147dc	\N	\N	\N
-ac861325-bc54-4583-bcdc-9e9f2a38ff84	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4e861f6a-86ad-4188-8ba7-0f214248b120	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	34a93025-18de-4c7a-8677-0fd9801248d1	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N	\N
 ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	\N	\N
@@ -364,7 +359,6 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1c
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce05744000b	2	ac1cf001-7fbc-1f2f-817f-bce058020001	d65e367c-0968-4be9-bd2a-6c3d6339d65c	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	ac1cf001-7fbc-1f2f-817f-bce0574c000f	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1d28a224-6293-4148-8b60-6714a0f1465d	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b93	2	ac1cf001-7fbc-1f2f-817f-bce058020001	6da4b991-b594-4b80-933a-26383d6d465f	\N	\N	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	f9cad59d-84b3-4880-a550-4072c26a6b94	2	ac1cf001-7fbc-1f2f-817f-bce058020001	773e7152-8d94-4f90-8689-956a7bdf4f4e	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	8488044e-b8df-403a-9cbd-16dad7e4a08c	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4ba33360-72e6-4a56-a253-59761d694d2c	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	\N	\N
@@ -387,7 +381,6 @@ f550c647-f94f-4e58-bcb9-b3d338af9009	56faf2e0-88ec-4ee5-a736-6c52688250f8	2c2526
 88b0661c-cc22-4a4a-9721-fc4f3cec21f8	0b2ca541-206d-48ad-bc02-fb61fbcb5552	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
 3c7f7825-b2c4-43b8-b91e-8ab6f8e28fac	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
 aa97bc61-149f-4b85-babb-eb40f0424ef5	02d5575d-b110-43f0-b0dd-53dbc37147dc	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
-83e9da7d-1208-42b9-91d5-5a4fd7daa2df	4e861f6a-86ad-4188-8ba7-0f214248b120	cdea99b7-1068-426a-ad7f-7b10f21fc4d6	https://apps.cdq.com/dashboard/fraud/report-fraud
 cb0d1b6a-29fd-4583-a924-641dcf3b26a9	34a93025-18de-4c7a-8677-0fd9801248d1	\N	https://portal-staging.afqm-services.com/
 3cafae15-4f03-49c3-9786-b6ca2e29fa76	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N
 9c5cb134-b77b-4b22-ae34-63b686b3b5b9	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	https://dtc-translator.adac.openresearch.com
@@ -398,7 +391,6 @@ d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N
 f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
 ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
 9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
-6da8bdef-2a21-474b-9618-ec0acffc6703	773e7152-8d94-4f90-8689-956a7bdf4f4e	cdea99b7-1068-426a-ad7f-7b10f21fc4d6	https://apps.cdq.com/dashboard/fraud/report-fraud
 ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
 3d8cb906-76a3-4cd7-ae99-4f9225437a27	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com
@@ -632,9 +624,7 @@ ALTER TABLE portal.company_user_assigned_app_favourites DISABLE TRIGGER ALL;
 
 COPY portal.company_user_assigned_app_favourites (company_user_id, app_id) FROM stdin;
 ac1cf001-7fbc-1f2f-817f-bce058020000	f9cad59d-84b3-4880-a550-4072c26a6b93
-ac1cf001-7fbc-1f2f-817f-bce058020000	f9cad59d-84b3-4880-a550-4072c26a6b94
 ac1cf001-7fbc-1f2f-817f-bce058020001	f9cad59d-84b3-4880-a550-4072c26a6b93
-ac1cf001-7fbc-1f2f-817f-bce058020001	f9cad59d-84b3-4880-a550-4072c26a6b94
 \.
 
 
@@ -682,8 +672,6 @@ aabcdfeb-6669-4c74-89f0-19cda0908731	EarthCommerce.UserRC_QAS2	ac1cf001-7fbc-1f2
 b05d86e1-6c98-4619-85fa-9a425e0800b6	Business Admin	9b957704-3505-4445-822c-d7ef80f27fcd	\N
 b05d86e1-6c98-4619-85fa-9a425e080000	fraud_app_manager	f9cad59d-84b3-4880-a550-4072c26a6b93	\N
 b05d86e1-6c98-4619-85fa-9a425e080001	fraud_app_user	f9cad59d-84b3-4880-a550-4072c26a6b93	\N
-b05d86e1-6c98-4619-85fa-9a425e080002	fraud_app_manager	f9cad59d-84b3-4880-a550-4072c26a6b94	\N
-b05d86e1-6c98-4619-85fa-9a425e080003	fraud_app_user	f9cad59d-84b3-4880-a550-4072c26a6b94	\N
 855eeefb-a2ef-4d74-ac10-34a87afcb865	admin	5cf74ef8-e0b7-4984-a872-474828beb5d3	\N
 545c2616-2fce-4f52-b881-331db2fc1e35	customer	5cf74ef8-e0b7-4984-a872-474828beb5d3	\N
 7a9e0777-2b13-4463-a7c4-f699afff3527	oem	5cf74ef8-e0b7-4984-a872-474828beb5d3	\N
@@ -906,7 +894,6 @@ ac1cf001-7fbc-1f2f-817f-bce0574f0010	free of charge
 500518a7-9b14-4b55-bdba-2ecd53cff831	free of charge
 0f956bce-7ec3-4171-b6d2-ba7fc57c37d5	free of charge
 37eee74c-95fb-40ee-ae9c-95953a80bd66	free of charge
-37eee74c-95fb-40ee-ae9c-95953a80bd67	free of charge
 37eee74c-95fb-40ee-ae9c-95953a80bd68	free of charge
 37eee74c-95fb-40ee-ae9c-95953a80bd69	free of charge
 37eee74c-95fb-40ee-ae9c-95953a80bd70	free of charge
@@ -929,7 +916,6 @@ ac1cf001-7fbc-1f2f-817f-bce05748000d	ac1cf001-7fbc-1f2f-817f-bce0574c000e
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	ac1cf001-7fbc-1f2f-817f-bce0574f0010
 f9cad59d-84b3-4880-a550-4072c26a6b93	0f956bce-7ec3-4171-b6d2-ba7fc57c37d5
 8488044e-b8df-403a-9cbd-16dad7e4a08c	37eee74c-95fb-40ee-ae9c-95953a80bd66
-f9cad59d-84b3-4880-a550-4072c26a6b94	37eee74c-95fb-40ee-ae9c-95953a80bd67
 5cf74ef8-e0b7-4984-a872-474828beb5d1	37eee74c-95fb-40ee-ae9c-95953a80bd68
 5cf74ef8-e0b7-4984-a872-474828beb5d2	37eee74c-95fb-40ee-ae9c-95953a80bd69
 5cf74ef8-e0b7-4984-a872-474828beb5d3	37eee74c-95fb-40ee-ae9c-95953a80bd70
@@ -958,8 +944,6 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	en	The service provides information about n
 5cf74ef8-e0b7-4984-a872-474828beb5d2	de	This is only a test text	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d3	en	This is only a test text	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d3	de	This is only a test text	This is only a test text
-f9cad59d-84b3-4880-a550-4072c26a6b94	en	The service provides the possibility to create a fraud case (e.g. invoices with fake bank details) and report them to business partners.	Report Fraud Cases
-f9cad59d-84b3-4880-a550-4072c26a6b94	de	This is only a test text	This is only a test text
 ac1cf001-7fbc-1f2f-817f-bce05744000b	de	This is only a test text	This is only a test text
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d4	de	AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.
@@ -976,6 +960,8 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 5cf74ef8-e0b7-4984-a872-474828beb5d9	en	mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.
 5cf74ef8-e0b7-4984-a872-474828beb510	de	The value added service solution Country Risk Score gives different users additional information regarding their business partners. This is part of the Know Your Business Partner approach and enables the user to make better decisions based on aggregated information. The main part of the country risk dashboard are information per country regarding corruption, political stability, economic risk and social and structural figures. There are official sources connected like CPI or Basel but the service offers the possibility to upload company/user specific ratings.	The country risk dashboard - country information regarding corruption, political stability, economic risk and social and structural figures.
 5cf74ef8-e0b7-4984-a872-474828beb510	en	The value added service solution Country Risk Score gives different users additional information regarding their business partners. This is part of the Know Your Business Partner approach and enables the user to make better decisions based on aggregated information. The main part of the country risk dashboard are information per country regarding corruption, political stability, economic risk and social and structural figures. There are official sources connected like CPI or Basel but the service offers the possibility to upload company/user specific ratings.	The country risk dashboard - country information regarding corruption, political stability, economic risk and social and structural figures.
+a16e73b9-5277-4b69-9f8d-3b227495dfea	en	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
+a16e73b9-5277-4b69-9f8d-3b227495dfea	de	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
 \.
 
 
@@ -1002,8 +988,6 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000012	5cf74ef8-e0b7-4984-a872-474828beb5d5	Smart Factory-Details3.png
 5cf74ef8-a0a1-0000-a000-000000000013	f9cad59d-84b3-4880-a550-4072c26a6b93	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-000000000014	f9cad59d-84b3-4880-a550-4072c26a6b93	Test-Image2.png
-5cf74ef8-a0a1-0000-a000-000000000015	f9cad59d-84b3-4880-a550-4072c26a6b94	Test-Image1.png
-5cf74ef8-a0a1-0000-a000-000000000016	f9cad59d-84b3-4880-a550-4072c26a6b94	Test-Image2.png
 5cf74ef8-a0a1-0000-a000-000000000017	8488044e-b8df-403a-9cbd-16dad7e4a08c	Test-Image1.png
 5cf74ef8-a0a1-0000-a000-000000000018	8488044e-b8df-403a-9cbd-16dad7e4a08c	Test-Image2.png
 5cf74ef8-a0a1-0000-a000-000000000019	ac1cf001-7fbc-1f2f-817f-bce0572c0007	Test-Image1.png
@@ -1134,10 +1118,6 @@ b05d86e1-6c98-4619-85fa-9a425e080000	de	Betrugsmanager
 b05d86e1-6c98-4619-85fa-9a425e080000	en	Fraud Manager
 b05d86e1-6c98-4619-85fa-9a425e080001	de	Betrugsreporter
 b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
-b05d86e1-6c98-4619-85fa-9a425e080002	de	Betrugsmanager
-b05d86e1-6c98-4619-85fa-9a425e080002	en	Fraud Manager
-b05d86e1-6c98-4619-85fa-9a425e080003	de	Betrugsreporter
-b05d86e1-6c98-4619-85fa-9a425e080003	en	Fraud User
 855eeefb-a2ef-4d74-ac10-34a87afcb865	de	Administrator
 855eeefb-a2ef-4d74-ac10-34a87afcb865	en	Administrator
 545c2616-2fce-4f52-b881-331db2fc1e35	de	Kunde
@@ -1170,4 +1150,3 @@ ALTER TABLE portal.user_role_descriptions ENABLE TRIGGER ALL;
 --
 -- PostgreSQL database dump complete
 --
-
