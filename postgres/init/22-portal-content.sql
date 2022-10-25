@@ -1115,6 +1115,19 @@ ALTER TABLE portal.service_provider_company_details ENABLE TRIGGER ALL;
 ALTER TABLE portal.user_role_assigned_collections DISABLE TRIGGER ALL;
 
 COPY portal.user_role_assigned_collections (user_role_id, user_role_collection_id) FROM stdin;
+58f897ec-0aad-4588-8ffa-5f45d6638632	1a24eca5-901f-4191-84a7-4ef09a894575
+7410693c-c893-409e-852f-9ee886ce94a6	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+58f897ec-0aad-4588-8ffa-5f45d6638633	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+607818be-4978-41f4-bf63-fa8d2de51154	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+ceec23fd-6b26-485c-a4bb-90571a29e148	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+b05d86e1-6c98-4619-85fa-9a425e0800b6	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+7410693c-c893-409e-852f-9ee886ce94a6	ec428950-8b64-4646-b336-28af869b5d73
+95fe4014-4d1b-47af-a22e-72a12f9470dc	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+95fe4014-4d1b-47af-a22e-72a12f9470dc	ec428950-8b64-4646-b336-28af869b5d73
+607818be-4978-41f4-bf63-fa8d2de51168	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	ec428950-8b64-4646-b336-28af869b5d73
+95fe4014-4d1b-47af-a22e-72a12f9470db	ec428950-8b64-4646-b336-28af869b5d73
+04231a30-df50-4d14-bb00-71ff012ae0cf	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
 \.
 
 
