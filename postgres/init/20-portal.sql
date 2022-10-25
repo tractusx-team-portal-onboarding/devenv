@@ -814,6 +814,16 @@ CREATE TABLE portal.company_identity_providers (
 
 
 --
+-- Name: company_role_assigned_role_collections; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_role_assigned_role_collections (
+    company_role_id integer NOT NULL,
+    user_role_collection_id uuid NOT NULL
+);
+
+
+--
 -- Name: company_role_descriptions; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -821,6 +831,16 @@ CREATE TABLE portal.company_role_descriptions (
     company_role_id integer NOT NULL,
     language_short_name character(2) NOT NULL,
     description character varying(255) NOT NULL
+);
+
+
+--
+-- Name: company_role_registration_data; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.company_role_registration_data (
+    company_role_id integer NOT NULL,
+    is_registration_role boolean NOT NULL
 );
 
 
@@ -1348,6 +1368,37 @@ CREATE TABLE portal.use_cases (
 
 
 --
+-- Name: user_role_assigned_collections; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.user_role_assigned_collections (
+    user_role_id uuid NOT NULL,
+    user_role_collection_id uuid NOT NULL
+);
+
+
+--
+-- Name: user_role_collection_descriptions; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.user_role_collection_descriptions (
+    user_role_collection_id uuid NOT NULL,
+    language_short_name character(2) NOT NULL,
+    description character varying(255) NOT NULL
+);
+
+
+--
+-- Name: user_role_collections; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.user_role_collections (
+    id uuid NOT NULL,
+    name text NOT NULL
+);
+
+
+--
 -- Name: user_role_descriptions; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1643,11 +1694,27 @@ ALTER TABLE ONLY portal.company_identity_providers
 
 
 --
+-- Name: company_role_assigned_role_collections pk_company_role_assigned_role_collections; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_role_assigned_role_collections
+    ADD CONSTRAINT pk_company_role_assigned_role_collections PRIMARY KEY (company_role_id);
+
+
+--
 -- Name: company_role_descriptions pk_company_role_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
 ALTER TABLE ONLY portal.company_role_descriptions
     ADD CONSTRAINT pk_company_role_descriptions PRIMARY KEY (company_role_id, language_short_name);
+
+
+--
+-- Name: company_role_registration_data pk_company_role_registration_data; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_role_registration_data
+    ADD CONSTRAINT pk_company_role_registration_data PRIMARY KEY (company_role_id);
 
 
 --
@@ -1939,6 +2006,30 @@ ALTER TABLE ONLY portal.use_cases
 
 
 --
+-- Name: user_role_assigned_collections pk_user_role_assigned_collections; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_assigned_collections
+    ADD CONSTRAINT pk_user_role_assigned_collections PRIMARY KEY (user_role_id, user_role_collection_id);
+
+
+--
+-- Name: user_role_collection_descriptions pk_user_role_collection_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_collection_descriptions
+    ADD CONSTRAINT pk_user_role_collection_descriptions PRIMARY KEY (user_role_collection_id, language_short_name);
+
+
+--
+-- Name: user_role_collections pk_user_role_collections; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_collections
+    ADD CONSTRAINT pk_user_role_collections PRIMARY KEY (id);
+
+
+--
 -- Name: user_role_descriptions pk_user_role_descriptions; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2169,6 +2260,13 @@ CREATE INDEX ix_company_assigned_use_cases_use_case_id ON portal.company_assigne
 --
 
 CREATE INDEX ix_company_identity_providers_identity_provider_id ON portal.company_identity_providers USING btree (identity_provider_id);
+
+
+--
+-- Name: ix_company_role_assigned_role_collections_user_role_collection; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_company_role_assigned_role_collections_user_role_collection ON portal.company_role_assigned_role_collections USING btree (user_role_collection_id);
 
 
 --
@@ -2498,6 +2596,20 @@ CREATE INDEX ix_offers_sales_manager_id ON portal.offers USING btree (sales_mana
 --
 
 CREATE UNIQUE INDEX ix_service_provider_company_details_company_id ON portal.service_provider_company_details USING btree (company_id);
+
+
+--
+-- Name: ix_user_role_assigned_collections_user_role_collection_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_user_role_assigned_collections_user_role_collection_id ON portal.user_role_assigned_collections USING btree (user_role_collection_id);
+
+
+--
+-- Name: ix_user_role_collection_descriptions_language_short_name; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_user_role_collection_descriptions_language_short_name ON portal.user_role_collection_descriptions USING btree (language_short_name);
 
 
 --
@@ -2993,6 +3105,22 @@ ALTER TABLE ONLY portal.company_identity_providers
 
 
 --
+-- Name: company_role_assigned_role_collections fk_company_role_assigned_role_collections_company_roles_compan; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_role_assigned_role_collections
+    ADD CONSTRAINT fk_company_role_assigned_role_collections_company_roles_compan FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id) ON DELETE CASCADE;
+
+
+--
+-- Name: company_role_assigned_role_collections fk_company_role_assigned_role_collections_user_role_collection; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_role_assigned_role_collections
+    ADD CONSTRAINT fk_company_role_assigned_role_collections_user_role_collection FOREIGN KEY (user_role_collection_id) REFERENCES portal.user_role_collections(id) ON DELETE CASCADE;
+
+
+--
 -- Name: company_role_descriptions fk_company_role_descriptions_company_roles_company_role_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -3006,6 +3134,14 @@ ALTER TABLE ONLY portal.company_role_descriptions
 
 ALTER TABLE ONLY portal.company_role_descriptions
     ADD CONSTRAINT fk_company_role_descriptions_languages_language_temp_id1 FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name) ON DELETE CASCADE;
+
+
+--
+-- Name: company_role_registration_data fk_company_role_registration_data_company_roles_company_role_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.company_role_registration_data
+    ADD CONSTRAINT fk_company_role_registration_data_company_roles_company_role_id FOREIGN KEY (company_role_id) REFERENCES portal.company_roles(id) ON DELETE CASCADE;
 
 
 --
@@ -3334,6 +3470,38 @@ ALTER TABLE ONLY portal.offer_subscriptions
 
 ALTER TABLE ONLY portal.service_provider_company_details
     ADD CONSTRAINT fk_service_provider_company_details_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
+
+
+--
+-- Name: user_role_assigned_collections fk_user_role_assigned_collections_user_role_collections_user_r; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_assigned_collections
+    ADD CONSTRAINT fk_user_role_assigned_collections_user_role_collections_user_r FOREIGN KEY (user_role_collection_id) REFERENCES portal.user_role_collections(id);
+
+
+--
+-- Name: user_role_assigned_collections fk_user_role_assigned_collections_user_roles_user_role_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_assigned_collections
+    ADD CONSTRAINT fk_user_role_assigned_collections_user_roles_user_role_id FOREIGN KEY (user_role_id) REFERENCES portal.user_roles(id);
+
+
+--
+-- Name: user_role_collection_descriptions fk_user_role_collection_descriptions_languages_language_short_; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_collection_descriptions
+    ADD CONSTRAINT fk_user_role_collection_descriptions_languages_language_short_ FOREIGN KEY (language_short_name) REFERENCES portal.languages(short_name) ON DELETE CASCADE;
+
+
+--
+-- Name: user_role_collection_descriptions fk_user_role_collection_descriptions_user_role_collections_use; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.user_role_collection_descriptions
+    ADD CONSTRAINT fk_user_role_collection_descriptions_user_role_collections_use FOREIGN KEY (user_role_collection_id) REFERENCES portal.user_role_collections(id) ON DELETE CASCADE;
 
 
 --
