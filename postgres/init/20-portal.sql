@@ -2459,6 +2459,13 @@ CREATE INDEX ix_offer_subscriptions_offer_subscription_status_id ON portal.offer
 
 
 --
+-- Name: ix_offer_subscriptions_requester_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_offer_subscriptions_requester_id ON portal.offer_subscriptions USING btree (requester_id);
+
+
+--
 -- Name: ix_offers_offer_status_id; Type: INDEX; Schema: portal; Owner: -
 --
 
@@ -3311,6 +3318,14 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_notification_type_notification_type_id FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
+
+
+--
+-- Name: offer_subscriptions fk_offer_subscriptions_company_users_requester_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.offer_subscriptions
+    ADD CONSTRAINT fk_offer_subscriptions_company_users_requester_id FOREIGN KEY (requester_id) REFERENCES portal.company_users(id);
 
 
 --
