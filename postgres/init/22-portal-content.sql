@@ -256,7 +256,7 @@ f032a036-d035-11ec-9d64-0242ac120002	Cl4-CX-DigitalTwin
 f032a037-d035-11ec-9d64-0242ac120002	Cl5-CX-Custodian
 f032a038-d035-11ec-9d64-0242ac120002	Cl6-CX-xx
 f032a039-d035-11ec-9d64-0242ac120002	Cl7-CX-BPDM
-f032a040-d035-11ec-9d64-0242ac120002	Cl8-CDQ-Fraud
+f032a040-d035-11ec-9d64-0242ac120002	Cl9-CDQ-Fraud
 f032a042-d035-11ec-9d64-0242ac120002	Cl10-CX-xx
 f032a043-d035-11ec-9d64-0242ac120002	Cl11-ADAC-Fleet
 f032a044-d035-11ec-9d64-0242ac120002	Cl12-CX-TestManager
@@ -658,12 +658,13 @@ COPY portal.user_roles (id, user_role, offer_id, last_editor_id) FROM stdin;
 58f897ec-0aad-4588-8ffa-5f45d6638632	CX Admin	9b957704-3505-4445-822c-d7ef80f27fcd	\N
 58f897ec-0aad-4588-8ffa-5f45d6638633	CX User	9b957704-3505-4445-822c-d7ef80f27fcd	\N
 607818be-4978-41f4-bf63-fa8d2de51154	IT Admin	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+607818be-4978-41f4-bf63-fa8d2de51180	Company Admin	9b957704-3505-4445-822c-d7ef80f27fcd	\N
 ceec23fd-6b26-485c-a4bb-90571a29e148	Signing Manager	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	\N
-95fe4014-4d1b-47af-a22e-72a12f9470db	Developer	9b957704-3505-4445-822c-d7ef80f27fcd	\N
-04231a30-df50-4d14-bb00-71ff012ae0cf	Data Specialist	9b957704-3505-4445-822c-d7ef80f27fcd	\N
-916e4be9-0ff7-48fb-bb80-97d2e93fca14	Data Specialist (INT only)	9b957704-3505-4445-822c-d7ef80f27fcd	\N
-0d9eb9e4-b6df-49bd-b045-d9cef96a879d	Technical User Semantic & Digital Twin	9b957704-3505-4445-822c-d7ef80f27fcd	\N
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Administrator	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+95fe4014-4d1b-47af-a22e-72a12f9470db	App Developer	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+95fe4014-4d1b-47af-a22e-72a12f9470dc	Sales Manager	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+04231a30-df50-4d14-bb00-71ff012ae0cf	Purchaser	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	Service Manager	9b957704-3505-4445-822c-d7ef80f27fcd	\N
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	App Manager	9b957704-3505-4445-822c-d7ef80f27fcd	\N
 efc20368-9e82-46ff-b88f-6495b9810253	EarthCommerce.AdministratorRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b	\N
 aabcdfeb-6669-4c74-89f0-19cda090873f	EarthCommerce.Advanced.BuyerRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b	\N
 efc20368-9e82-46ff-b88f-6495b9810250	EarthCommerce.BuyerRC_QAS2	ac1cf001-7fbc-1f2f-817f-bce05744000b	\N
@@ -793,7 +794,7 @@ COPY portal.iam_identity_providers (iam_idp_alias, identity_provider_id) FROM st
 bmw-wen-oidc	ac1cf001-7fbc-1f2f-817f-bce0571b0004
 Company-1	ac1cf001-7fbc-1f2f-817f-bce057230006
 Company-2	ac1cf001-7fbc-1f2f-817f-bce057230007
-Company-3	ac1cf001-7fbc-1f2f-817f-bce057230008
+Security-Company	ac1cf001-7fbc-1f2f-817f-bce057230008
 idp2	ac1cf001-7fbc-1f2f-817f-bce057770014
 CX-Test-Access	ac1cf001-7fbc-1f2f-817f-bce057770015
 \.
@@ -1092,18 +1093,20 @@ COPY portal.user_role_descriptions (user_role_id, language_short_name, descripti
 58f897ec-0aad-4588-8ffa-5f45d6638633	en	CX User
 607818be-4978-41f4-bf63-fa8d2de51154	de	IT Administrator
 607818be-4978-41f4-bf63-fa8d2de51154	en	IT Admin
+607818be-4978-41f4-bf63-fa8d2de51180	de	Unternehmensadministrator
+607818be-4978-41f4-bf63-fa8d2de51180	en	Company Admin
 ceec23fd-6b26-485c-a4bb-90571a29e148	de	Signing Manager
 ceec23fd-6b26-485c-a4bb-90571a29e148	en	Signing Manager
-95fe4014-4d1b-47af-a22e-72a12f9470db	de	Entwickler
-95fe4014-4d1b-47af-a22e-72a12f9470db	en	Developer
-04231a30-df50-4d14-bb00-71ff012ae0cf	de	Data Specialist
-04231a30-df50-4d14-bb00-71ff012ae0cf	en	Data Specialist
-0d9eb9e4-b6df-49bd-b045-d9cef96a879d	de	Technischer User Semantik & Zwillinge
-0d9eb9e4-b6df-49bd-b045-d9cef96a879d	en	Technical User Semantic & Digital Twin
-916e4be9-0ff7-48fb-bb80-97d2e93fca14	de	Data Specialist (INT only)
-916e4be9-0ff7-48fb-bb80-97d2e93fca14	en	Data Specialist (INT only)
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	de	App Administrator
-3ff68c40-6581-4e48-a03a-2a6c1c5aac89	en	App Admin
+95fe4014-4d1b-47af-a22e-72a12f9470db	de	App Developer
+95fe4014-4d1b-47af-a22e-72a12f9470db	en	App Developer
+95fe4014-4d1b-47af-a22e-72a12f9470dc	de	Sales Manager
+95fe4014-4d1b-47af-a22e-72a12f9470dc	en	Sales Manager
+04231a30-df50-4d14-bb00-71ff012ae0cf	de	Einkäufer
+04231a30-df50-4d14-bb00-71ff012ae0cf	en	Purchaser
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	de	Service Manager
+916e4be9-0ff7-48fb-bb80-97d2e93fca14	en	Service Manager
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	de	App Manager
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	en	App Manager
 efc20368-9e82-46ff-b88f-6495b9810253	de	Vehicle Purchaser
 efc20368-9e82-46ff-b88f-6495b9810253	en	Vehicle Purchaser
 aabcdfeb-6669-4c74-89f0-19cda090873f	de	Dismantling Lead
