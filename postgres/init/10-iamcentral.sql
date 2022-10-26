@@ -1759,6 +1759,17 @@ b5bb4dc6-4b2d-4638-ad04-565798f987d4	1666342916879	CX-Central	CREATE	master	d228
 77eaedc6-0f0b-4cdc-bb42-0567bf1c6aa1	1666342862947	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/55f23221-ad4c-4cdc-a7bd-efd907b71d2d/roles/Service Management	{"id":"2b7d7b74-1569-4cb2-94d4-cb1447a29502","name":"Service Management","composite":false}	\N	CLIENT_ROLE
 2b713949-98a5-4e66-92b0-a62c677085b2	1666342871020	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/2b7d7b74-1569-4cb2-94d4-cb1447a29502/composites	[{"id":"d1be902b-f6ef-4d7b-9c86-fb5fc5825e07","name":"activate_subscription","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 b076f6a8-57fc-400d-9521-216dcb3cb661	1666342876083	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/2b7d7b74-1569-4cb2-94d4-cb1447a29502/composites	[{"id":"9d9a85c7-9468-4eec-bbab-e0b5a69c4b98","name":"add_service_offering","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+6a685035-885a-4cda-8cd7-db17cc7d65c2	1666774818975	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/App Developer	{"id":"6e427643-18e7-4154-b519-ad0ce90262bd","name":"App Developer","composite":false}	\N	CLIENT_ROLE
+64f234f6-5235-4acd-925b-fea261d8df44	1666774827027	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/6e427643-18e7-4154-b519-ad0ce90262bd/composites	[{"id":"2f66ff52-5bb8-4b17-909b-0e1c6f26ac97","name":"add_app","description":"Users with this role can publish new apps in the Marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+f92effd1-69f3-4e88-b983-b75120ce8889	1666774835711	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/6e427643-18e7-4154-b519-ad0ce90262bd/composites	[{"id":"eb8b9cbb-94a9-4258-b225-ada962d08885","name":"filter_apps","description":"Users with this role can filter apps in the App Marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+0d250515-bfc0-4a16-b278-cf82da4f8ac1	1666774840393	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/6e427643-18e7-4154-b519-ad0ce90262bd/composites	[{"id":"2f9c84f7-a3cb-4241-84a7-6d1195cabb59","name":"view_apps","description":"Users with this role can view apps in the App Marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+a4236c93-a202-43c0-a32d-c11a9814f4c6	1666774845793	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/6e427643-18e7-4154-b519-ad0ce90262bd/composites	[{"id":"7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37","name":"view_service_marketplace","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+856ea102-a7c4-47cc-954a-942c56b3d6ec	1666774854051	CX-Central	DELETE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/418dfd6d-ec59-4a69-bd95-2d525e6379b0	\N	\N	CLIENT_ROLE
+6e1ef2ef-5e62-4d0c-b51d-3b9f7387c1f1	1666777668643	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/Company Admin	{"id":"f189df8e-06d9-4e7e-a3b6-968cbc3f4358","name":"Company Admin","composite":false}	\N	CLIENT_ROLE
+5ffcf582-a0f3-44f5-ba04-2e7c47639e71	1666777679799	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	clients/dd8c6ef1-a56f-4114-8918-6c7fc2057e34/roles/modify_user_account	{"id":"8659fc88-8ec9-4f23-85bd-7623b73ff64b","name":"modify_user_account","composite":false}	\N	CLIENT_ROLE
+6e9916f1-ede7-4eaf-a75d-960763548471	1666777692778	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e8b9f782-d707-4852-a979-e5a08b19f3c7/composites	[{"id":"8659fc88-8ec9-4f23-85bd-7623b73ff64b","name":"modify_user_account","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+7a9b38bf-5fde-4d53-a0eb-6aab04353d65	1666777711543	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/f189df8e-06d9-4e7e-a3b6-968cbc3f4358/composites	[{"id":"8659fc88-8ec9-4f23-85bd-7623b73ff64b","name":"modify_user_account","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
+bf891f74-2ad9-4ff6-82c4-20a19aca866c	1666777737112	CX-Central	CREATE	master	d2280ca6-3454-407a-9683-f39e2a3031dc	d25a17f9-1550-4b79-8495-3c1279c4333a	10.0.0.2	roles-by-id/e718571c-b4bb-4c35-81a7-c37ca147c4c2/composites	[{"id":"8659fc88-8ec9-4f23-85bd-7623b73ff64b","name":"modify_user_account","composite":false,"clientRole":true,"containerId":"dd8c6ef1-a56f-4114-8918-6c7fc2057e34"}]	\N	CLIENT_ROLE
 \.
 
 
@@ -2851,9 +2862,6 @@ e8b9f782-d707-4852-a979-e5a08b19f3c7	77f051b9-dda3-4cde-966d-eff8f2cdb7b9
 b72c63ff-3534-4897-9a81-1bc8cbff8a50	eb8b9cbb-94a9-4258-b225-ada962d08885
 b72c63ff-3534-4897-9a81-1bc8cbff8a50	77f051b9-dda3-4cde-966d-eff8f2cdb7b9
 b72c63ff-3534-4897-9a81-1bc8cbff8a50	2f9c84f7-a3cb-4241-84a7-6d1195cabb59
-418dfd6d-ec59-4a69-bd95-2d525e6379b0	2f66ff52-5bb8-4b17-909b-0e1c6f26ac97
-418dfd6d-ec59-4a69-bd95-2d525e6379b0	eb8b9cbb-94a9-4258-b225-ada962d08885
-418dfd6d-ec59-4a69-bd95-2d525e6379b0	2f9c84f7-a3cb-4241-84a7-6d1195cabb59
 e718571c-b4bb-4c35-81a7-c37ca147c4c2	1a1e42c6-28b7-4191-a52b-b97b72926c33
 e718571c-b4bb-4c35-81a7-c37ca147c4c2	bfe97d4b-c2fb-40dc-a22c-202aca620b1d
 e718571c-b4bb-4c35-81a7-c37ca147c4c2	77f051b9-dda3-4cde-966d-eff8f2cdb7b9
@@ -2936,7 +2944,6 @@ e8b9f782-d707-4852-a979-e5a08b19f3c7	81010a42-23ee-4d91-9ebf-0fb9fce867c3
 e8b9f782-d707-4852-a979-e5a08b19f3c7	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
 b72c63ff-3534-4897-9a81-1bc8cbff8a50	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
 55e1e90b-ccb4-4771-88ec-ba698696aef8	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
-418dfd6d-ec59-4a69-bd95-2d525e6379b0	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
 e718571c-b4bb-4c35-81a7-c37ca147c4c2	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
 e8b9f782-d707-4852-a979-e5a08b19f3c7	9d9a85c7-9468-4eec-bbab-e0b5a69c4b98
 e8b9f782-d707-4852-a979-e5a08b19f3c7	ce61ef92-cbc2-4e24-a964-51099c23132d
@@ -2952,6 +2959,13 @@ e718571c-b4bb-4c35-81a7-c37ca147c4c2	8936138a-3c66-4285-81e3-17f7c65e05bb
 2b7d7b74-1569-4cb2-94d4-cb1447a29502	d1be902b-f6ef-4d7b-9c86-fb5fc5825e07
 2b7d7b74-1569-4cb2-94d4-cb1447a29502	9d9a85c7-9468-4eec-bbab-e0b5a69c4b98
 02ef551b-47ad-46e6-a11f-f33b6d26b093	0c448392-7b06-4c70-baf7-997c13300654
+6e427643-18e7-4154-b519-ad0ce90262bd	2f66ff52-5bb8-4b17-909b-0e1c6f26ac97
+6e427643-18e7-4154-b519-ad0ce90262bd	eb8b9cbb-94a9-4258-b225-ada962d08885
+6e427643-18e7-4154-b519-ad0ce90262bd	2f9c84f7-a3cb-4241-84a7-6d1195cabb59
+6e427643-18e7-4154-b519-ad0ce90262bd	7831b7a9-ccdc-4287-94fd-8d7a7e4f0c37
+e8b9f782-d707-4852-a979-e5a08b19f3c7	8659fc88-8ec9-4f23-85bd-7623b73ff64b
+f189df8e-06d9-4e7e-a3b6-968cbc3f4358	8659fc88-8ec9-4f23-85bd-7623b73ff64b
+e718571c-b4bb-4c35-81a7-c37ca147c4c2	8659fc88-8ec9-4f23-85bd-7623b73ff64b
 \.
 
 
@@ -3495,7 +3509,6 @@ b72c63ff-3534-4897-9a81-1bc8cbff8a50	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	C
 93ae3ba4-f3de-4a89-8d94-4838c144f3f4	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	Users with this right can view the client roles of an app	view_client_roles	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 2f66ff52-5bb8-4b17-909b-0e1c6f26ac97	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	Users with this role can publish new apps in the Marketplace	add_app	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 b5f93694-56c6-4b24-985b-b360017c84a5	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	Admin - User Management	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
-418dfd6d-ec59-4a69-bd95-2d525e6379b0	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	Developer	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 6fca2875-82e8-47cd-a9fd-2a0fcee0e315	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	DevOps Management	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 03b8efba-cb1d-4399-80b4-7cc7527ab72f	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	Users with this role can edit apps which are published in the marketplace	edit_apps	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 e718571c-b4bb-4c35-81a7-c37ca147c4c2	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	IT Admin	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
@@ -3582,6 +3595,9 @@ ce61ef92-cbc2-4e24-a964-51099c23132d	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	s
 8da518cc-4152-4138-8d0a-f082efb65d38	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	t	\N	Dataspace Discovery	CX-Central	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	\N
 2b7d7b74-1569-4cb2-94d4-cb1447a29502	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	t	\N	Service Management	CX-Central	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	\N
 02ef551b-47ad-46e6-a11f-f33b6d26b093	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	t	\N	DAPS Certificate	CX-Central	55f23221-ad4c-4cdc-a7bd-efd907b71d2d	\N
+6e427643-18e7-4154-b519-ad0ce90262bd	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	App Developer	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+f189df8e-06d9-4e7e-a3b6-968cbc3f4358	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	Company Admin	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
+8659fc88-8ec9-4f23-85bd-7623b73ff64b	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	t	\N	modify_user_account	CX-Central	dd8c6ef1-a56f-4114-8918-6c7fc2057e34	\N
 \.
 
 
