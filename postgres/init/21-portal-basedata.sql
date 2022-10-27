@@ -64,6 +64,7 @@ COPY portal.company_roles (id, label) FROM stdin;
 1	ACTIVE_PARTICIPANT
 2	APP_PROVIDER
 3	SERVICE_PROVIDER
+4	OPERATOR
 \.
 
 
@@ -94,6 +95,20 @@ COPY portal.company_role_descriptions (company_role_id, language_short_name, des
 2	en	The App Provider is a company which is providing application software via the CX marketplace. As app provider you can participate and use the developer hub, release and offer applications to the network and manage your applications.
 3	de	Als Service Anbieter können 3rd Party angebote - wie z.b. Dataspace Services, EDCs und ähnliches im Netzwerk angeboten werden.
 3	en	The Service Provider is able to offer 3rd party services, such as dataspace service offerings to CX Members. CX members can subscribe for those services.
+4	de	Betreiber
+4	en	Operator
+\.
+
+
+--
+-- Data for Name: company_role_registration_data; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.company_role_registration_data (company_role_id, is_registration_role) FROM stdin;
+1	t
+2	t
+3	t
+4	f
 \.
 
 

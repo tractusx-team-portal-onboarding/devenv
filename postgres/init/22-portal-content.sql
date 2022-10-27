@@ -588,6 +588,38 @@ bdac6865-2a8d-4bfd-9373-9dfce8190895	ac1cf001-7fbc-1f2f-817f-bce057230007
 ALTER TABLE portal.company_identity_providers ENABLE TRIGGER ALL;
 
 --
+-- Data for Name: user_role_collections; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.user_role_collections DISABLE TRIGGER ALL;
+
+COPY portal.user_role_collections (id, name) FROM stdin;
+1a24eca5-901f-4191-84a7-4ef09a894575	Operator
+8cb12ea2-aed4-4d75-b041-ba297df3d2f2	CX Participant
+a5b8b1de-7759-4620-9c87-6b6d74fb4fbc	Service Provider
+ec428950-8b64-4646-b336-28af869b5d73	App Provider
+\.
+
+
+ALTER TABLE portal.user_role_collections ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: company_role_assigned_role_collections; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.company_role_assigned_role_collections DISABLE TRIGGER ALL;
+
+COPY portal.company_role_assigned_role_collections (company_role_id, user_role_collection_id) FROM stdin;
+1	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+2	ec428950-8b64-4646-b336-28af869b5d73
+3	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+4	1a24eca5-901f-4191-84a7-4ef09a894575
+\.
+
+
+ALTER TABLE portal.company_role_assigned_role_collections ENABLE TRIGGER ALL;
+
+--
 -- Data for Name: company_service_accounts; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -947,6 +979,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	en	The service provides information about n
 5cf74ef8-e0b7-4984-a872-474828beb5d3	de	This is only a test text	This is only a test text
 ac1cf001-7fbc-1f2f-817f-bce05744000b	de	This is only a test text	This is only a test text
 ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a test text
+5cf74ef8-e0b7-4984-a872-474828beb5d7	en	The "SAP Logistics Business Network, Material Traceability (LBN-MT)" is a solution for cross-company supply chain transparency and material traceability. The network-based solution approach creates a data basis for automotive manufacturers and suppliers alike to shorten response times in case of anomalies and to execute recalls along the supply chain more precisely. The analysis and capture of the entire batch and serial number genealogy is simple, structured, and user-friendly by using Fiori UI. Furthermore, these can be displayed graphically via a network graph. The existing standard integration with S/4HANA and ECC enables seamless data provision from the backend system in the network. Other systems can be integrated, and data provided via corresponding interfaces. With LBN-MT, customers can operate according to the principles of data interoperability and sovereignty in the Catena-X network with all relevant business partners and establish new business models along the value chain.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d4	de	AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.
 5cf74ef8-e0b7-4984-a872-474828beb5d8	en	Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.
 5cf74ef8-e0b7-4984-a872-474828beb5d4	en	AI-based software solutions enable manufacturing companies to digitalize the entire process chain in production and therefor a real increase in efficiency and competitiveness. The self-learning algorithm is the centerpiece of up2parts. It combines component information from 3D models with existing processes with the individual manufacturing expertise. As up2parts is used, the company-specific artificial intelligence is continuously trained and optimized. Production companies use up2parts to automate their work scheduling and quotation with the assistance of their own company specific artificial intelligence. The result: Automatic calculation proposals only take a few seconds, the quotation takes just 2 clicks and acceleration of the processes in production planning to the maximum. Thanks to the permanently self-training AI, the human expert knowledge in the company can be utilized optimally and is preserved in the long term. up2parts GmbH is a software company specialist in the development of efficiency-enhancing solutions for the digitalization of production processes. The company was founded in 2019, as the former software department of the contract manufacturer BAM GmbH. The experience and daily work of today's sister company BAM are used by up2parts as a basis for the development of innovative software solutions.	Enable manufacturing companies to digitalize the entire process chain in production.
@@ -954,7 +987,6 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 5cf74ef8-e0b7-4984-a872-474828beb5d5	en	The Smart Factory Web Portal is a web-based application to allow suppliers and MaaS platforms to offer production capabilities and capacities. At the same time, the Smart Factory Web Portal offers a search environment where a buyer can upload engineering files and configure procurement requirements which the Smart Factory Web Search Engine the portal exploits uses to calculate all possible supply chain alternatives by matching it to the registered supplier information. This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d6	en	PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control. PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees.PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD. PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d6	de	PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control. PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees. PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD. PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text
-5cf74ef8-e0b7-4984-a872-474828beb5d7	en	The "SAP Logistics Business Network, Material Traceability (LBN-MT)" is a solution for cross-company supply chain transparency and material traceability. The network-based solution approach creates a data basis for automotive manufacturers and suppliers alike to shorten response times in case of anomalies and to execute recalls along the supply chain more precisely. The analysis and capture of the entire batch and serial number genealogy is simple, structured, and user-friendly by using Fiori UI. Furthermore, these can be displayed graphically via a network graph. The existing standard integration with S/4HANA and ECC enables seamless data provision from the backend system in the network. Other systems can be integrated, and data provided via corresponding interfaces. With LBN-MT, customers can operate according to the principles of data interoperability and sovereignty in the Catena-X network with all relevant business partners and establish new business models along the value chain.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d7	de	Das „SAP Logistics Business Network, Material Traceability (LBN-MT)“ stellt eine Lösung zur unternehmensübergreifenden Lieferkettentransparenz und Material Rückverfolgbarkeit dar. Der netzwerkbasierte Lösungsansatz schafft eine Datengrundlage für Automobilhersteller und Zulieferer gleichermaßen, um Reaktionszeiten bei Anomalien zu verkürzen und Rückrufe entlang der Lieferkette präziser auszuführen. Die Analyse und Erfassung der gesamten Chargen- und Serialnummerngeneralogie ist mittels Fiori UI einfach, strukturiert und anwenderfreundlich. Ebenso lässt sich diese über einen Netzwerkgrafen graphisch darstellen. Durch die vorhandene Standardintegration mit S/4HANA und ECC ist eine nahtlose Datenbereitstellung aus dem Backendsystem im Netzwerk möglich. Andere Systeme können über entsprechende Schnittstellen integriert und Daten bereitgestellt werden. Mit LBN-MT können Kunden nach den Prinzipien der Dateninteroperabilität und Souveränität im Catena-X Netzwerk mit allen relevanten Geschäftspartnern agieren und neue Geschäftsfelder entlang der Wertschöpfungskette etablieren.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d8	de	Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.
 5cf74ef8-e0b7-4984-a872-474828beb5d9	de	mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.
@@ -1077,6 +1109,51 @@ COPY portal.service_provider_company_details (id, date_created, auto_setup_url, 
 ALTER TABLE portal.service_provider_company_details ENABLE TRIGGER ALL;
 
 --
+-- Data for Name: user_role_assigned_collections; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.user_role_assigned_collections DISABLE TRIGGER ALL;
+
+COPY portal.user_role_assigned_collections (user_role_id, user_role_collection_id) FROM stdin;
+58f897ec-0aad-4588-8ffa-5f45d6638632	1a24eca5-901f-4191-84a7-4ef09a894575
+7410693c-c893-409e-852f-9ee886ce94a6	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+58f897ec-0aad-4588-8ffa-5f45d6638633	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+607818be-4978-41f4-bf63-fa8d2de51154	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+ceec23fd-6b26-485c-a4bb-90571a29e148	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+b05d86e1-6c98-4619-85fa-9a425e0800b6	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+7410693c-c893-409e-852f-9ee886ce94a6	ec428950-8b64-4646-b336-28af869b5d73
+95fe4014-4d1b-47af-a22e-72a12f9470dc	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+95fe4014-4d1b-47af-a22e-72a12f9470dc	ec428950-8b64-4646-b336-28af869b5d73
+607818be-4978-41f4-bf63-fa8d2de51168	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+3ff68c40-6581-4e48-a03a-2a6c1c5aac89	ec428950-8b64-4646-b336-28af869b5d73
+95fe4014-4d1b-47af-a22e-72a12f9470db	ec428950-8b64-4646-b336-28af869b5d73
+04231a30-df50-4d14-bb00-71ff012ae0cf	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
+\.
+
+
+ALTER TABLE portal.user_role_assigned_collections ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: user_role_collection_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.user_role_collection_descriptions DISABLE TRIGGER ALL;
+
+COPY portal.user_role_collection_descriptions (user_role_collection_id, language_short_name, description) FROM stdin;
+1a24eca5-901f-4191-84a7-4ef09a894575	de	Betreiber
+1a24eca5-901f-4191-84a7-4ef09a894575	en	Operator
+8cb12ea2-aed4-4d75-b041-ba297df3d2f2	de	CX Netzwerkteilnehmer
+8cb12ea2-aed4-4d75-b041-ba297df3d2f2	en	CX Participant
+a5b8b1de-7759-4620-9c87-6b6d74fb4fbc	de	Dienstanbieter
+a5b8b1de-7759-4620-9c87-6b6d74fb4fbc	en	Service Provider
+ec428950-8b64-4646-b336-28af869b5d73	de	Softwareanbieter
+ec428950-8b64-4646-b336-28af869b5d73	en	App Provider
+\.
+
+
+ALTER TABLE portal.user_role_collection_descriptions ENABLE TRIGGER ALL;
+
+--
 -- Data for Name: user_role_descriptions; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -1153,3 +1230,4 @@ ALTER TABLE portal.user_role_descriptions ENABLE TRIGGER ALL;
 --
 -- PostgreSQL database dump complete
 --
+
