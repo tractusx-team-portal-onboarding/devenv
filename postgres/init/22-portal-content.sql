@@ -734,6 +734,8 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51167	User	5cf74ef8-e0b7-4984-a872-474828beb510	\N
 607818be-4978-41f4-bf63-fa8d2de51168	Service Management	0ffcb416-1101-4ba6-8d4a-a9dfa31745a4	\N
 607818be-4978-41f4-bf63-fa8d2de51169	User	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
+607818be-4978-41f4-bf63-fa8d2de51170	Viewer	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
+607818be-4978-41f4-bf63-fa8d2de51171	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
 \.
 
 
@@ -871,10 +873,10 @@ d54db875-774c-479f-9f14-375f2cb8b258	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-
 d54db875-774c-479f-9f14-375f2cb8b260	2022-03-24 18:01:33.439+00	1	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058020002
 d54db875-774c-479f-9f14-375f2cb8b261	2022-03-24 18:01:33.439+00	1	6b2d1263-c073-4a48-bfaf-704dc154ca9d	ac1cf001-7fbc-1f2f-817f-bce058020003
 d54db875-774c-479f-9f14-375f2cb8b262	2022-03-24 18:01:33.439+00	1	6b2d1263-c073-4a48-bfaf-704dc154ca9e	ac1cf001-7fbc-1f2f-817f-bce058020004
-d54db875-774c-479f-9f14-375f2cb8b263	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019990
-d54db875-774c-479f-9f14-375f2cb8b264	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019991
+d54db875-774c-479f-9f14-375f2cb8b263	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058019990
+d54db875-774c-479f-9f14-375f2cb8b264	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058019991
 d54db875-774c-479f-9f14-375f2cb8b265	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019992
-d54db875-774c-479f-9f14-375f2cb8b266	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9a	ac1cf001-7fbc-1f2f-817f-bce058019993
+d54db875-774c-479f-9f14-375f2cb8b266	2022-03-24 18:01:33.439+00	3	6b2d1263-c073-4a48-bfaf-704dc154ca9c	ac1cf001-7fbc-1f2f-817f-bce058019993
 \.
 
 
@@ -1103,6 +1105,7 @@ ALTER TABLE portal.offer_tags ENABLE TRIGGER ALL;
 ALTER TABLE portal.service_provider_company_details DISABLE TRIGGER ALL;
 
 COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
+3c0a31d2-7743-402c-af02-f0cc3cc3ca6d	2022-10-10 11:50:54.709881+00	https://orchestrator.cx.dih-cloud.com	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd
 \.
 
 
@@ -1222,6 +1225,10 @@ b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51168	en	Service Management for Service Providers
 607818be-4978-41f4-bf63-fa8d2de51169	de	Access to the SDE with data upload rights.
 607818be-4978-41f4-bf63-fa8d2de51169	en	Access to the SDE with data upload rights.
+607818be-4978-41f4-bf63-fa8d2de51170	de	Access to the SDE.
+607818be-4978-41f4-bf63-fa8d2de51170	en	Access to the SDE.
+607818be-4978-41f4-bf63-fa8d2de51171	de	Access as well as delete rights for the SDE.
+607818be-4978-41f4-bf63-fa8d2de51171	en	Access as well as delete rights for the SDE.
 \.
 
 
@@ -1230,4 +1237,3 @@ ALTER TABLE portal.user_role_descriptions ENABLE TRIGGER ALL;
 --
 -- PostgreSQL database dump complete
 --
-
