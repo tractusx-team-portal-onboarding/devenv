@@ -199,6 +199,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388+00	
 5cf74ef8-e0b7-4984-a872-474828beb5d9	mipart GmbH	2022-08-28 00:00:00+00	2022-08-28 00:00:00+00	\N	\N	info@mipart.com	0000	mipart GmbH	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	3	2022-08-28 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Dashboard	2022-10-10 00:00:00+00	2022-10-10 00:00:00+00	Country Risk Icon.PNG	https://vas-country-risk-frontend.dev.demo.catena-x.net/	Alexander.AK.Keppler@bmw.de	0000	Bayrische Motorenwerke	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-10-10 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 a16e73b9-5277-4b69-9f8d-3b227495dfea	SDE with EDC	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	\N	\N	Service Provider A	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020005	3	\N
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	Capacity Management	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	SupplyOn-LP-01.png	info@supplyon.com	\N	\N	SupplyOn	2dc4249f-b5ca-4d42-bef1-7a7a950a4f88	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020006	1	\N
 \.
 
 
@@ -240,6 +241,7 @@ ac1cf001-7fbc-1f2f-817f-bce0574c000f	c065a349-f649-47f8-94d5-1a504a855419
 5cf74ef8-e0b7-4984-a872-474828beb5d8	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb5d9	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb510	6909ccc7-37c8-4088-99ab-790f20702460
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	41e4a4c0-aae4-41c0-97c9-ebafde410de4
 \.
 
 
@@ -334,6 +336,7 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 5cf74ef8-e0b7-4984-a872-474828beb5d9	en
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
 5cf74ef8-e0b7-4984-a872-474828beb510	en
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	en
 \.
 
 
@@ -747,6 +750,8 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51169	User	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
 607818be-4978-41f4-bf63-fa8d2de51170	Viewer	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
 607818be-4978-41f4-bf63-fa8d2de51171	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
+607818be-4978-41f4-bf63-fa8d2de51172	Buyer Capacity Manager	a16e73b9-5277-4b69-9f8d-3b227495dfeb	\N
+607818be-4978-41f4-bf63-fa8d2de51173	Supplier Capacity Manager	a16e73b9-5277-4b69-9f8d-3b227495dfeb	\N
 \.
 
 
@@ -1018,6 +1023,8 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 5cf74ef8-e0b7-4984-a872-474828beb510	en	The value added service solution Country Risk Score gives different users additional information regarding their business partners. This is part of the Know Your Business Partner approach and enables the user to make better decisions based on aggregated information. The main part of the country risk dashboard are information per country regarding corruption, political stability, economic risk and social and structural figures. There are official sources connected like CPI or Basel but the service offers the possibility to upload company/user specific ratings.	The country risk dashboard - country information regarding corruption, political stability, economic risk and social and structural figures.
 a16e73b9-5277-4b69-9f8d-3b227495dfea	en	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
 a16e73b9-5277-4b69-9f8d-3b227495dfea	de	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	en	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	de	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
 \.
 
 
@@ -1067,6 +1074,9 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000037	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk World Map.PNG
 5cf74ef8-a0a1-0000-a000-000000000038	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Ratings.PNG
 5cf74ef8-a0a1-0000-a000-000000000039	5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Table of Business Partners.PNG
+5cf74ef8-a0a1-0000-a000-000000000040	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-01.png
+5cf74ef8-a0a1-0000-a000-000000000041	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-02.png
+5cf74ef8-a0a1-0000-a000-000000000042	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-03.png
 \.
 
 
@@ -1114,6 +1124,7 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb510	BPDM
 5cf74ef8-e0b7-4984-a872-474828beb510	Risk
 5cf74ef8-e0b7-4984-a872-474828beb510	Rating
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	Demand
 \.
 
 
