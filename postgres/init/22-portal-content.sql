@@ -58,7 +58,7 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	2022-03-24 18:01:33.341+00	BPNL00000003AYRE
 bdac6865-2a8d-4bfd-9373-9dfce8190895	2022-03-24 18:01:33.43+00	BPNL00000002LLHA	0000000000	Car Factory 2	Car Factory 2	1	c0e1d802-0c4b-4d0d-a763-b6d9d56e6f07	\N
 41fd2ab8-71cd-4546-9bef-a388d91b2542	2022-03-24 18:01:33.438+00	BPNL00000003LLHA	0000000000	Security Company	Security Company	1	86da3e1c-a634-41a6-ad44-9880746123e4	\N
 d14eba77-0b18-4e41-9d84-49ef875c0763	2022-03-24 18:01:33.442+00	BPNL00000003LLHB	0000000000	Dummy Corp. 1	Dummy Corp. 1	1	0f562ea7-4cc1-47a9-bfee-b41b0ac67ebb	\N
-9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442+00	CAXLCDQCORPZZ	0000000000	CDQ	CDQ	1	095ca573-bef1-4092-ad60-b7f651678fcd	\N
+9d049598-0dac-4d26-8a21-8f5b64c799cf	2022-03-24 18:01:33.442+00	BPNL00000003LLHC	0000000000	Palantir	Palantir	1	095ca573-bef1-4092-ad60-b7f651678fcd	\N
 cac8fa6a-9db7-4bad-9cbd-56298b74bac2	2022-03-24 18:01:33.442+00	CAXLBOSCHZZ	0000000000	BOSCH	BOSCH	2	081c8bfd-c6d1-4119-a5f8-a69726dfc11d	\N
 dfd90abe-b20e-4aff-87c6-f30f2bf9b104	2022-08-08 18:01:33.442+00	BPNL000000000009	0000000000	Siemens	Siemens	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fc	\N
 fe55fe20-5f19-401e-91a2-dfa37b44a0be	2022-08-08 18:01:33.442+00	BPNL00000003CSGV	0000000000	German Edge Cloud GmbH & Co. KG	GEC	2	b4db3945-19a7-4a50-97d6-e66e8dfd04fd	\N
@@ -127,6 +127,9 @@ ac1cf001-7fbc-1f2f-817f-bce058020001	2022-03-24 18:01:33.57+00	2022-03-24 18:01:
 ac1cf001-7fbc-1f2f-817f-bce058020002	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 1	220330ac-170d-4e22-8d72-9467ed042149	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020003	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	Company Admin 2	bdac6865-2a8d-4bfd-9373-9dfce8190895	1	\N
 ac1cf001-7fbc-1f2f-817f-bce058020005	2022-10-01 18:01:33.57+00	2022-10-01 18:01:33.57+00	julia.jeroch@bmw.de	Service	\N	Provider	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058020007	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	PartChain1	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058020008	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	PartChain2	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
+ac1cf001-7fbc-1f2f-817f-bce058020009	2022-03-24 18:01:33.57+00	2022-03-24 18:01:33.57+00	julia.jeroch@bmw.de	Test User	\N	PartChain3	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	\N
 \.
 
 
@@ -205,6 +208,7 @@ f9cad59d-84b3-4880-a550-4072c26a6b93	Fraud Dashboard	2022-03-24 18:01:33.388+00	
 5cf74ef8-e0b7-4984-a872-474828beb510	Country Risk Dashboard	2022-10-10 00:00:00+00	2022-10-10 00:00:00+00	Country Risk Icon.PNG	https://vas-country-risk-frontend.dev.demo.catena-x.net/	Alexander.AK.Keppler@bmw.de	0000	Bayrische Motorenwerke	ac861325-bc54-4583-bcdc-9e9f2a38ff84	3	2022-10-10 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 a16e73b9-5277-4b69-9f8d-3b227495dfea	SDE with EDC	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	\N	\N	Service Provider A	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020005	3	\N
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	Capacity Management	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	SupplyOn-LP-01.png	info@supplyon.com	\N	\N	SupplyOn	2dc4249f-b5ca-4d42-bef1-7a7a950a4f88	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020006	1	\N
+a16e73b9-5277-4b69-9f8d-3b227495dfec	Catena-X Xcelerator Share	2022-10-01 00:00:00+00	2022-10-01 00:00:00+00	\N	\N	kiryl.batsiukov@siemens.com	\N	Siemens	dfd90abe-b20e-4aff-87c6-f30f2bf9b104	3	2022-10-01 00:00:00+00	ac1cf001-7fbc-1f2f-817f-bce058020001	1	\N
 \.
 
 
@@ -247,6 +251,7 @@ ac1cf001-7fbc-1f2f-817f-bce0574c000f	c065a349-f649-47f8-94d5-1a504a855419
 5cf74ef8-e0b7-4984-a872-474828beb5d9	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 5cf74ef8-e0b7-4984-a872-474828beb510	6909ccc7-37c8-4088-99ab-790f20702460
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	41e4a4c0-aae4-41c0-97c9-ebafde410de4
+a16e73b9-5277-4b69-9f8d-3b227495dfec	c065a349-f649-47f8-94d5-1a504a855419
 \.
 
 
@@ -342,6 +347,7 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	en
 ac1cf001-7fbc-1f2f-817f-bce0574c000f	en
 5cf74ef8-e0b7-4984-a872-474828beb510	en
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	en
+a16e73b9-5277-4b69-9f8d-3b227495dfec	en
 \.
 
 
@@ -754,6 +760,8 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51171	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfea	\N
 607818be-4978-41f4-bf63-fa8d2de51172	Buyer Capacity Manager	a16e73b9-5277-4b69-9f8d-3b227495dfeb	\N
 607818be-4978-41f4-bf63-fa8d2de51173	Supplier Capacity Manager	a16e73b9-5277-4b69-9f8d-3b227495dfeb	\N
+607818be-4978-41f4-bf63-fa8d2de51174	User	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
+607818be-4978-41f4-bf63-fa8d2de51175	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
 \.
 
 
@@ -786,6 +794,9 @@ ac1cf001-7fbc-1f2f-817f-bce058019993	607818be-4978-41f4-bf63-fa8d2de51154	\N
 ac1cf001-7fbc-1f2f-817f-bce058019995	607818be-4978-41f4-bf63-fa8d2de51154	\N
 ac1cf001-7fbc-1f2f-817f-bce058019996	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
 ac1cf001-7fbc-1f2f-817f-bce058019997	58f897ec-0aad-4588-8ffa-5f45d6638632	\N
+ac1cf001-7fbc-1f2f-817f-bce058020007	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
+ac1cf001-7fbc-1f2f-817f-bce058020008	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
+ac1cf001-7fbc-1f2f-817f-bce058020009	58f897ec-0aad-4588-8ffa-5f45d6638633	\N
 \.
 
 
@@ -880,6 +891,9 @@ e5e403d5-3bd9-48f6-8931-7c0c717c3f40	ac1cf001-7fbc-1f2f-817f-bce058019992
 3d064630-3736-477e-80e2-148faf1cd210	ac1cf001-7fbc-1f2f-817f-bce058019995
 18f1a488-06e9-4dc4-ad43-cfb9c9a0c7da	ac1cf001-7fbc-1f2f-817f-bce058019996
 555b0b81-6ead-4d3d-8d5d-41c07bb8cfbb	ac1cf001-7fbc-1f2f-817f-bce058019997
+e193b73c-f4ec-46c2-b686-5c77fe49135e	ac1cf001-7fbc-1f2f-817f-bce058020007
+def0d51e-0a78-4774-ab51-b19a0cbe9d94	ac1cf001-7fbc-1f2f-817f-bce058020008
+2772f485-b0e8-4fab-b5a8-3ed517c5c766	ac1cf001-7fbc-1f2f-817f-bce058020009
 \.
 
 
@@ -1033,6 +1047,8 @@ a16e73b9-5277-4b69-9f8d-3b227495dfea	en	In order to allow Data Providers and Dat
 a16e73b9-5277-4b69-9f8d-3b227495dfea	de	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	en	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	de	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
+a16e73b9-5277-4b69-9f8d-3b227495dfec	en	Provided connectivity to Siemens Xcelerator Share product	Provided connectivity to Siemens Xcelerator Share product
+a16e73b9-5277-4b69-9f8d-3b227495dfec	de	This is only a test text	This is only a test text
 \.
 
 
@@ -1085,6 +1101,7 @@ COPY portal.offer_detail_images (id, offer_id, image_url) FROM stdin;
 5cf74ef8-a0a1-0000-a000-000000000040	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-01.png
 5cf74ef8-a0a1-0000-a000-000000000041	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-02.png
 5cf74ef8-a0a1-0000-a000-000000000042	a16e73b9-5277-4b69-9f8d-3b227495dfeb	SupplyOn-DCM-03.png
+5cf74ef8-a0a1-0000-a000-000000000043	a16e73b9-5277-4b69-9f8d-3b227495dfec	Siemens-Details-01.png
 \.
 
 
@@ -1133,6 +1150,7 @@ ac1cf001-7fbc-1f2f-817f-bce05744000b	Circular Economy
 5cf74ef8-e0b7-4984-a872-474828beb510	Risk
 5cf74ef8-e0b7-4984-a872-474828beb510	Rating
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	Demand
+a16e73b9-5277-4b69-9f8d-3b227495dfec	Quality
 \.
 
 
@@ -1269,6 +1287,14 @@ b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51170	en	Access to the SDE.
 607818be-4978-41f4-bf63-fa8d2de51171	de	Access as well as delete rights for the SDE.
 607818be-4978-41f4-bf63-fa8d2de51171	en	Access as well as delete rights for the SDE.
+607818be-4978-41f4-bf63-fa8d2de51172	de	Buyer Capacity Manager
+607818be-4978-41f4-bf63-fa8d2de51172	en	Buyer Capacity Manager
+607818be-4978-41f4-bf63-fa8d2de51173	de	Supplier Capacity Manager
+607818be-4978-41f4-bf63-fa8d2de51173	en	Supplier Capacity Manager
+607818be-4978-41f4-bf63-fa8d2de51174	de	Can view and use the app
+607818be-4978-41f4-bf63-fa8d2de51174	en	Can view and use the app
+607818be-4978-41f4-bf63-fa8d2de51175	de	Can configure the app
+607818be-4978-41f4-bf63-fa8d2de51175	en	Can configure the app
 \.
 
 
