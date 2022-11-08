@@ -1187,6 +1187,16 @@ CREATE TABLE portal.languages (
 
 
 --
+-- Name: notification_topic; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.notification_topic (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+
+--
 -- Name: notification_type; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1208,7 +1218,8 @@ CREATE TABLE portal.notifications (
     notification_type_id integer NOT NULL,
     is_read boolean NOT NULL,
     due_date timestamp with time zone,
-    creator_user_id uuid
+    creator_user_id uuid,
+    notification_topic_id integer DEFAULT 1 NOT NULL
 );
 
 
@@ -1958,6 +1969,14 @@ ALTER TABLE ONLY portal.languages
 
 
 --
+-- Name: notification_topic pk_notification_topic; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.notification_topic
+    ADD CONSTRAINT pk_notification_topic PRIMARY KEY (id);
+
+
+--
 -- Name: notification_type pk_notification_type; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2512,6 +2531,13 @@ CREATE INDEX ix_invitations_invitation_status_id ON portal.invitations USING btr
 --
 
 CREATE INDEX ix_notifications_creator_user_id ON portal.notifications USING btree (creator_user_id);
+
+
+--
+-- Name: ix_notifications_notification_topic_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_notifications_notification_topic_id ON portal.notifications USING btree (notification_topic_id);
 
 
 --
@@ -3446,6 +3472,14 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_company_users_receiver_id FOREIGN KEY (receiver_user_id) REFERENCES portal.company_users(id);
+
+
+--
+-- Name: notifications fk_notifications_notification_topic_notification_topic_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.notifications
+    ADD CONSTRAINT fk_notifications_notification_topic_notification_topic_id FOREIGN KEY (notification_topic_id) REFERENCES portal.notification_topic(id);
 
 
 --
