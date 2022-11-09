@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -450,11 +450,12 @@ COPY portal.document_types (id, label) FROM stdin;
 1	CX_FRAME_CONTRACT
 2	COMMERCIAL_REGISTER_EXTRACT
 3	APP_CONTRACT
-4	DATA_CONTRACT
 5	ADDITIONAL_DETAILS
 6	APP_LEADIMAGE
 7	APP_IMAGE
-8	SELF_DESCRIPTION_EDC
+4	APP_DATA_DETAILS
+8	SELF_DESCRIPTION
+9	APP_TECHNICAL_INFORMATION
 \.
 
 
