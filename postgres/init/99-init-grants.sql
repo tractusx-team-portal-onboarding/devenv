@@ -60,6 +60,8 @@ ALTER TABLE portal.invitations OWNER TO portal;
 ALTER TABLE portal.languages OWNER TO portal;
 ALTER TABLE portal.notifications OWNER TO portal;
 ALTER TABLE portal.notification_type OWNER TO portal;
+ALTER TABLE portal.notification_topic OWNER TO portal;
+ALTER TABLE portal.notification_type_assigned_topic OWNER TO portal;
 ALTER TABLE portal.offers OWNER TO portal;
 ALTER TABLE portal.offer_assigned_licenses OWNER TO portal;
 ALTER TABLE portal.offer_assigned_documents OWNER TO portal;
