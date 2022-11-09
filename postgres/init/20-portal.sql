@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1207,6 +1207,16 @@ CREATE TABLE portal.notification_type (
 
 
 --
+-- Name: notification_type_assigned_topic; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.notification_type_assigned_topic (
+    notification_type_id integer NOT NULL,
+    notification_topic_id integer NOT NULL
+);
+
+
+--
 -- Name: notifications; Type: TABLE; Schema: portal; Owner: -
 --
 
@@ -1218,8 +1228,7 @@ CREATE TABLE portal.notifications (
     notification_type_id integer NOT NULL,
     is_read boolean NOT NULL,
     due_date timestamp with time zone,
-    creator_user_id uuid,
-    notification_topic_id integer DEFAULT 1 NOT NULL
+    creator_user_id uuid
 );
 
 
@@ -1985,6 +1994,14 @@ ALTER TABLE ONLY portal.notification_type
 
 
 --
+-- Name: notification_type_assigned_topic pk_notification_type_assigned_topic; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.notification_type_assigned_topic
+    ADD CONSTRAINT pk_notification_type_assigned_topic PRIMARY KEY (notification_type_id, notification_topic_id);
+
+
+--
 -- Name: notifications pk_notifications; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -2527,17 +2544,24 @@ CREATE INDEX ix_invitations_invitation_status_id ON portal.invitations USING btr
 
 
 --
+-- Name: ix_notification_type_assigned_topic_notification_topic_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_notification_type_assigned_topic_notification_topic_id ON portal.notification_type_assigned_topic USING btree (notification_topic_id);
+
+
+--
+-- Name: ix_notification_type_assigned_topic_notification_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE UNIQUE INDEX ix_notification_type_assigned_topic_notification_type_id ON portal.notification_type_assigned_topic USING btree (notification_type_id);
+
+
+--
 -- Name: ix_notifications_creator_user_id; Type: INDEX; Schema: portal; Owner: -
 --
 
 CREATE INDEX ix_notifications_creator_user_id ON portal.notifications USING btree (creator_user_id);
-
-
---
--- Name: ix_notifications_notification_topic_id; Type: INDEX; Schema: portal; Owner: -
---
-
-CREATE INDEX ix_notifications_notification_topic_id ON portal.notifications USING btree (notification_topic_id);
 
 
 --
@@ -3459,6 +3483,22 @@ ALTER TABLE ONLY portal.invitations
 
 
 --
+-- Name: notification_type_assigned_topic fk_notification_type_assigned_topic_notification_topic_notific; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.notification_type_assigned_topic
+    ADD CONSTRAINT fk_notification_type_assigned_topic_notification_topic_notific FOREIGN KEY (notification_topic_id) REFERENCES portal.notification_topic(id);
+
+
+--
+-- Name: notification_type_assigned_topic fk_notification_type_assigned_topic_notification_type_notifica; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.notification_type_assigned_topic
+    ADD CONSTRAINT fk_notification_type_assigned_topic_notification_type_notifica FOREIGN KEY (notification_type_id) REFERENCES portal.notification_type(id);
+
+
+--
 -- Name: notifications fk_notifications_company_users_creator_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
@@ -3472,14 +3512,6 @@ ALTER TABLE ONLY portal.notifications
 
 ALTER TABLE ONLY portal.notifications
     ADD CONSTRAINT fk_notifications_company_users_receiver_id FOREIGN KEY (receiver_user_id) REFERENCES portal.company_users(id);
-
-
---
--- Name: notifications fk_notifications_notification_topic_notification_topic_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
---
-
-ALTER TABLE ONLY portal.notifications
-    ADD CONSTRAINT fk_notifications_notification_topic_notification_topic_id FOREIGN KEY (notification_topic_id) REFERENCES portal.notification_topic(id);
 
 
 --
