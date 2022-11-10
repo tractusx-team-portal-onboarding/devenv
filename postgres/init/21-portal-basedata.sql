@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -450,11 +450,12 @@ COPY portal.document_types (id, label) FROM stdin;
 1	CX_FRAME_CONTRACT
 2	COMMERCIAL_REGISTER_EXTRACT
 3	APP_CONTRACT
-4	DATA_CONTRACT
 5	ADDITIONAL_DETAILS
 6	APP_LEADIMAGE
 7	APP_IMAGE
-8	SELF_DESCRIPTION_EDC
+4	APP_DATA_DETAILS
+8	SELF_DESCRIPTION
+9	APP_TECHNICAL_INFORMATION
 \.
 
 
@@ -482,6 +483,17 @@ COPY portal.invitation_statuses (id, label) FROM stdin;
 
 
 --
+-- Data for Name: notification_topic; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.notification_topic (id, label) FROM stdin;
+1	INFO
+2	ACTION
+3	OFFER
+\.
+
+
+--
 -- Data for Name: notification_type; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -500,6 +512,28 @@ COPY portal.notification_type (id, label) FROM stdin;
 12	TECHNICAL_USER_CREATION
 13	SERVICE_REQUEST
 14	SERVICE_ACTIVATION
+\.
+
+
+--
+-- Data for Name: notification_type_assigned_topic; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.notification_type_assigned_topic (notification_type_id, notification_topic_id) FROM stdin;
+1	1
+2	2
+3	1
+4	1
+5	1
+6	1
+7	1
+8	2
+9	3
+10	1
+11	3
+12	1
+13	2
+14	3
 \.
 
 
