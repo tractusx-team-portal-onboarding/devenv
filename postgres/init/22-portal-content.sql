@@ -229,6 +229,9 @@ ALTER TABLE portal.offers ENABLE TRIGGER ALL;
 ALTER TABLE portal.agreement_assigned_offers DISABLE TRIGGER ALL;
 
 COPY portal.agreement_assigned_offers (agreement_id, offer_id) FROM stdin;
+aa0a0000-7fbc-1f2f-817f-bce0502c1017	a16e73b9-5277-4b69-9f8d-3b227495dfea
+aa0a0000-7fbc-1f2f-817f-bce0502c1018	a16e73b9-5277-4b69-9f8d-3b227495dfea
+aa0a0000-7fbc-1f2f-817f-bce0502c1018	a16e73b9-5277-4b69-9f8d-3b227495dfeb
 \.
 
 
