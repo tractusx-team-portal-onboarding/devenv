@@ -161,11 +161,6 @@ ALTER TABLE portal.documents ENABLE TRIGGER ALL;
 ALTER TABLE portal.agreement_assigned_documents DISABLE TRIGGER ALL;
 
 COPY portal.agreement_assigned_documents (agreement_id, document_id) FROM stdin;
-aa0a0000-7fbc-1f2f-817f-bce0502c1017	a16e73b9-5277-4b69-9f8d-3b227495dfea
-aa0a0000-7fbc-1f2f-817f-bce0502c1018	a16e73b9-5277-4b69-9f8d-3b227495dfea
-aa0a0000-7fbc-1f2f-817f-bce0502c1018	ac1cf001-7fbc-1f2f-817f-bce0572c0007
-aa0a0000-7fbc-1f2f-817f-bce0502c1018	5cf74ef8-e0b7-4984-a872-474828beb510
-aa0a0000-7fbc-1f2f-817f-bce0502c1018	a16e73b9-5277-4b69-9f8d-3b227495dfeb
 aa0a0000-7fbc-1f2f-817f-bce0502c1017	fda6c9cb-62be-4a98-99c1-d9c5a2df4aad
 \.
 
