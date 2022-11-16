@@ -1365,14 +1365,34 @@ CREATE TABLE portal.offers (
 
 
 --
--- Name: service_provider_company_details; Type: TABLE; Schema: portal; Owner: -
+-- Name: provider_company_details; Type: TABLE; Schema: portal; Owner: -
 --
 
-CREATE TABLE portal.service_provider_company_details (
+CREATE TABLE portal.provider_company_details (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
     auto_setup_url text NOT NULL,
     company_id uuid NOT NULL
+);
+
+
+--
+-- Name: service_assigned_service_types; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.service_assigned_service_types (
+    service_id uuid NOT NULL,
+    service_type_id integer NOT NULL
+);
+
+
+--
+-- Name: service_types; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.service_types (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL
 );
 
 
@@ -2026,11 +2046,27 @@ ALTER TABLE ONLY portal.offer_types
 
 
 --
--- Name: service_provider_company_details pk_service_provider_company_details; Type: CONSTRAINT; Schema: portal; Owner: -
+-- Name: service_assigned_service_types pk_service_assigned_service_types; Type: CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.service_provider_company_details
+ALTER TABLE ONLY portal.service_assigned_service_types
+    ADD CONSTRAINT pk_service_assigned_service_types PRIMARY KEY (service_id, service_type_id);
+
+
+--
+-- Name: provider_company_details pk_service_provider_company_details; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.provider_company_details
     ADD CONSTRAINT pk_service_provider_company_details PRIMARY KEY (id);
+
+
+--
+-- Name: service_types pk_service_types; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.service_types
+    ADD CONSTRAINT pk_service_types PRIMARY KEY (id);
 
 
 --
@@ -2642,10 +2678,17 @@ CREATE INDEX ix_offers_sales_manager_id ON portal.offers USING btree (sales_mana
 
 
 --
--- Name: ix_service_provider_company_details_company_id; Type: INDEX; Schema: portal; Owner: -
+-- Name: ix_provider_company_details_company_id; Type: INDEX; Schema: portal; Owner: -
 --
 
-CREATE UNIQUE INDEX ix_service_provider_company_details_company_id ON portal.service_provider_company_details USING btree (company_id);
+CREATE UNIQUE INDEX ix_provider_company_details_company_id ON portal.provider_company_details USING btree (company_id);
+
+
+--
+-- Name: ix_service_assigned_service_types_service_type_id; Type: INDEX; Schema: portal; Owner: -
+--
+
+CREATE INDEX ix_service_assigned_service_types_service_type_id ON portal.service_assigned_service_types USING btree (service_type_id);
 
 
 --
@@ -3531,10 +3574,26 @@ ALTER TABLE ONLY portal.offer_subscriptions
 
 
 --
--- Name: service_provider_company_details fk_service_provider_company_details_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+-- Name: service_assigned_service_types fk_service_assigned_service_types_offers_service_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
 --
 
-ALTER TABLE ONLY portal.service_provider_company_details
+ALTER TABLE ONLY portal.service_assigned_service_types
+    ADD CONSTRAINT fk_service_assigned_service_types_offers_service_id FOREIGN KEY (service_id) REFERENCES portal.offers(id);
+
+
+--
+-- Name: service_assigned_service_types fk_service_assigned_service_types_service_types_service_type_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.service_assigned_service_types
+    ADD CONSTRAINT fk_service_assigned_service_types_service_types_service_type_id FOREIGN KEY (service_type_id) REFERENCES portal.service_types(id);
+
+
+--
+-- Name: provider_company_details fk_service_provider_company_details_companies_company_id; Type: FK CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.provider_company_details
     ADD CONSTRAINT fk_service_provider_company_details_companies_company_id FOREIGN KEY (company_id) REFERENCES portal.companies(id);
 
 
