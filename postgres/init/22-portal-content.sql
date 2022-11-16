@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 14.4 (Debian 14.4-1.pgdg110+1)
+-- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1048,6 +1048,9 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 5cf74ef8-e0b7-4984-a872-474828beb5d5	en	The Smart Factory Web Portal is a web-based application to allow suppliers and MaaS platforms to offer production capabilities and capacities. At the same time, the Smart Factory Web Portal offers a search environment where a buyer can upload engineering files and configure procurement requirements which the Smart Factory Web Search Engine the portal exploits uses to calculate all possible supply chain alternatives by matching it to the registered supplier information. This matching is able to use up-to-date information about the capabilities and status of assets in the factory, as well as characteristics of the products - availability, quality, price, carbon emissions and so on - which provides a basis for possible negotiation between competing offers.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d6	en	PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control. PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees.PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD. PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d6	de	PRODUCTION PLANNING & CONTROL consists of the three coordinated applications PLANNING BOARD, PRODUCTION FEEDBACK and PRODUCTION COCKPIT. As a web-based solution from the cloud, it provides an easy entry into the optimization of production planning and control. PLANNING BOARD is intuitive tool for manual production planning with assistance functions. The software is suitable for easy replacement of EXCEL or paper and takes limited resources into account, such as workstations, machines and employees. PRODUCTION FEEDBACK provides real-time feedback from the shop floor, gives the machine operator an overview of all current production tasks and is directly connected to PLANNING BOARD. PRODUCTION COCKPIT is a simply structured dashboard that visualizes all manufacturing information. Depending on whether delivery reliability, order figures or the status of relevant. It can be configured individually.	This is only a test text
+a16e73b9-5277-4b69-9f8d-3b227495dfeb	de	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
+a16e73b9-5277-4b69-9f8d-3b227495dfec	en	Provided connectivity to Siemens Xcelerator Share product	Provided connectivity to Siemens Xcelerator Share product
+a16e73b9-5277-4b69-9f8d-3b227495dfec	de	This is only a test text	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d7	de	Das „SAP Logistics Business Network, Material Traceability (LBN-MT)“ stellt eine Lösung zur unternehmensübergreifenden Lieferkettentransparenz und Material Rückverfolgbarkeit dar. Der netzwerkbasierte Lösungsansatz schafft eine Datengrundlage für Automobilhersteller und Zulieferer gleichermaßen, um Reaktionszeiten bei Anomalien zu verkürzen und Rückrufe entlang der Lieferkette präziser auszuführen. Die Analyse und Erfassung der gesamten Chargen- und Serialnummerngeneralogie ist mittels Fiori UI einfach, strukturiert und anwenderfreundlich. Ebenso lässt sich diese über einen Netzwerkgrafen graphisch darstellen. Durch die vorhandene Standardintegration mit S/4HANA und ECC ist eine nahtlose Datenbereitstellung aus dem Backendsystem im Netzwerk möglich. Andere Systeme können über entsprechende Schnittstellen integriert und Daten bereitgestellt werden. Mit LBN-MT können Kunden nach den Prinzipien der Dateninteroperabilität und Souveränität im Catena-X Netzwerk mit allen relevanten Geschäftspartnern agieren und neue Geschäftsfelder entlang der Wertschöpfungskette etablieren.	This is only a test text
 5cf74ef8-e0b7-4984-a872-474828beb5d8	de	Siemens’ AM Network is an online order-to-delivery collaboration platform for the industrial additive manufacturing community. We connect the AM ecosystem, simplify the collaboration process, and streamline the AM production process. Siemens’ AM Network digitalizes and consistently improves your processes and ultimately accelerates the value in using Additive Manufacturing.	Online order-to-delivery collaboration platform for the industrial additive manufacturing community.
 5cf74ef8-e0b7-4984-a872-474828beb5d9	de	mipart is an on-demand manufacturing platform for the digital procurement of components. B2B and B2C customers can simply upload their CAD model, configure it online and order their component. The centerpiece of the mipart MaaS solution is an AI-based algorithm that analyzes and calculates the CAD models uploaded to the configurator in real time and generates a quotation within seconds. The customer can then order his component directly. What takes several days in the traditional way via paper correspondence, e-mail data exchange, and 2D component drawings, happens on mipart in just a few seconds. The manufacturing companies connected to mipart can use this new digital business model without investment costs and generate orders. Customers benefit from transparent processes and very short order times. miparts portfolio includes turned and milled parts, sheet metal processing and 3D printing. Individual parts and prototypes are just as possible as small series.	On demand manufacturing platform.
@@ -1057,9 +1060,6 @@ ac1cf001-7fbc-1f2f-817f-bce0573f0009	de	This is only a test text	This is only a 
 a16e73b9-5277-4b69-9f8d-3b227495dfea	en	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
 a16e73b9-5277-4b69-9f8d-3b227495dfea	de	In order to allow Data Providers and Data Consumers to easily participate in relevant Use Cases, a service for low-effort data sharing was needed. The service would add a convenience layer around already established CX components, such as EDC and Digital Twin Registry, simplifying their use. It is a standalone service which can be self-hosted, it enables companies to provide their data in the Catena-X network via an EDC, Ddata is uploaded via CSV-files/Manual Entry/Json format, the DFT registers the data in the Digital Twin Registry and makes it accessible via an EDC, DFT also act as a Data Consumer, it is show the data offers from data provider.	Component for Digital Twins registration
 a16e73b9-5277-4b69-9f8d-3b227495dfeb	en	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
-a16e73b9-5277-4b69-9f8d-3b227495dfeb	de	SupplyOn Capacity Management supports suppliers to collect production capacity data in a simple and intuitive way and enables buyer and supplier users to compare it with demand data. This comparison is mainly done on a tactical and strategical level, in order to identify potential mismatches as early as possible.  The data is available in a consistent format and can be downloaded for further internal processing. In addition, the application supports an integrated collaboration between suppliers and buyers via commenting and built-in task management features.	Supports suppliers to collect production capacity data
-a16e73b9-5277-4b69-9f8d-3b227495dfec	en	Provided connectivity to Siemens Xcelerator Share product	Provided connectivity to Siemens Xcelerator Share product
-a16e73b9-5277-4b69-9f8d-3b227495dfec	de	This is only a test text	This is only a test text
 \.
 
 
@@ -1168,17 +1168,29 @@ a16e73b9-5277-4b69-9f8d-3b227495dfec	Quality
 ALTER TABLE portal.offer_tags ENABLE TRIGGER ALL;
 
 --
--- Data for Name: service_provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
+-- Data for Name: provider_company_details; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
-ALTER TABLE portal.service_provider_company_details DISABLE TRIGGER ALL;
+ALTER TABLE portal.provider_company_details DISABLE TRIGGER ALL;
 
-COPY portal.service_provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
+COPY portal.provider_company_details (id, date_created, auto_setup_url, company_id) FROM stdin;
 3c0a31d2-7743-402c-af02-f0cc3cc3ca6d	2022-10-10 11:50:54.709881+00	https://orchestrator.cx.dih-cloud.com	3390c2d7-75c1-4169-aa27-6ce00e1f3cdd
 \.
 
 
-ALTER TABLE portal.service_provider_company_details ENABLE TRIGGER ALL;
+ALTER TABLE portal.provider_company_details ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: service_assigned_service_types; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.service_assigned_service_types DISABLE TRIGGER ALL;
+
+COPY portal.service_assigned_service_types (service_id, service_type_id) FROM stdin;
+\.
+
+
+ALTER TABLE portal.service_assigned_service_types ENABLE TRIGGER ALL;
 
 --
 -- Data for Name: user_role_assigned_collections; Type: TABLE DATA; Schema: portal; Owner: portal

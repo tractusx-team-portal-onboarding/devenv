@@ -572,6 +572,16 @@ COPY portal.offer_types (id, label) FROM stdin;
 
 
 --
+-- Data for Name: service_types; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.service_types (id, label) FROM stdin;
+1	DATASPACE_SERVICE
+2	CONSULTANCE_SERVICE
+\.
+
+
+--
 -- Data for Name: use_cases; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
