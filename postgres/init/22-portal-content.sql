@@ -293,6 +293,7 @@ f032a051-d035-11ec-9d64-0242ac120002	not yet known-6
 789e31ee-0fdb-4e42-a819-23e0cfb1179b	https://catenax-dt-rec.authentication.eu10.hana.ondemand.com
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 f032a052-d035-11ec-9d64-0242ac120002	Cl16-CX-CRisk
+f032a053-d035-11ec-9d64-0242ac120002	Cl18-CX-Pal
 \.
 
 
@@ -320,6 +321,7 @@ e080bb4b-567b-477e-adcf-080efc457d38	9ef01c20-6d9d-41ef-b336-fa64e1e2e4c2	f032a0
 476b0600-965b-4f10-8eb5-e4568859a886	5cf74ef8-e0b7-4984-a872-474828beb5d8	f032a050-d035-11ec-9d64-0242ac120002
 476b0600-965b-4f10-8eb5-e4568859a887	5cf74ef8-e0b7-4984-a872-474828beb5d9	f032a051-d035-11ec-9d64-0242ac120002
 476b0600-965b-4f10-8eb5-e4568859a888	5cf74ef8-e0b7-4984-a872-474828beb510	f032a052-d035-11ec-9d64-0242ac120002
+476b0600-965b-4f10-8eb5-e4568859a889	ac1cf001-7fbc-1f2f-817f-bce0574c000f	f032a053-d035-11ec-9d64-0242ac120002
 \.
 
 
@@ -416,7 +418,7 @@ bedb45bf-7094-4da0-9e69-0695db782a16	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	b161d5
 d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N
 22835697-99ea-45c8-bce6-9b2553a95c50	60f00bd0-98fe-4ed3-ad3b-90045921660c	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
 f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
-ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
+ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	476b0600-965b-4f10-8eb5-e4568859a889	https://catena-x.palantirfoundry.com/
 9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
 ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
@@ -775,6 +777,7 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51173	Supplier Capacity Manager	a16e73b9-5277-4b69-9f8d-3b227495dfeb	\N
 607818be-4978-41f4-bf63-fa8d2de51174	User	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
 607818be-4978-41f4-bf63-fa8d2de51175	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
+607818be-4978-41f4-bf63-fa8d2de51176	Viewer	ac1cf001-7fbc-1f2f-817f-bce0574c000f	\N
 \.
 
 
@@ -1320,6 +1323,8 @@ b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51174	en	Can view and use the app
 607818be-4978-41f4-bf63-fa8d2de51175	de	Can configure the app
 607818be-4978-41f4-bf63-fa8d2de51175	en	Can configure the app
+607818be-4978-41f4-bf63-fa8d2de51176	de	Can access the app
+607818be-4978-41f4-bf63-fa8d2de51176	en	Can access the app
 \.
 
 
