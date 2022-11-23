@@ -24,6 +24,28 @@ CREATE SCHEMA portal;
 
 
 --
+-- Name: lc_trigger_after_delete_appsubscriptiondetail(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_delete_appsubscriptiondetail() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.offer_subscription_id, 
+  OLD.app_instance_id, 
+  OLD.app_subscription_url, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
+--
 -- Name: lc_trigger_after_delete_companyapplication(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -172,6 +194,28 @@ $$;
 
 
 --
+-- Name: lc_trigger_after_insert_appsubscriptiondetail(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_insert_appsubscriptiondetail() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.offer_subscription_id, 
+  NEW.app_instance_id, 
+  NEW.app_subscription_url, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
+$$;
+
+
+--
 -- Name: lc_trigger_after_insert_companyapplication(); Type: FUNCTION; Schema: portal; Owner: -
 --
 
@@ -316,6 +360,28 @@ BEGIN
   NEW.last_editor_id;
 RETURN NEW;
 END;
+$$;
+
+
+--
+-- Name: lc_trigger_after_update_appsubscriptiondetail(); Type: FUNCTION; Schema: portal; Owner: -
+--
+
+CREATE FUNCTION portal.lc_trigger_after_update_appsubscriptiondetail() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.offer_subscription_id, 
+  NEW.app_instance_id, 
+  NEW.app_subscription_url, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -594,7 +660,25 @@ CREATE TABLE portal.app_subscription_details (
     id uuid NOT NULL,
     offer_subscription_id uuid NOT NULL,
     app_instance_id uuid,
-    app_subscription_url character varying(255)
+    app_subscription_url character varying(255),
+    last_editor_id uuid
+);
+
+
+--
+-- Name: audit_app_subscription_detail20221118; Type: TABLE; Schema: portal; Owner: -
+--
+
+CREATE TABLE portal.audit_app_subscription_detail20221118 (
+    audit_v1id uuid NOT NULL,
+    id uuid NOT NULL,
+    offer_subscription_id uuid NOT NULL,
+    app_instance_id uuid,
+    app_subscription_url character varying(255),
+    last_editor_id uuid,
+    audit_v1last_editor_id uuid,
+    audit_v1operation_id integer NOT NULL,
+    audit_v1date_last_changed timestamp with time zone NOT NULL
 );
 
 
@@ -1619,6 +1703,14 @@ ALTER TABLE ONLY portal.offer_tags
 
 ALTER TABLE ONLY portal.offers
     ADD CONSTRAINT pk_apps PRIMARY KEY (id);
+
+
+--
+-- Name: audit_app_subscription_detail20221118 pk_audit_app_subscription_detail20221118; Type: CONSTRAINT; Schema: portal; Owner: -
+--
+
+ALTER TABLE ONLY portal.audit_app_subscription_detail20221118
+    ADD CONSTRAINT pk_audit_app_subscription_detail20221118 PRIMARY KEY (audit_v1id);
 
 
 --
@@ -2720,6 +2812,13 @@ CREATE INDEX ix_user_roles_offer_id ON portal.user_roles USING btree (offer_id);
 
 
 --
+-- Name: app_subscription_details lc_trigger_after_delete_appsubscriptiondetail; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_delete_appsubscriptiondetail AFTER DELETE ON portal.app_subscription_details FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_delete_appsubscriptiondetail();
+
+
+--
 -- Name: company_applications lc_trigger_after_delete_companyapplication; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2762,6 +2861,13 @@ CREATE TRIGGER lc_trigger_after_delete_userrole AFTER DELETE ON portal.user_role
 
 
 --
+-- Name: app_subscription_details lc_trigger_after_insert_appsubscriptiondetail; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_insert_appsubscriptiondetail AFTER INSERT ON portal.app_subscription_details FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_insert_appsubscriptiondetail();
+
+
+--
 -- Name: company_applications lc_trigger_after_insert_companyapplication; Type: TRIGGER; Schema: portal; Owner: -
 --
 
@@ -2801,6 +2907,13 @@ CREATE TRIGGER lc_trigger_after_insert_offersubscription AFTER INSERT ON portal.
 --
 
 CREATE TRIGGER lc_trigger_after_insert_userrole AFTER INSERT ON portal.user_roles FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_insert_userrole();
+
+
+--
+-- Name: app_subscription_details lc_trigger_after_update_appsubscriptiondetail; Type: TRIGGER; Schema: portal; Owner: -
+--
+
+CREATE TRIGGER lc_trigger_after_update_appsubscriptiondetail AFTER UPDATE ON portal.app_subscription_details FOR EACH ROW EXECUTE FUNCTION portal.lc_trigger_after_update_appsubscriptiondetail();
 
 
 --

@@ -82,3 +82,4 @@ ALTER TABLE portal.user_role_collection_descriptions OWNER TO portal;
 ALTER TABLE portal.user_role_collections OWNER TO portal;
 ALTER TABLE portal.user_role_descriptions OWNER TO portal;
 ALTER TABLE portal.user_roles OWNER TO portal;
+ALTER TABLE portal.audit_app_subscription_detail20221118 OWNER TO portal;
