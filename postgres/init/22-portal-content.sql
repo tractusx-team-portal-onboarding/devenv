@@ -426,6 +426,18 @@ ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	htt
 ALTER TABLE portal.app_subscription_details ENABLE TRIGGER ALL;
 
 --
+-- Data for Name: audit_app_subscription_detail20221118; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.audit_app_subscription_detail20221118 DISABLE TRIGGER ALL;
+
+COPY portal.audit_app_subscription_detail20221118 (audit_v1id, id, offer_subscription_id, app_instance_id, app_subscription_url, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+ALTER TABLE portal.audit_app_subscription_detail20221118 ENABLE TRIGGER ALL;
+
+--
 -- Data for Name: audit_company_application20221005; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
