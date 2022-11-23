@@ -29,19 +29,19 @@ CREATE SCHEMA portal;
 
 CREATE FUNCTION portal.lc_trigger_after_delete_appsubscriptiondetail() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-BEGIN
-  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
-  OLD.offer_subscription_id, 
-  OLD.app_instance_id, 
-  OLD.app_subscription_url, 
-  OLD.last_editor_id, 
-  gen_random_uuid(), 
-  3, 
-  CURRENT_DATE, 
-  OLD.last_editor_id;
-RETURN NEW;
-END;
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT OLD.id, 
+  OLD.offer_subscription_id, 
+  OLD.app_instance_id, 
+  OLD.app_subscription_url, 
+  OLD.last_editor_id, 
+  gen_random_uuid(), 
+  3, 
+  CURRENT_DATE, 
+  OLD.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -199,19 +199,19 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_insert_appsubscriptiondetail() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-BEGIN
-  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-  NEW.offer_subscription_id, 
-  NEW.app_instance_id, 
-  NEW.app_subscription_url, 
-  NEW.last_editor_id, 
-  gen_random_uuid(), 
-  1, 
-  CURRENT_DATE, 
-  NEW.last_editor_id;
-RETURN NEW;
-END;
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.offer_subscription_id, 
+  NEW.app_instance_id, 
+  NEW.app_subscription_url, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  1, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
@@ -369,19 +369,19 @@ $$;
 
 CREATE FUNCTION portal.lc_trigger_after_update_appsubscriptiondetail() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$
-BEGIN
-  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
-  NEW.offer_subscription_id, 
-  NEW.app_instance_id, 
-  NEW.app_subscription_url, 
-  NEW.last_editor_id, 
-  gen_random_uuid(), 
-  2, 
-  CURRENT_DATE, 
-  NEW.last_editor_id;
-RETURN NEW;
-END;
+    AS $$
+BEGIN
+  INSERT INTO portal.audit_app_subscription_detail20221118 ("id", "offer_subscription_id", "app_instance_id", "app_subscription_url", "last_editor_id", "audit_v1id", "audit_v1operation_id", "audit_v1date_last_changed", "audit_v1last_editor_id") SELECT NEW.id, 
+  NEW.offer_subscription_id, 
+  NEW.app_instance_id, 
+  NEW.app_subscription_url, 
+  NEW.last_editor_id, 
+  gen_random_uuid(), 
+  2, 
+  CURRENT_DATE, 
+  NEW.last_editor_id;
+RETURN NEW;
+END;
 $$;
 
 
