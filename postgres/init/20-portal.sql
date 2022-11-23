@@ -990,7 +990,8 @@ CREATE TABLE portal.connectors (
     provider_id uuid NOT NULL,
     host_id uuid,
     location_id character(2) NOT NULL,
-    self_description_document_id uuid
+    self_description_document_id uuid,
+    daps_registration_successful boolean
 );
 
 
