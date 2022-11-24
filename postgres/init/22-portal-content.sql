@@ -86,6 +86,8 @@ aa0a0000-7fbc-1f2f-817f-bce0502c1015	1	2022-09-18 00:00:00+00	2022-09-18 00:00:0
 aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Marketplace Terms & Conditions	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1017	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Terms & Conditions Service Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1018	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Data Sharing Approval - allow CX to submit company data (company name, requester) to process the subscription	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1090	1	2022-01-01 00:00:00.388+00	2022-01-01 00:00:00.388+00	\N	I confirm that my company has successfully received a Catena-X onboarding certificate for application providers / service providers issued by an official Catena-X Conformity Assessment Body (CAB). I acknowledge that I am able to upload the certificate in the subsequent registration process steps. For more information on conformity assessment please visit the association homepage (<- Link ).	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1090	2	2022-01-01 00:00:00.388+00	2022-01-01 00:00:00.388+00	\N	I confirm that my company has successfully received a Catena-X onboarding certificate for application providers / service providers issued by an official Catena-X Conformity Assessment Body (CAB). I acknowledge that I am able to upload the certificate in the subsequent registration process steps. For more information on conformity assessment please visit the association homepage (<- Link ).	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
 
@@ -392,6 +394,7 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1c
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N	\N	\N
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb510	2	ac1cf001-7fbc-1f2f-817f-bce058020001	cc0c44ef-6602-4615-bf11-298656b30d6d	\N	\N	\N
 \.
 
 
@@ -424,6 +427,7 @@ ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	htt
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
 3d8cb906-76a3-4cd7-ae99-4f9225437a27	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com
 37241577-3730-4d39-ab5b-3555a0d11c42	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com
+aaaa44ef-6602-4615-bf11-298656b30d6d	cc0c44ef-6602-4615-bf11-298656b30d6d	476b0600-965b-4f10-8eb5-e4568859a888	https://country-risk-dashboard.int.demo.catena-x.net/
 \.
 
 
