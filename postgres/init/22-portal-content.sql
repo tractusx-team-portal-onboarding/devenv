@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
+-- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -394,7 +394,6 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1c
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d1	2	ac1cf001-7fbc-1f2f-817f-bce058020001	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d2	2	ac1cf001-7fbc-1f2f-817f-bce058020001	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	\N	\N
 2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb5d3	2	ac1cf001-7fbc-1f2f-817f-bce058020001	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	\N	\N	\N
-2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	5cf74ef8-e0b7-4984-a872-474828beb510	2	ac1cf001-7fbc-1f2f-817f-bce058020001	cc0c44ef-6602-4615-bf11-298656b30d6d	\N	\N	\N
 \.
 
 
@@ -406,32 +405,45 @@ ALTER TABLE portal.offer_subscriptions ENABLE TRIGGER ALL;
 
 ALTER TABLE portal.app_subscription_details DISABLE TRIGGER ALL;
 
-COPY portal.app_subscription_details (id, offer_subscription_id, app_instance_id, app_subscription_url) FROM stdin;
-a9aa870a-450b-4a58-8381-0cfe7f9f43e7	56d878d9-9574-4673-b32a-ebf5753042f5	b161d570-f6ff-45b4-a077-243f72487af6	\N
-e9e97133-a311-419c-8421-fd70264de9cb	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N	\N
-f550c647-f94f-4e58-bcb9-b3d338af9009	56faf2e0-88ec-4ee5-a736-6c52688250f8	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
-88b0661c-cc22-4a4a-9721-fc4f3cec21f8	0b2ca541-206d-48ad-bc02-fb61fbcb5552	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
-3c7f7825-b2c4-43b8-b91e-8ab6f8e28fac	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff
-aa97bc61-149f-4b85-babb-eb40f0424ef5	02d5575d-b110-43f0-b0dd-53dbc37147dc	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
-cb0d1b6a-29fd-4583-a924-641dcf3b26a9	34a93025-18de-4c7a-8677-0fd9801248d1	\N	https://portal-staging.afqm-services.com/
-3cafae15-4f03-49c3-9786-b6ca2e29fa76	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N
-9c5cb134-b77b-4b22-ae34-63b686b3b5b9	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	https://dtc-translator.adac.openresearch.com
-f21f3782-b2e4-462e-b0c0-986f49359536	846ec83b-4b84-4c29-b7ce-3e57d7405844	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com
-bedb45bf-7094-4da0-9e69-0695db782a16	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	b161d570-f6ff-45b4-a077-243f72487af6	\N
-d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N
-22835697-99ea-45c8-bce6-9b2553a95c50	60f00bd0-98fe-4ed3-ad3b-90045921660c	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com
-f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com
-ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	476b0600-965b-4f10-8eb5-e4568859a889	https://catena-x.palantirfoundry.com/
-9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/
-ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/
-7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N
-3d8cb906-76a3-4cd7-ae99-4f9225437a27	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com
-37241577-3730-4d39-ab5b-3555a0d11c42	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com
-aaaa44ef-6602-4615-bf11-298656b30d6d	cc0c44ef-6602-4615-bf11-298656b30d6d	476b0600-965b-4f10-8eb5-e4568859a888	https://country-risk-dashboard.int.demo.catena-x.net/
+COPY portal.app_subscription_details (id, offer_subscription_id, app_instance_id, app_subscription_url, last_editor_id) FROM stdin;
+a9aa870a-450b-4a58-8381-0cfe7f9f43e7	56d878d9-9574-4673-b32a-ebf5753042f5	b161d570-f6ff-45b4-a077-243f72487af6	\N	\N
+e9e97133-a311-419c-8421-fd70264de9cb	b1964680-474d-45dd-b1c4-91f39f9a4c48	\N	\N	\N
+f550c647-f94f-4e58-bcb9-b3d338af9009	56faf2e0-88ec-4ee5-a736-6c52688250f8	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N
+88b0661c-cc22-4a4a-9721-fc4f3cec21f8	0b2ca541-206d-48ad-bc02-fb61fbcb5552	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com	\N
+3c7f7825-b2c4-43b8-b91e-8ab6f8e28fac	1ab2e5e1-df8f-496b-aa12-c11067805992	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N
+aa97bc61-149f-4b85-babb-eb40f0424ef5	02d5575d-b110-43f0-b0dd-53dbc37147dc	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/	\N
+cb0d1b6a-29fd-4583-a924-641dcf3b26a9	34a93025-18de-4c7a-8677-0fd9801248d1	\N	https://portal-staging.afqm-services.com/	\N
+3cafae15-4f03-49c3-9786-b6ca2e29fa76	028265dd-82a8-4924-ab9a-a7b47dc2adfd	\N	\N	\N
+9c5cb134-b77b-4b22-ae34-63b686b3b5b9	93eecd4e-ca47-4dd2-85bf-775ea72eb312	\N	https://dtc-translator.adac.openresearch.com	\N
+f21f3782-b2e4-462e-b0c0-986f49359536	846ec83b-4b84-4c29-b7ce-3e57d7405844	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com	\N
+bedb45bf-7094-4da0-9e69-0695db782a16	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	b161d570-f6ff-45b4-a077-243f72487af6	\N	\N
+d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N	\N
+22835697-99ea-45c8-bce6-9b2553a95c50	60f00bd0-98fe-4ed3-ad3b-90045921660c	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N
+f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com	\N
+ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N
+9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/	\N
+ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/	\N
+7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
+3d8cb906-76a3-4cd7-ae99-4f9225437a27	11fd3bb9-6922-4b36-bc28-d30aded20231	\N	https://dtc-translator.adac.openresearch.com	\N
+37241577-3730-4d39-ab5b-3555a0d11c42	1ab6c7c9-ff68-47da-aad4-b88d83b757cd	7e828901-27cb-4078-bd15-00efd247c56a	https://fleet-management.adac.openresearch.com	\N
+ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	476b0600-965b-4f10-8eb5-e4568859a889	https://catena-x.palantirfoundry.com/	\N
+aaaa44ef-6602-4615-bf11-298656b30d6d	cc0c44ef-6602-4615-bf11-298656b30d6d	476b0600-965b-4f10-8eb5-e4568859a888	https://country-risk-dashboard.int.demo.catena-x.net/	\N
 \.
 
 
 ALTER TABLE portal.app_subscription_details ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: audit_app_subscription_detail20221118; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.audit_app_subscription_detail20221118 DISABLE TRIGGER ALL;
+
+COPY portal.audit_app_subscription_detail20221118 (audit_v1id, id, offer_subscription_id, app_instance_id, app_subscription_url, last_editor_id, audit_v1last_editor_id, audit_v1operation_id, audit_v1date_last_changed) FROM stdin;
+\.
+
+
+ALTER TABLE portal.audit_app_subscription_detail20221118 ENABLE TRIGGER ALL;
 
 --
 -- Data for Name: audit_company_application20221005; Type: TABLE DATA; Schema: portal; Owner: portal
@@ -1243,7 +1255,7 @@ b05d86e1-6c98-4619-85fa-9a425e0800b6	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
 607818be-4978-41f4-bf63-fa8d2de51180	ec428950-8b64-4646-b336-28af869b5d73
 95fe4014-4d1b-47af-a22e-72a12f9470dc	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
 95fe4014-4d1b-47af-a22e-72a12f9470dc	ec428950-8b64-4646-b336-28af869b5d73
-916e4be9-0ff7-48fb-bb80-97d2e93fca14	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
+16e4be9-0ff7-48fb-bb80-97d2e93fca14	a5b8b1de-7759-4620-9c87-6b6d74fb4fbc
 3ff68c40-6581-4e48-a03a-2a6c1c5aac89	ec428950-8b64-4646-b336-28af869b5d73
 95fe4014-4d1b-47af-a22e-72a12f9470db	ec428950-8b64-4646-b336-28af869b5d73
 04231a30-df50-4d14-bb00-71ff012ae0cf	8cb12ea2-aed4-4d75-b041-ba297df3d2f2
@@ -1363,3 +1375,4 @@ ALTER TABLE portal.user_role_descriptions ENABLE TRIGGER ALL;
 --
 -- PostgreSQL database dump complete
 --
+
