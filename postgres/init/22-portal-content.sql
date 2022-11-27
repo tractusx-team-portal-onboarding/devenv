@@ -86,7 +86,7 @@ aa0a0000-7fbc-1f2f-817f-bce0502c1015	1	2022-09-18 00:00:00+00	2022-09-18 00:00:0
 aa0a0000-7fbc-1f2f-817f-bce0502c1016	2	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Marketplace Terms & Conditions	ac861325-bc54-4583-bcdc-9e9f2a38ff84	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1017	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Terms & Conditions Service Provider	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1018	4	2022-09-18 00:00:00+00	2022-09-18 00:00:00+00	\N	Data Sharing Approval - allow CX to submit company data (company name, requester) to process the subscription	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
-aa0a0000-7fbc-1f2f-817f-bce0502c1090	1	2022-01-01 00:00:00.388+00	2022-01-01 00:00:00.388+00	\N	I confirm that my company has successfully received a Catena-X onboarding certificate issued by an official Conformity Assessment Body (CAB). I awknowledge to upload the certificate. For more information please visit the association homepage (Link)  2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
+aa0a0000-7fbc-1f2f-817f-bce0502c1090	1	2022-01-01 00:00:00.388+00	2022-01-01 00:00:00.388+00	\N	I confirm that my company has successfully received a Catena-X onboarding certificate issued by an official Conformity Assessment Body (CAB). I awknowledge to upload the certificate. For more information please visit the association homepage (Link)	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 aa0a0000-7fbc-1f2f-817f-bce0502c1090	2	2022-01-01 00:00:00.388+00	2022-01-01 00:00:00.388+00	\N	I confirm that my company has successfully received a Catena-X onboarding certificate issued by an official Conformity Assessment Body (CAB). I awknowledge to upload the certificate. For more information please visit the association homepage (Link)	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1aacde78-35ec-4df3-ba1e-f988cddcbbd9
 \.
 
@@ -420,7 +420,6 @@ bedb45bf-7094-4da0-9e69-0695db782a16	ed4de48d-fd4b-4384-a72f-ecae3c6cc5ba	b161d5
 d3796e27-d0bb-4376-80c3-2ffb49847424	85064593-0aaa-48c4-95a2-2700223aca5e	\N	\N	\N
 22835697-99ea-45c8-bce6-9b2553a95c50	60f00bd0-98fe-4ed3-ad3b-90045921660c	2c252614-ae87-4efc-8af8-4d011e70544b	https://dismantler-cockpit.d13fe27.kyma.ondemand.com	\N
 f9262016-7400-49a5-9908-c46257b4790f	d65e367c-0968-4be9-bd2a-6c3d6339d65c	ab25c218-9ab3-4f1a-b6f4-6394fbc33c5a	https://ec-qas.d13fe27.kyma.ondemand.com	\N
-ac6413b0-b179-462a-9074-e7d0bcc5ee5a	1d28a224-6293-4148-8b60-6714a0f1465d	\N	https://impact.bmw.cloud/workspace/carbon/ri.carbon.main.workspace.7d7f6c71-3981-4b78-b731-1b4c8f243c97/ri.workshop.main.module.c9beba25-4387-40dd-9e59-8c4e3b3df3ff	\N
 9741fa8d-74f3-44f8-8ec0-51c83399e508	6da4b991-b594-4b80-933a-26383d6d465f	d69075b4-9bce-489c-ba80-8f7f08c4a011	https://fraud-dashboard.int.demo.catena-x.net/	\N
 ed4116b0-f4bc-451e-aaa9-5df08969e1b4	4ba33360-72e6-4a56-a253-59761d694d2c	\N	https://portal-staging.afqm-services.com/	\N
 7f9888cb-2f78-4f71-b7dd-a9231888aa55	4d44eb62-7ac8-4a4a-a0d0-fc3daca5edd5	\N	\N	\N
@@ -1375,4 +1374,3 @@ ALTER TABLE portal.user_role_descriptions ENABLE TRIGGER ALL;
 --
 -- PostgreSQL database dump complete
 --
-
