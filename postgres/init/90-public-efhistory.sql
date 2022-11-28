@@ -75,6 +75,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221116093330_CPLP-1803-AddServiceTypes	6.0.4
 20221118061606_CPLP-1318-AuditAppSubscription	6.0.4
 20221123144540_CPLP-1601-AddAppRoleEnumToNotificationTypeId	6.0.4
+20221123180559_CPLP-1797-AddDapsRegistration	6.0.4
 \.
 
 
