@@ -899,9 +899,9 @@ Company-1	ac1cf001-7fbc-1f2f-817f-bce057230006
 Company-2	ac1cf001-7fbc-1f2f-817f-bce057230007
 Security-Company	ac1cf001-7fbc-1f2f-817f-bce057230008
 CX-Test-Access	ac1cf001-7fbc-1f2f-817f-bce057770016
-idp4	ac1cf001-7fbc-1f2f-817f-bce057770017
-idp5	ac1cf001-7fbc-1f2f-817f-bce057770018
-idp6	ac1cf001-7fbc-1f2f-817f-bce057770015
+Service-Provider	ac1cf001-7fbc-1f2f-817f-bce057770017
+App-Provider	ac1cf001-7fbc-1f2f-817f-bce057770018
+CX-Operator	ac1cf001-7fbc-1f2f-817f-bce057770015
 keycloak-oidc	e7317720-051d-4f4c-9140-ac23c6330351
 \.
 
