@@ -77,6 +77,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221123144540_CPLP-1601-AddAppRoleEnumToNotificationTypeId	6.0.4
 20221123180559_CPLP-1797-AddDapsRegistration	6.0.4
 20221129054345_CPLP-1518-AddAppReleaseApprovalToNotificationTypeId	6.0.4
+20221201125120_CPLP-1518-AddAppReleaseApprovalToNotificationTypeId	6.0.4
 \.
 
 
