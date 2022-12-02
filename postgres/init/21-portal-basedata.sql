@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 14.5 (Debian 14.5-2.pgdg110+2)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -514,6 +514,8 @@ COPY portal.notification_type (id, label) FROM stdin;
 14	SERVICE_ACTIVATION
 15	APP_ROLE_ADDED
 16	APP_RELEASE_APPROVAL
+17	SERVICE_RELEASE_REQUEST
+18	SERVICE_RELEASE_APPROVAL
 \.
 
 
@@ -537,6 +539,9 @@ COPY portal.notification_type_assigned_topic (notification_type_id, notification
 13	2
 14	3
 16	3
+15	3
+17	3
+18	3
 \.
 
 
