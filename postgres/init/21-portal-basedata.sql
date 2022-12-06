@@ -541,6 +541,7 @@ COPY portal.notification_type_assigned_topic (notification_type_id, notification
 16	3
 15	3
 17	3
+18	3
 \.
 
 

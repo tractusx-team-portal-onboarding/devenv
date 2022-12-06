@@ -79,6 +79,7 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221129054345_CPLP-1518-AddAppReleaseApprovalToNotificationTypeId	6.0.4
 20221201134921_CPLP-1518-AddNotificationMapping	6.0.4
 20221205180503_CPLP-1605-AddServiceReleaseNotification	6.0.4
+20221205191515_CPLP-1606-AddServiceReleaseApprovalToNotificationTypeId	6.0.4
 \.
 
 
