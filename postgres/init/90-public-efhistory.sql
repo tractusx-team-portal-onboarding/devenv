@@ -33,6 +33,18 @@ CREATE TABLE public.__efmigrations_history_portal (
 ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;
 
 --
+-- Name: __efmigrations_history_provisioning; Type: TABLE; Schema: public; Owner: provisioning
+--
+
+CREATE TABLE public.__efmigrations_history_provisioning (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL
+);
+
+
+ALTER TABLE public.__efmigrations_history_provisioning OWNER TO provisioning;
+
+--
 -- Data for Name: __efmigrations_history_portal; Type: TABLE DATA; Schema: public; Owner: portal
 --
 
@@ -82,6 +94,23 @@ COPY public.__efmigrations_history_portal (migration_id, product_version) FROM s
 20221205191515_CPLP-1606-AddServiceReleaseApprovalToNotificationTypeId	6.0.4
 20221206074134_CPLP-1519-AddReleaseRejectionNotifications	6.0.4
 \.
+
+
+--
+-- Data for Name: __efmigrations_history_provisioning; Type: TABLE DATA; Schema: public; Owner: provisioning
+--
+
+COPY public.__efmigrations_history_provisioning (migration_id, product_version) FROM stdin;
+20221207202641_InitialCreate	6.0.7
+\.
+
+
+--
+-- Name: __efmigrations_history_provisioning pk___efmigrations_history_provisioning; Type: CONSTRAINT; Schema: public; Owner: provisioning
+--
+
+ALTER TABLE ONLY public.__efmigrations_history_provisioning
+    ADD CONSTRAINT pk___efmigrations_history_provisioning PRIMARY KEY (migration_id);
 
 
 --

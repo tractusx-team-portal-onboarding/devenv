@@ -9,5 +9,6 @@ else
     echo "hostname $DEVENV_SERVERNAME unknown (run 'sudo ./set_wsl_hosts.sh' resp. 'sudo ./set_devhost_hosts.sh' first)"
   else
     docker run -it --rm -e PGPASSWORD=pwportal postgres pg_dump --disable-triggers -h $DEVENV_IP -a -t $TABLES -U portal postgres | awk '$0 ~ /^([^p]|p($|[^g]|g($|[^_]|_($|[^d]|d($|[^u]|u($|[^m]|m($|[^p]|p($|[^:])))))))).*/ { print }' > postgres/init/22-portal-content.sql
+    docker run -it --rm -e PGPASSWORD=pwprovisioning postgres pg_dump -h $DEVENV_IP -n provisioning -a -U provisioning postgres > postgres/init/31-provisioning-data.sql
   fi
 fi

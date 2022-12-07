@@ -83,3 +83,10 @@ ALTER TABLE portal.user_role_collection_descriptions OWNER TO portal;
 ALTER TABLE portal.user_role_collections OWNER TO portal;
 ALTER TABLE portal.user_role_descriptions OWNER TO portal;
 ALTER TABLE portal.user_roles OWNER TO portal;
+
+ALTER SCHEMA provisioning OWNER TO provisioning;
+ALTER TABLE provisioning.client_sequences OWNER TO provisioning;
+ALTER TABLE provisioning.identity_provider_sequences OWNER TO provisioning;
+ALTER TABLE provisioning.user_password_resets OWNER TO provisioning;
+ALTER SEQUENCE provisioning.client_sequence_sequence_id_seq OWNER TO provisioning;
+ALTER SEQUENCE provisioning.identity_provider_sequence_sequence_id_seq OWNER TO provisioning;
