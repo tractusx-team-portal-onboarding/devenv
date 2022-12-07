@@ -798,7 +798,7 @@ b05d86e1-6c98-4619-85fa-9a425e080014	Data Contributor	5cf74ef8-e0b7-4984-a872-47
 607818be-4978-41f4-bf63-fa8d2de51174	User	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
 607818be-4978-41f4-bf63-fa8d2de51175	Admin	a16e73b9-5277-4b69-9f8d-3b227495dfec	\N
 607818be-4978-41f4-bf63-fa8d2de51176	Viewer	ac1cf001-7fbc-1f2f-817f-bce0574c000f	\N
-607818be-4978-41f4-bf63-fa8d2de51180	User	ac1cf001-7fbc-1f2f-817f-bce0572c0007	\N
+607818be-4978-41f4-bf63-fa8d2de51183	User	ac1cf001-7fbc-1f2f-817f-bce0572c0007	\N
 607818be-4978-41f4-bf63-fa8d2de51181	Supervisor	ac1cf001-7fbc-1f2f-817f-bce0572c0007	\N
 607818be-4978-41f4-bf63-fa8d2de51182	Admin	ac1cf001-7fbc-1f2f-817f-bce0572c0007	\N
 \.
@@ -1369,8 +1369,8 @@ b05d86e1-6c98-4619-85fa-9a425e080001	en	Fraud User
 607818be-4978-41f4-bf63-fa8d2de51175	en	Can configure the app
 607818be-4978-41f4-bf63-fa8d2de51176	de	Can access the app
 607818be-4978-41f4-bf63-fa8d2de51176	en	Can access the app
-607818be-4978-41f4-bf63-fa8d2de51180	de	The user has access
-607818be-4978-41f4-bf63-fa8d2de51180	en	The user has access
+607818be-4978-41f4-bf63-fa8d2de51183	de	The user has access
+607818be-4978-41f4-bf63-fa8d2de51183	en	The user has access
 607818be-4978-41f4-bf63-fa8d2de51181	de	The user has access
 607818be-4978-41f4-bf63-fa8d2de51181	en	The user has access
 607818be-4978-41f4-bf63-fa8d2de51182	de	The user has access
