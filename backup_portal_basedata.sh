@@ -10,6 +10,7 @@ else
   else
     docker run -it --rm -e PGPASSWORD=pwpostgres postgres pg_dump -h $DEVENV_IP -n portal -s -O -U postgres postgres > postgres/init/20-portal.sql
     docker run -it --rm -e PGPASSWORD=pwportal postgres pg_dump -h $DEVENV_IP -a -t $BASETABLES -U portal postgres > postgres/init/21-portal-basedata.sql
+    docker run -it --rm -e PGPASSWORD=pwpostgres postgres pg_dump -h $DEVENV_IP -n provisioning -s -O -U postgres postgres > postgres/init/30-provisioning.sql
     docker run -it --rm -e PGPASSWORD=pwpostgres postgres pg_dump -h $DEVENV_IP -t '__efmigrations_history*' -U postgres postgres > postgres/init/90-public-efhistory.sql
   fi
 fi
