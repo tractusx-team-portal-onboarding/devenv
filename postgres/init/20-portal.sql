@@ -834,7 +834,6 @@ CREATE TABLE portal.companies (
     id uuid NOT NULL,
     date_created timestamp with time zone NOT NULL,
     business_partner_number character varying(20),
-    tax_id character varying(20),
     name character varying(255) NOT NULL,
     shortname character varying(255),
     company_status_id integer NOT NULL,
