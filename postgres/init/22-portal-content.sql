@@ -296,6 +296,7 @@ f032a051-d035-11ec-9d64-0242ac120002	not yet known-6
 cf207afb-d213-4c33-becc-0cabeef174a7	https://catenax-int-dismantler-s66pftcc.authentication.eu10.hana.ondemand.com
 f032a052-d035-11ec-9d64-0242ac120002	Cl16-CX-CRisk
 f032a053-d035-11ec-9d64-0242ac120002	Cl18-CX-Pal
+f032a040-d036-11ec-9d64-0242ac120002	Cl16-CX-BPDMGate-Portal
 \.
 
 
@@ -604,6 +605,19 @@ ac861325-bc54-4583-bcdc-9e9f2a38ff84	06b243a4-ba51-4bf3-bc40-5d79a2231b86
 ALTER TABLE portal.company_assigned_use_cases ENABLE TRIGGER ALL;
 
 --
+-- Data for Name: company_identifiers; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+ALTER TABLE portal.company_identifiers DISABLE TRIGGER ALL;
+
+COPY portal.company_identifiers (company_id, unique_identifier_id, value) FROM stdin;
+2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	1	HR 99990
+\.
+
+
+ALTER TABLE portal.company_identifiers ENABLE TRIGGER ALL;
+
+--
 -- Data for Name: identity_providers; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
@@ -701,6 +715,9 @@ COPY portal.company_service_accounts (id, date_created, company_id, name, descri
 7e85a0b8-0001-ab67-10d1-0ef508201020	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-12	sa-cl6-cx-12	1
 7e85a0b8-0001-ab67-10d1-0ef508201021	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-13	sa-cl6-cx-13	1
 7e85a0b8-0001-ab67-10d1-0ef508201022	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl5-cx-1	sa-cl5-cx-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201023	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl3-cx-1	sa-cl3-cx-1	1
+7e85a0b8-0001-ab67-10d1-0ef508201024	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl7-cx-5	sa-cl7-cx-5	1
+7e85a0b8-0001-ab67-10d1-0ef508201025	2022-06-01 18:01:33.439+00	2dc4249f-b5ca-4d42-bef1-7a7a950a4f87	sa-cl6-cx-01	sa-cl6-cx-01	1
 \.
 
 
