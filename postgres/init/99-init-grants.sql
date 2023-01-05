@@ -90,3 +90,6 @@ ALTER TABLE provisioning.identity_provider_sequences OWNER TO provisioning;
 ALTER TABLE provisioning.user_password_resets OWNER TO provisioning;
 ALTER SEQUENCE provisioning.client_sequence_sequence_id_seq OWNER TO provisioning;
 ALTER SEQUENCE provisioning.identity_provider_sequence_sequence_id_seq OWNER TO provisioning;
+ALTER TABLE portal.unique_identifiers OWNER TO portal;
+ALTER TABLE portal.country_assigned_identifier OWNER TO portal;
+ALTER TABLE portal.company_identifiers OWNER TO portal;

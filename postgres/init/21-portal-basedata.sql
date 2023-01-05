@@ -432,6 +432,29 @@ ZM	ZMB	Zambia	Zambia
 
 
 --
+-- Data for Name: unique_identifiers; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.unique_identifiers (id, label) FROM stdin;
+1	COMMERCIAL_REG_NUMBER
+2	VAT_ID
+3	LEI_CODE
+4	VIES
+5	EORI
+\.
+
+
+--
+-- Data for Name: country_assigned_identifier; Type: TABLE DATA; Schema: portal; Owner: portal
+--
+
+COPY portal.country_assigned_identifier (country_alpha2code, unique_identifier_id) FROM stdin;
+DE	1
+DE	2
+\.
+
+
+--
 -- Data for Name: document_status; Type: TABLE DATA; Schema: portal; Owner: portal
 --
 
