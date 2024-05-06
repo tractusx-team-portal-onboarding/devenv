@@ -13,40 +13,48 @@ services:
       POSTGRES_PASSWORD: pwpostgres
       
   iamcentral:
-    image: jboss/keycloak
+    image: keycloak/keycloak
     environment:
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: https://${DEVENV_SERVERNAME}:8443/iamcentral/auth
-      PROXY_ADDRESS_FORWARDING: 'true'
-      DB_VENDOR: postgres
-      DB_ADDR: db
-      DB_PORT: 5432
-      DB_DATABASE: postgres
-      DB_SCHEMA: iamcentral
-      DB_USER: kccentral
-      DB_PASSWORD: pwkccentral
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_URL: https://${DEVENV_SERVERNAME}:8443/iamcentral/auth
+      KC_HOSTNAME_ADMIN_URL: https://${DEVENV_SERVERNAME}:8443/iamcentral/auth
+      KC_HOSTNAME_STRICT_BACKCHANNEL: "true"
+      KC_HTTP_RELATIVE_PATH: auth
+      KC_PROXY_HEADERS: xforwarded
+      KC_DB: postgres
+      KC_DB_URL_HOST: db
+      KC_DB_URL_PORT: 5432
+      KC_DB_URL_DATABASE: postgres
+      KC_DB_SCHEMA: iamcentral
+      KC_DB_USERNAME: kccentral
+      KC_DB_PASSWORD: pwkccentral
       X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
+    command: start-dev
     volumes:
       - ./keycloak/ca:/tmp/ca
     extra_hosts:
       - "${DEVENV_SERVERNAME}:${DEVENV_IP}"
 
   iamshared:
-    image: jboss/keycloak
+    image: keycloak/keycloak
     environment:
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: https://${DEVENV_SERVERNAME}:8443/iamshared/auth
-      PROXY_ADDRESS_FORWARDING: 'true'
-      DB_VENDOR: postgres
-      DB_ADDR: db
-      DB_PORT: 5432
-      DB_DATABASE: postgres
-      DB_SCHEMA: iamshared
-      DB_USER: kcshared
-      DB_PASSWORD: pwkcshared
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_URL: https://${DEVENV_SERVERNAME}:8443/iamshared/auth
+      KC_HOSTNAME_ADMIN_URL: https://${DEVENV_SERVERNAME}:8443/iamshared/auth
+      KC_HOSTNAME_STRICT_BACKCHANNEL: "true"
+      KC_HTTP_RELATIVE_PATH: auth
+      KC_PROXY_HEADERS: xforwarded
+      KC_DB: postgres
+      KC_DB_URL_HOST: db
+      KC_DB_URL_PORT: 5432
+      KC_DB_URL_DATABASE: postgres
+      KC_DB_SCHEMA: iamshared
+      KC_DB_USERNAME: kcshared
+      KC_DB_PASSWORD: pwkcshared
       X509_CA_BUNDLE: /tmp/ca/devenv-ca.crt
+    command: start-dev
     volumes:
       - ./keycloak/ca:/tmp/ca
     extra_hosts:
